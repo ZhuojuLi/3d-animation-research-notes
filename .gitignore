@@ -1,0 +1,16 @@
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+__pycache__/
+.DS_Store
+node_modules/
+.venv/
+*.log
+*.jsonl
+*.safetensors
+*.pt
+*.pth
+*.tar.gz
+*.zip

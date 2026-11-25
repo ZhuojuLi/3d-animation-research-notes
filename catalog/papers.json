@@ -1,0 +1,1058 @@
+{
+  "date": "2026-11-25",
+  "count": 81,
+  "metadata_status": "Extracted from existing notes; not independently reverified for publication.",
+  "papers": [
+    {
+      "arxiv_id": "2605.12913",
+      "name_in_notes": "Revisiting DAgger in the Era of LLM-Agents",
+      "category": "单篇精读",
+      "focus": "学生访问状态、教师纠偏与黑盒蒸馏",
+      "url": "https://arxiv.org/abs/2605.12913",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2605.12913/README.md",
+      "referenced_in": [
+        "research/arxiv-2605.12913/README.md",
+        "research/arxiv-2610.02140/README.md",
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+        "research/3d-agent-round1-failure-retrospective-and-round2-audit-20261125/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2610.02140",
+      "name_in_notes": "Finetuning with Sampling: SFT Learns Better Than You Think",
+      "category": "单篇精读",
+      "focus": "分布偏移、投影采样与 SFT",
+      "url": "https://arxiv.org/abs/2610.02140",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2610.02140/README.md",
+      "referenced_in": [
+        "research/arxiv-2610.02140/README.md",
+        "3d-animation-agent/reports/student-cot-projection-exp-20261125-001/REPORT.md",
+        "3d-animation-agent/reports/student-cot-projection-exp-20261125-001/COT-PRUNE-OFFPOLICY-ISSUE.md"
+      ]
+    },
+    {
+      "arxiv_id": "2610.22341",
+      "name_in_notes": "3DCodeVerse",
+      "category": "单篇精读",
+      "focus": "代码驱动 3D、训练方法与 Agent Harness",
+      "url": "https://arxiv.org/abs/2610.22341",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2610.22341/README.md",
+      "referenced_in": [
+        "research/3d-animation-methods-and-technique-selection-20261121.md",
+        "research/arxiv-2610.22341/README.md",
+        "research/3d-agent-sft-mix-loss-20261123/README.md",
+        "research/3d-agent-data-mix-20261121/kimi-report.md",
+        "research/3d-agent-data-mix-20261121/astra-report.md",
+        "research/3d-agent-evaluation-system-20261122/README.md",
+        "research/3d-agent-sft-mix-loss-20261123/astra-report.md",
+        "research/3d-agent-sft-mix-loss-20261123/codex-me-report.md",
+        "research/3d-agent-evaluation-system-20261122/main-report.md",
+        "research/3d-agent-evaluation-system-20261122/astra-report.md",
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+        "research/3d-agent-evaluation-system-20261122/external-report-2.md",
+        "history/research/3d-verifiable-tasks-20261120.md",
+        "history/research/3d-animation-improvement-and-sft-cases-20261121.md",
+        "history/research/3d-agent-data-mix-20261121/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2611.28783",
+      "name_in_notes": "3DCodeFactory",
+      "category": "单篇精读",
+      "focus": "3D 数据构造、验证与训练配方",
+      "url": "https://arxiv.org/abs/2611.28783",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2611.28783/README.md",
+      "referenced_in": [
+        "research/arxiv-2611.28783/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2610.03715",
+      "name_in_notes": "4DCodeBench",
+      "category": "3D 动画、运动与镜头",
+      "focus": "动态场景、轨迹与时序评估",
+      "url": "https://arxiv.org/abs/2610.03715",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/3d-animation-methods-and-technique-selection-20261121.md",
+      "referenced_in": [
+        "research/3d-animation-methods-and-technique-selection-20261121.md",
+        "research/3d-agent-evaluation-system-20261122/astra-report.md",
+        "history/research/3d-animation-improvement-and-sft-cases-20261121.md"
+      ]
+    },
+    {
+      "arxiv_id": "2610.17288",
+      "name_in_notes": "PhysCodeGym",
+      "category": "3D 动画、运动与镜头",
+      "focus": "接触、支撑与因果干预检查",
+      "url": "https://arxiv.org/abs/2610.17288",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/3d-animation-methods-and-technique-selection-20261121.md",
+      "referenced_in": [
+        "research/3d-animation-methods-and-technique-selection-20261121.md",
+        "research/3d-agent-evaluation-system-20261122/README.md",
+        "research/3d-agent-evaluation-system-20261122/main-report.md",
+        "research/3d-agent-evaluation-system-20261122/external-report.md",
+        "research/3d-agent-evaluation-system-20261122/external-report-2.md",
+        "history/research/3d-animation-improvement-and-sft-cases-20261121.md"
+      ]
+    },
+    {
+      "arxiv_id": "2610.40754",
+      "name_in_notes": "DyCraft",
+      "category": "3D 动画、运动与镜头",
+      "focus": "长动作、关键姿态与几何验证",
+      "url": "https://arxiv.org/abs/2610.40754",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/3d-animation-methods-and-technique-selection-20261121.md",
+      "referenced_in": [
+        "research/3d-animation-methods-and-technique-selection-20261121.md",
+        "history/research/3d-animation-improvement-and-sft-cases-20261121.md"
+      ]
+    },
+    {
+      "arxiv_id": "2611.15789",
+      "name_in_notes": "VibePrevisBench",
+      "category": "3D 动画、运动与镜头",
+      "focus": "预演交付、镜头与画面可读性",
+      "url": "https://arxiv.org/abs/2611.15789",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/3d-animation-methods-and-technique-selection-20261121.md",
+      "referenced_in": [
+        "research/3d-animation-methods-and-technique-selection-20261121.md",
+        "research/3d-agent-evaluation-system-20261122/README.md",
+        "research/3d-agent-evaluation-system-20261122/main-report.md",
+        "research/3d-agent-evaluation-system-20261122/external-report.md",
+        "research/3d-agent-evaluation-system-20261122/external-report-2.md",
+        "history/research/3d-animation-improvement-and-sft-cases-20261121.md"
+      ]
+    },
+    {
+      "arxiv_id": "2607.26910",
+      "name_in_notes": "CinemaTraj",
+      "category": "3D 动画、运动与镜头",
+      "focus": "参数化运镜、避障与遮挡",
+      "url": "https://arxiv.org/abs/2607.26910",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/3d-animation-methods-and-technique-selection-20261121.md",
+      "referenced_in": [
+        "research/3d-animation-methods-and-technique-selection-20261121.md"
+      ]
+    },
+    {
+      "arxiv_id": "2610.38468",
+      "name_in_notes": "CineU",
+      "category": "3D 动画、运动与镜头",
+      "focus": "模板选型与定向修改",
+      "url": "https://arxiv.org/abs/2610.38468",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/3d-animation-methods-and-technique-selection-20261121.md",
+      "referenced_in": [
+        "research/3d-animation-methods-and-technique-selection-20261121.md",
+        "history/research/3d-animation-improvement-and-sft-cases-20261121.md"
+      ]
+    },
+    {
+      "arxiv_id": "2604.23580",
+      "name_in_notes": "PhysCodeBench",
+      "category": "3D 动画、运动与镜头",
+      "focus": "物理代码生成与诊断修复",
+      "url": "https://arxiv.org/abs/2604.23580",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/3d-animation-methods-and-technique-selection-20261121.md",
+      "referenced_in": [
+        "research/3d-animation-methods-and-technique-selection-20261121.md"
+      ]
+    },
+    {
+      "arxiv_id": "2606.28593",
+      "name_in_notes": "Animation2Code",
+      "category": "3D 动画、运动与镜头",
+      "focus": "外观与运动分开评测、视觉反馈",
+      "url": "https://arxiv.org/abs/2606.28593",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/3d-animation-methods-and-technique-selection-20261121.md",
+      "referenced_in": [
+        "research/3d-animation-methods-and-technique-selection-20261121.md",
+        "research/3d-agent-evaluation-system-20261122/README.md",
+        "research/3d-agent-sft-mix-loss-20261123/astra-report.md",
+        "research/3d-agent-evaluation-system-20261122/main-report.md",
+        "research/3d-agent-evaluation-system-20261122/external-report.md",
+        "research/3d-agent-evaluation-system-20261122/external-report-2.md"
+      ]
+    },
+    {
+      "arxiv_id": "2608.17975",
+      "name_in_notes": "aDSL",
+      "category": "3D 动画、运动与镜头",
+      "focus": "对象关系与动作约束",
+      "url": "https://arxiv.org/abs/2608.17975",
+      "reading_status": "专题 / 引用",
+      "primary_note": "history/research/3d-animation-improvement-and-sft-cases-20261121.md",
+      "referenced_in": [
+        "history/research/3d-animation-improvement-and-sft-cases-20261121.md"
+      ]
+    },
+    {
+      "arxiv_id": "2610.16577",
+      "name_in_notes": "CineRecon",
+      "category": "3D 动画、运动与镜头",
+      "focus": "镜头与动态重建",
+      "url": "https://arxiv.org/abs/2610.16577",
+      "reading_status": "专题 / 引用",
+      "primary_note": "history/research/3d-animation-improvement-and-sft-cases-20261121.md",
+      "referenced_in": [
+        "history/research/3d-animation-improvement-and-sft-cases-20261121.md"
+      ]
+    },
+    {
+      "arxiv_id": "2610.38231",
+      "name_in_notes": "Video-Coder",
+      "category": "3D 动画、运动与镜头",
+      "focus": "执行、渲染、反馈与返修",
+      "url": "https://arxiv.org/abs/2610.38231",
+      "reading_status": "专题 / 引用",
+      "primary_note": "history/research/3d-animation-improvement-and-sft-cases-20261121.md",
+      "referenced_in": [
+        "history/research/3d-animation-improvement-and-sft-cases-20261121.md"
+      ]
+    },
+    {
+      "arxiv_id": "2611.09894",
+      "name_in_notes": "3DCodeEdit",
+      "category": "3D 动画、运动与镜头",
+      "focus": "局部编辑与非目标保持",
+      "url": "https://arxiv.org/abs/2611.09894",
+      "reading_status": "专题 / 引用",
+      "primary_note": "history/research/3d-animation-improvement-and-sft-cases-20261121.md",
+      "referenced_in": [
+        "history/research/3d-animation-improvement-and-sft-cases-20261121.md"
+      ]
+    },
+    {
+      "arxiv_id": "2611.08294",
+      "name_in_notes": "ManimCode",
+      "category": "3D 动画、运动与镜头",
+      "focus": "教育动画与视觉自纠错",
+      "url": "https://arxiv.org/abs/2611.08294",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/3d-agent-sft-mix-loss-20261123/README.md",
+      "referenced_in": [
+        "research/3d-agent-sft-mix-loss-20261123/README.md",
+        "research/3d-agent-data-mix-20261121/astra-report.md",
+        "research/3d-agent-sft-mix-loss-20261123/codex-me-report.md",
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+        "history/research/3d-agent-data-mix-20261121/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2605.15187",
+      "name_in_notes": "Articraft",
+      "category": "3D 动画、运动与镜头",
+      "focus": "可动资产、代码化与结构化反馈",
+      "url": "https://arxiv.org/abs/2605.15187",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+      "referenced_in": [
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2611.17681",
+      "name_in_notes": "OCTAVE",
+      "category": "公开题源、3D / CAD 数据与基准",
+      "focus": "HTML5 / 3D 任务与规格",
+      "url": "https://arxiv.org/abs/2611.17681",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/3d-animation-distillation-datasets-20261121.md",
+      "referenced_in": [
+        "research/3d-animation-distillation-datasets-20261121.md"
+      ]
+    },
+    {
+      "arxiv_id": "2606.01869",
+      "name_in_notes": "WorldCoder-Bench",
+      "category": "公开题源、3D / CAD 数据与基准",
+      "focus": "3D 场景任务与状态契约",
+      "url": "https://arxiv.org/abs/2606.01869",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/3d-animation-distillation-datasets-20261121.md",
+      "referenced_in": [
+        "research/3d-animation-distillation-datasets-20261121.md",
+        "research/3d-agent-evaluation-system-20261122/README.md",
+        "research/3d-agent-evaluation-system-20261122/main-report.md",
+        "research/3d-agent-evaluation-system-20261122/external-report.md",
+        "research/3d-agent-evaluation-system-20261122/external-report-2.md"
+      ]
+    },
+    {
+      "arxiv_id": "2610.28416",
+      "name_in_notes": "Code2Video-Compass",
+      "category": "公开题源、3D / CAD 数据与基准",
+      "focus": "代码视频任务与时序验收",
+      "url": "https://arxiv.org/abs/2610.28416",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/3d-animation-distillation-datasets-20261121.md",
+      "referenced_in": [
+        "research/3d-animation-distillation-datasets-20261121.md",
+        "history/research/3d-animation-improvement-and-sft-cases-20261121.md"
+      ]
+    },
+    {
+      "arxiv_id": "2610.35864",
+      "name_in_notes": "VibeVideoBench",
+      "category": "公开题源、3D / CAD 数据与基准",
+      "focus": "视频交付与逐项 rubric",
+      "url": "https://arxiv.org/abs/2610.35864",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/3d-animation-distillation-datasets-20261121.md",
+      "referenced_in": [
+        "research/3d-animation-distillation-datasets-20261121.md"
+      ]
+    },
+    {
+      "arxiv_id": "2610.11105",
+      "name_in_notes": "TKCAM / RealEstate10K-Cap",
+      "category": "公开题源、3D / CAD 数据与基准",
+      "focus": "语言与相机轨迹",
+      "url": "https://arxiv.org/abs/2610.11105",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/3d-animation-distillation-datasets-20261121.md",
+      "referenced_in": [
+        "research/3d-animation-distillation-datasets-20261121.md"
+      ]
+    },
+    {
+      "arxiv_id": "2606.01057",
+      "name_in_notes": "3DCodeBench / 3DCodeData",
+      "category": "公开题源、3D / CAD 数据与基准",
+      "focus": "程序化建模任务与数据",
+      "url": "https://arxiv.org/abs/2606.01057",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/3d-and-cad-benchmarks-datasets-27b-boundaries-20261125/README.md",
+      "referenced_in": [
+        "research/3d-and-cad-benchmarks-datasets-27b-boundaries-20261125/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2606.13368",
+      "name_in_notes": "IterCAD",
+      "category": "公开题源、3D / CAD 数据与基准",
+      "focus": "交互修复与 REVISE / STOP",
+      "url": "https://arxiv.org/abs/2606.13368",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+      "referenced_in": [
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2605.10865",
+      "name_in_notes": "BenchCAD",
+      "category": "公开题源、3D / CAD 数据与基准",
+      "focus": "零件家族与泛化",
+      "url": "https://arxiv.org/abs/2605.10865",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/3d-and-cad-benchmarks-datasets-27b-boundaries-20261125/README.md",
+      "referenced_in": [
+        "research/3d-and-cad-benchmarks-datasets-27b-boundaries-20261125/README.md",
+        "history/research/3d-verifiable-tasks-20261120.md"
+      ]
+    },
+    {
+      "arxiv_id": "2605.10873",
+      "name_in_notes": "CADBench",
+      "category": "公开题源、3D / CAD 数据与基准",
+      "focus": "多模态 CAD 程序生成评测",
+      "url": "https://arxiv.org/abs/2605.10873",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/3d-and-cad-benchmarks-datasets-27b-boundaries-20261125/README.md",
+      "referenced_in": [
+        "research/3d-and-cad-benchmarks-datasets-27b-boundaries-20261125/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2605.07807",
+      "name_in_notes": "Text-to-CAD Evaluation with CADTests",
+      "category": "公开题源、3D / CAD 数据与基准",
+      "focus": "几何与拓扑的可执行检查",
+      "url": "https://arxiv.org/abs/2605.07807",
+      "reading_status": "专题 / 引用",
+      "primary_note": "history/research/3d-verifiable-tasks-20261120.md",
+      "referenced_in": [
+        "history/research/3d-verifiable-tasks-20261120.md"
+      ]
+    },
+    {
+      "arxiv_id": "2602.19171",
+      "name_in_notes": "HistCAD",
+      "category": "公开题源、3D / CAD 数据与基准",
+      "focus": "参数编辑与非目标关系保持",
+      "url": "https://arxiv.org/abs/2602.19171",
+      "reading_status": "专题 / 引用",
+      "primary_note": "history/research/3d-verifiable-tasks-20261120.md",
+      "referenced_in": [
+        "history/research/3d-verifiable-tasks-20261120.md"
+      ]
+    },
+    {
+      "arxiv_id": "2412.14042",
+      "name_in_notes": "CAD-Recode",
+      "category": "公开题源、3D / CAD 数据与基准",
+      "focus": "点云到 CAD 代码",
+      "url": "https://arxiv.org/abs/2412.14042",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/3d-and-cad-benchmarks-datasets-27b-boundaries-20261125/README.md",
+      "referenced_in": [
+        "research/3d-and-cad-benchmarks-datasets-27b-boundaries-20261125/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2505.14646",
+      "name_in_notes": "CAD-Coder（CAD 数据综述中的条目）",
+      "category": "公开题源、3D / CAD 数据与基准",
+      "focus": "沿用该综述登记，题名 / 编号对应待复核",
+      "url": "https://arxiv.org/abs/2505.14646",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/3d-and-cad-benchmarks-datasets-27b-boundaries-20261125/README.md",
+      "referenced_in": [
+        "research/3d-and-cad-benchmarks-datasets-27b-boundaries-20261125/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2505.19713",
+      "name_in_notes": "CAD-Coder（早期 CAD 笔记中的条目）",
+      "category": "公开题源、3D / CAD 数据与基准",
+      "focus": "沿用该笔记登记，题名 / 编号对应待复核",
+      "url": "https://arxiv.org/abs/2505.19713",
+      "reading_status": "专题 / 引用",
+      "primary_note": "history/research/3d-verifiable-tasks-20261120.md",
+      "referenced_in": [
+        "history/research/3d-verifiable-tasks-20261120.md"
+      ]
+    },
+    {
+      "arxiv_id": "2601.01426",
+      "name_in_notes": "SWE-Lego",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "混合数据、步级掩码与课程",
+      "url": "https://arxiv.org/abs/2601.01426",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+      "referenced_in": [
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2605.10674",
+      "name_in_notes": "Step Rejection Fine-Tuning / SRFT",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "轨迹内的步级质量处理",
+      "url": "https://arxiv.org/abs/2605.10674",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+      "referenced_in": [
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2609.18417",
+      "name_in_notes": "Dependency-Aware Trajectory Refinement",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "轨迹依赖与冗余裁剪",
+      "url": "https://arxiv.org/abs/2609.18417",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+      "referenced_in": [
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2506.04178",
+      "name_in_notes": "OpenThoughts3",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "数据来源、难度与蒸馏消融",
+      "url": "https://arxiv.org/abs/2506.04178",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+      "referenced_in": [
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2509.23045",
+      "name_in_notes": "Kimi-Dev",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "单轮技能先验与多轮迁移",
+      "url": "https://arxiv.org/abs/2509.23045",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+      "referenced_in": [
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2504.21798",
+      "name_in_notes": "SWE-smith",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "合成修复题与多样性",
+      "url": "https://arxiv.org/abs/2504.21798",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+      "referenced_in": [
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2504.07164",
+      "name_in_notes": "R2E-Gym",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "执行环境与验证器",
+      "url": "https://arxiv.org/abs/2504.07164",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+      "referenced_in": [
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2412.21139",
+      "name_in_notes": "SWE-Gym",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "可执行环境与 Agent 训练",
+      "url": "https://arxiv.org/abs/2412.21139",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+      "referenced_in": [
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2602.03411",
+      "name_in_notes": "SWE-Master",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "格式、难度与轨迹筛选",
+      "url": "https://arxiv.org/abs/2602.03411",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+      "referenced_in": [
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2505.20411",
+      "name_in_notes": "SWE-rebench",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "题库采集与污染控制",
+      "url": "https://arxiv.org/abs/2505.20411",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+      "referenced_in": [
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2602.23866",
+      "name_in_notes": "SWE-rebench V2",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "题库与验证改进",
+      "url": "https://arxiv.org/abs/2602.23866",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+      "referenced_in": [
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2501.12326",
+      "name_in_notes": "UI-TARS",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "原生多模态 Agent",
+      "url": "https://arxiv.org/abs/2501.12326",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+      "referenced_in": [
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2509.02544",
+      "name_in_notes": "UI-TARS-2",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "多模态数据构造与混合",
+      "url": "https://arxiv.org/abs/2509.02544",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+      "referenced_in": [
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2512.02556",
+      "name_in_notes": "DeepSeek-V3.2",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "工具使用中的历史思考",
+      "url": "https://arxiv.org/abs/2512.02556",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+      "referenced_in": [
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2505.09388",
+      "name_in_notes": "Qwen3 Technical Report",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "思考模式与模板",
+      "url": "https://arxiv.org/abs/2505.09388",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+      "referenced_in": [
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2510.24702",
+      "name_in_notes": "Agent Data Protocol",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "异构 Agent 数据协议",
+      "url": "https://arxiv.org/abs/2510.24702",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+      "referenced_in": [
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2501.11425",
+      "name_in_notes": "Agent-R",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "错误定位与纠偏",
+      "url": "https://arxiv.org/abs/2501.11425",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+      "referenced_in": [
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2505.03469",
+      "name_in_notes": "LS-Mixture",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "长短思考混合",
+      "url": "https://arxiv.org/abs/2505.03469",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+      "referenced_in": [
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2505.14604",
+      "name_in_notes": "SBT",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "思考预算与停止行为",
+      "url": "https://arxiv.org/abs/2505.14604",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+      "referenced_in": [
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2509.23392",
+      "name_in_notes": "JET",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "高效思考",
+      "url": "https://arxiv.org/abs/2509.23392",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+      "referenced_in": [
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2508.18773",
+      "name_in_notes": "ThinkDial",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "可控思考模式",
+      "url": "https://arxiv.org/abs/2508.18773",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+      "referenced_in": [
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2509.23586",
+      "name_in_notes": "AgentDiet",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "历史轨迹压缩",
+      "url": "https://arxiv.org/abs/2509.23586",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+      "referenced_in": [
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2606.27009",
+      "name_in_notes": "Semantic Early-Stopping",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "语义收敛与停止",
+      "url": "https://arxiv.org/abs/2606.27009",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+      "referenced_in": [
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2604.23747",
+      "name_in_notes": "SFT-then-RL Outperforms Mixed-Policy Methods",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "训练阶段与 loss 聚合",
+      "url": "https://arxiv.org/abs/2604.23747",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+      "referenced_in": [
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2508.05629",
+      "name_in_notes": "DFT",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "off-policy token 与微调目标",
+      "url": "https://arxiv.org/abs/2508.05629",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+      "referenced_in": [
+        "research/arxiv-2610.02140/README.md",
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2509.23753",
+      "name_in_notes": "Anchored SFT",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "分布约束",
+      "url": "https://arxiv.org/abs/2509.23753",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/arxiv-2610.02140/README.md",
+      "referenced_in": [
+        "research/arxiv-2610.02140/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2601.19897",
+      "name_in_notes": "OPSD",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "在策略自蒸馏",
+      "url": "https://arxiv.org/abs/2601.19897",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/arxiv-2610.02140/README.md",
+      "referenced_in": [
+        "research/arxiv-2610.02140/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2411.15124",
+      "name_in_notes": "Tülu 3",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "后训练流程与 SFT 定位",
+      "url": "https://arxiv.org/abs/2411.15124",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+      "referenced_in": [
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+        "research/3d-agent-sft-hparams-aodi-selection-20261123/main-report.md"
+      ]
+    },
+    {
+      "arxiv_id": "2310.12823",
+      "name_in_notes": "AgentTuning",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "Agent 数据与通用能力",
+      "url": "https://arxiv.org/abs/2310.12823",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/3d-agent-sft-mix-loss-20261123/README.md",
+      "referenced_in": [
+        "research/3d-agent-sft-mix-loss-20261123/README.md",
+        "research/3d-agent-data-mix-20261121/kimi-report.md",
+        "research/3d-agent-sft-mix-loss-20261123/codex-me-report.md",
+        "history/research/3d-agent-data-mix-20261121/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2310.05492",
+      "name_in_notes": "SFT Data Composition",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "监督数据组成",
+      "url": "https://arxiv.org/abs/2310.05492",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/3d-agent-data-mix-20261121/kimi-report.md",
+      "referenced_in": [
+        "research/3d-agent-data-mix-20261121/kimi-report.md",
+        "history/research/3d-agent-data-mix-20261121/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2508.11953",
+      "name_in_notes": "Data Mixing Optimization for SFT",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "数据混合优化",
+      "url": "https://arxiv.org/abs/2508.11953",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/3d-agent-data-mix-20261121/kimi-report.md",
+      "referenced_in": [
+        "research/3d-agent-data-mix-20261121/kimi-report.md",
+        "history/research/3d-agent-data-mix-20261121/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2502.06589",
+      "name_in_notes": "Hephaestus",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "Agent 工具训练",
+      "url": "https://arxiv.org/abs/2502.06589",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/3d-agent-data-mix-20261121/kimi-report.md",
+      "referenced_in": [
+        "research/3d-agent-data-mix-20261121/kimi-report.md",
+        "history/research/3d-agent-data-mix-20261121/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2501.12948",
+      "name_in_notes": "DeepSeek-R1",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "推理与后训练",
+      "url": "https://arxiv.org/abs/2501.12948",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/3d-agent-data-mix-20261121/kimi-report.md",
+      "referenced_in": [
+        "research/3d-agent-data-mix-20261121/kimi-report.md",
+        "history/research/3d-agent-data-mix-20261121/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2107.03374",
+      "name_in_notes": "Evaluating Large Language Models Trained on Code",
+      "category": "评估方法与背景引用",
+      "focus": "执行评估与 pass@k",
+      "url": "https://arxiv.org/abs/2107.03374",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/3d-agent-evaluation-system-20261122/astra-report.md",
+      "referenced_in": [
+        "research/3d-agent-evaluation-system-20261122/astra-report.md"
+      ]
+    },
+    {
+      "arxiv_id": "2406.12045",
+      "name_in_notes": "τ-bench",
+      "category": "评估方法与背景引用",
+      "focus": "工具交互与重复可靠性",
+      "url": "https://arxiv.org/abs/2406.12045",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/3d-agent-evaluation-system-20261122/README.md",
+      "referenced_in": [
+        "research/3d-agent-evaluation-system-20261122/README.md",
+        "research/3d-agent-evaluation-system-20261122/main-report.md",
+        "research/3d-agent-evaluation-system-20261122/astra-report.md",
+        "research/3d-agent-evaluation-system-20261122/external-report.md",
+        "research/3d-agent-evaluation-system-20261122/external-report-2.md"
+      ]
+    },
+    {
+      "arxiv_id": "2411.00640",
+      "name_in_notes": "Adding Error Bars to Evals",
+      "category": "评估方法与背景引用",
+      "focus": "配对、题簇与统计不确定性",
+      "url": "https://arxiv.org/abs/2411.00640",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/3d-agent-evaluation-system-20261122/README.md",
+      "referenced_in": [
+        "research/3d-agent-evaluation-system-20261122/README.md",
+        "research/3d-agent-evaluation-system-20261122/external-report-2.md",
+        "research/3d-agent-evaluation-system-20261122/external-report-2-review.md"
+      ]
+    },
+    {
+      "arxiv_id": "2403.07974",
+      "name_in_notes": "LiveCodeBench",
+      "category": "评估方法与背景引用",
+      "focus": "代码评测与时间窗口",
+      "url": "https://arxiv.org/abs/2403.07974",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/3d-agent-evaluation-system-20261122/external-report-2.md",
+      "referenced_in": [
+        "research/3d-agent-evaluation-system-20261122/external-report-2.md",
+        "research/3d-agent-evaluation-system-20261122/external-report-2-review.md"
+      ]
+    },
+    {
+      "arxiv_id": "2507.02825",
+      "name_in_notes": "Agentic Benchmark Checklist",
+      "category": "评估方法与背景引用",
+      "focus": "任务、结果与报告有效性",
+      "url": "https://arxiv.org/abs/2507.02825",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/3d-agent-evaluation-system-20261122/README.md",
+      "referenced_in": [
+        "research/3d-agent-evaluation-system-20261122/README.md",
+        "research/3d-agent-evaluation-system-20261122/main-report.md"
+      ]
+    },
+    {
+      "arxiv_id": "2609.40325",
+      "name_in_notes": "WorldAuditBench",
+      "category": "评估方法与背景引用",
+      "focus": "异常暴露与识别",
+      "url": "https://arxiv.org/abs/2609.40325",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/3d-agent-evaluation-system-20261122/README.md",
+      "referenced_in": [
+        "research/3d-agent-evaluation-system-20261122/README.md",
+        "research/3d-agent-evaluation-system-20261122/main-report.md",
+        "history/research/3d-animation-improvement-and-sft-cases-20261121.md"
+      ]
+    },
+    {
+      "arxiv_id": "2508.13587",
+      "name_in_notes": "Breaking the SFT Plateau: Multimodal Structured Reinforcement Learning for Chart-to-Code Generation",
+      "category": "评估方法与背景引用",
+      "focus": "图表代码与结构化反馈",
+      "url": "https://arxiv.org/abs/2508.13587",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/3d-agent-data-mix-20261121/astra-report.md",
+      "referenced_in": [
+        "research/3d-agent-data-mix-20261121/astra-report.md"
+      ]
+    },
+    {
+      "arxiv_id": "2608.25460",
+      "name_in_notes": "Training Alignment Auditors via RL",
+      "category": "评估方法与背景引用",
+      "focus": "审计 Agent 与反馈",
+      "url": "https://arxiv.org/abs/2608.25460",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/3d-agent-openai-anthropic-reading-notes-20261121.md",
+      "referenced_in": [
+        "research/3d-agent-openai-anthropic-reading-notes-20261121.md",
+        "research/3d-agent-data-mix-20261121/kimi-report.md",
+        "research/3d-agent-data-mix-20261121/astra-report.md",
+        "research/3d-agent-sft-mix-loss-20261123/codex-me-report.md",
+        "history/research/3d-animation-improvement-and-sft-cases-20261121.md",
+        "history/research/3d-agent-data-mix-20261121/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2005.14165",
+      "name_in_notes": "Language Models are Few-Shot Learners",
+      "category": "评估方法与背景引用",
+      "focus": "数据组成背景",
+      "url": "https://arxiv.org/abs/2005.14165",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/3d-agent-data-mix-20261121/astra-report.md",
+      "referenced_in": [
+        "research/3d-agent-data-mix-20261121/astra-report.md",
+        "research/3d-agent-sft-mix-loss-20261123/codex-me-report.md"
+      ]
+    },
+    {
+      "arxiv_id": "2203.02155",
+      "name_in_notes": "InstructGPT",
+      "category": "评估方法与背景引用",
+      "focus": "监督与偏好训练背景",
+      "url": "https://arxiv.org/abs/2203.02155",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/3d-agent-data-mix-20261121/kimi-report.md",
+      "referenced_in": [
+        "research/3d-agent-data-mix-20261121/kimi-report.md",
+        "research/3d-agent-data-mix-20261121/astra-report.md",
+        "research/3d-agent-sft-mix-loss-20261123/astra-report.md",
+        "research/3d-agent-sft-mix-loss-20261123/codex-me-report.md",
+        "history/research/3d-agent-data-mix-20261121/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2303.08774",
+      "name_in_notes": "GPT-4 Technical Report",
+      "category": "评估方法与背景引用",
+      "focus": "模型评估背景",
+      "url": "https://arxiv.org/abs/2303.08774",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/3d-agent-data-mix-20261121/kimi-report.md",
+      "referenced_in": [
+        "research/3d-agent-data-mix-20261121/kimi-report.md",
+        "history/research/3d-agent-data-mix-20261121/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2302.13971",
+      "name_in_notes": "LLaMA",
+      "category": "评估方法与背景引用",
+      "focus": "来源份额与重复曝光",
+      "url": "https://arxiv.org/abs/2302.13971",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/3d-agent-sft-mix-loss-20261123/README.md",
+      "referenced_in": [
+        "research/3d-agent-sft-mix-loss-20261123/README.md",
+        "research/3d-agent-sft-mix-loss-20261123/astra-report.md"
+      ]
+    },
+    {
+      "arxiv_id": "2305.11206",
+      "name_in_notes": "LIMA",
+      "category": "评估方法与背景引用",
+      "focus": "监督质量与多样性",
+      "url": "https://arxiv.org/abs/2305.11206",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/3d-agent-sft-hparams-aodi-selection-20261123/main-report.md",
+      "referenced_in": [
+        "research/3d-agent-sft-hparams-aodi-selection-20261123/main-report.md"
+      ]
+    },
+    {
+      "arxiv_id": "2308.12284",
+      "name_in_notes": "D4",
+      "category": "评估方法与背景引用",
+      "focus": "去重、多样化与重复",
+      "url": "https://arxiv.org/abs/2308.12284",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/3d-agent-sft-hparams-aodi-selection-20261123/main-report.md",
+      "referenced_in": [
+        "research/3d-agent-sft-hparams-aodi-selection-20261123/main-report.md"
+      ]
+    },
+    {
+      "arxiv_id": "2406.11794",
+      "name_in_notes": "DataComp-LM",
+      "category": "评估方法与背景引用",
+      "focus": "受控数据比较",
+      "url": "https://arxiv.org/abs/2406.11794",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/3d-agent-sft-hparams-aodi-selection-20261123/main-report.md",
+      "referenced_in": [
+        "research/3d-agent-sft-hparams-aodi-selection-20261123/main-report.md"
+      ]
+    },
+    {
+      "arxiv_id": "2406.17557",
+      "name_in_notes": "FineWeb",
+      "category": "评估方法与背景引用",
+      "focus": "数据筛选与消融",
+      "url": "https://arxiv.org/abs/2406.17557",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/3d-agent-sft-hparams-aodi-selection-20261123/main-report.md",
+      "referenced_in": [
+        "research/3d-agent-sft-hparams-aodi-selection-20261123/main-report.md"
+      ]
+    }
+  ]
+}
