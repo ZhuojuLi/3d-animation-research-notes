@@ -6,6 +6,7 @@
 | --- | --- |
 | [三轨顶级交付产物规格与高难长程造数指南（v2.0）](THREE-TRACK-DELIVERABLE-SPEC.md) | `3d-animation-agent/docs/THREE-TRACK-DELIVERABLE-SPEC.md` |
 | [小红书 `3DCodeFactory` 出题与 Rubric 体系拆解及 2D / CAD 双轨并发造数规范](XHS-TASK-AND-RUBRIC-SPEC.md) | `3d-animation-agent/docs/XHS-TASK-AND-RUBRIC-SPEC.md` |
+| [2D / CAD 高难度双轨 Canary 12（含小红书官方锚点）与 AGY 纯净沙盒盲测复盘报告](CANARY-12-AND-AGY-PROBE-REPORT-20261127.md) | `3d-animation-agent/docs/CANARY-12-AND-AGY-PROBE-REPORT-20261127.md` |
 | [XHS 对齐统一训练数据与上下文标准规范（三轨共用）](XHS-UNIFIED-SFT-STANDARD.md) | `3d-animation-agent/docs/XHS-UNIFIED-SFT-STANDARD.md` |
 | [Anim2D-Tree v2.0（5 大类 × 4 接地气词条 = 20 词条）](../configs/taxonomies/anim2d_tree_v2_0.json) | `3d-animation-agent/configs/taxonomies/anim2d_tree_v2_0.json` |
 | [CadQuery-Tree v2.0（5 大类 × 4 接地气词条 = 20 词条）](../configs/taxonomies/cadquery_tree_v2_0.json) | `3d-animation-agent/configs/taxonomies/cadquery_tree_v2_0.json` |

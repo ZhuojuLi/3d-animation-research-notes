@@ -1,7 +1,5 @@
 # 小红书 `3DCodeFactory` 出题与 Rubric 体系拆解及 2D / CAD 双轨并发造数规范
 
-> 公开整理版 · 2026-11-27。保留成文时点的记录；计划、文献结果和本地实测请分别理解。 环境路径已泛化，未收录的附件已标注；发布范围见 [整理说明](../../PROVENANCE.md)。
-
 > **成文日期**：2026-11-27  
 > **上游对照源码**：`3DCodeFactory`（`arXiv:2611.28783v1`，Apache-2.0，`assets/prompts/P01..P11.txt`、`assets/fewshots/{press,hall}/case.json`、`src/code3dfactory/{validation.py,workflow.py}`）  
 > **配套分类树与交付规格**：[Anim2D-Tree v2.0](../configs/taxonomies/anim2d_tree_v2_0.json) · [CadQuery-Tree v2.0](../configs/taxonomies/cadquery_tree_v2_0.json) · [三轨顶级交付产物规格 v2.0](THREE-TRACK-DELIVERABLE-SPEC.md) · [XHS 对齐统一 SFT 标准](XHS-UNIFIED-SFT-STANDARD.md)
@@ -97,4 +95,40 @@ flowchart LR
    - **出题 + Rubric + `P07` 自审阶段（纯 API 轻量 JSON）**：单题仅 3–4 次请求、无本地重渲染，直接开 **`16` 并发**，几分钟即可产出并审完百道高规格题目包；
    - **多轮沙盒 Rollout 阶段（含 Headless Chromium / OCCT 剖视与爆炸图渲染）**：受单机 CPU/内存与浏览器实例数约束，建议开 **`6–8` 个并行沙盒 Worker**，配合**分层 Best-of-2 早停**（首轮均分 `≥ 0.90` 且无单维短板直接录取；`0.60–0.90` 补跑第 2 轮选优；硬检不过立即短路不调 Judge），将有效轨迹产出速率最大化。
 3. **先小步 Canary 验证，再全量放开并发**：首次点火先按两棵 `v2.0` 树各抽 **5 道代表性高难题（5 CAD + 5 2D = 10 题）** 跑通 `P04→P05→P07→Rollout→硬检→Judge→XHS-ready JSONL` 闭环，实测核对题面接地气程度、Rubric 区分度、平均轮数与单题 Token 成本，确认无误后一键拉满 Phase 1 全量并发（`150–160` 题/轨）。
-4. **全量落盘可追溯账本**：每道题独立保存 `package.json`（含 `P07` 审计记录）、各 Attempt 的原始代理日志、确定性验收报告、`judgement.json` 与最终转换后的 `xhs_ready.jsonl` 分片，随时支持抽检与重评。
+## 四、从 `qwen-sft-6414` 真实轨迹补齐的三条“追求质量上限”提示词铁律（v2.1 必守）
+
+复盘发现：仅看小红书开源仓库里的 `P04.txt` 与论文附录 `hall/case.json` 容易把题面写成“机械罗列 `#dom-id` 和函数名的单元测试标书”；而实查小红书 `qwen-sft-6414` 真正入训轨迹（如 `xhs-val-06-0df9c93c.txt`、`xhs-val-11-32dd01c8.txt` 与 `/opt/code3d/TOOLS.md`），其**推高作品质量上限**的核心提示词设计有三条铁律，必须在合成与采样全链路强制执行：
+
+1. **四段式极简包裹 + 工具说明独立成文（`TOOLS.md` 解耦）**
+   - 严禁在用户需求里堆砌冗长的命令行教程。统一采用小红书真实入训四段式结构：
+     - **6 行极简顶栏**：声明交付目录、真实可编辑结构与 `Work until the task is done.`（不催促早停，释放多轮打磨空间）；
+     - **`USER REQUEST:`**：纯粹、自然、高标准的产品/工程与审美需求正文；
+     - **`REFERENCE IMAGES:`**：`use Read to inspect reference-0.jpg before modeling`；
+     - **工具指路单行尾注**：`Preinstalled rendering and verification tools: read TOOLS.md in your workspace.`（具体 CLI 用法全部收进工作区 `TOOLS.md`，顺带训练模型先读环境文档的真实工程习惯）。
+2. **`ordinary`（普通用户）画像彻底去 `#dom-id` 化，保留真实交互设计留白**
+   - 在 50% 的 `ordinary` 画像题中，**严禁替模型起好 `#aperture-prev`、`#btn-reset` 等死板选择器名字**，必须对齐小红书原味表达（如 *“我想能挑不同的切片来看……具体怎么触发由你来安排”*），倒逼模型自主设计合理的 UI 布局与控件，同时由评测端 Playwright 脚本按语义/DOM 角色自动发现并触发交互控件。
+3. **每题末尾强制注入“审美与工艺上限激发语（Quality-Ceiling Directive）”**
+   - 造数据的根本意义不是凑及格线功能，而是逼出教师模型的**质量天花板**与“全局看大图 → 局部/剖面放大挑刺 → 多轮精修”习惯。每道 `USER REQUEST` 末尾必须自然收束于上限激发指令：
+     - 中文：*“在满足上述需求的前提下，请充分发挥创作能力，持续打磨整体美感、构图层次、材质光影与机械/动效细节精度，让作品具有极高的吸引力与完成度。”*
+     - 英文：*“Under the premise of satisfying the above requirements, please give full play to creativity and iteratively refine overall aesthetics, composition hierarchy, material/lighting craft, and mechanical/motion precision so the work is deeply attractive and complete.”*
+
+---
+
+## 五、Canary 实跑与 AGY 沙盒盲测暴露出的四项“验收策略防误杀/防漏放”修正（v2.1 实证闭环）
+
+通过对 `10` 道自造高难题 + `2` 道小红书官方锚点题（`xhs_anchor_press_cad` / `xhs_anchor_agate_2d`）以及 `2` 道 AGY 纯净沙盒盲测（`cad_v2_09` / `anim2d_v2_07`）做逐帧/逐零件人工复核，我们定位并修复了第一版验收策略中的 **4 个真实工程盲区**：
+
+1. **导出校验器对“前序废分支过滤”的误杀（`_verify_exported_sft_record` 假阴性 — 已修复）**
+   - **现象**：`xhs_anchor_press_cad`（`0.96` 分）与 `cad_v2_09`（`0.952` 分）主会话完全健康（`accepted=1`，`0` 路径泄露），仅因 `claude --bare` 首轮存在一段被 `logging_proxy_to_swift.py` 正常拦截丢弃的短分支（`rejected=1`），被旧版导出门禁误判为 `export_failed`。
+   - **修复**：仅当被拒分片属于 `compact_before` / `compact_recovery` 断链污染时才阻断导出；普通废分支由导出器精准剥离，保留干净主干直通 `convert_native_to_xhs_ready.py`。
+2. **`cad_inspect.py` 质心径向爆炸与单向半切剖视导致的“校验器自摆乌龙”（已升级）**
+   - **现象 A（径向爆炸偏移同轴度）**：旧版 `cad_inspect.py` 按零件质心相对总成质心的向量 `delta = p_center - asm_center` 径向推开零件；遇到带局部剖窗的不对称壳体（如 `cad_v2_09`）或质心靠近原点的衬套座（如 `cad_v2_02`），会把原本严格同轴的零件推偏轴线或聚成一团，导致 Judge 在 `V04/V05` 误扣 `0.5` 分（AGY 沙盒探针在自检 `exploded_view.png` 时甚至主动发现了该问题并手写了沿主轴同轴拉开脚本！）。
+   - **现象 B（半切剖视切掉前后面板零件）**：旧版 `section_view.png` 粗暴切除整个 `y < y_mid` 前半空间，导致位于前半区的斜面前框与提手（如 `cad_v2_07` 的 `front_bezel`、`folding_handle`）在剖视图中整件消失。
+   - **修复**：① 剖视图升级为 **ISO 标准 90° 四分之一象限剖切（Quarter-Quadrant Cutaway：`x < x_mid ∧ y < y_mid`）**，在等轴测下同时暴露 X/Y 正交双剖面内腔止口与轴孔，且 **100% 零件保留在右/后半区绝不消失**；② 爆炸图升级为 **底板下沉（`-Z`）+ 主水平轴序同轴等距拉开**，严保轴系共线与独立零件簇清晰分离。
+3. **`P07` 新增“总包络与子零件跨度物理自洽性核查”（防 `cad_v2_02` 型尺寸自相矛盾）**
+   - **现象**：`cad_v2_02` 题面同时写了 *“默认总包络约 `180×110×130 mm`”* 与 *“底座 `150×76×12 mm`，不要额外添加工作台”*——肘节夹具沿 Y 向最宽零件就是 `76 mm` 底座，物理上不可能凑出 `110 mm` 的 Y 向总包络，导致忠实按底座建模的 `kimi-k3.1-pro` 在 `S02` 被冤扣 `0` 分。
+   - **修复**：在 `P07` 自审提示词中强制增加 **Envelope vs Sub-Part Geometric Feasibility** 核查，要求三轴总包络必须与最宽/最长/最高子部件跨度严格物理自洽。
+4. **2D 交互评测支持 `ordinary` 画像无选择器语义发现**
+   - **修复**：当 `ordinary` 画像题面隐藏 `#dom-id` 时，`_capture_2d_sheets_and_interactions` 按 `<label>` 文本、`aria-label`、按钮文案及未消费的 `<input type="range">` / `<select>` / `<button>` 角色自动匹配触发，彻底打通自然口语需求与自动化交互验收。
+
+
