@@ -17,8 +17,8 @@
       "source": "3d-animation-agent/configs/taxonomies/anim2d_tree_v2_0.json",
       "source_kind": "taxonomy_config",
       "title": "anim2d_tree_v2_0.json",
-      "source_sha256": "c958829522dc5d89c851d57adceb0b9ebf9a150488ce92e35b4c83e777737f3f",
-      "published_sha256": "c958829522dc5d89c851d57adceb0b9ebf9a150488ce92e35b4c83e777737f3f",
+      "source_sha256": "6cfd36d92c47ad331aeaa850d13bb6b224a2459437ca60083b51948cf704ff9d",
+      "published_sha256": "6cfd36d92c47ad331aeaa850d13bb6b224a2459437ca60083b51948cf704ff9d",
       "edits": {}
     },
     {
@@ -37,8 +37,8 @@
       "source": "3d-animation-agent/configs/taxonomies/cadquery_tree_v2_0.json",
       "source_kind": "taxonomy_config",
       "title": "cadquery_tree_v2_0.json",
-      "source_sha256": "a4794f1475392b820aa379993166055f45ff0bf47afeebfccea74709e5f244bd",
-      "published_sha256": "a4794f1475392b820aa379993166055f45ff0bf47afeebfccea74709e5f244bd",
+      "source_sha256": "ddb739f86a198b3a7055b6eb4410ec5f3b9b82f18704cbaeda75dd2faa9f9c96",
+      "published_sha256": "ddb739f86a198b3a7055b6eb4410ec5f3b9b82f18704cbaeda75dd2faa9f9c96",
       "edits": {}
     },
     {
@@ -92,8 +92,8 @@
       "source": "3d-animation-agent/docs/XHS-TASK-AND-RUBRIC-SPEC.md",
       "source_kind": "engineering_doc",
       "title": "小红书 `3DCodeFactory` 出题与 Rubric 体系拆解及 2D / CAD 双轨并发造数规范",
-      "source_sha256": "dd947a094d2935db0e1581ae1c8c9fcd20e63cf6117389245b354e8f94833cc0",
-      "published_sha256": "e9b74d2ee914ad42d143a00c82ffac0489921ca5f14aaed43dfd9376ff2768d0",
+      "source_sha256": "d9c9f314d5479e7ca94145e55aef0c24bdc8e5c11e39aabefab1d9b154811444",
+      "published_sha256": "aa7303d1fef91702643baf6f7f09a71c543107c83fcb0abf9a8d1549c53a49ba",
       "edits": {
         "local_path_placeholders": 1
       }

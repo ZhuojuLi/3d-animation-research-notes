@@ -5,7 +5,7 @@
   "track": "cad_print_cq",
   "style": "xhs_aligned_2_level_product_taxonomy",
   "supersedes_for_long_horizon": "configs/taxonomies/cadquery_tree_v1_1.json",
-  "design_principle": "对齐小红书 3DCodeFactory 接地气两层产品分类（5 大类 × 4 二级词条 = 20 词条），彻底取消人工正交任务形态矩阵与底层算子黑话。复杂单件（15-45+ 面）与 2-6 件多模块装配体、4 视图/剖视图查错、修轴向画反/止口反转/装配干涉、局部 Edit 精修与自然 EOS 收尾全部由长程轨迹自然承载；非 XY 起草基准覆盖、OCCT 安全建模与 STEP+3MF+STL+GLB 五层零干涉验证统一由 P07 出题器与验收器执行。",
+  "design_principle": "对齐小红书 3DCodeFactory 接地气两层产品分类（5 大类 × 4 二级词条 = 20 词条），彻底取消人工正交任务形态矩阵与底层算子黑话。严禁白布单个简单工件（单个角码、单个法兰盘、单个小方盒、单个裸齿轮等低复杂度单件一律拒收，27B 基座已饱和）；100% 聚焦先验难度 >= 4/5 的 4-10 件完整机械装置、工装治具总成与整机结构装配体（params.py + parts/*.py + assembly.py，总面数 60-250+ 面），在 50-150 轮长程轨迹中自然完成多零件分模块建模、4 视图+剖视图+爆炸图查错、修非 XY 轴向画反/止口反转/零件穿模干涉、局部 Edit 精修与自然 EOS 收尾。",
   "delivery_contract_ref": "docs/THREE-TRACK-DELIVERABLE-SPEC.md",
   "preferred_teacher_model": "kimi-k3.1-pro",
   "teacher_channel_note": "2026-11-27 更新：3D 专用 DeepSeek 配额已耗尽，专用 PhanRouter Kimi 通道（3d-animation-agent/.env）已恢复 kimi-k3.1-pro（OpenAI /v1/chat/completions 与 Claude Code 原生 /v1/messages 双接口实测 HTTP 200 返回 thinking+text），CAD 长程多模块与多零件装配数据默认切至 kimi-k3.1-pro。",
@@ -60,7 +60,7 @@
       "domain_zh": "支架、夹具与结构件",
       "label": "Mounting Brackets & Bases",
       "label_zh": "安装支架与底座",
-      "examples_zh": "多阶加强筋角码、斜交电机/传感器法兰安装座、减重口袋悬臂支架、异孔距转接板"
+      "examples_zh": "双轴电机与传感器正交微调支座总成（带筋底板+俯仰耳座+滑槽调节板+锁紧压块）、重型悬臂设备挂架配快拆背板与减震底座总成"
     },
     {
       "id": "CAD_D01L02",
@@ -69,7 +69,7 @@
       "domain_zh": "支架、夹具与结构件",
       "label": "Pipe & Desk Clamps",
       "label_zh": "管夹与桌面夹具",
-      "examples_zh": "双半对锁管夹卡鞍、桌缘 C 型夹配顶丝座、双件螺栓锁紧可调角度安装架"
+      "examples_zh": "四连杆增力快拆肘节夹具总成（T槽底座+立柱+连杆臂+手柄+导向套+压头）、带梯形丝杠与浮动压板的重型台虎钳/桌缘C型夹总成"
     },
     {
       "id": "CAD_D01L03",
@@ -78,7 +78,7 @@
       "domain_zh": "支架、夹具与结构件",
       "label": "Linear Rails & Sliders",
       "label_zh": "导轨与滑台组件",
-      "examples_zh": "燕尾槽/T 型槽导轨+滑块+端盖三件套、带锁紧滑块的滑槽靠山尺组件"
+      "examples_zh": "双轴燕尾十字微调滑台总成（底座+十字中滑板+上载物台+丝杠+刻度手轮+锁紧楔条）、带限位轴承座与锁紧滑块的精密直线模组总成"
     },
     {
       "id": "CAD_D01L04",
@@ -87,7 +87,7 @@
       "domain_zh": "支架、夹具与结构件",
       "label": "Drilling & Alignment Jigs",
       "label_zh": "钻孔与定位治具",
-      "examples_zh": "多平面钻孔导向治具配衬套座、V 型块与阶梯压板对中夹具、木工/机加工转角定位模"
+      "examples_zh": "可调中心距多角度钻孔导向治具总成（V型定位底座+滑动衬套架+阶梯压板+锁紧立柱+标尺挡块）、精密机加工正交定位装夹台总成"
     },
     {
       "id": "CAD_D02L01",
@@ -96,7 +96,7 @@
       "domain_zh": "外壳、机箱与收纳盒",
       "label": "Electronics & Board Cases",
       "label_zh": "电子设备机箱",
-      "examples_zh": "树莓派/开发板多侧孔机箱（含 PCB 铜柱座+通风槽+上盖）、电源模块散热壳体"
+      "examples_zh": "工业嵌入式工控机整机结构总成（密集散热翅片顶盖+带PCB铜柱阵列的下机壳+前后多规格I/O面板+硬盘托架+DIN导轨卡扣座）"
     },
     {
       "id": "CAD_D02L02",
@@ -105,7 +105,7 @@
       "domain_zh": "外壳、机箱与收纳盒",
       "label": "Snap & Lipped Box Assemblies",
       "label_zh": "上下盖扣合壳体",
-      "examples_zh": "抽壳底盒+下伸止口盖板装配、定位销与紧固耳双半壳、企口沟槽密封盒与压框组件"
+      "examples_zh": "重型三防双层止口仪器箱总成（加强筋深腔下箱+下伸企口密封上盖+双耳销轴合页+前部双连杆拨杆搭扣+内部可拆隔板架）"
     },
     {
       "id": "CAD_D02L03",
@@ -114,7 +114,7 @@
       "domain_zh": "外壳、机箱与收纳盒",
       "label": "Angled Consoles & Panels",
       "label_zh": "仪器斜面控制台",
-      "examples_zh": "倾角仪表操作台+可拆背板+内部走线槽、嵌入式按钮旋钮面板壳体组件"
+      "examples_zh": "台式数字示波器/合成器斜面整机总成（百叶通风下壳+倾角前面板+多规格编码器旋钮组+屏幕内嵌压框+可拆电源背板+折叠提手铰链）"
     },
     {
       "id": "CAD_D02L04",
@@ -123,7 +123,7 @@
       "domain_zh": "外壳、机箱与收纳盒",
       "label": "Divided Trays & Twist-Lock Jars",
       "label_zh": "分格收纳盒与罐体",
-      "examples_zh": "带可插拔分隔板的零件盒、模块化互锁底板与阶梯料盒、四分之一圈卡口旋锁罐与盖"
+      "examples_zh": "多层旋转展开式精密零件收纳塔总成（加重底座+中心定位转轴柱+3层分格旋转料盘+四分之一圈卡口防尘顶盖）"
     },
     {
       "id": "CAD_D03L01",
@@ -132,7 +132,7 @@
       "domain_zh": "机械传动与活动机构",
       "label": "Gear & Pulley Sets",
       "label_zh": "齿轮与带轮组",
-      "examples_zh": "定位底板啮合双齿轮组、法兰同步带轮+键槽轮毂+挡圈装配、简易行星轮支架组"
+      "examples_zh": "双级行星齿轮减速器剖切总成（分体下箱体+上观察盖+太阳轮输入轴+3颗行星轮+行星架输出法兰+内齿圈+轴承端盖）"
     },
     {
       "id": "CAD_D03L02",
@@ -141,7 +141,7 @@
       "domain_zh": "机械传动与活动机构",
       "label": "Crank, Link & Slider Mechanisms",
       "label_zh": "连杆与曲柄机构",
-      "examples_zh": "四件式曲柄连杆滑块装配体、偏心轮推杆导向座、平行四杆升降支架组件"
+      "examples_zh": "台式齿轮齿条精密手压机总成（开槽底座+C型立柱+齿条冲头+齿轮轴+四辐手轮+分度转盘）、双缸曲柄连杆活塞展示机总成"
     },
     {
       "id": "CAD_D03L03",
@@ -150,7 +150,7 @@
       "domain_zh": "机械传动与活动机构",
       "label": "Hinges & Rotary Joints",
       "label_zh": "铰链与旋转关节",
-      "examples_zh": "三件式销轴合页、双耳叉形万向旋转关节、带阻尼垫片槽的折叠转轴"
+      "examples_zh": "多自由度中空走线机械臂腕部关节总成（基座法兰+俯仰U型叉架+横滚旋转座+中空转轴+轴承压盖+末端工具法兰）"
     },
     {
       "id": "CAD_D03L04",
@@ -159,7 +159,7 @@
       "domain_zh": "机械传动与活动机构",
       "label": "Shaft Couplers & Latches",
       "label_zh": "联轴器与机械锁扣",
-      "examples_zh": "三件式十字滑块/梅花联轴器、箱包拨杆搭扣组件、带滑栓插销的门扣装配"
+      "examples_zh": "带分体安全防护罩与胀紧套的十字滑块联轴器总成（底座支承架+主从动半联轴节+十字滑块+上下防护罩）、多连杆棘爪机械锁体总成"
     },
     {
       "id": "CAD_D04L01",
@@ -168,7 +168,7 @@
       "domain_zh": "管路、散热与工业配件",
       "label": "Flanges, Fittings & Manifolds",
       "label_zh": "法兰与管路接头",
-      "examples_zh": "回转颈部多孔法兰盘、带密封槽阶梯变径转接管、多轴相交通孔三通/四通阀块"
+      "examples_zh": "蜗轮手轮驱动法兰式偏心蝶阀总成（双法兰阀体+圆盘阀板+通轴阀杆+蜗轮减速箱座+辐条手轮+密封压盖+法兰螺栓阵）"
     },
     {
       "id": "CAD_D04L02",
@@ -177,7 +177,7 @@
       "domain_zh": "管路、散热与工业配件",
       "label": "Air Ducts & Fan Shrouds",
       "label_zh": "风道与风扇导流罩",
-      "examples_zh": "方转圆放样风扇集风罩（带安装耳）、内部导流隔板阶梯风道盒、有界曲率弯管接头"
+      "examples_zh": "离心蜗壳鼓风机与联动导流百叶总成（螺旋蜗壳双半腔+多叶片后倾叶轮+方转圆进风集流罩+电机法兰座+出风联动百叶窗框）"
     },
     {
       "id": "CAD_D04L03",
@@ -186,7 +186,7 @@
       "domain_zh": "管路、散热与工业配件",
       "label": "Heatsinks & Vent Grilles",
       "label_zh": "散热器与百叶通风件",
-      "examples_zh": "平行翅片散热器（含沉头安装耳）、极坐标径向散热轮毂、双件百叶通风窗与压框"
+      "examples_zh": "双塔热管风冷散热器总成（铜底压块+多根U型弯管+密集鳍片阵列+双风扇导流扣具框+主板背板支架）、连杆同步开合工业百叶窗总成"
     },
     {
       "id": "CAD_D04L04",
@@ -195,7 +195,7 @@
       "domain_zh": "管路、散热与工业配件",
       "label": "Handwheels, Knobs & Fasteners",
       "label_zh": "手轮旋钮与紧固件",
-      "examples_zh": "带嵌件六角螺母槽的辐条手轮、防滑凹槽调节旋钮、衬套法兰轴套与维修替换把手"
+      "examples_zh": "带游标刻度环与折叠摇柄的机床进给手轮总成（轴承支座+刻度衬套+四辐手轮体+可折叠偏心手柄+端面星形锁紧旋钮）"
     },
     {
       "id": "CAD_D05L01",
@@ -204,7 +204,7 @@
       "domain_zh": "桌面实用件与创客装备",
       "label": "Device Stands & Cable Organizers",
       "label_zh": "数码支架与理线器",
-      "examples_zh": "隐藏走线道倾角手机/平板底座、双半拼装绕线轴、桌边多孔卡槽理线器与耳机挂架"
+      "examples_zh": "双关节平行四杆悬臂显示器/平板支臂总成（桌缘夹持底座+下悬臂+上俯仰臂+隐藏走线盖板+VESA万向快拆云台头）"
     },
     {
       "id": "CAD_D05L02",
@@ -213,7 +213,7 @@
       "domain_zh": "桌面实用件与创客装备",
       "label": "Tool Racks & Pegboard Mounts",
       "label_zh": "工具架与洞洞板挂件",
-      "examples_zh": "阶梯斜面螺丝刀/批头分类座（含挂墙孔）、洞洞板卡钩挂架、DIN 导轨卡扣固定座"
+      "examples_zh": "工作台旋转式多层工具塔与洞洞板工作站总成（轴承转盘底座+四面洞洞板立柱芯+阶梯批头插架+卡尺挂架+分格零件托盘）"
     },
     {
       "id": "CAD_D05L03",
@@ -222,7 +222,7 @@
       "domain_zh": "桌面实用件与创客装备",
       "label": "Camera & Servo Gimbal Mounts",
       "label_zh": "相机与电机云台件",
-      "examples_zh": "运动相机双耳铰接转接座、燕尾快拆板夹座、舵机/步进电机双轴云台支架与皮带张紧器"
+      "examples_zh": "三轴步进电机同步带传动相机云台总成（底座旋转台+航向带轮+俯仰与横滚正交悬臂框+电机张紧座+阿卡燕尾快拆夹座+锁紧旋钮）"
     },
     {
       "id": "CAD_D05L04",
@@ -231,7 +231,7 @@
       "domain_zh": "桌面实用件与创客装备",
       "label": "Modular Kit & Toy Mechanisms",
       "label_zh": "拼装模型结构件",
-      "examples_zh": "多孔科技积木梁销拼装件、桌面投石机/发条小车底盘车架组件、可动关节连接件组"
+      "examples_zh": "桌面配重投石机可动机械模型总成（榫卯车架底盘+四轮轴系+A字主立柱架+抛射长臂+配重吊篮铰接件+棘轮绞盘扳机机构）"
     }
   ]
 }

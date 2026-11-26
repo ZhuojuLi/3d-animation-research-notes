@@ -60,10 +60,13 @@
 
 ---
 
-### 2.2 Track 3：CAD 多模块参数化零件与机械装配体（`CadQuery-Tree v2.0`，5 大类 × 4 词条 = 20 词条）
+### 2.2 Track 3：CAD 多模块机械系统与整机结构总成（`CadQuery-Tree v2.0`，5 大类 × 4 词条 = 20 词条）
 
+- **硬性复杂度底线（彻底砍掉“白布单个工件”）**：
+  - **严禁生成任何孤立简单单件**（如单个安装角码、单个法兰盘、单个带盖空盒、单个裸齿轮——`Qwen3.8-27B Base` 在简单单件上已达 `9/12`，继续造纯属浪费 API 与算力）。
+  - 对标小红书 `press/case.json`（16 部件齿轮齿条压机总成），在 `P01` 筛种与 `P06` 难度定级处设立硬门槛：**仅放行 `content_complexity ≥ 4` 且 `geometry_complexity ≥ 4` 的完整多部件机械装置、工装治具总成或整机结构装配体**（强制交付 `output/src/{params.py, parts/*.py (4–10 个功能耦合独立零件), assembly.py}`，装配体总面数 **`60–250+` B-rep 面**，交付 `STEP + 3MF + STL + GLB` 四格式与 4 视图 + 剖视图 `section_view.png` + 爆炸图 `exploded_view.png`）。
 - **任务包 `(C, S, F)` 生成要求**：
-  - `context_C`：覆盖 `ordinary`（创客/结构需求方描述桌面夹具、收纳盒、云台用途与配合件）与 `professional`（机械工程师给出基准面、公差配合、壁厚与接口孔距），中英双语 `50:50`；复杂单件交付 `output/src/model.py`（**硬门槛 `15–45+` B-rep 面，禁 6–15 面简单拉伸块**），多件装配体（占比 `≥55%`）交付 `output/src/{params.py, parts/*.py (2–6 个独立零件), assembly.py}` 及 `STEP + 3MF + STL + GLB` 四格式与多视角工程图（4 视图 + 剖视图 `section_view.png` + 爆炸图 `exploded_view.png`）。
+  - `context_C`：覆盖 `ordinary`（创客/产品需求方描述完整夹具台、减速器、云台、仪器整机的用途与联动方式）与 `professional`（机械工程师给出各子部件基准面、配合公差、孔系与接口尺寸），中英双语 `50:50`。
   - `specification_S`：
     - **强制非 XY 起草基准配额**：跨题库强制路由主起草平面 **`XY 40% / XZ 30% / YZ 30%`**（专治 27B 轴向画反顽疾）；
     - **显式配合间隙与内部结构**：写明总体包围盒尺寸 `dims_mm`、孔轴/止口/滑槽配合间隙（如 `0.20–0.40 mm` 3D 打印公差）、下伸止口/抽壳腔体/沉头孔/阵列等复合特征，以及 **`true_brep_manifold_constraint`（严禁零件布尔粘死成单块冒充装配体、严禁非水密破面与零件空间穿模干涉）**。

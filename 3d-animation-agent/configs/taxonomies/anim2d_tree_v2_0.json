@@ -5,7 +5,7 @@
   "track": "2d_web_interactive_multi",
   "style": "xhs_aligned_2_level_product_taxonomy",
   "supersedes_for_long_horizon": "configs/taxonomies/anim2d_tree_v1_1.json",
-  "design_principle": "对齐小红书 3DCodeFactory 接地气两层产品分类（5 大类 × 4 二级词条 = 20 词条），彻底取消人工正交任务形态矩阵与技术黑话。从零搭建、渲染看图查错、局部 Edit 纠错精修与自然 EOS 收尾全部由 50-150 轮真实长程轨迹自然承载；多文件结构、本地 GSAP、window.renderAt(t) 一键导 MP4 等硬约束统一由 P07 出题器与验收器执行。",
+  "design_principle": "对齐小红书 3DCodeFactory 接地气两层产品分类（5 大类 × 4 二级词条 = 20 词条），彻底取消人工正交任务形态矩阵与技术黑话。严禁白底/黑底孤立单个图标、单个弹跳球或单张简陋图表卡片等玩具题；100% 聚焦先验难度 >= 4/5 的完整多区块互动长页、多层视差丰富场景与多视图联动工程/数据系统（>= 4-6 个模块化 JS/CSS/SVG 文件 + 本地 GSAP + 2-3 个深度业务交互控件），由 50-150 轮真实长程轨迹自然承载构建、看图查错、局部 Edit 精修与收敛。",
   "delivery_contract_ref": "docs/THREE-TRACK-DELIVERABLE-SPEC.md",
   "preferred_teacher_model": "kimi-k3.1-pro",
   "teacher_channel_note": "2026-11-27 更新：3D 专用 DeepSeek 配额已耗尽，专用 PhanRouter Kimi 通道（3d-animation-agent/.env）已恢复 kimi-k3.1-pro，自产长程多轮采集默认优先使用 kimi-k3.1-pro。",
@@ -177,7 +177,7 @@
       "domain_zh": "商业动效与界面包装",
       "label": "Animated Icons & Vector Art",
       "label_zh": "图标与矢量插画动效",
-      "examples_zh": "剪刀/工具/日历/奖章等高精 SVG 刚体支点铰接动效、多图标错峰交互动效集"
+      "examples_zh": "完整精密制图工作台多器械刚体铰接协同舞台（圆规/裁刀/比例尺/图纸卷边多体同步+拆解检视面板）、多模块品牌视觉动效设计系统展示台"
     },
     {
       "id": "A2D_D04L03",
