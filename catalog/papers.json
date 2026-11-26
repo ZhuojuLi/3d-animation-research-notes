@@ -1,38 +1,49 @@
 {
   "date": "2026-11-27",
-  "count": 85,
-  "metadata_status": "Extracted from existing notes; not independently reverified for publication.",
+  "count": 116,
+  "deep_read_count": 42,
+  "metadata_status": "42 single-paper deep-reads verified directly against arXiv HTML/XML with SHA-256; remaining entries extracted from notes.",
   "papers": [
     {
       "arxiv_id": "2605.12913",
       "name_in_notes": "Revisiting DAgger in the Era of LLM-Agents",
       "category": "单篇精读",
+      "subcategory": "早期学生中心与基础 3D 精读",
       "focus": "学生访问状态、教师纠偏与黑盒蒸馏",
       "url": "https://arxiv.org/abs/2605.12913",
       "reading_status": "单篇精读",
       "primary_note": "research/arxiv-2605.12913/README.md",
       "referenced_in": [
-        "research/arxiv-2605.12913/README.md"
+        "research/arxiv-2605.12913/README.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/3d-agent-round1-failure-retrospective-and-round2-audit-20261125/README.md",
+        "research/README.md",
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
       ]
     },
     {
       "arxiv_id": "2610.02140",
       "name_in_notes": "Finetuning with Sampling: SFT Learns Better Than You Think",
       "category": "单篇精读",
+      "subcategory": "早期学生中心与基础 3D 精读",
       "focus": "分布偏移、投影采样与 SFT",
       "url": "https://arxiv.org/abs/2610.02140",
       "reading_status": "单篇精读",
       "primary_note": "research/arxiv-2610.02140/README.md",
       "referenced_in": [
         "research/arxiv-2610.02140/README.md",
+        "3d-animation-agent/reports/README.md",
         "3d-animation-agent/reports/student-cot-projection-exp-20261125-001/COT-PRUNE-OFFPOLICY-ISSUE.md",
-        "3d-animation-agent/reports/student-cot-projection-exp-20261125-001/REPORT.md"
+        "3d-animation-agent/reports/student-cot-projection-exp-20261125-001/REPORT.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/README.md"
       ]
     },
     {
       "arxiv_id": "2610.22341",
       "name_in_notes": "3DCodeVerse",
       "category": "单篇精读",
+      "subcategory": "早期学生中心与基础 3D 精读",
       "focus": "代码驱动 3D、训练方法与 Agent Harness",
       "url": "https://arxiv.org/abs/2610.22341",
       "reading_status": "单篇精读",
@@ -41,16 +52,22 @@
         "research/arxiv-2610.22341/README.md",
         "3d-animation-agent/docs/THREE-TRACK-DELIVERABLE-SPEC.md",
         "3d-animation-agent/reports/oneshot-vs-longhorizon-3dcodefactory-20261126/REPORT.md",
+        "history/research/3d-agent-data-mix-20261121/README.md",
         "history/research/3d-animation-improvement-and-sft-cases-20261121.md",
         "history/research/3d-verifiable-tasks-20261120.md",
         "research/3d-agent-data-mix-20261121/astra-report.md",
         "research/3d-agent-data-mix-20261121/kimi-report.md",
+        "research/3d-agent-evaluation-system-20261122/README.md",
         "research/3d-agent-evaluation-system-20261122/astra-report.md",
         "research/3d-agent-evaluation-system-20261122/external-report-2.md",
         "research/3d-agent-evaluation-system-20261122/main-report.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/3d-agent-sft-mix-loss-20261123/README.md",
         "research/3d-agent-sft-mix-loss-20261123/astra-report.md",
         "research/3d-agent-sft-mix-loss-20261123/codex-me-report.md",
         "research/3d-animation-methods-and-technique-selection-20261121.md",
+        "research/README.md",
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
         "research/three-track-data-factory-strategy-20261126/aodi-phase1-phase2-retrospective-20261126.md"
       ]
     },
@@ -58,7 +75,8 @@
       "arxiv_id": "2611.28783",
       "name_in_notes": "3DCodeFactory",
       "category": "单篇精读",
-      "focus": "3D 数据构造、验证与训练配方",
+      "subcategory": "早期学生中心与基础 3D 精读",
+      "focus": "小红书 3D 数据构造、五维 Rubric 验证与训练配方",
       "url": "https://arxiv.org/abs/2611.28783",
       "reading_status": "单篇精读",
       "primary_note": "research/arxiv-2611.28783/README.md",
@@ -69,9 +87,635 @@
         "3d-animation-agent/docs/XHS-UNIFIED-SFT-STANDARD.md",
         "3d-animation-agent/docs/plans/2026-11-25-round3-big-picture-alignment-plan.md",
         "3d-animation-agent/reports/oneshot-vs-longhorizon-3dcodefactory-20261126/REPORT.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/README.md",
         "research/three-track-data-factory-strategy-20261126/aodi-phase1-phase2-retrospective-20261126.md",
         "research/three-track-data-factory-strategy-20261126/astra-report.md",
         "research/three-track-data-factory-strategy-20261126/main-report.md"
+      ]
+    },
+    {
+      "arxiv_id": "2611.10768",
+      "name_in_notes": "BlenderFORGE",
+      "category": "单篇精读",
+      "subcategory": "3D 与动画 RL 精读",
+      "focus": "反应式 3D 编辑自蒸馏 SFT + 36:1 通用锚点 + GSPO AgentLoop-RL",
+      "url": "https://arxiv.org/abs/2611.10768",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2611.10768/README.md",
+      "referenced_in": [
+        "research/arxiv-2611.10768/README.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/README.md",
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2611.09894",
+      "name_in_notes": "Video-Coder",
+      "category": "单篇精读",
+      "subcategory": "3D 与动画 RL 精读",
+      "focus": "代码驱动视频生成空目录防残留重跑与执行奖励指数退火",
+      "url": "https://arxiv.org/abs/2611.09894",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2611.09894/README.md",
+      "referenced_in": [
+        "research/arxiv-2611.09894/README.md",
+        "history/research/3d-animation-improvement-and-sft-cases-20261121.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/README.md",
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2611.08294",
+      "name_in_notes": "ManimCode",
+      "category": "单篇精读",
+      "subcategory": "3D 与动画 RL 精读",
+      "focus": "含 Qwen3.8-27B 实测与正反双序成对盲评的教育动画视觉自纠错",
+      "url": "https://arxiv.org/abs/2611.08294",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2611.08294/README.md",
+      "referenced_in": [
+        "research/arxiv-2611.08294/README.md",
+        "3d-animation-agent/reports/oneshot-vs-longhorizon-3dcodefactory-20261126/REPORT.md",
+        "history/research/3d-agent-data-mix-20261121/README.md",
+        "research/3d-agent-data-mix-20261121/astra-report.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/3d-agent-sft-mix-loss-20261123/README.md",
+        "research/3d-agent-sft-mix-loss-20261123/codex-me-report.md",
+        "research/README.md",
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2610.38231",
+      "name_in_notes": "3DCodeEdit",
+      "category": "单篇精读",
+      "subcategory": "3D 与动画 RL 精读",
+      "focus": "Qwen3.8-27B / Kimi K3 / Opus 5.5 3D 编辑几何瓶颈与独立挑刺 Reviewer",
+      "url": "https://arxiv.org/abs/2610.38231",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2610.38231/README.md",
+      "referenced_in": [
+        "research/arxiv-2610.38231/README.md",
+        "history/research/3d-animation-improvement-and-sft-cases-20261121.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/README.md",
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2609.36380",
+      "name_in_notes": "LEGO-Anything",
+      "category": "单篇精读",
+      "subcategory": "3D 与动画 RL 精读",
+      "focus": "GPT-6 3D 场景重建 29.6% 编辑倒退、自评 45.8% 与残差回滚插件",
+      "url": "https://arxiv.org/abs/2609.36380",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2609.36380/README.md",
+      "referenced_in": [
+        "research/arxiv-2609.36380/README.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/README.md",
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2608.29519",
+      "name_in_notes": "FuncRoom-Agent / ScenePRM",
+      "category": "单篇精读",
+      "subcategory": "3D 与动画 RL 精读",
+      "focus": "Qwen3.6-35B-A3B 分层 3D 功能房间可执行阶段过程奖励",
+      "url": "https://arxiv.org/abs/2608.29519",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2608.29519/README.md",
+      "referenced_in": [
+        "research/arxiv-2608.29519/README.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2502.15601",
+      "name_in_notes": "WorldCraft",
+      "category": "单篇精读",
+      "subcategory": "3D 与动画 RL 精读",
+      "focus": "程序化 3D 世界受控单参差分自检与分层防穿模空间优化",
+      "url": "https://arxiv.org/abs/2502.15601",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2502.15601/README.md",
+      "referenced_in": [
+        "research/arxiv-2502.15601/README.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2611.05151",
+      "name_in_notes": "WebCatalyst",
+      "category": "单篇精读",
+      "subcategory": "交互网页与 2D 闭环 RL 精读",
+      "focus": "冻结 Visual Anchor 防审美退化、CDP 调用栈信用与本地 27B 零成本裁判",
+      "url": "https://arxiv.org/abs/2611.05151",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2611.05151/README.md",
+      "referenced_in": [
+        "research/arxiv-2611.05151/README.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/README.md",
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2610.28610",
+      "name_in_notes": "InterWebCoder",
+      "category": "单篇精读",
+      "subcategory": "交互网页与 2D 闭环 RL 精读",
+      "focus": "ms-swift 契约钩子 2× 加权 SFT、故障归因测试合成与确定性 TDRL",
+      "url": "https://arxiv.org/abs/2610.28610",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2610.28610/README.md",
+      "referenced_in": [
+        "research/arxiv-2610.28610/README.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/README.md",
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2610.11543",
+      "name_in_notes": "WebLoop",
+      "category": "单篇精读",
+      "subcategory": "交互网页与 2D 闭环 RL 精读",
+      "focus": "Qwen3.5-27B 同模型三角色 GRPO 与两阶段 Critic 净跃迁课程",
+      "url": "https://arxiv.org/abs/2610.11543",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2610.11543/README.md",
+      "referenced_in": [
+        "research/arxiv-2610.11543/README.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/README.md",
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2604.22840",
+      "name_in_notes": "AeSlides",
+      "category": "单篇精读",
+      "subcategory": "交互网页与 2D 闭环 RL 精读",
+      "focus": "剥离 CSS overflow:hidden、高斯平滑防噪点作弊与 GDPO 解耦归一化",
+      "url": "https://arxiv.org/abs/2604.22840",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2604.22840/README.md",
+      "referenced_in": [
+        "research/arxiv-2604.22840/README.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/README.md",
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2604.20398",
+      "name_in_notes": "WebGen-R1",
+      "category": "单篇精读",
+      "subcategory": "交互网页与 2D 闭环 RL 精读",
+      "focus": "Playwright 动态状态迁移功能奖与多视口等级美学双目标 RL",
+      "url": "https://arxiv.org/abs/2604.20398",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2604.20398/README.md",
+      "referenced_in": [
+        "research/arxiv-2604.20398/README.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/README.md",
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2510.11498",
+      "name_in_notes": "ReLook",
+      "category": "单篇精读",
+      "subcategory": "交互网页与 2D 闭环 RL 精读",
+      "focus": "多轮看图负分罢工坍塌复盘、单调增益接收与零 Critic 部署自内化",
+      "url": "https://arxiv.org/abs/2510.11498",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2510.11498/README.md",
+      "referenced_in": [
+        "research/arxiv-2510.11498/README.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/README.md",
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2509.22644",
+      "name_in_notes": "WebGen-Agent / Step-GRPO",
+      "category": "单篇精读",
+      "subcategory": "交互网页与 2D 闭环 RL 精读",
+      "focus": "有状态代码工作区即时状态分（禁累加未来步）与 1-Epoch SFT 停点",
+      "url": "https://arxiv.org/abs/2509.22644",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2509.22644/README.md",
+      "referenced_in": [
+        "research/arxiv-2509.22644/README.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/README.md",
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2609.34587",
+      "name_in_notes": "IR4RL",
+      "category": "单篇精读",
+      "subcategory": "SVG 与参数化/物理 CAD RL 精读",
+      "focus": "图形程序可执行前缀闭合渲染与边际过程奖励防遮挡废代码",
+      "url": "https://arxiv.org/abs/2609.34587",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2609.34587/README.md",
+      "referenced_in": [
+        "research/arxiv-2609.34587/README.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2609.25270",
+      "name_in_notes": "RULER",
+      "category": "单篇精读",
+      "subcategory": "SVG 与参数化/物理 CAD RL 精读",
+      "focus": "根治 SVG 标量美学 21× 代码暴涨与 <text> 字牌刷分的六维正交 Rubric",
+      "url": "https://arxiv.org/abs/2609.25270",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2609.25270/README.md",
+      "referenced_in": [
+        "research/arxiv-2609.25270/README.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/README.md",
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2607.27699",
+      "name_in_notes": "RefineSVG",
+      "category": "单篇精读",
+      "subcategory": "SVG 与参数化/物理 CAD RL 精读",
+      "focus": "带通过滤防全盘重写、YCbCr 显式残差热力图与余弦代码效率奖",
+      "url": "https://arxiv.org/abs/2607.27699",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2607.27699/README.md",
+      "referenced_in": [
+        "research/arxiv-2607.27699/README.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/README.md",
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2508.13587",
+      "name_in_notes": "MSRL",
+      "category": "单篇精读",
+      "subcategory": "SVG 与参数化/物理 CAD RL 精读",
+      "focus": "打破 2M 数据 SFT 平台期的结构化代码+视觉双粒度两阶段 RL",
+      "url": "https://arxiv.org/abs/2508.13587",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2508.13587/README.md",
+      "referenced_in": [
+        "research/arxiv-2508.13587/README.md",
+        "research/3d-agent-data-mix-20261121/astra-report.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2611.09401",
+      "name_in_notes": "PhyCAD",
+      "category": "单篇精读",
+      "subcategory": "SVG 与参数化/物理 CAD RL 精读",
+      "focus": "CadQuery + CAE 物理硬约束严格保序分层平衡优势（HBA）",
+      "url": "https://arxiv.org/abs/2611.09401",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2611.09401/README.md",
+      "referenced_in": [
+        "research/arxiv-2611.09401/README.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/README.md",
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2606.13368",
+      "name_in_notes": "IterCAD",
+      "category": "单篇精读",
+      "subcategory": "SVG 与参数化/物理 CAD RL 精读",
+      "focus": "ms-swift 多轮视觉 CAD 渐进纠错 SFT + GSPO + GVPM 可行前缀保护",
+      "url": "https://arxiv.org/abs/2606.13368",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2606.13368/README.md",
+      "referenced_in": [
+        "research/arxiv-2606.13368/README.md",
+        "3d-animation-agent/docs/THREE-TRACK-DELIVERABLE-SPEC.md",
+        "3d-animation-agent/reports/oneshot-vs-longhorizon-3dcodefactory-20261126/REPORT.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/README.md",
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+        "research/arxiv-2507.18071/README.md",
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2505.22914",
+      "name_in_notes": "cadrille",
+      "category": "单篇精读",
+      "subcategory": "SVG 与参数化/物理 CAD RL 精读",
+      "focus": "异构 CAD 混训掉分复盘、无源码真值 Dr.CPPO 在线 RL 与难例挖掘",
+      "url": "https://arxiv.org/abs/2505.22914",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2505.22914/README.md",
+      "referenced_in": [
+        "research/arxiv-2505.22914/README.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/README.md",
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2505.19713",
+      "name_in_notes": "CAD-Coder (Beihang/HKU)",
+      "category": "单篇精读",
+      "subcategory": "SVG 与参数化/物理 CAD RL 精读",
+      "focus": "8K 极净胜 70K 噪数据、无格式护栏 200 步语法崩溃与薄壁 CD 盲区",
+      "url": "https://arxiv.org/abs/2505.19713",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2505.19713/README.md",
+      "referenced_in": [
+        "research/arxiv-2505.19713/README.md",
+        "history/research/3d-verifiable-tasks-20261120.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/README.md",
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2606.19348",
+      "name_in_notes": "DeepSeek-V4",
+      "category": "单篇精读",
+      "subcategory": "2026 大厂旗舰与生产 RL 基建精读",
+      "focus": "分域 RL → 缓存末层状态全词表 OPD 合模、全轮保 think 与 WAL 防短偏置",
+      "url": "https://arxiv.org/abs/2606.19348",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2606.19348/README.md",
+      "referenced_in": [
+        "research/arxiv-2606.19348/README.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/README.md",
+        "research/frontier-labs-agentic-rl-blogs-2026h2/README.md",
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2607.24653",
+      "name_in_notes": "Kimi K3",
+      "category": "单篇精读",
+      "subcategory": "2026 大厂旗舰与生产 RL 基建精读",
+      "focus": "9 专家截断 MOPD、3D/WebGL 盲评净胜 +59.1%、多脚手架与 AgentENV 微虚机",
+      "url": "https://arxiv.org/abs/2607.24653",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2607.24653/README.md",
+      "referenced_in": [
+        "research/arxiv-2607.24653/README.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/README.md",
+        "research/frontier-labs-agentic-rl-blogs-2026h2/README.md",
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2608.30320",
+      "name_in_notes": "Qwen3.8-Next",
+      "category": "单篇精读",
+      "subcategory": "2026 大厂旗舰与生产 RL 基建精读",
+      "focus": "含 Qwen3.8-27B 14 榜基线、GDN+QSA+GR 4×LR 零尖峰与预/后训练背离",
+      "url": "https://arxiv.org/abs/2608.30320",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2608.30320/README.md",
+      "referenced_in": [
+        "research/arxiv-2608.30320/README.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/README.md",
+        "research/frontier-labs-agentic-rl-blogs-2026h2/README.md",
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2602.15763",
+      "name_in_notes": "GLM-5 / slime",
+      "category": "单篇精读",
+      "subcategory": "2026 大厂旗舰与生产 RL 基建精读",
+      "focus": "TITO 零重分词网关、确定性 topk + IcePop、三级防作弊与跨阶段 OPD",
+      "url": "https://arxiv.org/abs/2602.15763",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2602.15763/README.md",
+      "referenced_in": [
+        "research/arxiv-2602.15763/README.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/README.md",
+        "research/frontier-labs-agentic-rl-blogs-2026h2/README.md",
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2602.02276",
+      "name_in_notes": "Kimi K2.5",
+      "category": "单篇精读",
+      "subcategory": "2026 大厂旗舰与生产 RL 基建精读",
+      "focus": "视觉看图自修闭环起源与 Toggle 熟题条件交替预算控制算法",
+      "url": "https://arxiv.org/abs/2602.02276",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2602.02276/README.md",
+      "referenced_in": [
+        "research/arxiv-2602.02276/README.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/README.md",
+        "research/frontier-labs-agentic-rl-blogs-2026h2/README.md",
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2511.18397",
+      "name_in_notes": "Anthropic Production RL Hacking",
+      "category": "单篇精读",
+      "subcategory": "2026 大厂旗舰与生产 RL 基建精读",
+      "focus": "生产代码 RL 篡改 pytest/exit 黑客跨域失调与物理只读隔离铁律",
+      "url": "https://arxiv.org/abs/2511.18397",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2511.18397/README.md",
+      "referenced_in": [
+        "research/arxiv-2511.18397/README.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/README.md",
+        "research/frontier-labs-agentic-rl-blogs-2026h2/README.md",
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2509.02544",
+      "name_in_notes": "UI-TARS-2",
+      "category": "单篇精读",
+      "subcategory": "2026 大厂旗舰与生产 RL 基建精读",
+      "focus": "保留全历史 think + 最近 5 张截图滑窗、虚拟时钟劫持与沙盒飞轮",
+      "url": "https://arxiv.org/abs/2509.02544",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2509.02544/README.md",
+      "referenced_in": [
+        "research/arxiv-2509.02544/README.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/README.md",
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+        "research/frontier-labs-agentic-rl-blogs-2026h2/README.md",
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2511.21631",
+      "name_in_notes": "Qwen3-VL",
+      "category": "单篇精读",
+      "subcategory": "2026 大厂旗舰与生产 RL 基建精读",
+      "focus": "动态高分辨率空间接地、遮图必要性过滤与 SAPO 软门控 RL",
+      "url": "https://arxiv.org/abs/2511.21631",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2511.21631/README.md",
+      "referenced_in": [
+        "research/arxiv-2511.21631/README.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/README.md",
+        "research/frontier-labs-agentic-rl-blogs-2026h2/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2611.31258",
+      "name_in_notes": "RECAP",
+      "category": "单篇精读",
+      "subcategory": "跨压缩长程、自蒸馏与 Rubric 优化器精读",
+      "focus": "单窗口有界上下文压缩行为失真奖励与压缩后在线自蒸馏",
+      "url": "https://arxiv.org/abs/2611.31258",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2611.31258/README.md",
+      "referenced_in": [
+        "research/arxiv-2611.31258/README.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/README.md",
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2607.05378",
+      "name_in_notes": "CompactionRL",
+      "category": "单篇精读",
+      "subcategory": "跨压缩长程、自蒸馏与 Rubric 优化器精读",
+      "focus": "与 Claude Code 9 节摘要同源、全局可训 Token 归一化与跨段 GAE",
+      "url": "https://arxiv.org/abs/2607.05378",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2607.05378/README.md",
+      "referenced_in": [
+        "research/arxiv-2607.05378/README.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/README.md",
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2605.20164",
+      "name_in_notes": "POW3R",
+      "category": "单篇精读",
+      "subcategory": "跨压缩长程、自蒸馏与 Rubric 优化器精读",
+      "focus": "类内方差感知动态 Rubric 加权（快 2.5–4×）与裁判 reasoning 防崩铁律",
+      "url": "https://arxiv.org/abs/2605.20164",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2605.20164/README.md",
+      "referenced_in": [
+        "research/arxiv-2605.20164/README.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/README.md",
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2605.17291",
+      "name_in_notes": "SRaR",
+      "category": "单篇精读",
+      "subcategory": "跨压缩长程、自蒸馏与 Rubric 优化器精读",
+      "focus": "步骤级正负对比 Rubric 与跨轨迹中心化解耦优势（死循环砍半）",
+      "url": "https://arxiv.org/abs/2605.17291",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2605.17291/README.md",
+      "referenced_in": [
+        "research/arxiv-2605.17291/README.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/README.md",
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2605.12474",
+      "name_in_notes": "Reward Hacking in Rubric RL",
+      "category": "单篇精读",
+      "subcategory": "跨压缩长程、自蒸馏与 Rubric 优化器精读",
+      "focus": "弱裁判三大盲区、负向洁净度条款与自内化间隔零成本早停",
+      "url": "https://arxiv.org/abs/2605.12474",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2605.12474/README.md",
+      "referenced_in": [
+        "research/arxiv-2605.12474/README.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/README.md",
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2601.19897",
+      "name_in_notes": "SDFT",
+      "category": "单篇精读",
+      "subcategory": "跨压缩长程、自蒸馏与 Rubric 优化器精读",
+      "focus": "同模型蓝图条件化 G=1 全词表解析 KL 在线自蒸馏与持续学习零遗忘",
+      "url": "https://arxiv.org/abs/2601.19897",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2601.19897/README.md",
+      "referenced_in": [
+        "research/arxiv-2601.19897/README.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2507.18071",
+      "name_in_notes": "GSPO",
+      "category": "单篇精读",
+      "subcategory": "跨压缩长程、自蒸馏与 Rubric 优化器精读",
+      "focus": "序列级长度归一化似然比根治长序列崩塌与多轮局部归因 GSPO-token",
+      "url": "https://arxiv.org/abs/2507.18071",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2507.18071/README.md",
+      "referenced_in": [
+        "research/arxiv-2507.18071/README.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/README.md",
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2505.10978",
+      "name_in_notes": "GiGPO",
+      "category": "单篇精读",
+      "subcategory": "跨压缩长程、自蒸馏与 Rubric 优化器精读",
+      "focus": "零 Critic 零额外采样锚点状态归组双层优势与稀疏题去标准差稳健化",
+      "url": "https://arxiv.org/abs/2505.10978",
+      "reading_status": "单篇精读",
+      "primary_note": "research/arxiv-2505.10978/README.md",
+      "referenced_in": [
+        "research/arxiv-2505.10978/README.md",
+        "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+        "research/README.md"
       ]
     },
     {
@@ -98,6 +742,7 @@
       "primary_note": "research/3d-animation-methods-and-technique-selection-20261121.md",
       "referenced_in": [
         "history/research/3d-animation-improvement-and-sft-cases-20261121.md",
+        "research/3d-agent-evaluation-system-20261122/README.md",
         "research/3d-agent-evaluation-system-20261122/external-report-2.md",
         "research/3d-agent-evaluation-system-20261122/external-report.md",
         "research/3d-agent-evaluation-system-20261122/main-report.md",
@@ -127,6 +772,7 @@
       "primary_note": "research/3d-animation-methods-and-technique-selection-20261121.md",
       "referenced_in": [
         "history/research/3d-animation-improvement-and-sft-cases-20261121.md",
+        "research/3d-agent-evaluation-system-20261122/README.md",
         "research/3d-agent-evaluation-system-20261122/external-report-2.md",
         "research/3d-agent-evaluation-system-20261122/external-report.md",
         "research/3d-agent-evaluation-system-20261122/main-report.md",
@@ -180,6 +826,7 @@
       "primary_note": "research/3d-animation-methods-and-technique-selection-20261121.md",
       "referenced_in": [
         "3d-animation-agent/docs/THREE-TRACK-DELIVERABLE-SPEC.md",
+        "research/3d-agent-evaluation-system-20261122/README.md",
         "research/3d-agent-evaluation-system-20261122/external-report-2.md",
         "research/3d-agent-evaluation-system-20261122/external-report.md",
         "research/3d-agent-evaluation-system-20261122/main-report.md",
@@ -209,45 +856,6 @@
       "primary_note": "history/research/3d-animation-improvement-and-sft-cases-20261121.md",
       "referenced_in": [
         "history/research/3d-animation-improvement-and-sft-cases-20261121.md"
-      ]
-    },
-    {
-      "arxiv_id": "2610.38231",
-      "name_in_notes": "Video-Coder",
-      "category": "3D 动画、运动与镜头",
-      "focus": "执行、渲染、反馈与返修",
-      "url": "https://arxiv.org/abs/2610.38231",
-      "reading_status": "专题 / 引用",
-      "primary_note": "history/research/3d-animation-improvement-and-sft-cases-20261121.md",
-      "referenced_in": [
-        "history/research/3d-animation-improvement-and-sft-cases-20261121.md"
-      ]
-    },
-    {
-      "arxiv_id": "2611.09894",
-      "name_in_notes": "3DCodeEdit",
-      "category": "3D 动画、运动与镜头",
-      "focus": "局部编辑与非目标保持",
-      "url": "https://arxiv.org/abs/2611.09894",
-      "reading_status": "专题 / 引用",
-      "primary_note": "history/research/3d-animation-improvement-and-sft-cases-20261121.md",
-      "referenced_in": [
-        "history/research/3d-animation-improvement-and-sft-cases-20261121.md"
-      ]
-    },
-    {
-      "arxiv_id": "2611.08294",
-      "name_in_notes": "ManimCode",
-      "category": "3D 动画、运动与镜头",
-      "focus": "教育动画与视觉自纠错",
-      "url": "https://arxiv.org/abs/2611.08294",
-      "reading_status": "专题 / 引用",
-      "primary_note": "research/3d-agent-sft-mix-loss-20261123/README.md",
-      "referenced_in": [
-        "research/3d-agent-sft-mix-loss-20261123/README.md",
-        "3d-animation-agent/reports/oneshot-vs-longhorizon-3dcodefactory-20261126/REPORT.md",
-        "research/3d-agent-data-mix-20261121/astra-report.md",
-        "research/3d-agent-sft-mix-loss-20261123/codex-me-report.md"
       ]
     },
     {
@@ -283,6 +891,7 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/3d-animation-distillation-datasets-20261121.md",
       "referenced_in": [
+        "research/3d-agent-evaluation-system-20261122/README.md",
         "research/3d-agent-evaluation-system-20261122/external-report-2.md",
         "research/3d-agent-evaluation-system-20261122/external-report.md",
         "research/3d-agent-evaluation-system-20261122/main-report.md",
@@ -339,20 +948,6 @@
       ]
     },
     {
-      "arxiv_id": "2606.13368",
-      "name_in_notes": "IterCAD",
-      "category": "公开题源、3D / CAD 数据与基准",
-      "focus": "交互修复与 REVISE / STOP",
-      "url": "https://arxiv.org/abs/2606.13368",
-      "reading_status": "专题 / 引用",
-      "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
-      "referenced_in": [
-        "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
-        "3d-animation-agent/docs/THREE-TRACK-DELIVERABLE-SPEC.md",
-        "3d-animation-agent/reports/oneshot-vs-longhorizon-3dcodefactory-20261126/REPORT.md"
-      ]
-    },
-    {
       "arxiv_id": "2605.10865",
       "name_in_notes": "BenchCAD",
       "category": "公开题源、3D / CAD 数据与基准",
@@ -361,8 +956,8 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/3d-and-cad-benchmarks-datasets-27b-boundaries-20261125/README.md",
       "referenced_in": [
-        "research/3d-and-cad-benchmarks-datasets-27b-boundaries-20261125/README.md",
-        "history/research/3d-verifiable-tasks-20261120.md"
+        "history/research/3d-verifiable-tasks-20261120.md",
+        "research/3d-and-cad-benchmarks-datasets-27b-boundaries-20261125/README.md"
       ]
     },
     {
@@ -415,26 +1010,15 @@
     },
     {
       "arxiv_id": "2505.14646",
-      "name_in_notes": "CAD-Coder（CAD 数据综述中的条目）",
+      "name_in_notes": "CAD-Coder (MIT Image-to-CAD)",
       "category": "公开题源、3D / CAD 数据与基准",
-      "focus": "沿用该综述登记，题名 / 编号对应待复核",
+      "focus": "MIT 图像转 CadQuery VLM（已与北航 2505.19713 Text-to-CAD 消歧）",
       "url": "https://arxiv.org/abs/2505.14646",
       "reading_status": "专题 / 引用",
       "primary_note": "research/3d-and-cad-benchmarks-datasets-27b-boundaries-20261125/README.md",
       "referenced_in": [
-        "research/3d-and-cad-benchmarks-datasets-27b-boundaries-20261125/README.md"
-      ]
-    },
-    {
-      "arxiv_id": "2505.19713",
-      "name_in_notes": "CAD-Coder（早期 CAD 笔记中的条目）",
-      "category": "公开题源、3D / CAD 数据与基准",
-      "focus": "沿用该笔记登记，题名 / 编号对应待复核",
-      "url": "https://arxiv.org/abs/2505.19713",
-      "reading_status": "专题 / 引用",
-      "primary_note": "history/research/3d-verifiable-tasks-20261120.md",
-      "referenced_in": [
-        "history/research/3d-verifiable-tasks-20261120.md"
+        "research/3d-and-cad-benchmarks-datasets-27b-boundaries-20261125/README.md",
+        "research/arxiv-2505.19713/README.md"
       ]
     },
     {
@@ -446,8 +1030,8 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
       "referenced_in": [
-        "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
-        "3d-animation-agent/reports/oneshot-vs-longhorizon-3dcodefactory-20261126/REPORT.md"
+        "3d-animation-agent/reports/oneshot-vs-longhorizon-3dcodefactory-20261126/REPORT.md",
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
       ]
     },
     {
@@ -459,8 +1043,8 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
       "referenced_in": [
-        "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
-        "3d-animation-agent/reports/oneshot-vs-longhorizon-3dcodefactory-20261126/REPORT.md"
+        "3d-animation-agent/reports/oneshot-vs-longhorizon-3dcodefactory-20261126/REPORT.md",
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
       ]
     },
     {
@@ -484,8 +1068,8 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
       "referenced_in": [
-        "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
-        "3d-animation-agent/reports/oneshot-vs-longhorizon-3dcodefactory-20261126/REPORT.md"
+        "3d-animation-agent/reports/oneshot-vs-longhorizon-3dcodefactory-20261126/REPORT.md",
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
       ]
     },
     {
@@ -497,8 +1081,8 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
       "referenced_in": [
-        "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
-        "3d-animation-agent/reports/oneshot-vs-longhorizon-3dcodefactory-20261126/REPORT.md"
+        "3d-animation-agent/reports/oneshot-vs-longhorizon-3dcodefactory-20261126/REPORT.md",
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
       ]
     },
     {
@@ -586,18 +1170,6 @@
       ]
     },
     {
-      "arxiv_id": "2509.02544",
-      "name_in_notes": "UI-TARS-2",
-      "category": "Agent SFT、数据配比与纠偏",
-      "focus": "多模态数据构造与混合",
-      "url": "https://arxiv.org/abs/2509.02544",
-      "reading_status": "专题 / 引用",
-      "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
-      "referenced_in": [
-        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
-      ]
-    },
-    {
       "arxiv_id": "2512.02556",
       "name_in_notes": "DeepSeek-V3.2",
       "category": "Agent SFT、数据配比与纠偏",
@@ -606,8 +1178,8 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
       "referenced_in": [
-        "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
-        "3d-animation-agent/reports/oneshot-vs-longhorizon-3dcodefactory-20261126/REPORT.md"
+        "3d-animation-agent/reports/oneshot-vs-longhorizon-3dcodefactory-20261126/REPORT.md",
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
       ]
     },
     {
@@ -755,18 +1327,6 @@
       ]
     },
     {
-      "arxiv_id": "2601.19897",
-      "name_in_notes": "OPSD",
-      "category": "Agent SFT、数据配比与纠偏",
-      "focus": "在策略自蒸馏",
-      "url": "https://arxiv.org/abs/2601.19897",
-      "reading_status": "专题 / 引用",
-      "primary_note": "research/arxiv-2610.02140/README.md",
-      "referenced_in": [
-        "research/arxiv-2610.02140/README.md"
-      ]
-    },
-    {
       "arxiv_id": "2411.15124",
       "name_in_notes": "Tülu 3",
       "category": "Agent SFT、数据配比与纠偏",
@@ -775,8 +1335,8 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
       "referenced_in": [
-        "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
-        "research/3d-agent-sft-hparams-aodi-selection-20261123/main-report.md"
+        "research/3d-agent-sft-hparams-aodi-selection-20261123/main-report.md",
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
       ]
     },
     {
@@ -788,8 +1348,9 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/3d-agent-sft-mix-loss-20261123/README.md",
       "referenced_in": [
-        "research/3d-agent-sft-mix-loss-20261123/README.md",
+        "history/research/3d-agent-data-mix-20261121/README.md",
         "research/3d-agent-data-mix-20261121/kimi-report.md",
+        "research/3d-agent-sft-mix-loss-20261123/README.md",
         "research/3d-agent-sft-mix-loss-20261123/codex-me-report.md"
       ]
     },
@@ -802,6 +1363,7 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/3d-agent-data-mix-20261121/kimi-report.md",
       "referenced_in": [
+        "history/research/3d-agent-data-mix-20261121/README.md",
         "research/3d-agent-data-mix-20261121/kimi-report.md"
       ]
     },
@@ -814,6 +1376,7 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/3d-agent-data-mix-20261121/kimi-report.md",
       "referenced_in": [
+        "history/research/3d-agent-data-mix-20261121/README.md",
         "research/3d-agent-data-mix-20261121/kimi-report.md"
       ]
     },
@@ -826,6 +1389,7 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/3d-agent-data-mix-20261121/kimi-report.md",
       "referenced_in": [
+        "history/research/3d-agent-data-mix-20261121/README.md",
         "research/3d-agent-data-mix-20261121/kimi-report.md"
       ]
     },
@@ -838,6 +1402,7 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/3d-agent-data-mix-20261121/kimi-report.md",
       "referenced_in": [
+        "history/research/3d-agent-data-mix-20261121/README.md",
         "research/3d-agent-data-mix-20261121/kimi-report.md"
       ]
     },
@@ -918,21 +1483,9 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/3d-agent-evaluation-system-20261122/README.md",
       "referenced_in": [
-        "research/3d-agent-evaluation-system-20261122/README.md",
         "history/research/3d-animation-improvement-and-sft-cases-20261121.md",
+        "research/3d-agent-evaluation-system-20261122/README.md",
         "research/3d-agent-evaluation-system-20261122/main-report.md"
-      ]
-    },
-    {
-      "arxiv_id": "2508.13587",
-      "name_in_notes": "Breaking the SFT Plateau: Multimodal Structured Reinforcement Learning for Chart-to-Code Generation",
-      "category": "评估方法与背景引用",
-      "focus": "图表代码与结构化反馈",
-      "url": "https://arxiv.org/abs/2508.13587",
-      "reading_status": "专题 / 引用",
-      "primary_note": "research/3d-agent-data-mix-20261121/astra-report.md",
-      "referenced_in": [
-        "research/3d-agent-data-mix-20261121/astra-report.md"
       ]
     },
     {
@@ -944,6 +1497,7 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/3d-agent-openai-anthropic-reading-notes-20261121.md",
       "referenced_in": [
+        "history/research/3d-agent-data-mix-20261121/README.md",
         "history/research/3d-animation-improvement-and-sft-cases-20261121.md",
         "research/3d-agent-data-mix-20261121/astra-report.md",
         "research/3d-agent-data-mix-20261121/kimi-report.md",
@@ -973,6 +1527,7 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/3d-agent-data-mix-20261121/kimi-report.md",
       "referenced_in": [
+        "history/research/3d-agent-data-mix-20261121/README.md",
         "research/3d-agent-data-mix-20261121/astra-report.md",
         "research/3d-agent-data-mix-20261121/kimi-report.md",
         "research/3d-agent-sft-mix-loss-20261123/astra-report.md",
@@ -988,6 +1543,7 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/3d-agent-data-mix-20261121/kimi-report.md",
       "referenced_in": [
+        "history/research/3d-agent-data-mix-20261121/README.md",
         "research/3d-agent-data-mix-20261121/kimi-report.md"
       ]
     },
@@ -1061,8 +1617,8 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/cad-2d-sample-study-and-taxonomy-v2-20261126/README.md",
       "referenced_in": [
-        "research/cad-2d-sample-study-and-taxonomy-v2-20261126/README.md",
-        "3d-animation-agent/docs/THREE-TRACK-DELIVERABLE-SPEC.md"
+        "3d-animation-agent/docs/THREE-TRACK-DELIVERABLE-SPEC.md",
+        "research/cad-2d-sample-study-and-taxonomy-v2-20261126/README.md"
       ]
     },
     {
@@ -1074,8 +1630,8 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/cad-2d-sample-study-and-taxonomy-v2-20261126/README.md",
       "referenced_in": [
-        "research/cad-2d-sample-study-and-taxonomy-v2-20261126/README.md",
-        "3d-animation-agent/docs/THREE-TRACK-DELIVERABLE-SPEC.md"
+        "3d-animation-agent/docs/THREE-TRACK-DELIVERABLE-SPEC.md",
+        "research/cad-2d-sample-study-and-taxonomy-v2-20261126/README.md"
       ]
     },
     {
@@ -1087,8 +1643,8 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/cad-2d-sample-study-and-taxonomy-v2-20261126/README.md",
       "referenced_in": [
-        "research/cad-2d-sample-study-and-taxonomy-v2-20261126/README.md",
-        "3d-animation-agent/docs/THREE-TRACK-DELIVERABLE-SPEC.md"
+        "3d-animation-agent/docs/THREE-TRACK-DELIVERABLE-SPEC.md",
+        "research/cad-2d-sample-study-and-taxonomy-v2-20261126/README.md"
       ]
     },
     {
@@ -1101,6 +1657,18 @@
       "primary_note": "3d-animation-agent/docs/THREE-TRACK-DELIVERABLE-SPEC.md",
       "referenced_in": [
         "3d-animation-agent/docs/THREE-TRACK-DELIVERABLE-SPEC.md"
+      ]
+    },
+    {
+      "arxiv_id": "2505.08686",
+      "name_in_notes": "arXiv:2505.08686",
+      "category": "评估方法与背景引用",
+      "focus": "新精读笔记与大厂技术报告中的方法/基准背景引用",
+      "url": "https://arxiv.org/abs/2505.08686",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/arxiv-2505.19713/README.md",
+      "referenced_in": [
+        "research/arxiv-2505.19713/README.md"
       ]
     }
   ]

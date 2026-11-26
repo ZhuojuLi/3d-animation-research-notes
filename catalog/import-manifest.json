@@ -828,6 +828,15 @@
       "edits": {}
     },
     {
+      "path": "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+      "source": "research/3d-agent-post-sft-rl-survey-20261127/README.md",
+      "source_kind": "local_note",
+      "title": "3D / 2D / CAD 三轨 Agent 在小红书 SFT 之后的强化学习与自蒸馏前沿调研（v2.0 全面升级版）",
+      "source_sha256": "2e790372304f576de48e4e95f9fdaf8f3a9010bc6415aa0aba6bd85a3b4e7806",
+      "published_sha256": "f5c222f42bb19a6f1162065da1a164790173418ebd472ddcb62e47266aff4fbd",
+      "edits": {}
+    },
+    {
       "path": "research/3d-agent-round1-failure-retrospective-and-round2-audit-20261125/README.md",
       "source": "research/3d-agent-round1-failure-retrospective-and-round2-audit-20261125/README.md",
       "source_kind": "local_note",
@@ -1116,8 +1125,8 @@
       "source": "research/README.md",
       "source_kind": "local_note",
       "title": "研究笔记索引",
-      "source_sha256": "0ded74be7ad6d4d20f5f4cc1557540ab44aad8a8e9b8bd07fc0b14a02c90d072",
-      "published_sha256": "c31055d9c22c1b2f7f10e8894a36389f9e3a8cfcf8efd5c99596d32e344a0922",
+      "source_sha256": "90ecb3964614511e104ae7cfb92f039697afade77aeb9e5ea94ef91e4e5df282",
+      "published_sha256": "6406639806876edc625cec438c0d88e1931bebf7b4e3bd24c61acaa6fae240e4",
       "edits": {
         "unpublished_attachment_links": 4
       }
@@ -1134,6 +1143,210 @@
       }
     },
     {
+      "path": "research/arxiv-2502.15601/README.md",
+      "source": "research/arxiv-2502.15601/README.md",
+      "source_kind": "paper_study",
+      "title": "论文精读：WorldCraft: Photo-Realistic 3D World Creation and Customization via LLM Agents（arXiv:2502.15601v2）",
+      "source_sha256": "4e75b33bc3a51239dc3a383c450ff73678f96ba0bcfd9950b9d0a653f938a00c",
+      "published_sha256": "38b77487fdff662d5c346f1d018e290001c622a1584b92c6284741f0a49fcc6b",
+      "edits": {
+        "upstream_links": 2,
+        "unpublished_attachment_links": 1
+      }
+    },
+    {
+      "path": "research/arxiv-2505.10978/README.md",
+      "source": "research/arxiv-2505.10978/README.md",
+      "source_kind": "paper_study",
+      "title": "论文精读：Group-in-Group Policy Optimization for LLM Agent Training（GiGPO，arXiv:2505.10978v3）",
+      "source_sha256": "723a7098b15bed1c9ecec2bd6e98a7b75e2379f7b77666f95d972e9dd6e1852c",
+      "published_sha256": "67b75a93d8f3885f8e26ba718444c0b7cb06101bebca70448371177ef298b314",
+      "edits": {
+        "upstream_links": 2,
+        "unpublished_attachment_links": 1
+      }
+    },
+    {
+      "path": "research/arxiv-2505.19713/README.md",
+      "source": "research/arxiv-2505.19713/README.md",
+      "source_kind": "paper_study",
+      "title": "论文精读：CAD-Coder: Text-to-CAD Generation with Chain-of-Thought and Geometric Reward（arXiv:2505.19713v3, NeurIPS 2025）",
+      "source_sha256": "49c43a70392f905f1aafbc1b1d8bc0ff40aabe58d83427b81182efce245a1572",
+      "published_sha256": "c40736a8373c142a5c665fb17dfa303ba52d778cd2d413ac1290fe0553d264fc",
+      "edits": {
+        "upstream_links": 2,
+        "unpublished_attachment_links": 1
+      }
+    },
+    {
+      "path": "research/arxiv-2505.22914/README.md",
+      "source": "research/arxiv-2505.22914/README.md",
+      "source_kind": "paper_study",
+      "title": "论文精读：cadrille: Multimodal CAD Reconstruction with Reinforcement Learning（arXiv:2505.22914v3, ICLR Oral）",
+      "source_sha256": "ae376e19f4313714ced96454a4e593f7d387092b041375bfd2e6bebd37119bd1",
+      "published_sha256": "6540b22f7b2757f92e796059635accc6f38a2f94d191a5103e1a4ee54c071079",
+      "edits": {
+        "upstream_links": 2,
+        "unpublished_attachment_links": 1
+      }
+    },
+    {
+      "path": "research/arxiv-2507.18071/README.md",
+      "source": "research/arxiv-2507.18071/README.md",
+      "source_kind": "paper_study",
+      "title": "论文精读：Group Sequence Policy Optimization（GSPO，arXiv:2507.18071v2）",
+      "source_sha256": "06129a4af1b303b0a76cd31bda98a5b1bfbae434abd22c76b1852357921ce9d6",
+      "published_sha256": "2cf895fe3771225ff474db92488bb84fb430ab9197e7ccab3c0acef966e35272",
+      "edits": {
+        "upstream_links": 2,
+        "unpublished_attachment_links": 1
+      }
+    },
+    {
+      "path": "research/arxiv-2508.13587/README.md",
+      "source": "research/arxiv-2508.13587/README.md",
+      "source_kind": "paper_study",
+      "title": "论文精读：Breaking the SFT Plateau: Multimodal Structured Reinforcement Learning for Chart-to-Code Generation（MSRL, arXiv:2508.13587v2）",
+      "source_sha256": "d0544a19fce7599899c09b91dd44babe383ef7405ee17fef6d9efd73ae22be47",
+      "published_sha256": "e99ab1b90a19a4624af297b92991d147a2efa4622869de12dc28b3758ebbf818",
+      "edits": {
+        "upstream_links": 2,
+        "unpublished_attachment_links": 1
+      }
+    },
+    {
+      "path": "research/arxiv-2509.02544/README.md",
+      "source": "research/arxiv-2509.02544/README.md",
+      "source_kind": "paper_study",
+      "title": "UI-TARS-2 Technical Report: Advancing GUI Agent with Multi-Turn Reinforcement Learning",
+      "source_sha256": "db2b75afc039c4081f85e78b39a3a3a8b6405e20c4595168a170518dd846fa20",
+      "published_sha256": "bb38d8aec55138395ae7ff762d944ace41b4ccefa9621484df8043030ca014e4",
+      "edits": {
+        "upstream_links": 2,
+        "unpublished_attachment_links": 1
+      }
+    },
+    {
+      "path": "research/arxiv-2509.22644/README.md",
+      "source": "research/arxiv-2509.22644/README.md",
+      "source_kind": "paper_study",
+      "title": "WebGen-Agent / Step-GRPO（arXiv:2509.22644v1，ICLR 2026）深度精读：即时工作区状态优势 vs 累积未来奖励崩盘实证",
+      "source_sha256": "41ba92796e6eba12115de8cd9b4211fa0c145a0bb432986b26a843e9ef0ab8f5",
+      "published_sha256": "b6008713f32172fcf6f8620908bef66458e8e62c7b19a6e4d86ab9e237293c41",
+      "edits": {
+        "upstream_links": 2,
+        "unpublished_attachment_links": 1
+      }
+    },
+    {
+      "path": "research/arxiv-2510.11498/README.md",
+      "source": "research/arxiv-2510.11498/README.md",
+      "source_kind": "paper_study",
+      "title": "ReLook（arXiv:2510.11498v1，ACL 2026）深度精读：行为坍缩防治、强制单调接收与 $\\gamma=0.1$ 免裁判自反思蒸馏",
+      "source_sha256": "4212be8ab812271326ae5164df09bbc93b183fa093efce650227019c540565b1",
+      "published_sha256": "abd4a11e47e9cf9b66a001dd3a5739bef475464b1cdcfcfa04bd66be48e3a36e",
+      "edits": {
+        "upstream_links": 2,
+        "unpublished_attachment_links": 1
+      }
+    },
+    {
+      "path": "research/arxiv-2511.18397/README.md",
+      "source": "research/arxiv-2511.18397/README.md",
+      "source_kind": "paper_study",
+      "title": "Natural Emergent Misalignment from Reward Hacking in Production RL",
+      "source_sha256": "423b0942f5e05da8d8a8840114bb508d0043c5b79a0d65a7d1b42443cfa77a5d",
+      "published_sha256": "dbcc89efcd8ae48c92ed8e6bd3bb656c98c71b2208f61d3c80b6dfec7d4a069f",
+      "edits": {
+        "upstream_links": 2,
+        "unpublished_attachment_links": 1
+      }
+    },
+    {
+      "path": "research/arxiv-2511.21631/README.md",
+      "source": "research/arxiv-2511.21631/README.md",
+      "source_kind": "paper_study",
+      "title": "Qwen3-VL Technical Report",
+      "source_sha256": "aba4722cf892f0a46bcc9f662729841a0b02b288581bc606756296aacff5a4a6",
+      "published_sha256": "47d49c1e1eefc48ed0ee28e9e55a2f4d3b42a0c13a477a15bd7a67c3885f0699",
+      "edits": {
+        "upstream_links": 2,
+        "unpublished_attachment_links": 1
+      }
+    },
+    {
+      "path": "research/arxiv-2601.19897/README.md",
+      "source": "research/arxiv-2601.19897/README.md",
+      "source_kind": "paper_study",
+      "title": "论文精读：Self-Distillation Enables Continual Learning（SDFT，arXiv:2601.19897v2）",
+      "source_sha256": "2731214ea397b7d3c6a59c5b13c2d07f66807eadf6174e73b2e8255687aa8aa8",
+      "published_sha256": "00cf214a854618a98e018fcea492e9f4059b9c9d23b4fdf4761577fc19b4ce9c",
+      "edits": {
+        "upstream_links": 2,
+        "unpublished_attachment_links": 1
+      }
+    },
+    {
+      "path": "research/arxiv-2602.02276/README.md",
+      "source": "research/arxiv-2602.02276/README.md",
+      "source_kind": "paper_study",
+      "title": "Kimi K2.5: Visual Agentic Intelligence",
+      "source_sha256": "8fb60e825540089462a1b827069481718c51b48457e26109e57ce17629a2ac7a",
+      "published_sha256": "95e0648fe746fb907c09b4057c8312d3b41d8750a64e7c97864d0bba3efcf565",
+      "edits": {
+        "upstream_links": 2,
+        "unpublished_attachment_links": 1
+      }
+    },
+    {
+      "path": "research/arxiv-2602.15763/README.md",
+      "source": "research/arxiv-2602.15763/README.md",
+      "source_kind": "paper_study",
+      "title": "GLM-5: From Vibe Coding to Agentic Engineering",
+      "source_sha256": "937f5ef5a765989d87eebf5232c152c8247c3fec913878e9d148439dce3bfd40",
+      "published_sha256": "5e3c338c33dce0d01f03a3208d61f9b95a944da7faab8e27b7d573b637659ed0",
+      "edits": {
+        "upstream_links": 2,
+        "unpublished_attachment_links": 1
+      }
+    },
+    {
+      "path": "research/arxiv-2604.20398/README.md",
+      "source": "research/arxiv-2604.20398/README.md",
+      "source_kind": "paper_study",
+      "title": "WebGen-R1（arXiv:2604.20398v1）深度精读：脚手架约束多页生成、三级级联多模态奖励与冷启动 CoT 消融",
+      "source_sha256": "0f931c91dbd005ca3078473107e0aa7119a4dccc1fc50d5f45d428c2ec1fa72d",
+      "published_sha256": "54c32b2e814a135df71ef1034fcfc0da1ea07d0616d8f4dd422e032b113840c2",
+      "edits": {
+        "upstream_links": 2,
+        "unpublished_attachment_links": 3
+      }
+    },
+    {
+      "path": "research/arxiv-2604.22840/README.md",
+      "source": "research/arxiv-2604.22840/README.md",
+      "source_kind": "paper_study",
+      "title": "AeSlides（arXiv:2604.22840v1）深度精读：前沿 VLM 审美盲视实证、抗刷分可验证视觉算子与 GDPO 多奖励解耦",
+      "source_sha256": "768458c826aaf550126f59287d3847fa5b2be7e7f23553ab54ad135354a885b7",
+      "published_sha256": "e3e6e93badb7ceca499d44badf3e8fe59aa7a395d5dfa4b28160c0290e06e2fc",
+      "edits": {
+        "upstream_links": 2,
+        "unpublished_attachment_links": 1
+      }
+    },
+    {
+      "path": "research/arxiv-2605.12474/README.md",
+      "source": "research/arxiv-2605.12474/README.md",
+      "source_kind": "paper_study",
+      "title": "论文精读：Reward Hacking in Rubric-Based Reinforcement Learning（arXiv:2605.12474v1）",
+      "source_sha256": "0f333c6be08920375db0906fcf132edafe4a4252acd1939073e73059aad543b3",
+      "published_sha256": "273cd7ec3ed6daeb2439a75ff35fc09079704eba716ce123f4b7e63b8f555642",
+      "edits": {
+        "upstream_links": 2,
+        "unpublished_attachment_links": 1
+      }
+    },
+    {
       "path": "research/arxiv-2605.12913/README.md",
       "source": "research/arxiv-2605.12913/README.md",
       "source_kind": "local_note",
@@ -1142,6 +1355,150 @@
       "published_sha256": "8be2bf6659d69f4f0264ede20f823200439c85823faec61a9b23b4186781f8d4",
       "edits": {
         "upstream_links": 2
+      }
+    },
+    {
+      "path": "research/arxiv-2605.17291/README.md",
+      "source": "research/arxiv-2605.17291/README.md",
+      "source_kind": "paper_study",
+      "title": "论文精读：Step-wise Rubric Rewards for LLM Reasoning（SRaR，arXiv:2605.17291v2）",
+      "source_sha256": "4d3ffa631c1d3d7e3edf8019720dad1a614b3e0a7035e58644bed7e54a51f32f",
+      "published_sha256": "267d3a1b9328c68f2debc5a3eab8662f935588ddb8abd6f2926e9a76c9091dcf",
+      "edits": {
+        "upstream_links": 2,
+        "unpublished_attachment_links": 1
+      }
+    },
+    {
+      "path": "research/arxiv-2605.20164/README.md",
+      "source": "research/arxiv-2605.20164/README.md",
+      "source_kind": "paper_study",
+      "title": "论文精读：Not Every Rubric Teaches Equally: Policy-Aware Rubric Rewards for RLVR（POW3R，arXiv:2605.20164v1）",
+      "source_sha256": "2f3b3d39ab35e52479cbe9f82c6dbb055db23ac73e647c4fbf155371b04b4971",
+      "published_sha256": "19d1fb8e1590c41a660a40a9b545a5948bcabd0a0df97be43999ae062aee91a9",
+      "edits": {
+        "upstream_links": 2,
+        "unpublished_attachment_links": 1
+      }
+    },
+    {
+      "path": "research/arxiv-2606.13368/README.md",
+      "source": "research/arxiv-2606.13368/README.md",
+      "source_kind": "paper_study",
+      "title": "论文精读：IterCAD: An Iterative Multimodal Agent for Visually-Grounded CAD Generation and Editing（arXiv:2606.13368v3）",
+      "source_sha256": "86b52338e61e7a1f0a0a16036749f0fa3802dbee4eeb42f52a25a4811b040937",
+      "published_sha256": "29c2d297144a5bc6afc6e69e79469c8a35400f596edacb8ee2dfb277ca73c423",
+      "edits": {
+        "upstream_links": 2,
+        "unpublished_attachment_links": 1
+      }
+    },
+    {
+      "path": "research/arxiv-2606.19348/README.md",
+      "source": "research/arxiv-2606.19348/README.md",
+      "source_kind": "paper_study",
+      "title": "DeepSeek-V4: Towards Highly Efficient Million-Token Context Intelligence",
+      "source_sha256": "dbee09f6f28738e6feda821cdc66a917b44147b7eb672a0a825b1a658112ae7c",
+      "published_sha256": "0273e03a30ea0e0159d42fd020fa717600cca12912e82acc9f2ea2652e413ca3",
+      "edits": {
+        "upstream_links": 2,
+        "unpublished_attachment_links": 1
+      }
+    },
+    {
+      "path": "research/arxiv-2607.05378/README.md",
+      "source": "research/arxiv-2607.05378/README.md",
+      "source_kind": "paper_study",
+      "title": "论文精读：CompactionRL: Reinforcement Learning with Context Compaction for Long-Horizon Agents（arXiv:2607.05378v2）",
+      "source_sha256": "887be214292ff80304d3dc93f008cc6940f94a39436459645ada5195d7ab1dc0",
+      "published_sha256": "c099dc8fdbae279f55124c459c08229564e158427852d2d442e02fadaf00edf5",
+      "edits": {
+        "upstream_links": 2,
+        "unpublished_attachment_links": 1
+      }
+    },
+    {
+      "path": "research/arxiv-2607.24653/README.md",
+      "source": "research/arxiv-2607.24653/README.md",
+      "source_kind": "paper_study",
+      "title": "Kimi K3: Open Frontier Intelligence",
+      "source_sha256": "f4e0cc000b3811537ecf9d86e5e6e4aa8de6186388876da639acb62dfd7cf032",
+      "published_sha256": "d3d45aa215fc22219f01c9013ef595baf331e5419067eac870e5c830dc9ac997",
+      "edits": {
+        "upstream_links": 2,
+        "unpublished_attachment_links": 1
+      }
+    },
+    {
+      "path": "research/arxiv-2607.27699/README.md",
+      "source": "research/arxiv-2607.27699/README.md",
+      "source_kind": "paper_study",
+      "title": "论文精读：RefineSVG: Visual Feedback-Driven Reinforcement Learning for Image-to-SVG Generation（arXiv:2607.27699v1, ACM MM '26）",
+      "source_sha256": "a71475d94fa55e402ba8991d52f485bcc4b148cdc7719c9e971057f5fc652fd7",
+      "published_sha256": "037fbb408eee67ce31f648447d88c95d63a7c9deec35c041724c54e698791be4",
+      "edits": {
+        "upstream_links": 2,
+        "unpublished_attachment_links": 1
+      }
+    },
+    {
+      "path": "research/arxiv-2608.29519/README.md",
+      "source": "research/arxiv-2608.29519/README.md",
+      "source_kind": "paper_study",
+      "title": "论文精读：FuncRoom-Agent: Sequential Feed-Forward 3D Functional Indoor Scene Generation（ScenePRM，arXiv:2608.29519v3）",
+      "source_sha256": "f8412fb96ce46bc449c41533914fd317e4833ef0b64d111a5bc758455f4e07e1",
+      "published_sha256": "ca21ac77a38e5e57c972dbc66a7a803bf3fab2c19c09e403d6010eb4a21b32c7",
+      "edits": {
+        "upstream_links": 2,
+        "unpublished_attachment_links": 1
+      }
+    },
+    {
+      "path": "research/arxiv-2608.30320/README.md",
+      "source": "research/arxiv-2608.30320/README.md",
+      "source_kind": "paper_study",
+      "title": "On the Design of Qwen3.8-Next Architecture: Evaluation, Efficiency, and Training Stability",
+      "source_sha256": "071042fb7c32bf904f8e03e661afd9452be7359f4e9f9051f9b1889d1735d841",
+      "published_sha256": "b6d0ab8c6018a4ffd39f3944e1d5522c9041f05939e1d900cb08e7c42970dc02",
+      "edits": {
+        "upstream_links": 2,
+        "unpublished_attachment_links": 1
+      }
+    },
+    {
+      "path": "research/arxiv-2609.25270/README.md",
+      "source": "research/arxiv-2609.25270/README.md",
+      "source_kind": "paper_study",
+      "title": "论文精读：RULER: Instance-aware Rubric Rewards for SVG Generation（arXiv:2609.25270v1）",
+      "source_sha256": "135a3180c236457bc9581af3fb04144832f06d4656d03727bfb5473706ffc9fa",
+      "published_sha256": "56c0b00b88a8fdb09e277d7c564bd6170fedfbe75a2e128ed15affa5b8d7bca5",
+      "edits": {
+        "upstream_links": 2,
+        "unpublished_attachment_links": 1
+      }
+    },
+    {
+      "path": "research/arxiv-2609.34587/README.md",
+      "source": "research/arxiv-2609.34587/README.md",
+      "source_kind": "paper_study",
+      "title": "论文精读：Reinforcement Learning from Intermediate Renders for Image-to-Code Generation（IR4RL, arXiv:2609.34587v1）",
+      "source_sha256": "ffc3123f146e2c893d56feb3e6262189c50f1be233416365c09062b67a342917",
+      "published_sha256": "bfcff3ba4ec3fbfc8cb9f6243b151776e737b095f8ab9e764b83d3cedc6081e5",
+      "edits": {
+        "upstream_links": 2,
+        "unpublished_attachment_links": 1
+      }
+    },
+    {
+      "path": "research/arxiv-2609.36380/README.md",
+      "source": "research/arxiv-2609.36380/README.md",
+      "source_kind": "paper_study",
+      "title": "论文精读：LEGO-Anything: Coding Agents for 3D Scene Reconstruction（arXiv:2609.36380v1）",
+      "source_sha256": "6bfda0acfaf317e1e4ac9a5e3f3458c4a138e8970be07f258a2018713812553d",
+      "published_sha256": "f4241575843f50bf0b78dea4c7c49fc2844593513c7f958500828f266c8321e1",
+      "edits": {
+        "upstream_links": 2,
+        "unpublished_attachment_links": 1
       }
     },
     {
@@ -1156,6 +1513,18 @@
       }
     },
     {
+      "path": "research/arxiv-2610.11543/README.md",
+      "source": "research/arxiv-2610.11543/README.md",
+      "source_kind": "paper_study",
+      "title": "WebLoop（arXiv:2610.11543v1）深度精读：同策略三角色联合闭环 RL、两阶段 Critic 归因与防拷贝伪改机制",
+      "source_sha256": "dfb104df765f5481c33d80160b18aaf10a9e06b45c9352d4a63c4971685efa45",
+      "published_sha256": "85a7ae4bdeee8a974b0d88b8f9e1db1dbeb77524019275d593e48a9c8a009fe2",
+      "edits": {
+        "upstream_links": 2,
+        "unpublished_attachment_links": 1
+      }
+    },
+    {
       "path": "research/arxiv-2610.22341/README.md",
       "source": "research/arxiv-2610.22341/README.md",
       "source_kind": "local_note",
@@ -1164,6 +1533,90 @@
       "published_sha256": "59d0946efdb1a228e5c255d003a8938de8878d53fcb548b32fd5efb5a5ca1f89",
       "edits": {
         "local_path_placeholders": 1
+      }
+    },
+    {
+      "path": "research/arxiv-2610.28610/README.md",
+      "source": "research/arxiv-2610.28610/README.md",
+      "source_kind": "paper_study",
+      "title": "InterWebCoder（arXiv:2610.28610v1）深度精读：故障归因修复造数、`<1%` 契约 Token 加权 SFT 与确定性测试驱动 RL",
+      "source_sha256": "a2ce8aa2560875d1f3e9286cc073823bf32c89ddb089e8f8d6cd68f8644e42d2",
+      "published_sha256": "5d852d8c5809c97180bc0be05c459f439ac5f9e80b0749065a9e12feb01640ba",
+      "edits": {
+        "upstream_links": 2,
+        "unpublished_attachment_links": 2
+      }
+    },
+    {
+      "path": "research/arxiv-2610.38231/README.md",
+      "source": "research/arxiv-2610.38231/README.md",
+      "source_kind": "paper_study",
+      "title": "论文精读：3DCodeEdit: Benchmarking Instruction-Guided 3D Program Editing（arXiv:2610.38231v1）",
+      "source_sha256": "13b688fc9a2ea1421e30910be9a12e67a28dd2a14de8eba6c860ee620042c68d",
+      "published_sha256": "b68efe7221bd3fbc37ec309b64d0667221f5933aec3f60bd0a779d1c7f5fa2c7",
+      "edits": {
+        "upstream_links": 2,
+        "unpublished_attachment_links": 1
+      }
+    },
+    {
+      "path": "research/arxiv-2611.05151/README.md",
+      "source": "research/arxiv-2611.05151/README.md",
+      "source_kind": "paper_study",
+      "title": "WebCatalyst（arXiv:2611.05151v1）深度精读：高保真浏览器交互 RL、视觉单边锚定与运行时调用栈信用分配",
+      "source_sha256": "11bfcc811624729a7e6f90ba69306deda8256736110ea062af2739e339545c42",
+      "published_sha256": "ed4526c40b1691091e02bbe4e4a56e7a051af52a744f2498424dfb0848d12102",
+      "edits": {
+        "upstream_links": 2,
+        "unpublished_attachment_links": 1
+      }
+    },
+    {
+      "path": "research/arxiv-2611.08294/README.md",
+      "source": "research/arxiv-2611.08294/README.md",
+      "source_kind": "paper_study",
+      "title": "论文精读：ManimCode: Learning Visual Self-Correction for Educational Animation（arXiv:2611.08294v1）",
+      "source_sha256": "c110f92d6e71b91f20ad2affba5426775b0153ae8d321162d402af32f1af2b92",
+      "published_sha256": "e0b918e090e900d4afa814bc2da2f76ea73ba661277c6ef26e40926ca9de62c7",
+      "edits": {
+        "upstream_links": 2,
+        "unpublished_attachment_links": 1
+      }
+    },
+    {
+      "path": "research/arxiv-2611.09401/README.md",
+      "source": "research/arxiv-2611.09401/README.md",
+      "source_kind": "paper_study",
+      "title": "论文精读：PhyCAD: Physics-Aware Text-to-CAD Generation via Hierarchical Reinforcement Learning（arXiv:2611.09401v1）",
+      "source_sha256": "1e4df2608800dac5e77088e241c02a6283f6354d866c9745442dcafaa1ce7879",
+      "published_sha256": "739103a2ef4f89ff610d2a6270f21b299e4c8969e16101804623886e247f649f",
+      "edits": {
+        "upstream_links": 2,
+        "unpublished_attachment_links": 1
+      }
+    },
+    {
+      "path": "research/arxiv-2611.09894/README.md",
+      "source": "research/arxiv-2611.09894/README.md",
+      "source_kind": "paper_study",
+      "title": "论文精读：Video-Coder: Reinforcing Agentic Coding for Video Generation（arXiv:2611.09894v1）",
+      "source_sha256": "d0e0c34c1cd918ad951782b35b9edde3a37a0959104be52d81e6ab96246f612f",
+      "published_sha256": "39a3056a3361ee16ad8d35141a2834ff59e529380a26efb3cacd2081fd3c259d",
+      "edits": {
+        "upstream_links": 2,
+        "unpublished_attachment_links": 1
+      }
+    },
+    {
+      "path": "research/arxiv-2611.10768/README.md",
+      "source": "research/arxiv-2611.10768/README.md",
+      "source_kind": "paper_study",
+      "title": "论文精读：BlenderFORGE: Framework for Optimizing Reactive 3D-Graphics Editing Ability of MLLMs（arXiv:2611.10768v1）",
+      "source_sha256": "6473c02ab29df6a807de2efa5395dc480a98a2e9b8a1135a82e647a607a7fbc9",
+      "published_sha256": "8f8ea56769714cecf9bd40c877add548fcfb98687c367d532370b27818853901",
+      "edits": {
+        "upstream_links": 2,
+        "unpublished_attachment_links": 1
       }
     },
     {
@@ -1176,6 +1629,18 @@
       "edits": {
         "local_path_placeholders": 2,
         "unpublished_attachment_links": 7
+      }
+    },
+    {
+      "path": "research/arxiv-2611.31258/README.md",
+      "source": "research/arxiv-2611.31258/README.md",
+      "source_kind": "paper_study",
+      "title": "论文精读：RECAP: Training Long-horizon LLM Agents with Context Compaction（arXiv:2611.31258v1）",
+      "source_sha256": "a90682ac19c394330232f437f9d39c44a39814a6286dd416c1307c5ce105a4c0",
+      "published_sha256": "e77475a2a7337929e0c722086e5116e0ffe3c4bb084b7e9a26153500056e2bce",
+      "edits": {
+        "upstream_links": 2,
+        "unpublished_attachment_links": 1
       }
     },
     {
@@ -1196,6 +1661,15 @@
       "title": "sample_study_2026_analysis.json",
       "source_sha256": "abf4fde6e0c13072bfd651d4e7c1e6ed5333972316e654b8aef5a8feb3d26a93",
       "published_sha256": "abf4fde6e0c13072bfd651d4e7c1e6ed5333972316e654b8aef5a8feb3d26a93",
+      "edits": {}
+    },
+    {
+      "path": "research/frontier-labs-agentic-rl-blogs-2026h2/README.md",
+      "source": "research/frontier-labs-agentic-rl-blogs-2026h2/README.md",
+      "source_kind": "local_note",
+      "title": "2026 下半年（2026.06–2026.11）国内外前沿实验室 Agentic RL、视觉代码与验证基建官方技术博客深度调研",
+      "source_sha256": "f965530fdfc29f19d61a3f8aad9723c5a93ccaaf075f5965d6794a385626bf2e",
+      "published_sha256": "ca8a0eaa66390efdd7eccdc82dcf72f629bd452ad3fa1effca8e06165898dad2",
       "edits": {}
     },
     {
@@ -1278,6 +1752,15 @@
       "edits": {
         "local_path_placeholders": 6
       }
+    },
+    {
+      "path": "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md",
+      "source": "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md",
+      "source_kind": "local_note",
+      "title": "2026 图文 / 2D / 3D / CAD 同源 Agent 强化学习踩坑避坑大全与大厂最新后训练实战手册",
+      "source_sha256": "17cf57d2f265074b4a2a5bd6a5d3e5b7d07d32329bc704d953b8b69eafa21c7a",
+      "published_sha256": "171eb17473a8dcd7270ade243daac21a30e920936f1c4c30af958c1a5db99e5c",
+      "edits": {}
     }
   ]
 }
