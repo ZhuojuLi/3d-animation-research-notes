@@ -1,6 +1,6 @@
 {
-  "date": "2026-11-25",
-  "count": 81,
+  "date": "2026-11-27",
+  "count": 85,
   "metadata_status": "Extracted from existing notes; not independently reverified for publication.",
   "papers": [
     {
@@ -12,10 +12,7 @@
       "reading_status": "单篇精读",
       "primary_note": "research/arxiv-2605.12913/README.md",
       "referenced_in": [
-        "research/arxiv-2605.12913/README.md",
-        "research/arxiv-2610.02140/README.md",
-        "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
-        "research/3d-agent-round1-failure-retrospective-and-round2-audit-20261125/README.md"
+        "research/arxiv-2605.12913/README.md"
       ]
     },
     {
@@ -28,8 +25,8 @@
       "primary_note": "research/arxiv-2610.02140/README.md",
       "referenced_in": [
         "research/arxiv-2610.02140/README.md",
-        "3d-animation-agent/reports/student-cot-projection-exp-20261125-001/REPORT.md",
-        "3d-animation-agent/reports/student-cot-projection-exp-20261125-001/COT-PRUNE-OFFPOLICY-ISSUE.md"
+        "3d-animation-agent/reports/student-cot-projection-exp-20261125-001/COT-PRUNE-OFFPOLICY-ISSUE.md",
+        "3d-animation-agent/reports/student-cot-projection-exp-20261125-001/REPORT.md"
       ]
     },
     {
@@ -41,21 +38,20 @@
       "reading_status": "单篇精读",
       "primary_note": "research/arxiv-2610.22341/README.md",
       "referenced_in": [
-        "research/3d-animation-methods-and-technique-selection-20261121.md",
         "research/arxiv-2610.22341/README.md",
-        "research/3d-agent-sft-mix-loss-20261123/README.md",
-        "research/3d-agent-data-mix-20261121/kimi-report.md",
+        "3d-animation-agent/docs/THREE-TRACK-DELIVERABLE-SPEC.md",
+        "3d-animation-agent/reports/oneshot-vs-longhorizon-3dcodefactory-20261126/REPORT.md",
+        "history/research/3d-animation-improvement-and-sft-cases-20261121.md",
+        "history/research/3d-verifiable-tasks-20261120.md",
         "research/3d-agent-data-mix-20261121/astra-report.md",
-        "research/3d-agent-evaluation-system-20261122/README.md",
+        "research/3d-agent-data-mix-20261121/kimi-report.md",
+        "research/3d-agent-evaluation-system-20261122/astra-report.md",
+        "research/3d-agent-evaluation-system-20261122/external-report-2.md",
+        "research/3d-agent-evaluation-system-20261122/main-report.md",
         "research/3d-agent-sft-mix-loss-20261123/astra-report.md",
         "research/3d-agent-sft-mix-loss-20261123/codex-me-report.md",
-        "research/3d-agent-evaluation-system-20261122/main-report.md",
-        "research/3d-agent-evaluation-system-20261122/astra-report.md",
-        "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
-        "research/3d-agent-evaluation-system-20261122/external-report-2.md",
-        "history/research/3d-verifiable-tasks-20261120.md",
-        "history/research/3d-animation-improvement-and-sft-cases-20261121.md",
-        "history/research/3d-agent-data-mix-20261121/README.md"
+        "research/3d-animation-methods-and-technique-selection-20261121.md",
+        "research/three-track-data-factory-strategy-20261126/aodi-phase1-phase2-retrospective-20261126.md"
       ]
     },
     {
@@ -67,7 +63,14 @@
       "reading_status": "单篇精读",
       "primary_note": "research/arxiv-2611.28783/README.md",
       "referenced_in": [
-        "research/arxiv-2611.28783/README.md"
+        "research/arxiv-2611.28783/README.md",
+        "3d-animation-agent/docs/THREE-TRACK-DELIVERABLE-SPEC.md",
+        "3d-animation-agent/docs/XHS-UNIFIED-SFT-STANDARD.md",
+        "3d-animation-agent/docs/plans/2026-11-25-round3-big-picture-alignment-plan.md",
+        "3d-animation-agent/reports/oneshot-vs-longhorizon-3dcodefactory-20261126/REPORT.md",
+        "research/three-track-data-factory-strategy-20261126/aodi-phase1-phase2-retrospective-20261126.md",
+        "research/three-track-data-factory-strategy-20261126/astra-report.md",
+        "research/three-track-data-factory-strategy-20261126/main-report.md"
       ]
     },
     {
@@ -79,9 +82,9 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/3d-animation-methods-and-technique-selection-20261121.md",
       "referenced_in": [
-        "research/3d-animation-methods-and-technique-selection-20261121.md",
+        "history/research/3d-animation-improvement-and-sft-cases-20261121.md",
         "research/3d-agent-evaluation-system-20261122/astra-report.md",
-        "history/research/3d-animation-improvement-and-sft-cases-20261121.md"
+        "research/3d-animation-methods-and-technique-selection-20261121.md"
       ]
     },
     {
@@ -93,12 +96,11 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/3d-animation-methods-and-technique-selection-20261121.md",
       "referenced_in": [
-        "research/3d-animation-methods-and-technique-selection-20261121.md",
-        "research/3d-agent-evaluation-system-20261122/README.md",
-        "research/3d-agent-evaluation-system-20261122/main-report.md",
-        "research/3d-agent-evaluation-system-20261122/external-report.md",
+        "history/research/3d-animation-improvement-and-sft-cases-20261121.md",
         "research/3d-agent-evaluation-system-20261122/external-report-2.md",
-        "history/research/3d-animation-improvement-and-sft-cases-20261121.md"
+        "research/3d-agent-evaluation-system-20261122/external-report.md",
+        "research/3d-agent-evaluation-system-20261122/main-report.md",
+        "research/3d-animation-methods-and-technique-selection-20261121.md"
       ]
     },
     {
@@ -110,8 +112,8 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/3d-animation-methods-and-technique-selection-20261121.md",
       "referenced_in": [
-        "research/3d-animation-methods-and-technique-selection-20261121.md",
-        "history/research/3d-animation-improvement-and-sft-cases-20261121.md"
+        "history/research/3d-animation-improvement-and-sft-cases-20261121.md",
+        "research/3d-animation-methods-and-technique-selection-20261121.md"
       ]
     },
     {
@@ -123,12 +125,11 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/3d-animation-methods-and-technique-selection-20261121.md",
       "referenced_in": [
-        "research/3d-animation-methods-and-technique-selection-20261121.md",
-        "research/3d-agent-evaluation-system-20261122/README.md",
-        "research/3d-agent-evaluation-system-20261122/main-report.md",
-        "research/3d-agent-evaluation-system-20261122/external-report.md",
+        "history/research/3d-animation-improvement-and-sft-cases-20261121.md",
         "research/3d-agent-evaluation-system-20261122/external-report-2.md",
-        "history/research/3d-animation-improvement-and-sft-cases-20261121.md"
+        "research/3d-agent-evaluation-system-20261122/external-report.md",
+        "research/3d-agent-evaluation-system-20261122/main-report.md",
+        "research/3d-animation-methods-and-technique-selection-20261121.md"
       ]
     },
     {
@@ -152,8 +153,8 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/3d-animation-methods-and-technique-selection-20261121.md",
       "referenced_in": [
-        "research/3d-animation-methods-and-technique-selection-20261121.md",
-        "history/research/3d-animation-improvement-and-sft-cases-20261121.md"
+        "history/research/3d-animation-improvement-and-sft-cases-20261121.md",
+        "research/3d-animation-methods-and-technique-selection-20261121.md"
       ]
     },
     {
@@ -177,12 +178,12 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/3d-animation-methods-and-technique-selection-20261121.md",
       "referenced_in": [
-        "research/3d-animation-methods-and-technique-selection-20261121.md",
-        "research/3d-agent-evaluation-system-20261122/README.md",
-        "research/3d-agent-sft-mix-loss-20261123/astra-report.md",
-        "research/3d-agent-evaluation-system-20261122/main-report.md",
+        "3d-animation-agent/docs/THREE-TRACK-DELIVERABLE-SPEC.md",
+        "research/3d-agent-evaluation-system-20261122/external-report-2.md",
         "research/3d-agent-evaluation-system-20261122/external-report.md",
-        "research/3d-agent-evaluation-system-20261122/external-report-2.md"
+        "research/3d-agent-evaluation-system-20261122/main-report.md",
+        "research/3d-agent-sft-mix-loss-20261123/astra-report.md",
+        "research/3d-animation-methods-and-technique-selection-20261121.md"
       ]
     },
     {
@@ -243,10 +244,9 @@
       "primary_note": "research/3d-agent-sft-mix-loss-20261123/README.md",
       "referenced_in": [
         "research/3d-agent-sft-mix-loss-20261123/README.md",
+        "3d-animation-agent/reports/oneshot-vs-longhorizon-3dcodefactory-20261126/REPORT.md",
         "research/3d-agent-data-mix-20261121/astra-report.md",
-        "research/3d-agent-sft-mix-loss-20261123/codex-me-report.md",
-        "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
-        "history/research/3d-agent-data-mix-20261121/README.md"
+        "research/3d-agent-sft-mix-loss-20261123/codex-me-report.md"
       ]
     },
     {
@@ -282,11 +282,10 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/3d-animation-distillation-datasets-20261121.md",
       "referenced_in": [
-        "research/3d-animation-distillation-datasets-20261121.md",
-        "research/3d-agent-evaluation-system-20261122/README.md",
-        "research/3d-agent-evaluation-system-20261122/main-report.md",
+        "research/3d-agent-evaluation-system-20261122/external-report-2.md",
         "research/3d-agent-evaluation-system-20261122/external-report.md",
-        "research/3d-agent-evaluation-system-20261122/external-report-2.md"
+        "research/3d-agent-evaluation-system-20261122/main-report.md",
+        "research/3d-animation-distillation-datasets-20261121.md"
       ]
     },
     {
@@ -298,8 +297,8 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/3d-animation-distillation-datasets-20261121.md",
       "referenced_in": [
-        "research/3d-animation-distillation-datasets-20261121.md",
-        "history/research/3d-animation-improvement-and-sft-cases-20261121.md"
+        "history/research/3d-animation-improvement-and-sft-cases-20261121.md",
+        "research/3d-animation-distillation-datasets-20261121.md"
       ]
     },
     {
@@ -347,7 +346,9 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
       "referenced_in": [
-        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+        "3d-animation-agent/docs/THREE-TRACK-DELIVERABLE-SPEC.md",
+        "3d-animation-agent/reports/oneshot-vs-longhorizon-3dcodefactory-20261126/REPORT.md"
       ]
     },
     {
@@ -444,7 +445,8 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
       "referenced_in": [
-        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+        "3d-animation-agent/reports/oneshot-vs-longhorizon-3dcodefactory-20261126/REPORT.md"
       ]
     },
     {
@@ -456,7 +458,8 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
       "referenced_in": [
-        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+        "3d-animation-agent/reports/oneshot-vs-longhorizon-3dcodefactory-20261126/REPORT.md"
       ]
     },
     {
@@ -480,7 +483,8 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
       "referenced_in": [
-        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+        "3d-animation-agent/reports/oneshot-vs-longhorizon-3dcodefactory-20261126/REPORT.md"
       ]
     },
     {
@@ -492,7 +496,8 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
       "referenced_in": [
-        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+        "3d-animation-agent/reports/oneshot-vs-longhorizon-3dcodefactory-20261126/REPORT.md"
       ]
     },
     {
@@ -600,7 +605,8 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
       "referenced_in": [
-        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+        "3d-animation-agent/reports/oneshot-vs-longhorizon-3dcodefactory-20261126/REPORT.md"
       ]
     },
     {
@@ -732,7 +738,6 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
       "referenced_in": [
-        "research/arxiv-2610.02140/README.md",
         "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
       ]
     },
@@ -784,8 +789,7 @@
       "referenced_in": [
         "research/3d-agent-sft-mix-loss-20261123/README.md",
         "research/3d-agent-data-mix-20261121/kimi-report.md",
-        "research/3d-agent-sft-mix-loss-20261123/codex-me-report.md",
-        "history/research/3d-agent-data-mix-20261121/README.md"
+        "research/3d-agent-sft-mix-loss-20261123/codex-me-report.md"
       ]
     },
     {
@@ -797,8 +801,7 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/3d-agent-data-mix-20261121/kimi-report.md",
       "referenced_in": [
-        "research/3d-agent-data-mix-20261121/kimi-report.md",
-        "history/research/3d-agent-data-mix-20261121/README.md"
+        "research/3d-agent-data-mix-20261121/kimi-report.md"
       ]
     },
     {
@@ -810,8 +813,7 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/3d-agent-data-mix-20261121/kimi-report.md",
       "referenced_in": [
-        "research/3d-agent-data-mix-20261121/kimi-report.md",
-        "history/research/3d-agent-data-mix-20261121/README.md"
+        "research/3d-agent-data-mix-20261121/kimi-report.md"
       ]
     },
     {
@@ -823,8 +825,7 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/3d-agent-data-mix-20261121/kimi-report.md",
       "referenced_in": [
-        "research/3d-agent-data-mix-20261121/kimi-report.md",
-        "history/research/3d-agent-data-mix-20261121/README.md"
+        "research/3d-agent-data-mix-20261121/kimi-report.md"
       ]
     },
     {
@@ -836,8 +837,7 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/3d-agent-data-mix-20261121/kimi-report.md",
       "referenced_in": [
-        "research/3d-agent-data-mix-20261121/kimi-report.md",
-        "history/research/3d-agent-data-mix-20261121/README.md"
+        "research/3d-agent-data-mix-20261121/kimi-report.md"
       ]
     },
     {
@@ -862,10 +862,10 @@
       "primary_note": "research/3d-agent-evaluation-system-20261122/README.md",
       "referenced_in": [
         "research/3d-agent-evaluation-system-20261122/README.md",
-        "research/3d-agent-evaluation-system-20261122/main-report.md",
         "research/3d-agent-evaluation-system-20261122/astra-report.md",
+        "research/3d-agent-evaluation-system-20261122/external-report-2.md",
         "research/3d-agent-evaluation-system-20261122/external-report.md",
-        "research/3d-agent-evaluation-system-20261122/external-report-2.md"
+        "research/3d-agent-evaluation-system-20261122/main-report.md"
       ]
     },
     {
@@ -878,8 +878,8 @@
       "primary_note": "research/3d-agent-evaluation-system-20261122/README.md",
       "referenced_in": [
         "research/3d-agent-evaluation-system-20261122/README.md",
-        "research/3d-agent-evaluation-system-20261122/external-report-2.md",
-        "research/3d-agent-evaluation-system-20261122/external-report-2-review.md"
+        "research/3d-agent-evaluation-system-20261122/external-report-2-review.md",
+        "research/3d-agent-evaluation-system-20261122/external-report-2.md"
       ]
     },
     {
@@ -891,8 +891,8 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/3d-agent-evaluation-system-20261122/external-report-2.md",
       "referenced_in": [
-        "research/3d-agent-evaluation-system-20261122/external-report-2.md",
-        "research/3d-agent-evaluation-system-20261122/external-report-2-review.md"
+        "research/3d-agent-evaluation-system-20261122/external-report-2-review.md",
+        "research/3d-agent-evaluation-system-20261122/external-report-2.md"
       ]
     },
     {
@@ -918,8 +918,8 @@
       "primary_note": "research/3d-agent-evaluation-system-20261122/README.md",
       "referenced_in": [
         "research/3d-agent-evaluation-system-20261122/README.md",
-        "research/3d-agent-evaluation-system-20261122/main-report.md",
-        "history/research/3d-animation-improvement-and-sft-cases-20261121.md"
+        "history/research/3d-animation-improvement-and-sft-cases-20261121.md",
+        "research/3d-agent-evaluation-system-20261122/main-report.md"
       ]
     },
     {
@@ -943,12 +943,11 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/3d-agent-openai-anthropic-reading-notes-20261121.md",
       "referenced_in": [
-        "research/3d-agent-openai-anthropic-reading-notes-20261121.md",
-        "research/3d-agent-data-mix-20261121/kimi-report.md",
-        "research/3d-agent-data-mix-20261121/astra-report.md",
-        "research/3d-agent-sft-mix-loss-20261123/codex-me-report.md",
         "history/research/3d-animation-improvement-and-sft-cases-20261121.md",
-        "history/research/3d-agent-data-mix-20261121/README.md"
+        "research/3d-agent-data-mix-20261121/astra-report.md",
+        "research/3d-agent-data-mix-20261121/kimi-report.md",
+        "research/3d-agent-openai-anthropic-reading-notes-20261121.md",
+        "research/3d-agent-sft-mix-loss-20261123/codex-me-report.md"
       ]
     },
     {
@@ -973,11 +972,10 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/3d-agent-data-mix-20261121/kimi-report.md",
       "referenced_in": [
-        "research/3d-agent-data-mix-20261121/kimi-report.md",
         "research/3d-agent-data-mix-20261121/astra-report.md",
+        "research/3d-agent-data-mix-20261121/kimi-report.md",
         "research/3d-agent-sft-mix-loss-20261123/astra-report.md",
-        "research/3d-agent-sft-mix-loss-20261123/codex-me-report.md",
-        "history/research/3d-agent-data-mix-20261121/README.md"
+        "research/3d-agent-sft-mix-loss-20261123/codex-me-report.md"
       ]
     },
     {
@@ -989,8 +987,7 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/3d-agent-data-mix-20261121/kimi-report.md",
       "referenced_in": [
-        "research/3d-agent-data-mix-20261121/kimi-report.md",
-        "history/research/3d-agent-data-mix-20261121/README.md"
+        "research/3d-agent-data-mix-20261121/kimi-report.md"
       ]
     },
     {
@@ -1052,6 +1049,57 @@
       "primary_note": "research/3d-agent-sft-hparams-aodi-selection-20261123/main-report.md",
       "referenced_in": [
         "research/3d-agent-sft-hparams-aodi-selection-20261123/main-report.md"
+      ]
+    },
+    {
+      "arxiv_id": "2611.09769",
+      "name_in_notes": "AnimWeb-Bench",
+      "category": "公开题源、3D / CAD 数据与基准",
+      "focus": "多文件 Awwwards 级动态网页基准与多维视觉审美评估",
+      "url": "https://arxiv.org/abs/2611.09769",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/cad-2d-sample-study-and-taxonomy-v2-20261126/README.md",
+      "referenced_in": [
+        "research/cad-2d-sample-study-and-taxonomy-v2-20261126/README.md",
+        "3d-animation-agent/docs/THREE-TRACK-DELIVERABLE-SPEC.md"
+      ]
+    },
+    {
+      "arxiv_id": "2611.10592",
+      "name_in_notes": "MotionGraphicsBench",
+      "category": "3D 动画、运动与镜头",
+      "focus": "2D 动态图形确定性时空验证程序与断言范式",
+      "url": "https://arxiv.org/abs/2611.10592",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/cad-2d-sample-study-and-taxonomy-v2-20261126/README.md",
+      "referenced_in": [
+        "research/cad-2d-sample-study-and-taxonomy-v2-20261126/README.md",
+        "3d-animation-agent/docs/THREE-TRACK-DELIVERABLE-SPEC.md"
+      ]
+    },
+    {
+      "arxiv_id": "2610.23104",
+      "name_in_notes": "Webdev-Bench / WebCoder-27B",
+      "category": "公开题源、3D / CAD 数据与基准",
+      "focus": "多文件前端工程里程碑演进评测架",
+      "url": "https://arxiv.org/abs/2610.23104",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/cad-2d-sample-study-and-taxonomy-v2-20261126/README.md",
+      "referenced_in": [
+        "research/cad-2d-sample-study-and-taxonomy-v2-20261126/README.md",
+        "3d-animation-agent/docs/THREE-TRACK-DELIVERABLE-SPEC.md"
+      ]
+    },
+    {
+      "arxiv_id": "2610.33149",
+      "name_in_notes": "WebUniverse",
+      "category": "公开题源、3D / CAD 数据与基准",
+      "focus": "多轮 Web Agent 轨迹与自定义许可边界",
+      "url": "https://arxiv.org/abs/2610.33149",
+      "reading_status": "专题 / 引用",
+      "primary_note": "3d-animation-agent/docs/THREE-TRACK-DELIVERABLE-SPEC.md",
+      "referenced_in": [
+        "3d-animation-agent/docs/THREE-TRACK-DELIVERABLE-SPEC.md"
       ]
     }
   ]

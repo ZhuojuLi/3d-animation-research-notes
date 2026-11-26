@@ -4,6 +4,14 @@
 
 | 文档 | 内容 |
 | --- | --- |
+| [三轨顶级交付产物规格与高难长程造数指南（v2.0）](THREE-TRACK-DELIVERABLE-SPEC.md) | `3d-animation-agent/docs/THREE-TRACK-DELIVERABLE-SPEC.md` |
+| [XHS 对齐统一训练数据与上下文标准规范（三轨共用）](XHS-UNIFIED-SFT-STANDARD.md) | `3d-animation-agent/docs/XHS-UNIFIED-SFT-STANDARD.md` |
+| [Anim2D-Tree v2.0（5 大类 × 4 接地气词条 = 20 词条）](../configs/taxonomies/anim2d_tree_v2_0.json) | `3d-animation-agent/configs/taxonomies/anim2d_tree_v2_0.json` |
+| [CadQuery-Tree v2.0（5 大类 × 4 接地气词条 = 20 词条）](../configs/taxonomies/cadquery_tree_v2_0.json) | `3d-animation-agent/configs/taxonomies/cadquery_tree_v2_0.json` |
+| [三轨统一交付契约四字段 Schema](../configs/taxonomies/contract_schema.json) | `3d-animation-agent/configs/taxonomies/contract_schema.json` |
+| [Anim2D-Tree v1.1（初版 36 叶归档对照）](../configs/taxonomies/anim2d_tree_v1_1.json) | `3d-animation-agent/configs/taxonomies/anim2d_tree_v1_1.json` |
+| [CadQuery-Tree v1.1（初版 36 叶归档对照）](../configs/taxonomies/cadquery_tree_v1_1.json) | `3d-animation-agent/configs/taxonomies/cadquery_tree_v1_1.json` |
+| [Round 3 全链路对齐改造总计划（Big Picture）](plans/2026-11-25-round3-big-picture-alignment-plan.md) | `3d-animation-agent/docs/plans/2026-11-25-round3-big-picture-alignment-plan.md` |
 | [3D Agent 造数总守则与 `Qwen3.8-27B` 能力边界手册（Data Playbook）](DATA-PLAYBOOK.md) | `3d-animation-agent/docs/DATA-PLAYBOOK.md` |
 | [3D Agent 全链路统一参数与避坑规范（造数 · 转写 · 验收 · 27B 推理与提交）](STANDARD-PARAMS.md) | `3d-animation-agent/docs/STANDARD-PARAMS.md` |
 | [初版结构与边界](architecture.md) | `3d-animation-agent/docs/architecture.md` |

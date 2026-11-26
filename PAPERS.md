@@ -1,6 +1,6 @@
 # Paper list
 
-从已有笔记提取并按 arXiv 编号去重，共 **81 条引用**，其中 **4 篇有单独精读**。其余条目来自专题综述或背景引用，不代表每篇均已完整精读。
+从已有笔记提取并按 arXiv 编号去重，共 **85 条引用**，其中 **4 篇有单独精读**。其余条目来自专题综述或背景引用，不代表每篇均已完整精读。
 
 名称与研究重点沿用原笔记。本次整理未重新逐篇核验题名、版本和实验数字；已发现的 CAD-Coder 编号歧义在表中保留标注。全部引用位置见 [机器可读索引](catalog/papers.json)。
 
@@ -33,6 +33,7 @@
 | 3DCodeEdit | [2611.09894](https://arxiv.org/abs/2611.09894) | 局部编辑与非目标保持 | [专题 / 引用](history/research/3d-animation-improvement-and-sft-cases-20261121.md) |
 | ManimCode | [2611.08294](https://arxiv.org/abs/2611.08294) | 教育动画与视觉自纠错 | [专题 / 引用](research/3d-agent-sft-mix-loss-20261123/README.md) |
 | Articraft | [2605.15187](https://arxiv.org/abs/2605.15187) | 可动资产、代码化与结构化反馈 | [专题 / 引用](research/agent-sft-lessons-and-data-recipes-20261125/README.md) |
+| MotionGraphicsBench | [2611.10592](https://arxiv.org/abs/2611.10592) | 2D 动态图形确定性时空验证程序与断言范式 | [专题 / 引用](research/cad-2d-sample-study-and-taxonomy-v2-20261126/README.md) |
 
 ## 公开题源、3D / CAD 数据与基准
 
@@ -52,6 +53,9 @@
 | CAD-Recode | [2412.14042](https://arxiv.org/abs/2412.14042) | 点云到 CAD 代码 | [专题 / 引用](research/3d-and-cad-benchmarks-datasets-27b-boundaries-20261125/README.md) |
 | CAD-Coder（CAD 数据综述中的条目） | [2505.14646](https://arxiv.org/abs/2505.14646) | 沿用该综述登记，题名 / 编号对应待复核 | [专题 / 引用](research/3d-and-cad-benchmarks-datasets-27b-boundaries-20261125/README.md) |
 | CAD-Coder（早期 CAD 笔记中的条目） | [2505.19713](https://arxiv.org/abs/2505.19713) | 沿用该笔记登记，题名 / 编号对应待复核 | [专题 / 引用](history/research/3d-verifiable-tasks-20261120.md) |
+| AnimWeb-Bench | [2611.09769](https://arxiv.org/abs/2611.09769) | 多文件 Awwwards 级动态网页基准与多维视觉审美评估 | [专题 / 引用](research/cad-2d-sample-study-and-taxonomy-v2-20261126/README.md) |
+| Webdev-Bench / WebCoder-27B | [2610.23104](https://arxiv.org/abs/2610.23104) | 多文件前端工程里程碑演进评测架 | [专题 / 引用](research/cad-2d-sample-study-and-taxonomy-v2-20261126/README.md) |
+| WebUniverse | [2610.33149](https://arxiv.org/abs/2610.33149) | 多轮 Web Agent 轨迹与自定义许可边界 | [专题 / 引用](3d-animation-agent/docs/THREE-TRACK-DELIVERABLE-SPEC.md) |
 
 ## Agent SFT、数据配比与纠偏
 

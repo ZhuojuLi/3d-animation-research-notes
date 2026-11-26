@@ -1,13 +1,14 @@
 # 3DCodeFactory（arXiv:2611.28783v1）一手精读与工程迁移方案
 
-> 公开整理版 · 2026-11-25。保留成文时点的记录；计划、文献结果和本地实测请分别理解。 环境路径已泛化，未收录的附件已标注；发布范围见 [整理说明](../../PROVENANCE.md)。
+> 公开整理版 · 2026-11-27。保留成文时点的记录；计划、文献结果和本地实测请分别理解。 环境路径已泛化，未收录的附件已标注；发布范围见 [整理说明](../../PROVENANCE.md)。
 
 > 调研日期：2026-11-25  
 > 论文标题：*3DCodeFactory: Scaling Training Data for 3D Code Agents*（Dots Studio, Xiaohongshu Inc.；Zhaoyu Wang, Xueru Wen, XingYu Li, Jie Lou）  
 > 协议与开源资产（**全部 Apache-2.0**）：
 > - 论文原文：[paper.html（上游原文）](https://arxiv.org/abs/2611.28783) · [paper.txt（上游原文）](https://arxiv.org/abs/2611.28783)（`https://arxiv.org/html/2611.28783v1`，含正文 + Appendix A–F 全量 11 个 Prompt 模板与 8 张附表）
-> - 官方代码仓：`https://github.com/3DCodeFactory/3DCodeFactory`（核心源码已归档：[workflow.py（上游仓库）](https://github.com/3DCodeFactory/3DCodeFactory) · [trajectory.py（上游仓库）](https://github.com/3DCodeFactory/3DCodeFactory) · [docker_agent.py（上游仓库）](https://github.com/3DCodeFactory/3DCodeFactory) · [validation.py（上游仓库）](https://github.com/3DCodeFactory/3DCodeFactory) · [vector_guard.py（上游仓库）](https://github.com/3DCodeFactory/3DCodeFactory) · [paper.toml（上游仓库）](https://github.com/3DCodeFactory/3DCodeFactory) · [manifest.json（上游仓库）](https://github.com/3DCodeFactory/3DCodeFactory)）
-> - Hugging Face 数据集：`3DCodeFactory/3DCodeFactory`（别名 `wangzhaoyu/3DCodeFactory`；元数据与真实分片样本实查：hf-README.md（本地附件未发布） · hf-api.json（本地附件未发布） · hf-shards.json（本地附件未发布） · `sample-shard-prefix.jsonl.zst`）
+> - 官方代码仓：`https://github.com/3DCodeFactory/3DCodeFactory`（**完整源码与资产已克隆至 `3DCodeFactory-repo`（本地附件未发布）**，含 [P01–P11 全部 12 份官方提示词（上游仓库）](https://github.com/3DCodeFactory/3DCodeFactory)、[56 叶节点 taxonomy.json（上游仓库）](https://github.com/3DCodeFactory/3DCodeFactory)、[Three.js few-shot hall/case.json（上游仓库）](https://github.com/3DCodeFactory/3DCodeFactory)、[Blender few-shot press/case.json（上游仓库）](https://github.com/3DCodeFactory/3DCodeFactory)、[schema.json（上游仓库）](https://github.com/3DCodeFactory/3DCodeFactory) 与核心源码 `src/code3dfactory/*`）
+> - 项目主页：`https://3dcodefactory.github.io/`（已存档 `homepage.html`（本地附件未发布）、`data.js`（本地附件未发布）、Three.js 实时案例源码 `chateau.js`（本地附件未发布））
+> - Hugging Face 数据集：`3DCodeFactory/3DCodeFactory`（别名 `wangzhaoyu/3DCodeFactory`；元数据与真实分片样本实查：`hf-README.md`（本地附件未发布） · `hf-api.json`（本地附件未发布） · `hf-shards.json`（本地附件未发布） · `sample-shard-prefix.jsonl.zst`；全量 401 分片直连下载进行中：`${WORKSPACE}/datasets/3dcodefactory/`）
 
 ---
 

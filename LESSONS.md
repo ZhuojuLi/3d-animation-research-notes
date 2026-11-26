@@ -43,3 +43,9 @@
 跨模型改写思考链可能改变文体与 token 分布。NLL 可以辅助诊断这种变化，但 NLL 下降本身不能证明任务能力改善或没有遗忘。最终仍需训练后在留出任务与通用能力上做对照。
 
 来源：[CoT 压缩问题](3d-animation-agent/reports/student-cot-projection-exp-20261125-001/COT-PRUNE-OFFPOLICY-ISSUE.md)、[NLL / 投影实验](3d-animation-agent/reports/student-cot-projection-exp-20261125-001/REPORT.md)、[Finetuning with Sampling](research/arxiv-2610.02140/README.md)。
+
+## 8. 越过单轮简单脚本天花板：面向多文件复杂工程与原生参数同构
+
+强基座（如 `Qwen3.8-27B`）已具备可观的单轮短代码生成基线，继续堆砌单文件玩具题几乎不提升复杂工程与审美上限，甚至会干扰长程多轮工具习惯。高收益蒸馏应聚焦：多模块工程组织（前端 ES6 多文件 + 本地静态服务、CAD 参数+零件+装配分模块与 `STEP` 零干涉验证）、保留原生 `auto-compact` 分段与第一人称 `<think>`、对坏轮仅置二值 `"loss": False` 保留纠错闭环，并遵循“不传多余定制参数、训推工具面与默认档位原生同构”原则。
+
+来源：[三轨顶级交付规格 v2.0](3d-animation-agent/docs/THREE-TRACK-DELIVERABLE-SPEC.md)、[2026 样本学习与 v2.0 分类树](research/cad-2d-sample-study-and-taxonomy-v2-20261126/README.md)、[全链路管线对齐联合审核](research/three-track-pipeline-alignment-audit-20261126/README.md)、[单轮 vs 长程多轮证据](3d-animation-agent/reports/oneshot-vs-longhorizon-3dcodefactory-20261126/REPORT.md)。

@@ -4,6 +4,11 @@
 
 | 文档 | 内容 |
 | --- | --- |
+| [小红书 `3DCodeFactory` 训练策略拆解与单轮 vs 长程多轮对照报告](oneshot-vs-longhorizon-3dcodefactory-20261126/REPORT.md) | `3d-animation-agent/reports/oneshot-vs-longhorizon-3dcodefactory-20261126/REPORT.md` |
+| [小红书 `3DCodeFactory` 分片分段与视觉 Token 分布审计报告](xhs-threejs-segment-audit-20261126/REPORT.md) | `3d-animation-agent/reports/xhs-threejs-segment-audit-20261126/REPORT.md` |
+| [XHS Three.js 留出集 `core20` 沙盒评测报告（3600s 原生基准）](xhs-threejs-eval-core20-20261126-3600s-noprefix/REPORT.md) | `3d-animation-agent/reports/xhs-threejs-eval-core20-20261126-3600s-noprefix/REPORT.md` |
+| [Round 2 `v3` 全参评测报告](round2-v3-full-eval-20261126/REPORT.md) | `3d-animation-agent/reports/round2-v3-full-eval-20261126/REPORT.md` |
+| [Round 2 `v3` 放宽窗口对照评测报告](round2-v3-relaxed-eval-20261126/REPORT.md) | `3d-animation-agent/reports/round2-v3-relaxed-eval-20261126/REPORT.md` |
 | [Aodi 万级 one-shot 27B SFT 效果复核](aodi-one-shot-sft-review-20261121.md) | `3d-animation-agent/reports/aodi-one-shot-sft-review-20261121.md` |
 | [Aodi one-shot 与 Kimi ReAct 对照报告](aodi-one-shot-vs-react-final-20261122.md) | `3d-animation-agent/reports/aodi-one-shot-vs-react-final-20261122.md` |
 | [3D Agent 夜间采集与初审最终报告](overnight-collection-report-20261122.md) | `3d-animation-agent/reports/overnight-collection-report-20261122.md` |

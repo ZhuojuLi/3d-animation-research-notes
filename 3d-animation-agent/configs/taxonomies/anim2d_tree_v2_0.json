@@ -1,0 +1,237 @@
+{
+  "taxonomy_id": "Anim2D-Tree",
+  "version": "2.0",
+  "aligned_date": "2026-11-26",
+  "track": "2d_web_interactive_multi",
+  "style": "xhs_aligned_2_level_product_taxonomy",
+  "supersedes_for_long_horizon": "configs/taxonomies/anim2d_tree_v1_1.json",
+  "design_principle": "对齐小红书 3DCodeFactory 接地气两层产品分类（5 大类 × 4 二级词条 = 20 词条），彻底取消人工正交任务形态矩阵与技术黑话。从零搭建、渲染看图查错、局部 Edit 纠错精修与自然 EOS 收尾全部由 50-150 轮真实长程轨迹自然承载；多文件结构、本地 GSAP、window.renderAt(t) 一键导 MP4 等硬约束统一由 P07 出题器与验收器执行。",
+  "delivery_contract_ref": "docs/THREE-TRACK-DELIVERABLE-SPEC.md",
+  "preferred_teacher_model": "kimi-k3.1-pro",
+  "teacher_channel_note": "2026-11-27 更新：3D 专用 DeepSeek 配额已耗尽，专用 PhanRouter Kimi 通道（3d-animation-agent/.env）已恢复 kimi-k3.1-pro，自产长程多轮采集默认优先使用 kimi-k3.1-pro。",
+  "ood_benchmarks_excluded": [
+    "starry1001/AnimWeb-Bench (CC-BY-4.0, 124 pages)",
+    "figma-ai/motion-graphics-bench (Data CC-BY-NC-SA-4.0 NEVER TRAIN / Code MIT, 100 tasks)",
+    "Roy-DOU/Webdev-Bench (MIT, 40 composite tasks)",
+    "evals/2d-seed-v1 (internal, 12 tasks)"
+  ],
+  "domains": [
+    {
+      "domain_id": "D01",
+      "domain": "Web & Product Pages",
+      "domain_zh": "网页与产品展示",
+      "quota": 0.20,
+      "focus_zh": "品牌官网、新品发布页、活动专题与互动作品集，重点打磨版式审美、视差层次与遮罩转场"
+    },
+    {
+      "domain_id": "D02",
+      "domain": "Education & Explainers",
+      "domain_zh": "科普教学与原理演示",
+      "quota": 0.20,
+      "focus_zh": "替代传统单向科普视频的可交互网页实验台与分层原理剖面，可玩可控且一键导 MP4"
+    },
+    {
+      "domain_id": "D03",
+      "domain": "Data & Dashboards",
+      "domain_zh": "数据图表与业务看板",
+      "quota": 0.20,
+      "focus_zh": "数据新闻长卷、商业指标大屏、地图航线流转与系统架构动态流程图，确保数值与图形严格同步"
+    },
+    {
+      "domain_id": "D04",
+      "domain": "Motion & UI Design",
+      "domain_zh": "商业动效与界面包装",
+      "quota": 0.20,
+      "focus_zh": "片头标识、矢量图标刚体铰接动效、动态海报字幕与软件交互流程演示，专治支点漂移与节奏生硬"
+    },
+    {
+      "domain_id": "D05",
+      "domain": "Stories & Playgrounds",
+      "domain_zh": "故事短片与互动小品",
+      "quota": 0.20,
+      "focus_zh": "风格化角色短片、昼夜风景画卷、分镜绘本与音画/物理益智小互动，强化表现力与连贯叙事"
+    }
+  ],
+  "leaves": [
+    {
+      "id": "A2D_D01L01",
+      "domain_id": "D01",
+      "domain": "Web & Product Pages",
+      "domain_zh": "网页与产品展示",
+      "label": "Brand Hero & Landing",
+      "label_zh": "品牌官网主视觉",
+      "examples_zh": "科技/设计工作室动态首屏、动态排版主舞台、多区块品牌叙事官网"
+    },
+    {
+      "id": "A2D_D01L02",
+      "domain_id": "D01",
+      "domain": "Web & Product Pages",
+      "domain_zh": "网页与产品展示",
+      "label": "Product Launch Page",
+      "label_zh": "新品发布页",
+      "examples_zh": "耳机/手表/相机/合成器交互发布页、滚动拆解高精矢量硬件剖面与热点交互"
+    },
+    {
+      "id": "A2D_D01L03",
+      "domain_id": "D01",
+      "domain": "Web & Product Pages",
+      "domain_zh": "网页与产品展示",
+      "label": "Campaign Narrative Page",
+      "label_zh": "活动专题长页",
+      "examples_zh": "年度回顾长卷、展览/节庆互动专题页、多章节平滑滚动帘幕揭幕页"
+    },
+    {
+      "id": "A2D_D01L04",
+      "domain_id": "D01",
+      "domain": "Web & Product Pages",
+      "domain_zh": "网页与产品展示",
+      "label": "Interactive Gallery & Portfolio",
+      "label_zh": "互动作品画廊",
+      "examples_zh": "杂志风错峰卡片画廊、点击卡片共享元素放大详情转场、分类筛选重排动效"
+    },
+    {
+      "id": "A2D_D02L01",
+      "domain_id": "D02",
+      "domain": "Education & Explainers",
+      "domain_zh": "科普教学与原理演示",
+      "label": "Physics & Astronomy Labs",
+      "label_zh": "物理与天文实验",
+      "examples_zh": "透镜折射色散实验台、耦合振子与波干涉、天体轨道与日食月食交互模拟"
+    },
+    {
+      "id": "A2D_D02L02",
+      "domain_id": "D02",
+      "domain": "Education & Explainers",
+      "domain_zh": "科普教学与原理演示",
+      "label": "Math & Algorithm Demos",
+      "label_zh": "数学与算法演示",
+      "examples_zh": "傅里叶轮系绘曲线、图论与寻路可视化、排序/树结构/注意力机制动态图解"
+    },
+    {
+      "id": "A2D_D02L03",
+      "domain_id": "D02",
+      "domain": "Education & Explainers",
+      "domain_zh": "科普教学与原理演示",
+      "label": "Mechanical & Engineering Cutaways",
+      "domain_zh": "机械与工程原理",
+      "examples_zh": "机械表擒纵齿轮系、四冲程发动机循环、液压阀/水泵/锂电池充放电剖面演示"
+    },
+    {
+      "id": "A2D_D02L04",
+      "domain_id": "D02",
+      "domain": "Education & Explainers",
+      "domain_zh": "科普教学与原理演示",
+      "label": "Biology & Science Explainers",
+      "domain_zh": "生物与科学图解",
+      "examples_zh": "细胞有丝分裂、心脏泵血循环、光合作用/水循环/板块运动交互分层图解"
+    },
+    {
+      "id": "A2D_D03L01",
+      "domain_id": "D03",
+      "domain": "Data & Dashboards",
+      "domain_zh": "数据图表与业务看板",
+      "label": "Scrollytelling Data Stories",
+      "label_zh": "数据新闻故事",
+      "examples_zh": "多幕切换数据叙事长图、带动态标注与高亮过渡的趋势对比故事板"
+    },
+    {
+      "id": "A2D_D03L02",
+      "domain_id": "D03",
+      "domain": "Data & Dashboards",
+      "domain_zh": "数据图表与业务看板",
+      "label": "Business KPI Dashboards",
+      "label_zh": "商业指标看板",
+      "examples_zh": "多图表联动筛选运营看板、能源/金融实时监控台、带时间轴回放的数据面板"
+    },
+    {
+      "id": "A2D_D03L03",
+      "domain_id": "D03",
+      "domain": "Data & Dashboards",
+      "domain_zh": "数据图表与业务看板",
+      "label": "Maps & Route Flows",
+      "domain_zh": "地图与轨迹流转",
+      "examples_zh": "地铁轨交运行拓扑图、供应链与航空航线脉冲流转、六边形区域热力演进图"
+    },
+    {
+      "id": "A2D_D03L04",
+      "domain_id": "D03",
+      "domain": "Data & Dashboards",
+      "domain_zh": "数据图表与业务看板",
+      "label": "System & Workflow Diagrams",
+      "domain_zh": "系统架构流程图",
+      "examples_zh": "微服务/负载均衡请求流与故障演练沙盒、节点连线工作流与数据包路由动画"
+    },
+    {
+      "id": "A2D_D04L01",
+      "domain_id": "D04",
+      "domain": "Motion & UI Design",
+      "domain_zh": "商业动效与界面包装",
+      "label": "Brand Openers & Logos",
+      "label_zh": "品牌片头与标识",
+      "examples_zh": "品牌徽章复合缓动演绎、频道包装片头与字幕条套件、路径描边生长标识"
+    },
+    {
+      "id": "A2D_D04L02",
+      "domain_id": "D04",
+      "domain": "Motion & UI Design",
+      "domain_zh": "商业动效与界面包装",
+      "label": "Animated Icons & Vector Art",
+      "label_zh": "图标与矢量插画动效",
+      "examples_zh": "剪刀/工具/日历/奖章等高精 SVG 刚体支点铰接动效、多图标错峰交互动效集"
+    },
+    {
+      "id": "A2D_D04L03",
+      "domain_id": "D04",
+      "domain": "Motion & UI Design",
+      "domain_zh": "商业动效与界面包装",
+      "label": "Kinetic Posters & Captions",
+      "label_zh": "动态海报与字幕",
+      "examples_zh": "瑞士/包豪斯风格节律动态海报、窗口裁切滚动字牌、音乐节动态视觉展板"
+    },
+    {
+      "id": "A2D_D04L04",
+      "domain_id": "D04",
+      "domain": "Motion & UI Design",
+      "domain_zh": "商业动效与界面包装",
+      "label": "App & UI Walkthroughs",
+      "label_zh": "软件界面交互演示",
+      "examples_zh": "SaaS 核心功能分步仿真演示、多状态结账/上传/通知状态机、拟物旋钮仪表台"
+    },
+    {
+      "id": "A2D_D05L01",
+      "domain_id": "D05",
+      "domain": "Stories & Playgrounds",
+      "domain_zh": "故事短片与互动小品",
+      "label": "Character Action Shorts",
+      "label_zh": "角色动作短片",
+      "examples_zh": "扁平插画风人物/机器人/宇航员关节动作小品、Q 弹挤压拉伸吉祥物表情反馈"
+    },
+    {
+      "id": "A2D_D05L02",
+      "domain_id": "D05",
+      "domain": "Stories & Playgrounds",
+      "domain_zh": "故事短片与互动小品",
+      "label": "City & Nature Landscapes",
+      "label_zh": "城市与自然画卷",
+      "examples_zh": "霓虹街区/海港灯塔昼夜光影视差、等轴测微缩城市运转、四季植物生长风摆画卷"
+    },
+    {
+      "id": "A2D_D05L03",
+      "domain_id": "D05",
+      "domain": "Stories & Playgrounds",
+      "domain_zh": "故事短片与互动小品",
+      "label": "Interactive Storyboards",
+      "label_zh": "互动分镜绘本",
+      "examples_zh": "多幕连续转场绘本短片、可切换视角与时间线的叙事插画剧场"
+    },
+    {
+      "id": "A2D_D05L04",
+      "domain_id": "D05",
+      "domain": "Stories & Playgrounds",
+      "domain_zh": "故事短片与互动小品",
+      "label": "Music & Puzzle Mini-Apps",
+      "label_zh": "音画与益智小应用",
+      "examples_zh": "复古节拍步进器与频谱波形台、精修动效手感的 2D 轨道/齿轮/光学解谜微沙盒"
+    }
+  ]
+}

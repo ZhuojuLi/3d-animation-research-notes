@@ -1,6 +1,6 @@
 # 3D Agent 全链路统一参数与避坑规范（造数 · 转写 · 验收 · 27B 推理与提交）
 
-> 公开整理版 · 2026-11-25。保留成文时点的记录；计划、文献结果和本地实测请分别理解。 环境路径已泛化，未收录的附件已标注；发布范围见 [整理说明](../../PROVENANCE.md)。
+> 公开整理版 · 2026-11-27。保留成文时点的记录；计划、文献结果和本地实测请分别理解。 环境路径已泛化，未收录的附件已标注；发布范围见 [整理说明](../../PROVENANCE.md)。
 
 > 生效日期：2026-11-25  
 > 适用范围：`${WORKSPACE}/3d-animation-agent` 下全部 3D 动画（Three.js）、图生 3D、CadQuery 参数化建模与 2D 动画轨的教师造数、CoT 改写、视觉验收、本地 27B 评测与 ModelForge 提交。  
@@ -15,14 +15,14 @@
 | **1. 教师造数**（生成 / 修复 / 编辑 / 健康对照） | **3D 专用 DeepSeek `1017`**（`.env.deepseek`，直连 PhanRouter，不与 PPT/18790 混池） | **`high`**（拉满质量上限） | 单轮输出 **`32768`**（禁止 8192 截断大 HTML） | Three.js：生成 `≤36`、修/改/健康 `≤24`；<br>CadQuery：生成 `≤24`、修/改 `≤18`、健康 `≤12` | ① 全量走 `repos-logging-proxy` 抓包（保留真实 `system` 与完整工具 schema）；<br>② 沙盒工具源码与运行环境 **0 宿主机路径泄漏**（禁 `/mnt/disk1`、`${USER_HOME}`）；<br>③ 离线单文件内联 + 自检通过后立刻收尾，禁无限微调 |
 | **2. CoT 压缩 / 改写**（控制超长 `<think>`） | 现阶段 DeepSeek `1017`；后续高要求批次优先切 **27B 学生原生投影**（`scripts/student_project_cot.py`） | DeepSeek 改写开 **`low`**；27B 原生投影开 **`medium`** | 输出 **`16384`**（防思考+独白合计截断）；目标长度 One-Shot `3K–8K` tok、ReAct 仅压缩超长轮 | 单轮改写，保留 100% 原始代码与工具调用 | ① **严禁输出 Markdown `#` 标题或审阅报告腔**，必须纯文本第一人称内心独白；<br>② 改写后强制校验代码/工具字段 SHA-256 逐字节不变；<br>③ 放量前用 `scripts/audit_student_nll.py` 核查 `think_nll` 与 `>5` 极端尾巴 |
 | **3. 视觉验收 / `Eval v3` 盲评** | **3D 专用 DeepSeek `1017`**（`.env.deepseek`，`scripts/eval_3d_v3.py`） | **`low`**（客观稳定、减少无效发散） | **单图/单评 ≥ `12000`**；**多图/A·B 盲评对战 ≥ `12000`（若空正文自动升至 `16384` 重试）** | 单次严格 JSON 输出 + 原子断点续跑 | ① **严禁设 `2048` 或 `4096`**（推理型模型 `reasoning_tokens` 消耗 `max_tokens`，超预算会返回空 `content`）；<br>② **严禁将解析失败/空响应兜底归为 `WARN`**，必须显式标 `ERROR` / `judge_error` 并重试；<br>③ 100% `blind_id` 匿名 + 50/50 翻转位置 + 纯 WebGL 帧差防 HUD 假动 |
-| **4. 27B 学生本地评测** | 原版 `${MODEL_ROOT}/Qwen3.8-27B`（BF16）或 SFT 导出 HF 权重 | **统一主测 `medium`**（与 SFT 训练分布 100% 同构）；单轮极难/摸天花板可加测 **`xhigh`** | 上下文 **`131072`**（CadQuery）~ **`262144`**（Three.js 多轮）；自动压缩窗口留 32K–60K 余量；单轮输出 **`32768`**（绝不再用 8192） | 与教师采用同口径 `--max-turns` | ① **扫卡 → 多卡并起分片跑 → 推理结束立刻停删容器 → `nvidia-smi` 核验归零**（见 `qwen38-bf16-local/SKILL.md`）；<br>② 绝不把 64K / 8192 配置性截断误判为模型失败 |
-| **5. ModelForge 平台提交** | 导出 HF 权重目录 | 模板必须同时兼容 **`low` / `medium` / `xhigh` / `high(=xhigh)`** | 上下文 **`262144`**，`preserve_thinking=true`，TP4 | 平台要求请求失败率 **`< 1%`**（目标 `0%`） | ① **强制合入 `chat_template.compat.jinja`**（将 `high` 映射为原生 `xhigh` 别名，同步写入 `chat_template.jinja` 与 `tokenizer_config.json`）；<br>② 提交前跑满 150 项模板与 tokenizer 回归验证；<br>③ 留意非首条 `system` 位置限制（见 797557 case #287） |
+| **4. 27B 学生本地评测** | 原版 `${MODEL_ROOT}/Qwen3.8-27B`（BF16）或 SFT 导出 HF 权重 | **统一主测 `medium`**（与 SFT 训练分布 100% 同构）；单轮极难/摸天花板可加测 **`xhigh`** | 上下文 **`131072`**（CadQuery）~ **`262144`**（Three.js 多轮）；自动压缩窗口留 32K–60K 余量；单轮输出 **`65536`**（绝不再用 8192） | 与教师采用同口径 `--max-turns` | ① **严禁正式评测或长驻服务携带 `--enforce-eager`**（会关闭 CUDA Graph 与 `torch.compile`，使 A100 TP2 单流速度从 ~45 tok/s 暴跌至 ~13 tok/s，并配合 `--enable-prefix-caching --mamba-cache-mode align` 复用多轮前缀）；<br>② **扫卡 → 多卡并起分片跑 → 推理结束立刻停删容器 → `nvidia-smi` 核验归零**；<br>③ 绝不把 64K / 8192 配置性截断误判为模型失败 |
+| **5. ModelForge / 沙盒服务提交** | 导出 HF 权重目录 | 模板必须采用统一加固版 `chat_template.qwen38-compat.jinja`（本地附件未发布）（对齐 Aodi `servingfix`：除 `medium`/`low` 外任意 effort 全部映射 `xhigh`，绝不抛错） | 上下文 **`262144`**，`preserve_thinking=true`，TP2/TP4 | 平台要求请求失败率 **`< 1%`**（目标 `0%`） | ① **强制合入 `configs/chat_template.qwen38-compat.jinja`**（含非 `medium/low` 全映 `xhigh` + 中途 `role=system` 内联渲染不抛错，同步写入 `chat_template.jinja`）；<br>② 提交前跑满 OpenAI + Anthropic + 中途 `system` + `high/max/minimal` 全矩阵回归；<br>③ 彻底免去外置 adapter 转发层 |
 
 ---
 
 ## 二、`Qwen3.8-27B` 思考档位与 SFT 压缩 CoT 的底层耦合原理
 
-经直接核验原版 `${MODEL_ROOT}/Qwen3.8-27B/chat_template.jinja`（副本见 chat_template.original.jinja（本地附件未发布））与 `ready.jsonl` 实际入训样本，明确以下 4 条技术事实：
+经直接核验原版 `${MODEL_ROOT}/Qwen3.8-27B/chat_template.jinja`（副本见 `chat_template.original.jinja`（本地附件未发布））与 `ready.jsonl` 实际入训样本，明确以下 4 条技术事实：
 
 1. **没有独立权重或隐藏路由 token**：`Qwen3.8-27B` 的思考档位本质上只是模板在 `<|im_start|>system` 最前面拼接的一句纯英文指令：
    - **`medium`**：**不插入任何前缀（空字符串）**；

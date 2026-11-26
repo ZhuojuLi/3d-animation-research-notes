@@ -1,0 +1,216 @@
+{
+  "taxonomy_id": "Anim2D-Tree",
+  "version": "1.1",
+  "aligned_date": "2026-11-26",
+  "track": "2d_anim",
+  "architecture": "dual_layer_36_leaf_vocab_plus_12_phase1_core_families",
+  "source_strategy": "${WORKSPACE}/research/three-track-data-factory-strategy-20261126/README.md",
+  "delivery_contract": {
+    "needs_http_server": false,
+    "bundle_mode": "single_file_inline",
+    "allow_network": false,
+    "motion_type": "continuous_deterministic"
+  },
+  "renderer_split_target": {
+    "canvas2d": 0.70,
+    "svg": 0.30
+  },
+  "task_form_quota": {
+    "defect_repair": 0.35,
+    "build": 0.30,
+    "local_edit": 0.25,
+    "healthy": 0.10
+  },
+  "reference_image_policy": {
+    "allowed_for_style_ab": ["A2D_F09", "A2D_F10"],
+    "forbidden_as_numeric_ground_truth": ["A2D_F01", "A2D_F02", "A2D_F03", "A2D_F04", "A2D_F06", "A2D_F07", "A2D_F12"]
+  },
+  "cross_family_tags": [
+    "diagram_flow_transition",
+    "landscape_portrait_reflow",
+    "recolor_preserve_motion",
+    "retime_preserve_composition",
+    "periodic_seam_continuity",
+    "one_shot_terminal_state"
+  ],
+  "phase1_core_families": [
+    {
+      "family_id": "A2D_F01",
+      "name": "Pendulums & Oscillators",
+      "name_zh": "摆与振子",
+      "leaves": ["A01L01", "A01L02"],
+      "preferred_renderer": "canvas2d",
+      "min_independent_train_tasks": 8,
+      "min_distinct_configurations": 2,
+      "verifiable_focus": "Single pendulum and damped spring-mass first (double pendulum deferred); phase, rod length, and damping envelope"
+    },
+    {
+      "family_id": "A2D_F02",
+      "name": "Collisions & Elastic Bounce",
+      "name_zh": "碰撞与弹跳",
+      "leaves": ["A01L03", "A07L04"],
+      "preferred_renderer": "canvas2d",
+      "min_independent_train_tasks": 8,
+      "min_distinct_configurations": 2,
+      "verifiable_focus": "Two-body collision & squash-and-stretch recovery; exact impact instant and post-impact trajectory"
+    },
+    {
+      "family_id": "A2D_F03",
+      "name": "Planar Linkages & Gears",
+      "name_zh": "平面连杆与齿轮",
+      "leaves": ["A01L04", "A01L05"],
+      "preferred_renderer": "canvas2d",
+      "min_independent_train_tasks": 8,
+      "min_distinct_configurations": 2,
+      "verifiable_focus": "Joint closure, spin direction, and gear ratio (blocks background-only fake motion)"
+    },
+    {
+      "family_id": "A2D_F04",
+      "name": "Optics Rays & Waveforms",
+      "name_zh": "光路与波形",
+      "leaves": ["A02L01", "A02L03", "A02L05"],
+      "preferred_renderer": "canvas2d",
+      "min_independent_train_tasks": 8,
+      "min_distinct_configurations": 2,
+      "verifiable_focus": "Ray intersections and wave crest phases with explicit coordinate system & units in prompt"
+    },
+    {
+      "family_id": "A2D_F05",
+      "name": "Ripples & Bounded Particles",
+      "name_zh": "波纹与有界粒子",
+      "leaves": ["A03L01", "A03L02", "A03L03"],
+      "preferred_renderer": "canvas2d",
+      "min_independent_train_tasks": 8,
+      "min_distinct_configurations": 2,
+      "verifiable_focus": "Deterministic PRNG seed, exact out-of-order seek reproducibility at same t, explicit trail/clear contract"
+    },
+    {
+      "family_id": "A2D_F06",
+      "name": "Geometric Constructions & Proofs",
+      "name_zh": "几何构造与证明",
+      "leaves": ["A04L01", "A04L04"],
+      "preferred_renderer": "svg",
+      "min_independent_train_tasks": 8,
+      "min_distinct_configurations": 2,
+      "verifiable_focus": "Epicycles/circle tracing, similar triangles, auxiliary lines, and verifiable angles"
+    },
+    {
+      "family_id": "A2D_F07",
+      "name": "Algorithms & Data Narratives",
+      "name_zh": "算法与数据叙事",
+      "leaves": ["A04L03", "A08L01"],
+      "preferred_renderer": "svg",
+      "min_independent_train_tasks": 8,
+      "min_distinct_configurations": 2,
+      "verifiable_focus": "Array/path state synchronized with rendered bars/nodes, dynamic legend, and highlight callouts"
+    },
+    {
+      "family_id": "A2D_F08",
+      "name": "Horology & Rhythmic Symmetry",
+      "name_zh": "钟表与节律",
+      "leaves": ["A05L01", "A05L02", "A05L03"],
+      "preferred_renderer": "svg",
+      "min_independent_train_tasks": 8,
+      "min_distinct_configurations": 2,
+      "verifiable_focus": "Offline beat timing, tick-mark precision, symmetric morphing, and periodic seam position+velocity continuity"
+    },
+    {
+      "family_id": "A2D_F09",
+      "name": "Parallax Atmospheric Scenes",
+      "name_zh": "视差插画",
+      "leaves": ["A06L01", "A06L02", "A06L03", "A06L04"],
+      "preferred_renderer": "canvas2d",
+      "min_independent_train_tasks": 8,
+      "min_distinct_configurations": 2,
+      "verifiable_focus": "3-layer relative scroll rates, subject occlusion order, camera continuity (eligible for style reference-image A/B)"
+    },
+    {
+      "family_id": "A2D_F10",
+      "name": "Vector Growth & Brand Kinetic Typography",
+      "name_zh": "矢量生长与标识动效",
+      "leaves": ["A07L02"],
+      "supplementary_items": ["logo_stroke_reveal", "title_lower_third_entrances"],
+      "preferred_renderer": "svg",
+      "min_independent_train_tasks": 8,
+      "min_distinct_configurations": 2,
+      "verifiable_focus": "SVG home turf: path stroke-dashoffset length, letter spacing, viewBox non-clipping, one-shot terminal state"
+    },
+    {
+      "family_id": "A2D_F11",
+      "name": "UI State Transitions",
+      "name_zh": "UI 状态过渡",
+      "leaves": ["A07L03"],
+      "supplementary_items": ["button_feedback", "loading_to_success_error", "card_expand_collapse"],
+      "preferred_renderer": "svg",
+      "min_independent_train_tasks": 8,
+      "min_distinct_configurations": 2,
+      "verifiable_focus": "Trigger responsiveness, clean pause freeze, and deterministic recovery after interruption"
+    },
+    {
+      "family_id": "A2D_F12",
+      "name": "Interactive Explainers",
+      "name_zh": "交互教学",
+      "leaves": ["A08L03", "A08L04"],
+      "preferred_renderer": "canvas2d",
+      "min_independent_train_tasks": 8,
+      "min_distinct_configurations": 2,
+      "verifiable_focus": "Analytic orbits or single-parameter physical controls tested at fixed parameter-change instants"
+    }
+  ],
+  "phase2_demoted_leaves": [
+    {"id": "A02L02", "reason": "Grating interference deferred; start with 3-ray prism dispersion"},
+    {"id": "A02L04", "reason": "Complex EM field lines deferred; start with single charged particle in uniform field"},
+    {"id": "A03L04", "reason": "Merged into A2D_F09 parallax sky backgrounds"},
+    {"id": "A03L05", "reason": "Large boid flocks deferred; start with 3-agent analytic follow paths"},
+    {"id": "A04L02", "reason": "Deep fractals deferred to bounded finite-depth recursion"},
+    {"id": "A04L05", "reason": "Step-integrated cellular automata easily break random seek; use precomputed bounded grid states"},
+    {"id": "A05L04", "reason": "Complex optical illusions deferred"},
+    {"id": "A07L01", "reason": "Multi-bone walk cycles deferred to 2-segment limb foot-contact check"},
+    {"id": "A08L02", "reason": "Full circuit/thermal solvers deferred to table-driven or numerically validated models"}
+  ],
+  "leaves": [
+    {"id": "A01L01", "domain": "Mechanics & Linkages", "domain_zh": "经典力学与机械连杆", "label": "Pendulums & Newton's Cradle", "label_zh": "单摆/双摆/牛顿摆", "phase": 1, "family_id": "A2D_F01"},
+    {"id": "A01L02", "domain": "Mechanics & Linkages", "domain_zh": "经典力学与机械连杆", "label": "Spring-Mass & Damped Resonance", "label_zh": "弹簧振子与阻尼共振", "phase": 1, "family_id": "A2D_F01"},
+    {"id": "A01L03", "domain": "Mechanics & Linkages", "domain_zh": "经典力学与机械连杆", "label": "Elastic Collisions & Dominoes", "label_zh": "弹性碰撞/台球/多米诺", "phase": 1, "family_id": "A2D_F02"},
+    {"id": "A01L04", "domain": "Mechanics & Linkages", "domain_zh": "经典力学与机械连杆", "label": "Four-Bar Linkage, Crank-Slider & Cam", "label_zh": "四杆机构/曲柄滑块/凸轮", "phase": 1, "family_id": "A2D_F03"},
+    {"id": "A01L05", "domain": "Mechanics & Linkages", "domain_zh": "经典力学与机械连杆", "label": "Planar Meshing Gears & Pulleys", "label_zh": "平面啮合齿轮/滑轮组", "phase": 1, "family_id": "A2D_F03"},
+
+    {"id": "A02L01", "domain": "Optics, Waves & EM", "domain_zh": "光学、波动与电磁场", "label": "Refraction, Reflection & Lens Rays", "label_zh": "折射/反射/透镜成像光路", "phase": 1, "family_id": "A2D_F04"},
+    {"id": "A02L02", "domain": "Optics, Waves & EM", "domain_zh": "光学、波动与电磁场", "label": "Prism Dispersion & Grating Interference", "label_zh": "棱镜色散与光栅干涉", "phase": 2, "family_id": null},
+    {"id": "A02L03", "domain": "Optics, Waves & EM", "domain_zh": "光学、波动与电磁场", "label": "Standing/Traveling Waves & Doppler", "label_zh": "驻波/行波叠加与多普勒", "phase": 1, "family_id": "A2D_F04"},
+    {"id": "A02L04", "domain": "Optics, Waves & EM", "domain_zh": "光学、波动与电磁场", "label": "Electric/Magnetic Field Lines & Charge", "label_zh": "电场/磁场力线与带电粒子偏转", "phase": 2, "family_id": null},
+    {"id": "A02L05", "domain": "Optics, Waves & EM", "domain_zh": "光学、波动与电磁场", "label": "Acoustic Resonance & Lissajous Curves", "label_zh": "声波共振/李萨如图形", "phase": 1, "family_id": "A2D_F04"},
+
+    {"id": "A03L01", "domain": "Fluids, Particles & Nature", "domain_zh": "流体、粒子与气象自然", "label": "Water Ripples & Wave Diffusion", "label_zh": "水面涟漪与波场扩散", "phase": 1, "family_id": "A2D_F05"},
+    {"id": "A03L02", "domain": "Fluids, Particles & Nature", "domain_zh": "流体、粒子与气象自然", "label": "Deterministic Smoke, Flame & Fountain", "label_zh": "烟雾/火焰/喷泉确定性粒子", "phase": 1, "family_id": "A2D_F05"},
+    {"id": "A03L03", "domain": "Fluids, Particles & Nature", "domain_zh": "流体、粒子与气象自然", "label": "Rain, Snow & Wind-Swaying Foliage", "label_zh": "雨滴/落雪/风吹草木摆动", "phase": 1, "family_id": "A2D_F05"},
+    {"id": "A03L04", "domain": "Fluids, Particles & Nature", "domain_zh": "流体、粒子与气象自然", "label": "Starfield, Aurora & Drifting Clouds", "label_zh": "星空/极光/流星与云层流动", "phase": 2, "family_id": "A2D_F09"},
+    {"id": "A03L05", "domain": "Fluids, Particles & Nature", "domain_zh": "流体、粒子与气象自然", "label": "Flocking Fish, Birds & Fireflies", "label_zh": "生态群体（鱼群/鸟群/萤火虫）", "phase": 2, "family_id": null},
+
+    {"id": "A04L01", "domain": "Math & Algorithms", "domain_zh": "数学几何与算法可视化", "label": "Fourier Epicycles & Spirograph", "label_zh": "傅里叶级数/圆周旋轮线绘图", "phase": 1, "family_id": "A2D_F06"},
+    {"id": "A04L02", "domain": "Math & Algorithms", "domain_zh": "数学几何与算法可视化", "label": "Fractals & Koch Growth", "label_zh": "分形树/科赫雪花/曼德勃罗缩放", "phase": 2, "family_id": null},
+    {"id": "A04L03", "domain": "Math & Algorithms", "domain_zh": "数学几何与算法可视化", "label": "Sorting & Pathfinding (A*/BFS) Steps", "label_zh": "排序/寻路（A*/BFS）步进动画", "phase": 1, "family_id": "A2D_F07"},
+    {"id": "A04L04", "domain": "Math & Algorithms", "domain_zh": "数学几何与算法可视化", "label": "Dynamic Geometric Theorem Proofs", "label_zh": "几何定理动态证明（勾股/圆锥曲线）", "phase": 1, "family_id": "A2D_F06"},
+    {"id": "A04L05", "domain": "Math & Algorithms", "domain_zh": "数学几何与算法可视化", "label": "Cellular Automata & Game of Life", "label_zh": "细胞自动机/生命游戏周期演化", "phase": 2, "family_id": null},
+
+    {"id": "A05L01", "domain": "Horology & Kinetic Art", "domain_zh": "精密钟表与几何韵律", "label": "Mechanical Dial & Moonphase Clock", "label_zh": "机械计时表盘/月相表", "phase": 1, "family_id": "A2D_F08"},
+    {"id": "A05L02", "domain": "Horology & Kinetic Art", "domain_zh": "精密钟表与几何韵律", "label": "Metronome & Visual Rhythm", "label_zh": "节拍器与视觉音乐律动", "phase": 1, "family_id": "A2D_F08"},
+    {"id": "A05L03", "domain": "Horology & Kinetic Art", "domain_zh": "精密钟表与几何韵律", "label": "Kaleidoscope & Symmetric Morph", "label_zh": "万花筒/对称几何形态渐变", "phase": 1, "family_id": "A2D_F08"},
+    {"id": "A05L04", "domain": "Horology & Kinetic Art", "domain_zh": "精密钟表与几何韵律", "label": "Optical Illusion & Mobius Loops", "label_zh": "极简几何莫比乌斯/视错觉循环", "phase": 2, "family_id": null},
+
+    {"id": "A06L01", "domain": "Parallax & Atmospheric Scenes", "domain_zh": "视差插画与光影场景", "label": "Coastal Lighthouse Beam & Waves", "label_zh": "海滨灯塔扫光与海浪视差", "phase": 1, "family_id": "A2D_F09"},
+    {"id": "A06L02", "domain": "Parallax & Atmospheric Scenes", "domain_zh": "视差插画与光影场景", "label": "Neon Rainy City Street & Traffic", "label_zh": "城市夜景/霓虹雨街与车流", "phase": 1, "family_id": "A2D_F09"},
+    {"id": "A06L03", "domain": "Parallax & Atmospheric Scenes", "domain_zh": "视差插画与光影场景", "label": "Sunrise/Sunset Clouds & Lanterns", "label_zh": "日出日落/天光云影与灯笼飘浮", "phase": 1, "family_id": "A2D_F09"},
+    {"id": "A06L04", "domain": "Parallax & Atmospheric Scenes", "domain_zh": "视差插画与光影场景", "label": "Scrolling Train & Layered Mountains", "label_zh": "列车穿行/多层次山林滚动画卷", "phase": 1, "family_id": "A2D_F09"},
+
+    {"id": "A07L01", "domain": "Vector Motion & Micro-UI", "domain_zh": "矢量角色与拟物微动效", "label": "2D Character Walk & Jump Cycle", "label_zh": "2D 简笔/几何角色行走与跳跃循环", "phase": 2, "family_id": null},
+    {"id": "A07L02", "domain": "Vector Motion & Micro-UI", "domain_zh": "矢量角色与拟物微动效", "label": "Vector Botanical Growth & Logo Reveal", "label_zh": "矢量植物生长/花朵绽放与标识描边", "phase": 1, "family_id": "A2D_F10"},
+    {"id": "A07L03", "domain": "Vector Motion & Micro-UI", "domain_zh": "矢量角色与拟物微动效", "label": "Mechanical Toggle, Gauge & UI State", "label_zh": "拟物机械开关/仪表指针/UI 状态过渡", "phase": 1, "family_id": "A2D_F11"},
+    {"id": "A07L04", "domain": "Vector Motion & Micro-UI", "domain_zh": "矢量角色与拟物微动效", "label": "Squash & Stretch Elastic Character", "label_zh": "弹性形变弹跳角色/图标", "phase": 1, "family_id": "A2D_F02"},
+
+    {"id": "A08L01", "domain": "Interactive Explainers & Data", "domain_zh": "交互式科普与动态图表", "label": "Racing Bar & Timeline Line Chart", "label_zh": "动态排序柱状图/时间轴折线演进", "phase": 1, "family_id": "A2D_F07"},
+    {"id": "A08L02", "domain": "Interactive Explainers & Data", "domain_zh": "交互式科普与动态图表", "label": "Circuit, Water Flow & Heat Transfer", "label_zh": "电路/水流/热传导实时模拟图", "phase": 2, "family_id": null},
+    {"id": "A08L03", "domain": "Interactive Explainers & Data", "domain_zh": "交互式科普与动态图表", "label": "Planetary Orbits, Eclipses & Tides", "label_zh": "天体公转/日食月食/潮汐演示", "phase": 1, "family_id": "A2D_F12"},
+    {"id": "A08L04", "domain": "Interactive Explainers & Data", "domain_zh": "交互式科普与动态图表", "label": "Parameter-Slider Physics Workbench", "label_zh": "交互参数滑块联动物理实验台", "phase": 1, "family_id": "A2D_F12"}
+  ]
+}

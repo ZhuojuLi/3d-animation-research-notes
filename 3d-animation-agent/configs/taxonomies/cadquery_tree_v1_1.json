@@ -1,0 +1,213 @@
+{
+  "taxonomy_id": "CadQuery-Tree",
+  "version": "1.1",
+  "aligned_date": "2026-11-26",
+  "track": "cad_print_cq",
+  "architecture": "dual_layer_36_leaf_vocab_plus_12_phase1_core_families",
+  "source_strategy": "${WORKSPACE}/research/three-track-data-factory-strategy-20261126/README.md",
+  "delivery_contract": {
+    "needs_http_server": false,
+    "bundle_mode": "parametric_source_plus_exports",
+    "allow_network": false,
+    "motion_type": "static_geometry"
+  },
+  "task_form_quota": {
+    "defect_repair": 0.40,
+    "parametric_edit": 0.30,
+    "build": 0.20,
+    "healthy": 0.10
+  },
+  "cross_family_tags": [
+    "dimension_drawing_adaptation",
+    "countersink_counterbore",
+    "mirror_left_right",
+    "thin_wall_clearance_variant",
+    "multi_plane_switch_xy_xz_yz",
+    "shell_or_pocket",
+    "fillet_or_chamfer",
+    "linear_or_polar_pattern",
+    "boolean_through_holes",
+    "two_part_clearance_fit"
+  ],
+  "p07_mandatory_prompt_clauses": [
+    "Explicit Z=0 base datum whenever bottom alignment is tested",
+    "Exact named assembly leaf part IDs matching verification checks",
+    "All secondary dimensions determining volume, hole axes, wall thickness, and clearance"
+  ],
+  "ood_benchmark": {
+    "name": "BenchCAD",
+    "frozen_count": 25,
+    "face_range": [15, 35],
+    "zero_training_overlap_by_family": true
+  },
+  "phase1_core_families": [
+    {
+      "family_id": "CAD_F01",
+      "name": "Brackets & Flange Mounts",
+      "name_zh": "支架与法兰座",
+      "leaves": ["C01L01", "C01L02", "C01L03"],
+      "min_independent_train_tasks": 8,
+      "min_distinct_configurations": 2,
+      "verifiable_focus": "Hole spacing, gusset/rib orientation, and unchanged non-target region during local hole edits"
+    },
+    {
+      "family_id": "CAD_F02",
+      "name": "Clamping Hangers & Pipe Clips",
+      "name_zh": "夹持挂架与管夹",
+      "leaves": ["C01L04", "C04L01"],
+      "min_independent_train_tasks": 8,
+      "min_distinct_configurations": 2,
+      "verifiable_focus": "Targeted fix for XZ/XY axial misalignment counterexamples; probe-verified channel axis"
+    },
+    {
+      "family_id": "CAD_F03",
+      "name": "Box Lids & Enclosure Interfaces",
+      "name_zh": "盒盖与壳体接口",
+      "leaves": ["C02L01", "C02L03", "C02L04"],
+      "min_independent_train_tasks": 8,
+      "min_distinct_configurations": 2,
+      "verifiable_focus": "Downward inner lip direction & depth, side port cutouts, alignment bosses, and mating clearance (elastic snap deferred to Phase 2)"
+    },
+    {
+      "family_id": "CAD_F04",
+      "name": "Vented Panels & Finned Heat Sinks",
+      "name_zh": "通风面板与翅片",
+      "leaves": ["C02L02", "C07L01", "C07L04"],
+      "min_independent_train_tasks": 8,
+      "min_distinct_configurations": 2,
+      "verifiable_focus": "Bounded pattern counts to avoid OCCT face explosion; through-slot continuity, wall thickness, and slot pitch"
+    },
+    {
+      "family_id": "CAD_F05",
+      "name": "Single Wheels, Pulleys & Hubs",
+      "name_zh": "单轮与轮毂",
+      "leaves": ["C03L01", "C03L03", "C04L03"],
+      "min_independent_train_tasks": 8,
+      "min_distinct_configurations": 2,
+      "verifiable_focus": "Hub, keyway bore, rim, and sparse grip ribs (true involute teeth, sprockets, and fine knurling deferred)"
+    },
+    {
+      "family_id": "CAD_F06",
+      "name": "Small Hardware & Replacement Parts",
+      "name_zh": "紧固小件与维修替换件",
+      "leaves": ["C04L05"],
+      "supplementary_items": ["bushings", "shaft_sleeves", "replacement_knobs_and_handles"],
+      "min_independent_train_tasks": 8,
+      "min_distinct_configurations": 2,
+      "verifiable_focus": "Exact interface adaptation from given mating dimensions"
+    },
+    {
+      "family_id": "CAD_F07",
+      "name": "Linear Rails & End Stops",
+      "name_zh": "导轨与止挡",
+      "leaves": ["C05L01", "C05L02"],
+      "min_independent_train_tasks": 8,
+      "min_distinct_configurations": 2,
+      "verifiable_focus": "Cross-section mating clearance, stop block placement, and stroke sampling"
+    },
+    {
+      "family_id": "CAD_F08",
+      "name": "Drilling & Alignment Jigs",
+      "name_zh": "钻孔治具",
+      "leaves": ["C05L03", "C05L04"],
+      "min_independent_train_tasks": 8,
+      "min_distinct_configurations": 2,
+      "verifiable_focus": "Hole-pattern diagram and datum face adherence, guide bushing axis, and preserved non-target faces"
+    },
+    {
+      "family_id": "CAD_F09",
+      "name": "Flanges & Straight Adapters",
+      "name_zh": "法兰与直通转接",
+      "leaves": ["C06L01", "C06L02"],
+      "supplementary_items": ["bolt_pattern_adapter_plates", "stepped_diameter_couplers"],
+      "min_independent_train_tasks": 8,
+      "min_distinct_configurations": 2,
+      "verifiable_focus": "Flange thickness, bolt-circle symmetry, and continuous bore passage"
+    },
+    {
+      "family_id": "CAD_F10",
+      "name": "Organizers & Tool Racks",
+      "name_zh": "收纳盒与工具插架",
+      "leaves": ["C08L01", "C08L02"],
+      "min_independent_train_tasks": 8,
+      "min_distinct_configurations": 2,
+      "verifiable_focus": "Solid divider continuity and blind-slot pocket depths"
+    },
+    {
+      "family_id": "CAD_F11",
+      "name": "Desk Stands & Angled Consoles",
+      "name_zh": "桌面底座与倾角外壳",
+      "leaves": ["C08L03", "C02L05"],
+      "min_independent_train_tasks": 8,
+      "min_distinct_configurations": 2,
+      "verifiable_focus": "Digital stable support footprint, device clearance envelope, and cable-exit direction"
+    },
+    {
+      "family_id": "CAD_F12",
+      "name": "Spools & Cable Management",
+      "name_zh": "线轴与理线件",
+      "leaves": ["C08L04"],
+      "supplementary_items": ["cable_pass_through_channels", "desk_edge_wire_guides"],
+      "min_independent_train_tasks": 8,
+      "min_distinct_configurations": 2,
+      "verifiable_focus": "Probe-verified continuous wire channel and flange retention geometry"
+    }
+  ],
+  "phase2_demoted_leaves": [
+    {"id": "C01L05", "reason": "Start from fixed-angle adapters before adjustable mechanisms"},
+    {"id": "C03L02", "reason": "Rack-and-pinion meshing: geometric readback does not prove non-interfering kinematics"},
+    {"id": "C03L04", "reason": "Complex cam/follower profiles deferred; start with eccentric disks"},
+    {"id": "C03L05", "reason": "Multi-axis universal joint yokes deferred to single-yoke precursors"},
+    {"id": "C04L02", "reason": "Cantilever snap-fit geometry only; no elasticity/fatigue claims"},
+    {"id": "C04L04", "reason": "Multi-part print-in-place hinges deferred to single-knuckle precursors"},
+    {"id": "C06L03", "reason": "Sweep elbows prone to OCCT tangent/self-intersection; start with intersecting-bore T-blocks"},
+    {"id": "C06L04", "reason": "Complex aerodynamic nozzles deferred to revolved funnels"},
+    {"id": "C07L02", "reason": "Dense pin-fin arrays cause OCCT face explosion"},
+    {"id": "C07L03", "reason": "Curved fan shrouds deferred to straight-wall adapters"}
+  ],
+  "leaves": [
+    {"id": "C01L01", "domain": "Brackets & Mounts", "domain_zh": "支架与安装固定件", "label": "L/U/Z Angle Brackets", "label_zh": "L/U/Z 型角码支架", "phase": 1, "family_id": "CAD_F01"},
+    {"id": "C01L02", "domain": "Brackets & Mounts", "domain_zh": "支架与安装固定件", "label": "Gusseted Cantilever Brackets", "label_zh": "带加强筋悬臂托架", "phase": 1, "family_id": "CAD_F01"},
+    {"id": "C01L03", "domain": "Brackets & Mounts", "domain_zh": "支架与安装固定件", "label": "Motor & Sensor Flange Mounts", "label_zh": "电机/传感器法兰安装座", "phase": 1, "family_id": "CAD_F01"},
+    {"id": "C01L04", "domain": "Brackets & Mounts", "domain_zh": "支架与安装固定件", "label": "Wall & Desk Clamping Hangers", "label_zh": "墙面/桌面夹持挂架", "phase": 1, "family_id": "CAD_F02"},
+    {"id": "C01L05", "domain": "Brackets & Mounts", "domain_zh": "支架与安装固定件", "label": "Adjustable Multi-Angle Brackets", "label_zh": "多角度可调转接支架", "phase": 2, "family_id": null},
+
+    {"id": "C02L01", "domain": "Enclosures & Housings", "domain_zh": "外壳与箱体组件", "label": "Shelled Base Box & Mating Lid", "label_zh": "抽壳底盒+配合上盖", "phase": 1, "family_id": "CAD_F03"},
+    {"id": "C02L02", "domain": "Enclosures & Housings", "domain_zh": "外壳与箱体组件", "label": "Vented & Louvered Electronics Box", "label_zh": "带散热格栅/百叶电子外壳", "phase": 1, "family_id": "CAD_F04"},
+    {"id": "C02L03", "domain": "Enclosures & Housings", "domain_zh": "外壳与箱体组件", "label": "Side-Ported Interface Enclosure", "label_zh": "带侧壁开孔/接口面板盒", "phase": 1, "family_id": "CAD_F03"},
+    {"id": "C02L04", "domain": "Enclosures & Housings", "domain_zh": "外壳与箱体组件", "label": "Split Housing with Bosses & Pins", "label_zh": "螺丝柱/定位销双半壳", "phase": 1, "family_id": "CAD_F03"},
+    {"id": "C02L05", "domain": "Enclosures & Housings", "domain_zh": "外壳与箱体组件", "label": "Angled Instrument Console Housing", "label_zh": "仪表/屏幕倾斜操作台外壳", "phase": 1, "family_id": "CAD_F11"},
+
+    {"id": "C03L01", "domain": "Mechanical Transmission", "domain_zh": "传动与运动机械件", "label": "Spur Gear & Keyed Hub Blank", "label_zh": "直齿轮/带毂键槽轮", "phase": 1, "family_id": "CAD_F05"},
+    {"id": "C03L02", "domain": "Mechanical Transmission", "domain_zh": "传动与运动机械件", "label": "Rack & Pinion Pair", "label_zh": "齿条与齿轮配合", "phase": 2, "family_id": null},
+    {"id": "C03L03", "domain": "Mechanical Transmission", "domain_zh": "传动与运动机械件", "label": "Flanged Pulley & Hub", "label_zh": "带轮与法兰轮毂", "phase": 1, "family_id": "CAD_F05"},
+    {"id": "C03L04", "domain": "Mechanical Transmission", "domain_zh": "传动与运动机械件", "label": "Cam, Eccentric & Follower", "label_zh": "凸轮/偏心轮与拨杆", "phase": 2, "family_id": null},
+    {"id": "C03L05", "domain": "Mechanical Transmission", "domain_zh": "传动与运动机械件", "label": "Shaft Coupler & U-Joint Yoke", "label_zh": "联轴器/万向节叉件", "phase": 2, "family_id": null},
+
+    {"id": "C04L01", "domain": "Fasteners, Clips & Hinges", "domain_zh": "紧固、卡扣与铰链", "label": "Cable & Pipe Saddle Clip", "label_zh": "线缆/管夹卡鞍", "phase": 1, "family_id": "CAD_F02"},
+    {"id": "C04L02", "domain": "Fasteners, Clips & Hinges", "domain_zh": "紧固、卡扣与铰链", "label": "Cantilever Snap Latch", "label_zh": "弹性悬臂卡扣/锁舌", "phase": 2, "family_id": null},
+    {"id": "C04L03", "domain": "Fasteners, Clips & Hinges", "domain_zh": "紧固、卡扣与铰链", "label": "Ribbed Control Knob & Handwheel", "label_zh": "筋条旋钮/手轮", "phase": 1, "family_id": "CAD_F05"},
+    {"id": "C04L04", "domain": "Fasteners, Clips & Hinges", "domain_zh": "紧固、卡扣与铰链", "label": "Two-Part Pin Hinge", "label_zh": "两段式销轴铰链", "phase": 2, "family_id": null},
+    {"id": "C04L05", "domain": "Fasteners, Clips & Hinges", "domain_zh": "紧固、卡扣与铰链", "label": "T-Slot Nut, Spacer & Bushing", "label_zh": "T 型槽螺母/垫片/隔套/替换件", "phase": 1, "family_id": "CAD_F06"},
+
+    {"id": "C05L01", "domain": "Rails, Sliders & Jigs", "domain_zh": "导轨、滑块与定位夹具", "label": "Dovetail Rail & Slider", "label_zh": "燕尾槽导轨+滑块", "phase": 1, "family_id": "CAD_F07"},
+    {"id": "C05L02", "domain": "Rails, Sliders & Jigs", "domain_zh": "导轨、滑块与定位夹具", "label": "Slotted Track & End Stop", "label_zh": "线性槽轨+限位止挡", "phase": 1, "family_id": "CAD_F07"},
+    {"id": "C05L03", "domain": "Rails, Sliders & Jigs", "domain_zh": "导轨、滑块与定位夹具", "label": "V-Block & Drilling Guide Jig", "label_zh": "V 型块/钻孔定位治具", "phase": 1, "family_id": "CAD_F08"},
+    {"id": "C05L04", "domain": "Rails, Sliders & Jigs", "domain_zh": "导轨、滑块与定位夹具", "label": "Stepped Clamp & Centering Fixture", "label_zh": "阶梯压板与对中夹具", "phase": 1, "family_id": "CAD_F08"},
+
+    {"id": "C06L01", "domain": "Pipes, Flanges & Adapters", "domain_zh": "管路、法兰与转接头", "label": "Multi-Bolt Circular & Square Flange", "label_zh": "多孔圆形/方形法兰盘", "phase": 1, "family_id": "CAD_F09"},
+    {"id": "C06L02", "domain": "Pipes, Flanges & Adapters", "domain_zh": "管路、法兰与转接头", "label": "Stepped Straight Reducer Coupler", "label_zh": "变径直通/阶梯转接管", "phase": 1, "family_id": "CAD_F09"},
+    {"id": "C06L03", "domain": "Pipes, Flanges & Adapters", "domain_zh": "管路、法兰与转接头", "label": "Hollow L/T Sweep Elbow", "label_zh": "L/T 型中空弯头/三通", "phase": 2, "family_id": null},
+    {"id": "C06L04", "domain": "Pipes, Flanges & Adapters", "domain_zh": "管路、法兰与转接头", "label": "Funnel, Nozzle & Duct", "label_zh": "漏斗/喷嘴/导流罩", "phase": 2, "family_id": null},
+
+    {"id": "C07L01", "domain": "Thermal & Vented Parts", "domain_zh": "热管理与多孔结构", "label": "Parallel Fin Heat Sink with Ears", "label_zh": "平行翅片散热器+安装耳", "phase": 1, "family_id": "CAD_F04"},
+    {"id": "C07L02", "domain": "Thermal & Vented Parts", "domain_zh": "热管理与多孔结构", "label": "Pin-Fin Array Base", "label_zh": "针翅/阵列柱散热底座", "phase": 2, "family_id": null},
+    {"id": "C07L03", "domain": "Thermal & Vented Parts", "domain_zh": "热管理与多孔结构", "label": "Curved Fan Shroud Adapter", "label_zh": "风扇导风罩/转接框", "phase": 2, "family_id": null},
+    {"id": "C07L04", "domain": "Thermal & Vented Parts", "domain_zh": "热管理与多孔结构", "label": "Perforated Filter Plate & Grid", "label_zh": "多孔滤波板/网格支架", "phase": 1, "family_id": "CAD_F04"},
+
+    {"id": "C08L01", "domain": "Functional Organizers", "domain_zh": "功能收纳与桌面实用件", "label": "Compartmented Parts Tray", "label_zh": "多格分层零件盒/托盘", "phase": 1, "family_id": "CAD_F10"},
+    {"id": "C08L02", "domain": "Functional Organizers", "domain_zh": "功能收纳与桌面实用件", "label": "Multi-Slot Tool & Bit Rack", "label_zh": "工具/电池/批头多孔插架", "phase": 1, "family_id": "CAD_F10"},
+    {"id": "C08L03", "domain": "Functional Organizers", "domain_zh": "功能收纳与桌面实用件", "label": "Angled Phone & Tablet Desk Stand", "label_zh": "手机/平板/设备倾角底座", "phase": 1, "family_id": "CAD_F11"},
+    {"id": "C08L04", "domain": "Functional Organizers", "domain_zh": "功能收纳与桌面实用件", "label": "Cable Spool & Wire Guide", "label_zh": "绕线盘/线轴与理线件", "phase": 1, "family_id": "CAD_F12"}
+  ]
+}

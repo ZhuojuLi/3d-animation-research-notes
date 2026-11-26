@@ -1,6 +1,667 @@
 {
-  "date": "2026-11-25",
+  "date": "2026-11-27",
   "documents": [
+    {
+      "path": "3d-animation-agent/configs/taxonomies/anim2d_tree_v1_1.json",
+      "source": "3d-animation-agent/configs/taxonomies/anim2d_tree_v1_1.json",
+      "source_kind": "taxonomy_config",
+      "title": "anim2d_tree_v1_1.json",
+      "source_sha256": "089d32605e689af621f9ff85cfc6d56a882746490f5ab0dfb980cb6d838349cf",
+      "published_sha256": "a4fb496babe6761ce2a0054ade31c97abd55a5f7155c244551700fa90300f2f9",
+      "edits": {
+        "local_path_placeholders": 1
+      }
+    },
+    {
+      "path": "3d-animation-agent/configs/taxonomies/anim2d_tree_v2_0.json",
+      "source": "3d-animation-agent/configs/taxonomies/anim2d_tree_v2_0.json",
+      "source_kind": "taxonomy_config",
+      "title": "anim2d_tree_v2_0.json",
+      "source_sha256": "c958829522dc5d89c851d57adceb0b9ebf9a150488ce92e35b4c83e777737f3f",
+      "published_sha256": "c958829522dc5d89c851d57adceb0b9ebf9a150488ce92e35b4c83e777737f3f",
+      "edits": {}
+    },
+    {
+      "path": "3d-animation-agent/configs/taxonomies/cadquery_tree_v1_1.json",
+      "source": "3d-animation-agent/configs/taxonomies/cadquery_tree_v1_1.json",
+      "source_kind": "taxonomy_config",
+      "title": "cadquery_tree_v1_1.json",
+      "source_sha256": "3fdd201876534cf2379507825fd925871686d9380db4428ae31f207863fd24a8",
+      "published_sha256": "f90fa8407ae04813d31ede12245970fd11ff52401553c36d31044d7264f3c25e",
+      "edits": {
+        "local_path_placeholders": 1
+      }
+    },
+    {
+      "path": "3d-animation-agent/configs/taxonomies/cadquery_tree_v2_0.json",
+      "source": "3d-animation-agent/configs/taxonomies/cadquery_tree_v2_0.json",
+      "source_kind": "taxonomy_config",
+      "title": "cadquery_tree_v2_0.json",
+      "source_sha256": "a4794f1475392b820aa379993166055f45ff0bf47afeebfccea74709e5f244bd",
+      "published_sha256": "a4794f1475392b820aa379993166055f45ff0bf47afeebfccea74709e5f244bd",
+      "edits": {}
+    },
+    {
+      "path": "3d-animation-agent/configs/taxonomies/contract_schema.json",
+      "source": "3d-animation-agent/configs/taxonomies/contract_schema.json",
+      "source_kind": "taxonomy_config",
+      "title": "contract_schema.json",
+      "source_sha256": "87eb34c6a5c0f17fe2a6c0a795cf723b80856a256b8d9090b608a3d0a2e83501",
+      "published_sha256": "401a7530400e96ba68da8a5fddd2a5bbca19021c004ff10d9c78284795491caa",
+      "edits": {
+        "local_path_placeholders": 1
+      }
+    },
+    {
+      "path": "3d-animation-agent/docs/DATA-PLAYBOOK.md",
+      "source": "3d-animation-agent/docs/DATA-PLAYBOOK.md",
+      "source_kind": "local_note",
+      "title": "3D Agent 造数总守则与 `Qwen3.8-27B` 能力边界手册（Data Playbook）",
+      "source_sha256": "399e66be29649bee0e8be517e2d6fa6440fa1d3785afd77c75375c75842e0d28",
+      "published_sha256": "5c8d821e70181664b32672630d69038a3e214d441e20772ef1c2e3ca77392545",
+      "edits": {
+        "unpublished_attachment_links": 1,
+        "local_path_placeholders": 3
+      }
+    },
+    {
+      "path": "3d-animation-agent/docs/STANDARD-PARAMS.md",
+      "source": "3d-animation-agent/docs/STANDARD-PARAMS.md",
+      "source_kind": "engineering_doc",
+      "title": "3D Agent 全链路统一参数与避坑规范（造数 · 转写 · 验收 · 27B 推理与提交）",
+      "source_sha256": "86d0cb25646a4daac8ce44550d2a10f63e83bbf4abb20a1ce496abe911eb865c",
+      "published_sha256": "1f5a052439f36024f4524e86db30eca3a278ed6dbbe2cba69a8a2b6366072807",
+      "edits": {
+        "local_path_placeholders": 4,
+        "unpublished_attachment_links": 2
+      }
+    },
+    {
+      "path": "3d-animation-agent/docs/THREE-TRACK-DELIVERABLE-SPEC.md",
+      "source": "3d-animation-agent/docs/THREE-TRACK-DELIVERABLE-SPEC.md",
+      "source_kind": "engineering_doc",
+      "title": "三轨顶级交付产物规格与高难长程造数指南（v2.0）",
+      "source_sha256": "3aeea71eb02a74f4344be3209a1c8a015ba5bad86574f85f34c0fabcdc48bb1d",
+      "published_sha256": "80f67237c975c34b8ad34f1ea18617db1836eefc871771bc0620e65307ea3a20",
+      "edits": {
+        "local_path_placeholders": 1
+      }
+    },
+    {
+      "path": "3d-animation-agent/docs/XHS-UNIFIED-SFT-STANDARD.md",
+      "source": "3d-animation-agent/docs/XHS-UNIFIED-SFT-STANDARD.md",
+      "source_kind": "engineering_doc",
+      "title": "XHS 对齐统一训练数据与上下文标准规范（3D 展示 · CAD 打印 · 2D 动画三轨共用）",
+      "source_sha256": "a5b4b16f87fdb83b285eb233e3f76838d17e4f9d28e246c9e1ab8fd9f17c4740",
+      "published_sha256": "47a795107387747e50e4eb5419ce1ffea2cd4b9c906898750426f534157328f9",
+      "edits": {
+        "local_path_placeholders": 2,
+        "unpublished_attachment_links": 2
+      }
+    },
+    {
+      "path": "3d-animation-agent/docs/architecture.md",
+      "source": "3d-animation-agent/docs/architecture.md",
+      "source_kind": "local_note",
+      "title": "初版结构与边界",
+      "source_sha256": "96968ea1b150affe316927bbf758010515fc2ee67409ccd049ab34f8451c2eff",
+      "published_sha256": "d7afa90db805904209c88233ceaac6d1e75f71947d2d0f573da89c3c0843e7ac",
+      "edits": {}
+    },
+    {
+      "path": "3d-animation-agent/docs/kimi-case-01-kinetic.md",
+      "source": "3d-animation-agent/docs/kimi-case-01-kinetic.md",
+      "source_kind": "local_note",
+      "title": "Kimi C1「轨道共振」8 秒动力雕塑案例拆解",
+      "source_sha256": "4684bc23f402cd012620ce846cb0999bcd545c665e281ca0a87fed5351505c99",
+      "published_sha256": "aab4eb38c7a2e31232fef79dc7ca49384c9b6b25d354c783c4dbcdf15c6de4ea",
+      "edits": {
+        "unpublished_attachment_links": 4
+      }
+    },
+    {
+      "path": "3d-animation-agent/docs/kimi-case-02-speaker.md",
+      "source": "3d-animation-agent/docs/kimi-case-02-speaker.md",
+      "source_kind": "local_note",
+      "title": "Kimi C2「MODUL 01」12 秒模块化音箱案例拆解",
+      "source_sha256": "ade02090358347279bc72e2508750958a6dcda74f19497f56713e1e153de565f",
+      "published_sha256": "0f37c8000e70fb691a93a5b36d65791d5e04af1243b2fe973e9facbd27a570b5",
+      "edits": {
+        "unpublished_attachment_links": 2
+      }
+    },
+    {
+      "path": "3d-animation-agent/docs/kimi-case-03-scroll.md",
+      "source": "3d-animation-agent/docs/kimi-case-03-scroll.md",
+      "source_kind": "local_note",
+      "title": "Kimi C3「远行星降」滚动叙事案例拆解",
+      "source_sha256": "50b5eb431cacacfe533120ad7c5c9e95fd6e76bc88aa27f46d74e1cc8424f2f0",
+      "published_sha256": "307f294f5bfce8e988047e8114851c2a47342e1555af606131e3f055db3ed41f",
+      "edits": {
+        "unpublished_attachment_links": 2
+      }
+    },
+    {
+      "path": "3d-animation-agent/docs/kimi-case-04-crystals.md",
+      "source": "3d-animation-agent/docs/kimi-case-04-crystals.md",
+      "source_kind": "local_note",
+      "title": "Kimi C4「晶潮」2,400 晶体群案例拆解",
+      "source_sha256": "4becc2818363bb981a84c675fbd27e450fc392130a0a885a68c5eb744f63a19b",
+      "published_sha256": "8d40142572bd9894212af6b187d544ca3701670209ed726dd14fb9564033deca",
+      "edits": {
+        "unpublished_attachment_links": 4
+      }
+    },
+    {
+      "path": "3d-animation-agent/docs/kimi-harness-probes.md",
+      "source": "3d-animation-agent/docs/kimi-harness-probes.md",
+      "source_kind": "local_note",
+      "title": "Kimi Harness 拆解与 3D Web Animation 探针",
+      "source_sha256": "cce4f60d9885ce10192519906bf57af3dedab6a7afa11657ee7db7aa696896b5",
+      "published_sha256": "68ccafb82a1438b2ed46f9716fca7f5ea440a16c0aa99ef09b15f0cdec1f82e7",
+      "edits": {
+        "unpublished_attachment_links": 7
+      }
+    },
+    {
+      "path": "3d-animation-agent/docs/kimi-reference.md",
+      "source": "3d-animation-agent/docs/kimi-reference.md",
+      "source_kind": "local_note",
+      "title": "Kimi 巴黎 1888 案例整理",
+      "source_sha256": "df900569279bcde089953bbc83330aa33da2b1d780ecba921878a6dfebf03baa",
+      "published_sha256": "c501ff64e806ee02e93ee3627ccf809b4216ce434f8c517e39d6a5e32fa13ade",
+      "edits": {}
+    },
+    {
+      "path": "3d-animation-agent/docs/plans/2026-11-21-overnight-case-collection.md",
+      "source": "3d-animation-agent/docs/plans/2026-11-21-overnight-case-collection.md",
+      "source_kind": "local_note",
+      "title": "夜间 12 题采集与双队列计划（草案）",
+      "source_sha256": "587fad7fb2d72cae475ee084bfd6ef9d8741d3c65fb07dce7a4343ea2ba839ca",
+      "published_sha256": "58dcf7d93a2fc2249de9a23b65bf57bf77a3778c00fa8d4c6d3dd076b1649be0",
+      "edits": {
+        "unpublished_attachment_links": 1
+      }
+    },
+    {
+      "path": "3d-animation-agent/docs/plans/2026-11-21-react-teacher-fast-start.md",
+      "source": "3d-animation-agent/docs/plans/2026-11-21-react-teacher-fast-start.md",
+      "source_kind": "local_note",
+      "title": "ReAct 教师数据快速启动决定（执行草案）",
+      "source_sha256": "f6b202816baafdef249b2f98320856bf6cc417b034618149c18f9752824120ca",
+      "published_sha256": "0da75ba37b71f1bad612b845c66b5ac167664bf76ac4e22d84ff4da8999678f5",
+      "edits": {}
+    },
+    {
+      "path": "3d-animation-agent/docs/plans/2026-11-21-sandbox-distillation-pilot.md",
+      "source": "3d-animation-agent/docs/plans/2026-11-21-sandbox-distillation-pilot.md",
+      "source_kind": "local_note",
+      "title": "Three.js 沙盒蒸馏首轮实验草案",
+      "source_sha256": "a541427b1a13d2c54f06db6d0d2b6768e2eaf8e175088e0ef3ce30f63775bf1b",
+      "published_sha256": "cfc053c2ff3d087a88e12987a336ecd95ffb2049b7e25eff6e3fb3903c7dba0d",
+      "edits": {
+        "unpublished_attachment_links": 1
+      }
+    },
+    {
+      "path": "3d-animation-agent/docs/plans/2026-11-21-simple-first-sft.md",
+      "source": "3d-animation-agent/docs/plans/2026-11-21-simple-first-sft.md",
+      "source_kind": "local_note",
+      "title": "朴素首版 SFT：万级代码数据 + Agent 轨迹增量计划（草案）",
+      "source_sha256": "c8058a7d1713773319364dad8158b9e8ec01cd3f3a59b91f61cf593c2fae2536",
+      "published_sha256": "724dc791fa33524825592746bab74a8a071a761b3554ee30da9b6a488e53e1e4",
+      "edits": {
+        "local_path_placeholders": 2
+      }
+    },
+    {
+      "path": "3d-animation-agent/docs/plans/2026-11-22-overnight-react-collection.md",
+      "source": "3d-animation-agent/docs/plans/2026-11-22-overnight-react-collection.md",
+      "source_kind": "local_note",
+      "title": "2026-11-22 通宵 ReAct 教师采集与验收计划",
+      "source_sha256": "d8f883568a8ffbc05531fe41e96614527700677cfcb85461731c8a5476499f83",
+      "published_sha256": "2d4d35289e86d258db6c521d39c67473dee6cd0a3b94c0070fe19ad8f5ec5696",
+      "edits": {}
+    },
+    {
+      "path": "3d-animation-agent/docs/plans/2026-11-22-scale-to-1000-react-trajectories.md",
+      "source": "3d-animation-agent/docs/plans/2026-11-22-scale-to-1000-react-trajectories.md",
+      "source_kind": "local_note",
+      "title": "千条级 ReAct 候选轨迹采集与数据组成（执行版）",
+      "source_sha256": "a3c0ae92bc21e0110a2615e641864fb54bccb7c12627c9f2f30eacd4ce416f9c",
+      "published_sha256": "60f264cc6f824ef362eb6eff5911e5830faa268b375a05306e6c12bd29834142",
+      "edits": {}
+    },
+    {
+      "path": "3d-animation-agent/docs/plans/2026-11-23-first-sft-evaluation-and-failure-clusters.md",
+      "source": "3d-animation-agent/docs/plans/2026-11-23-first-sft-evaluation-and-failure-clusters.md",
+      "source_kind": "local_note",
+      "title": "首版 27B 训练后怎么测，下一轮 Kimi 轨迹怎么选题",
+      "source_sha256": "d2e3cb33582e2d2b07a42ffa7bc0583b9594fcb03913e081316fa184160b0cdf",
+      "published_sha256": "bf8cf5c6667799a07ea56c315ffbbb9e7a12dc3849a226a59eb89849b7f97dad",
+      "edits": {
+        "unpublished_attachment_links": 21
+      }
+    },
+    {
+      "path": "3d-animation-agent/docs/plans/2026-11-24-line-c-new-devtest-spec.md",
+      "source": "3d-animation-agent/docs/plans/2026-11-24-line-c-new-devtest-spec.md",
+      "source_kind": "local_note",
+      "title": "C3：新 dev/test 题集规格（v1 已落地为 evals/devtest-v2）",
+      "source_sha256": "e0ec1af5fab81ba569e397a3432b19512e8d3e21630df4f73f31d04cc7a47b66",
+      "published_sha256": "cdfa274bd7ac9cbc76f45925d79b11f53dd1d38c05533a65047dbeaac1e123f6",
+      "edits": {}
+    },
+    {
+      "path": "3d-animation-agent/docs/plans/2026-11-24-next-sft-data-plan.md",
+      "source": "3d-animation-agent/docs/plans/2026-11-24-next-sft-data-plan.md",
+      "source_kind": "local_note",
+      "title": "下一轮 27B 训练的数据补充建议",
+      "source_sha256": "2463f0cf2f0caa6d312a6546d39e3797f562cf935e025877800ea7ea637c4d82",
+      "published_sha256": "49f31814f1bf704e48f1f25f7f38b33cab7c4cbeb30d861743e9501d64bbc72a",
+      "edits": {}
+    },
+    {
+      "path": "3d-animation-agent/docs/plans/2026-11-24-round2-27b-data-and-training-plan.md",
+      "source": "3d-animation-agent/docs/plans/2026-11-24-round2-27b-data-and-training-plan.md",
+      "source_kind": "local_note",
+      "title": "Round 2：27B Dense 3D 动画数据制造、消融训练与三轨准备方案",
+      "source_sha256": "71d860edf66be8271649c0afca9158b0cf0780a56a804173e7940bdea8b47ffa",
+      "published_sha256": "debc0465c09874f6d430349d59cdac9a32b5e1b00f66b56d42580c2b0bb26427",
+      "edits": {
+        "unpublished_attachment_links": 1,
+        "local_path_placeholders": 1
+      }
+    },
+    {
+      "path": "3d-animation-agent/docs/plans/2026-11-25-round3-big-picture-alignment-plan.md",
+      "source": "3d-animation-agent/docs/plans/2026-11-25-round3-big-picture-alignment-plan.md",
+      "source_kind": "engineering_doc",
+      "title": "3D Agent 全链路对齐改造与 Round 3 演进总计划（Big-Picture Plan）",
+      "source_sha256": "f8f97440c3f0fd0b904e3a8e12b5858d488f77724a680103b7d8285b2a3f9b65",
+      "published_sha256": "a3aba9e638e7193238476152f792fb3cba0e963dd271235f5b77d0d3c852c756",
+      "edits": {
+        "local_path_placeholders": 3,
+        "unpublished_attachment_links": 6
+      }
+    },
+    {
+      "path": "3d-animation-agent/reports/aodi-one-shot-sft-review-20261121.md",
+      "source": "3d-animation-agent/reports/aodi-one-shot-sft-review-20261121.md",
+      "source_kind": "local_note",
+      "title": "Aodi 万级 one-shot 27B SFT 效果复核",
+      "source_sha256": "3fd8f5524006b6f3aeb122539209c216914ee235ddc45c99e25d2e3d72418b10",
+      "published_sha256": "aa9b29c60eefa1d07deefba36c0072302a538d842af11c545a6b16483443ef88",
+      "edits": {
+        "local_path_placeholders": 6
+      }
+    },
+    {
+      "path": "3d-animation-agent/reports/aodi-one-shot-vs-react-final-20261122.md",
+      "source": "3d-animation-agent/reports/aodi-one-shot-vs-react-final-20261122.md",
+      "source_kind": "local_note",
+      "title": "Aodi one-shot 与 Kimi ReAct 对照报告",
+      "source_sha256": "00b001ed346ff6eaa18a685b5fab5dbc51ca6a9050600451a8baa1981e4b350c",
+      "published_sha256": "ff2c12f44d0b9f6520fb20d1e874c528cd79befa2e99ecd4d29f056833147117",
+      "edits": {}
+    },
+    {
+      "path": "3d-animation-agent/reports/cad-print-seed-baseline-20261125-001/REPORT.md",
+      "source": "3d-animation-agent/reports/cad-print-seed-baseline-20261125-001/REPORT.md",
+      "source_kind": "local_note",
+      "title": "CadQuery 参数化 / 3D 打印建模轨 Phase 0 摸底报告（`evals/print-seed-v1`）",
+      "source_sha256": "1a445eae016d709befded21a7656edd8286ec2956ed4c4aac0d1fd06aa608138",
+      "published_sha256": "6a01ef38d78a5d31be93d7ea70bd26f497884d5a14df1bb675d456728843d33f",
+      "edits": {
+        "unpublished_attachment_links": 9,
+        "local_path_placeholders": 5,
+        "internal_infrastructure": 2
+      }
+    },
+    {
+      "path": "3d-animation-agent/reports/deepseek-teacher-canary-20261124-001/REPORT.md",
+      "source": "3d-animation-agent/reports/deepseek-teacher-canary-20261124-001/REPORT.md",
+      "source_kind": "local_note",
+      "title": "DeepSeek 接入沙盒 Claude Code 教师链路实测报告",
+      "source_sha256": "b7cd77b927d53bd324d25605172da94b54c7a513a0052ff76751693f5cfac99a",
+      "published_sha256": "2563799753f801db79999e0b45976a90e236a10fa0935c3688fc11fad54cffe0",
+      "edits": {
+        "unpublished_attachment_links": 6,
+        "local_path_placeholders": 3
+      }
+    },
+    {
+      "path": "3d-animation-agent/reports/eval-v3-devtest-v2-20261125-001/REPORT.md",
+      "source": "3d-animation-agent/reports/eval-v3-devtest-v2-20261125-001/REPORT.md",
+      "source_kind": "local_note",
+      "title": "3D 动画评测体系升级（Eval v3）与历史基线全量重评报告",
+      "source_sha256": "b9fc9f01cba6564e25c984b7941955ab9b4b3117674b35be76320b33cb40dca0",
+      "published_sha256": "289daeee618b970fa681cd207f437a5db1ab8bde33b21173923d7c9ab9ebd473",
+      "edits": {
+        "unpublished_attachment_links": 11,
+        "local_path_placeholders": 3
+      }
+    },
+    {
+      "path": "3d-animation-agent/reports/first-sft-20261123-001/ISSUES.md",
+      "source": "3d-animation-agent/reports/first-sft-20261123-001/ISSUES.md",
+      "source_kind": "local_note",
+      "title": "首版 SFT 运行问题记录",
+      "source_sha256": "4bf1b59c127ae7687806c471f8c2dcd93787e3f1886c29b89093b85668e00dbc",
+      "published_sha256": "b584515596e8be78d9663b177514abbc4acd002b62cd041d28a73766880c85e3",
+      "edits": {
+        "unpublished_attachment_links": 3,
+        "local_path_placeholders": 1
+      }
+    },
+    {
+      "path": "3d-animation-agent/reports/first-sft-20261123-001/REPORT.md",
+      "source": "3d-animation-agent/reports/first-sft-20261123-001/REPORT.md",
+      "source_kind": "local_note",
+      "title": "3D Agent 首版混合 SFT",
+      "source_sha256": "28f903aab52eaf9fe749023b21a154be649a393b2f0725249baec4956653d300",
+      "published_sha256": "0589fce2461e496b6e8c59e7ac433d318fcaefa67def545ce6fb8e269c8855f5",
+      "edits": {
+        "unpublished_attachment_links": 11,
+        "local_path_placeholders": 1
+      }
+    },
+    {
+      "path": "3d-animation-agent/reports/first-sft-eval-20261123-001/ISSUES.md",
+      "source": "3d-animation-agent/reports/first-sft-eval-20261123-001/ISSUES.md",
+      "source_kind": "local_note",
+      "title": "首版训后测评运行记录",
+      "source_sha256": "7ee7355d7beab4ed2af7ef172fedd33eeb6d147cdf151b021e2f7ea7cd196d7b",
+      "published_sha256": "e93ec852da98bfa21bae070017f51fa1e07c5ff09fe0de4446612e98cdb3557f",
+      "edits": {}
+    },
+    {
+      "path": "3d-animation-agent/reports/first-sft-eval-20261123-001/REPORT.md",
+      "source": "3d-animation-agent/reports/first-sft-eval-20261123-001/REPORT.md",
+      "source_kind": "local_note",
+      "title": "首版 3D Agent 训后配对评测",
+      "source_sha256": "981bda79c24db5cc161bff82a06a5287d29703e4e8afca98a0f48e7871bc6393",
+      "published_sha256": "6dc5c7d4c1d78227940317457a403339d7a017bc628b5752a577121fbccf9774",
+      "edits": {
+        "unpublished_attachment_links": 4
+      }
+    },
+    {
+      "path": "3d-animation-agent/reports/first-sft-eval-20261123-001/protocol.md",
+      "source": "3d-animation-agent/reports/first-sft-eval-20261123-001/protocol.md",
+      "source_kind": "local_note",
+      "title": "首版 3D Agent 配对评测",
+      "source_sha256": "03fa8069212e10d5ccfedc40241714a22e579e46a1c9690ad57441dc4005e54f",
+      "published_sha256": "d5589b86a6ff4f20787fddbf30c2b2e678eea2520898889574a7e36ea67f7256",
+      "edits": {}
+    },
+    {
+      "path": "3d-animation-agent/reports/harness-data-provenance-20261124-001/REPORT.md",
+      "source": "3d-animation-agent/reports/harness-data-provenance-20261124-001/REPORT.md",
+      "source_kind": "local_note",
+      "title": "React 采集数据溯源排查：是否存在\"缺信息的本地历史\"问题",
+      "source_sha256": "c7aa1940353bd992b00f37b883377ab89a25cd77fafd424505b8ca58e9989e96",
+      "published_sha256": "569097bf1158609baf0455b1046a552f1656b9f210305267d235b6ba6595601d",
+      "edits": {
+        "internal_infrastructure": 1
+      }
+    },
+    {
+      "path": "3d-animation-agent/reports/oneshot-vs-longhorizon-3dcodefactory-20261126/REPORT.md",
+      "source": "3d-animation-agent/reports/oneshot-vs-longhorizon-3dcodefactory-20261126/REPORT.md",
+      "source_kind": "experiment_report",
+      "title": "小红书 `3DCodeFactory` 训练策略与「海量单轮 vs 长程原生多轮」核心证据汇编",
+      "source_sha256": "e3f97873d9cacf0d9b81fb055d66b9ca1354f279af2bcdf00b10aea71ae36778",
+      "published_sha256": "71ee21a05c26665a9ded5f704931cb6e1acd0d1a00a2c054add9da7d32139737",
+      "edits": {
+        "unpublished_attachment_links": 3
+      }
+    },
+    {
+      "path": "3d-animation-agent/reports/oneshot30-checkpoint10946-20261124-002-xhigh/REPORT.md",
+      "source": "3d-animation-agent/reports/oneshot30-checkpoint10946-20261124-002-xhigh/REPORT.md",
+      "source_kind": "local_note",
+      "title": "checkpoint-10946 的 30 题 xhigh 单轮补测",
+      "source_sha256": "a419ed3f05f7524eaebd4702d325c15d23a74bdbfc838e458ab87e55a0ced375",
+      "published_sha256": "e1298e705a882adfec9c4c26c5989a1a4cf2e6febc0d31d651a33442c95bf2f3",
+      "edits": {
+        "unpublished_attachment_links": 5
+      }
+    },
+    {
+      "path": "3d-animation-agent/reports/overnight-collection-report-20261122.md",
+      "source": "3d-animation-agent/reports/overnight-collection-report-20261122.md",
+      "source_kind": "local_note",
+      "title": "3D Agent 夜间采集与初审最终报告",
+      "source_sha256": "e4a4bd43ea01b39b718ca2f6a6f069743b6200741588e440469cd9ad32a28d93",
+      "published_sha256": "9b84258c467f63037dd5f3dc1bfc27fcb0a95cc07eec2c98d9659213edc8f388",
+      "edits": {}
+    },
+    {
+      "path": "3d-animation-agent/reports/round2-canary-20261124-001/REPORT.md",
+      "source": "3d-animation-agent/reports/round2-canary-20261124-001/REPORT.md",
+      "source_kind": "local_note",
+      "title": "Round 2 阶段 1 线 B 交付与 10 题 DeepSeek `high` 全链路 Canary 实测报告",
+      "source_sha256": "80f3e972794c7488d55b74a44482117666c50b5590f1a14e3943c1cb2c5f2887",
+      "published_sha256": "b8573161f6e4aa71a4df568bc6157b0437ef9d0d9f2810049bcbe83937f04853",
+      "edits": {
+        "unpublished_attachment_links": 10,
+        "local_path_placeholders": 1,
+        "internal_infrastructure": 1,
+        "local_preview_links": 1
+      }
+    },
+    {
+      "path": "3d-animation-agent/reports/round2-line-a-eval-20261124-001/REPORT.md",
+      "source": "3d-animation-agent/reports/round2-line-a-eval-20261124-001/REPORT.md",
+      "source_kind": "local_note",
+      "title": "Round 2 阶段 1 · 线 A：评测基线与根因诊断总报告",
+      "source_sha256": "1ec14067186a4818095ad0e38be29172ea4cbbcb1f7f4d46c213408c038f4bef",
+      "published_sha256": "77eeb837e71b70bffe9c18302da8f01ca778cefea34f0b856d1025a13e0d1af2",
+      "edits": {
+        "unpublished_attachment_links": 16,
+        "local_path_placeholders": 1,
+        "internal_infrastructure": 1
+      }
+    },
+    {
+      "path": "3d-animation-agent/reports/round2-line-a-eval-20261124-001/old-dev-failure-diagnosis.md",
+      "source": "3d-animation-agent/reports/round2-line-a-eval-20261124-001/old-dev-failure-diagnosis.md",
+      "source_kind": "local_note",
+      "title": "旧 Dev“空答缺 HTML”与“broken_delivery”根因精准诊断",
+      "source_sha256": "dc27df9ed85b7d2e5b78a5c216b9d13440d73e57b53463590f5baabf9e618fe6",
+      "published_sha256": "69b86f5c0aa5676bf5007df2531f3f48061d755dbddda55001b6a7765238f945",
+      "edits": {
+        "local_path_placeholders": 2
+      }
+    },
+    {
+      "path": "3d-animation-agent/reports/round2-line-c-seeds-20261124-001/REPORT.md",
+      "source": "3d-animation-agent/reports/round2-line-c-seeds-20261124-001/REPORT.md",
+      "source_kind": "local_note",
+      "title": "Round 2 阶段 1 · 线 C（2D 动画与 3D 打印冻结种子评测集建设）验收报告",
+      "source_sha256": "2137af022216df4d5382d7adb34a9bf507adc324e1f62be8e9774a4f014b60ec",
+      "published_sha256": "0633f9f7728847294c9ee0e7cbeebb796925a622394b1cfa8c5cd616801cd2ac",
+      "edits": {
+        "local_path_placeholders": 4
+      }
+    },
+    {
+      "path": "3d-animation-agent/reports/round2-phase2-curation-20261125/FREEZE-REPORT.md",
+      "source": "3d-animation-agent/reports/round2-phase2-curation-20261125/FREEZE-REPORT.md",
+      "source_kind": "local_note",
+      "title": "Round 2 27B SFT Frozen Dataset (`round2-sft-27b-v3`)",
+      "source_sha256": "725d0d69106807295aca6d8ef0e198b6dcb3321d9c168ca1481c61cfa6fe225c",
+      "published_sha256": "8d92c22244c62bff117f2330fb52e616865bda591dae68cda0350dfc89b987f4",
+      "edits": {
+        "local_path_placeholders": 1
+      }
+    },
+    {
+      "path": "3d-animation-agent/reports/round2-prep-20261125/REPORT.md",
+      "source": "3d-animation-agent/reports/round2-prep-20261125/REPORT.md",
+      "source_kind": "local_note",
+      "title": "Round 2 阶段 2 前置封口任务 2 交付报告",
+      "source_sha256": "5571a11716add46d34a97008607a39a30d0b53df96ffcf3f1d19b0c6e0c86907",
+      "published_sha256": "e57abaecfa91699936d206c9c265b6870e5083b72f697423ea796fbb1245092f",
+      "edits": {
+        "unpublished_attachment_links": 1,
+        "local_path_placeholders": 3
+      }
+    },
+    {
+      "path": "3d-animation-agent/reports/round2-v3-full-eval-20261126/REPORT.md",
+      "source": "3d-animation-agent/reports/round2-v3-full-eval-20261126/REPORT.md",
+      "source_kind": "experiment_report",
+      "title": "Round 2 Phase 3：`v3-full`（Qwen3.8-27B Dense）3-Epoch 训练与全量对比评测总报告",
+      "source_sha256": "69d55a5280f6134cbff3e10fa227b62f00a5c5a4c02aa734c9b1e69f7f6a2981",
+      "published_sha256": "7541a7effc2a26e8723d9a0bc906da89d3debfd3bf295cd7034471816d2946b1",
+      "edits": {
+        "local_path_placeholders": 6,
+        "unpublished_attachment_links": 24
+      }
+    },
+    {
+      "path": "3d-animation-agent/reports/round2-v3-relaxed-eval-20261126/REPORT.md",
+      "source": "3d-animation-agent/reports/round2-v3-relaxed-eval-20261126/REPORT.md",
+      "source_kind": "experiment_report",
+      "title": "Round 2 收口总报告：宽松新标准（65K / 262K / img32）`Base` vs `v3_e2` 全量配对评测与完整 `Eval v3` 盲评闭环",
+      "source_sha256": "1f51ce3330e025608257662ec3d94779ba02192f18f8366e3f0a36d472248729",
+      "published_sha256": "44c5165ca2a61c269c46684a9b2f643caa597f7b79c71e5263c77610ce7a0fbc",
+      "edits": {
+        "local_path_placeholders": 4,
+        "unpublished_attachment_links": 14
+      }
+    },
+    {
+      "path": "3d-animation-agent/reports/seed-collection-final-report.md",
+      "source": "3d-animation-agent/reports/seed-collection-final-report.md",
+      "source_kind": "local_note",
+      "title": "3D Agent 首轮双模型种子采集最终报告",
+      "source_sha256": "c8b6242cb9a386f7f696bcd7d4c3f5b682b6a0ef23016ed10276a0c7a4b11748",
+      "published_sha256": "b683f3f16968cd3e73c08574c671aaaa393240cff1b1bcf8bb34f68970cac289",
+      "edits": {}
+    },
+    {
+      "path": "3d-animation-agent/reports/sft-conversion-20261123-001/REPORT.md",
+      "source": "3d-animation-agent/reports/sft-conversion-20261123-001/REPORT.md",
+      "source_kind": "local_note",
+      "title": "Kimi ReAct 首版 SFT 转换报告",
+      "source_sha256": "de7b81ccf0bb34fd37eda32aea0037c0ba44586640bcc61c878a85435ee3975c",
+      "published_sha256": "2c0c5dcd5419cfd9537aa0e730b00e7c4124d6ad67c58e989c9a8df180efbda9",
+      "edits": {
+        "local_path_placeholders": 4
+      }
+    },
+    {
+      "path": "3d-animation-agent/reports/student-cot-projection-exp-20261125-001/COT-PRUNE-OFFPOLICY-ISSUE.md",
+      "source": "3d-animation-agent/reports/student-cot-projection-exp-20261125-001/COT-PRUNE-OFFPOLICY-ISSUE.md",
+      "source_kind": "local_note",
+      "title": "问题记录：Round 2 DeepSeek CoT 二次压缩引入 `<think>` 槽位文风错位与 off-policy 分布偏移",
+      "source_sha256": "c2e1c06ef1919849b4e07ec44b78ce5710b3e213d7cd33c95b49d0e96cd8f882",
+      "published_sha256": "34878edfc3277735fed9cbee77a1203fb4c987280d1291052b28cf962bd6c746",
+      "edits": {
+        "unpublished_attachment_links": 3,
+        "local_path_placeholders": 2
+      }
+    },
+    {
+      "path": "3d-animation-agent/reports/student-cot-projection-exp-20261125-001/REPORT.md",
+      "source": "3d-animation-agent/reports/student-cot-projection-exp-20261125-001/REPORT.md",
+      "source_kind": "local_note",
+      "title": "27B 基座 NLL 分布体检与学生原生 CoT 投影实验报告（arXiv:2610.02140 轻量化落地）",
+      "source_sha256": "82c81469afa2ae8a3f661efa9334568ab75cf9d28166a485922d466f5f77ba9e",
+      "published_sha256": "b11971b7ceb4d988d2e5398081af20c70e5d780c770af691c5eb3c02d0b7df6c",
+      "edits": {
+        "unpublished_attachment_links": 6,
+        "local_path_placeholders": 1,
+        "internal_infrastructure": 1
+      }
+    },
+    {
+      "path": "3d-animation-agent/reports/training-pipeline-smoke-20261121/REPORT.md",
+      "source": "3d-animation-agent/reports/training-pipeline-smoke-20261121/REPORT.md",
+      "source_kind": "local_note",
+      "title": "Claude Code 轨迹到 Swift 的双样本烟测",
+      "source_sha256": "8ffe5a32c85c81f5e9d5c0ff2a87b59429430013ec9f619c0aac424cf8bb2eb3",
+      "published_sha256": "83f33b53513eddb7d887047ad51e5e8a6a11a4e728aa70a261507d261bc539bd",
+      "edits": {
+        "local_path_placeholders": 4
+      }
+    },
+    {
+      "path": "3d-animation-agent/reports/xhs-threejs-eval-core20-20261126-3600s-noprefix/REPORT.md",
+      "source": "3d-animation-agent/reports/xhs-threejs-eval-core20-20261126-3600s-noprefix/REPORT.md",
+      "source_kind": "experiment_report",
+      "title": "XHS Three.js 沙盒长程评测报告 (`xhs-threejs-val-v1 / core20`)",
+      "source_sha256": "cbaf45e02d63321a15eaff1d12b0845793ce1360f9faf2b24013ec16b7e8fce4",
+      "published_sha256": "54dbdff9ac2a8c6d3aa4825ee2fbe32c62319472700f2df4c0eb84b52353e6a4",
+      "edits": {}
+    },
+    {
+      "path": "3d-animation-agent/reports/xhs-threejs-segment-audit-20261126/REPORT.md",
+      "source": "3d-animation-agent/reports/xhs-threejs-segment-audit-20261126/REPORT.md",
+      "source_kind": "experiment_report",
+      "title": "XHS 3DCodeFactory Three.js 合法分段与 Qwen3.8-27B 真实长度审计（231 / 401 完整分片）",
+      "source_sha256": "7da5f3eceed2cb5db20358bde57f819c9fba3896b55a006eedff77787cbd19de",
+      "published_sha256": "eb967fbbd8526792ab6f03de4c32676fd082192730fddf9039d32deeae180a3a",
+      "edits": {
+        "local_path_placeholders": 1
+      }
+    },
+    {
+      "path": "history/research/3d-agent-data-mix-20261121/README.md",
+      "source": "research/3d-agent-data-mix-20261121/README.md",
+      "source_kind": "archived_note",
+      "title": "3D Agent 训练数据配比：通用开源代码与前沿难点任务簇",
+      "source_sha256": "0b96d7eea4491b6862ab74238851dc525d03d97165bb52a5014f377ec740033e",
+      "published_sha256": "bf1d849a3c3dfccf2d618dcc0520aa2625c4fc7349e5c45557384fbb50ca84fe",
+      "edits": {
+        "unpublished_attachment_links": 1
+      }
+    },
+    {
+      "path": "history/research/3d-agent-sandbox-distillation-20261120.md",
+      "source": "research/3d-agent-sandbox-distillation-20261120.md",
+      "source_kind": "archived_note",
+      "title": "Three.js 动画 Agent 沙盒蒸馏调研",
+      "source_sha256": "918cf52a526ee5c71d71752ab95316f6c7e9965c56c33ef6807bc02a22241d13",
+      "published_sha256": "43e4b61f07af5a830de8d7e0b8cd65f6817135bb9ed2bb88ee1adaf8a1171087",
+      "edits": {
+        "unpublished_attachment_links": 34
+      }
+    },
+    {
+      "path": "history/research/3d-agent-training-data-composition-20261122.md",
+      "source": "research/3d-agent-training-data-composition-20261122.md",
+      "source_kind": "archived_note",
+      "title": "3D Agent 27B 训练数据组成：通用代码、ReAct 与健康控制",
+      "source_sha256": "432b43a229c652901c8e2d659990ca671cf95a46705bd0d26276367b02cad0c4",
+      "published_sha256": "ff25e7856efb74c598f4885dfe93cbbcc18e0c0d583365d1549ab5bdbfe8eb62",
+      "edits": {}
+    },
+    {
+      "path": "history/research/3d-animation-improvement-and-sft-cases-20261121.md",
+      "source": "research/3d-animation-improvement-and-sft-cases-20261121.md",
+      "source_kind": "archived_note",
+      "title": "纯代码 3D 动画 Agent 的提升点、验收题与教师轨迹筛选",
+      "source_sha256": "8becd7e5b6723fd84234c8f342f983c6c8890f6a92eac84fe51eb43af36e4105",
+      "published_sha256": "ba99a070539578b03177605118da6c7a6cfbef0813a5c42f8feb3acc858f0ada",
+      "edits": {
+        "unpublished_attachment_links": 16
+      }
+    },
+    {
+      "path": "history/research/3d-verifiable-tasks-20261120.md",
+      "source": "research/3d-verifiable-tasks-20261120.md",
+      "source_kind": "archived_note",
+      "title": "给 3D Web 动画选一个可以做 RL 的子任务",
+      "source_sha256": "23327dfe05328eef8eff3526cd0e54a1b3b1ec01f8f939fc3cb209b781517a80",
+      "published_sha256": "a32fff8fa1b6575e2cb561186aa4f77c63c9580ce45b26b081f4d479d8033b21",
+      "edits": {
+        "unpublished_attachment_links": 3
+      }
+    },
     {
       "path": "research/3d-agent-data-construction-retrospective-20261123/README.md",
       "source": "research/3d-agent-data-construction-retrospective-20261123/README.md",
@@ -440,6 +1101,17 @@
       }
     },
     {
+      "path": "research/README.md",
+      "source": "research/README.md",
+      "source_kind": "local_note",
+      "title": "研究笔记索引",
+      "source_sha256": "eaa911cf57f1050610d91560ca9bfa62ae539e8f0c066e0773c1e2d751fd11e9",
+      "published_sha256": "f37b71df27c332cd23a8b856059ff3f98f803952a670ae061c44b843245cd61b",
+      "edits": {
+        "unpublished_attachment_links": 4
+      }
+    },
+    {
       "path": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
       "source": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
       "source_kind": "local_note",
@@ -486,534 +1158,106 @@
     {
       "path": "research/arxiv-2611.28783/README.md",
       "source": "research/arxiv-2611.28783/README.md",
-      "source_kind": "local_note",
+      "source_kind": "paper_study",
       "title": "3DCodeFactory（arXiv:2611.28783v1）一手精读与工程迁移方案",
-      "source_sha256": "c884bba2c165fb1ca311c1d68d72b568c5300590f90a089d4a5d4ddf459955e3",
-      "published_sha256": "25903f70327efdefa2f47f709db106623474f85b2e5e405f38c70bc5cc175c3f",
+      "source_sha256": "b1ef9e12a077f140148fa5c14a7aab62b24ffd4c11071b0e88d8488b702ef652",
+      "published_sha256": "1c56c1edf82b72cac0d5f193f1530df8eaeeecdc4e396a2474c10c1d6adbb91b",
       "edits": {
-        "upstream_links": 11,
-        "unpublished_attachment_links": 3,
-        "local_path_placeholders": 1
-      }
-    },
-    {
-      "path": "3d-animation-agent/docs/DATA-PLAYBOOK.md",
-      "source": "3d-animation-agent/docs/DATA-PLAYBOOK.md",
-      "source_kind": "local_note",
-      "title": "3D Agent 造数总守则与 `Qwen3.8-27B` 能力边界手册（Data Playbook）",
-      "source_sha256": "399e66be29649bee0e8be517e2d6fa6440fa1d3785afd77c75375c75842e0d28",
-      "published_sha256": "5c8d821e70181664b32672630d69038a3e214d441e20772ef1c2e3ca77392545",
-      "edits": {
-        "unpublished_attachment_links": 1,
-        "local_path_placeholders": 3
-      }
-    },
-    {
-      "path": "3d-animation-agent/docs/STANDARD-PARAMS.md",
-      "source": "3d-animation-agent/docs/STANDARD-PARAMS.md",
-      "source_kind": "local_note",
-      "title": "3D Agent 全链路统一参数与避坑规范（造数 · 转写 · 验收 · 27B 推理与提交）",
-      "source_sha256": "2812c77d27be915c42ef8863cbfa305124b42a2c4ec2b1dc0c0c5d3e77f3d193",
-      "published_sha256": "8b303146417aecebcc89ff389470bb5c6b0676868e6fb059d6b796c72685e491",
-      "edits": {
-        "unpublished_attachment_links": 1,
-        "local_path_placeholders": 4
-      }
-    },
-    {
-      "path": "3d-animation-agent/docs/architecture.md",
-      "source": "3d-animation-agent/docs/architecture.md",
-      "source_kind": "local_note",
-      "title": "初版结构与边界",
-      "source_sha256": "96968ea1b150affe316927bbf758010515fc2ee67409ccd049ab34f8451c2eff",
-      "published_sha256": "d7afa90db805904209c88233ceaac6d1e75f71947d2d0f573da89c3c0843e7ac",
-      "edits": {}
-    },
-    {
-      "path": "3d-animation-agent/docs/kimi-case-01-kinetic.md",
-      "source": "3d-animation-agent/docs/kimi-case-01-kinetic.md",
-      "source_kind": "local_note",
-      "title": "Kimi C1「轨道共振」8 秒动力雕塑案例拆解",
-      "source_sha256": "4684bc23f402cd012620ce846cb0999bcd545c665e281ca0a87fed5351505c99",
-      "published_sha256": "aab4eb38c7a2e31232fef79dc7ca49384c9b6b25d354c783c4dbcdf15c6de4ea",
-      "edits": {
-        "unpublished_attachment_links": 4
-      }
-    },
-    {
-      "path": "3d-animation-agent/docs/kimi-case-02-speaker.md",
-      "source": "3d-animation-agent/docs/kimi-case-02-speaker.md",
-      "source_kind": "local_note",
-      "title": "Kimi C2「MODUL 01」12 秒模块化音箱案例拆解",
-      "source_sha256": "ade02090358347279bc72e2508750958a6dcda74f19497f56713e1e153de565f",
-      "published_sha256": "0f37c8000e70fb691a93a5b36d65791d5e04af1243b2fe973e9facbd27a570b5",
-      "edits": {
-        "unpublished_attachment_links": 2
-      }
-    },
-    {
-      "path": "3d-animation-agent/docs/kimi-case-03-scroll.md",
-      "source": "3d-animation-agent/docs/kimi-case-03-scroll.md",
-      "source_kind": "local_note",
-      "title": "Kimi C3「远行星降」滚动叙事案例拆解",
-      "source_sha256": "50b5eb431cacacfe533120ad7c5c9e95fd6e76bc88aa27f46d74e1cc8424f2f0",
-      "published_sha256": "307f294f5bfce8e988047e8114851c2a47342e1555af606131e3f055db3ed41f",
-      "edits": {
-        "unpublished_attachment_links": 2
-      }
-    },
-    {
-      "path": "3d-animation-agent/docs/kimi-case-04-crystals.md",
-      "source": "3d-animation-agent/docs/kimi-case-04-crystals.md",
-      "source_kind": "local_note",
-      "title": "Kimi C4「晶潮」2,400 晶体群案例拆解",
-      "source_sha256": "4becc2818363bb981a84c675fbd27e450fc392130a0a885a68c5eb744f63a19b",
-      "published_sha256": "8d40142572bd9894212af6b187d544ca3701670209ed726dd14fb9564033deca",
-      "edits": {
-        "unpublished_attachment_links": 4
-      }
-    },
-    {
-      "path": "3d-animation-agent/docs/kimi-harness-probes.md",
-      "source": "3d-animation-agent/docs/kimi-harness-probes.md",
-      "source_kind": "local_note",
-      "title": "Kimi Harness 拆解与 3D Web Animation 探针",
-      "source_sha256": "cce4f60d9885ce10192519906bf57af3dedab6a7afa11657ee7db7aa696896b5",
-      "published_sha256": "68ccafb82a1438b2ed46f9716fca7f5ea440a16c0aa99ef09b15f0cdec1f82e7",
-      "edits": {
+        "local_path_placeholders": 2,
         "unpublished_attachment_links": 7
       }
     },
     {
-      "path": "3d-animation-agent/docs/kimi-reference.md",
-      "source": "3d-animation-agent/docs/kimi-reference.md",
+      "path": "research/cad-2d-sample-study-and-taxonomy-v2-20261126/README.md",
+      "source": "research/cad-2d-sample-study-and-taxonomy-v2-20261126/README.md",
       "source_kind": "local_note",
-      "title": "Kimi 巴黎 1888 案例整理",
-      "source_sha256": "df900569279bcde089953bbc83330aa33da2b1d780ecba921878a6dfebf03baa",
-      "published_sha256": "c501ff64e806ee02e93ee3627ccf809b4216ce434f8c517e39d6a5e32fa13ade",
-      "edits": {}
-    },
-    {
-      "path": "3d-animation-agent/docs/plans/2026-11-21-overnight-case-collection.md",
-      "source": "3d-animation-agent/docs/plans/2026-11-21-overnight-case-collection.md",
-      "source_kind": "local_note",
-      "title": "夜间 12 题采集与双队列计划（草案）",
-      "source_sha256": "587fad7fb2d72cae475ee084bfd6ef9d8741d3c65fb07dce7a4343ea2ba839ca",
-      "published_sha256": "58dcf7d93a2fc2249de9a23b65bf57bf77a3778c00fa8d4c6d3dd076b1649be0",
+      "title": "2026 外部 2D / CAD 高质样本实测调研、27B 能力缺口与 v2.0 高难分类树报告",
+      "source_sha256": "f7899ce804953b08703384670e7a2231b5ce30ae1c3e1b3a5763728495894fca",
+      "published_sha256": "c5b4f22dafe9178629b943349e42d065f3e6628e18031130c068965182ca4105",
       "edits": {
+        "local_path_placeholders": 2,
         "unpublished_attachment_links": 1
       }
     },
     {
-      "path": "3d-animation-agent/docs/plans/2026-11-21-react-teacher-fast-start.md",
-      "source": "3d-animation-agent/docs/plans/2026-11-21-react-teacher-fast-start.md",
+      "path": "research/three-track-data-factory-strategy-20261126/README.md",
+      "source": "research/three-track-data-factory-strategy-20261126/README.md",
       "source_kind": "local_note",
-      "title": "ReAct 教师数据快速启动决定（执行草案）",
-      "source_sha256": "f6b202816baafdef249b2f98320856bf6cc417b034618149c18f9752824120ca",
-      "published_sha256": "0da75ba37b71f1bad612b845c66b5ac167664bf76ac4e22d84ff4da8999678f5",
-      "edits": {}
-    },
-    {
-      "path": "3d-animation-agent/docs/plans/2026-11-21-sandbox-distillation-pilot.md",
-      "source": "3d-animation-agent/docs/plans/2026-11-21-sandbox-distillation-pilot.md",
-      "source_kind": "local_note",
-      "title": "Three.js 沙盒蒸馏首轮实验草案",
-      "source_sha256": "a541427b1a13d2c54f06db6d0d2b6768e2eaf8e175088e0ef3ce30f63775bf1b",
-      "published_sha256": "cfc053c2ff3d087a88e12987a336ecd95ffb2049b7e25eff6e3fb3903c7dba0d",
+      "title": "三轨视觉 Agent（3D 动画 / CAD 打印 / 2D 动画）数据工厂与分类树总方案：联合审核汇总",
+      "source_sha256": "0d06a3e9bb1335b2d2d7b8a6cb83d34d585427b2751a2964c2d662abc69415aa",
+      "published_sha256": "3ce67f353725aa066b337a12cc32478529241000adfdf74e99d81e56fc58abf5",
       "edits": {
-        "unpublished_attachment_links": 1
+        "local_path_placeholders": 1,
+        "unpublished_attachment_links": 7
       }
     },
     {
-      "path": "3d-animation-agent/docs/plans/2026-11-21-simple-first-sft.md",
-      "source": "3d-animation-agent/docs/plans/2026-11-21-simple-first-sft.md",
+      "path": "research/three-track-data-factory-strategy-20261126/aodi-phase1-phase2-retrospective-20261126.md",
+      "source": "research/three-track-data-factory-strategy-20261126/aodi-phase1-phase2-retrospective-20261126.md",
       "source_kind": "local_note",
-      "title": "朴素首版 SFT：万级代码数据 + Agent 轨迹增量计划（草案）",
-      "source_sha256": "c8058a7d1713773319364dad8158b9e8ec01cd3f3a59b91f61cf593c2fae2536",
-      "published_sha256": "724dc791fa33524825592746bab74a8a071a761b3554ee30da9b6a488e53e1e4",
+      "title": "Aodi（Code2Video）Phase 1 / Phase 2 实验与我方三轨实测并表复盘",
+      "source_sha256": "798df9698697b45687f1260d2bc21c3694b8231dc7f72448fe0bf3b75991884d",
+      "published_sha256": "38745ca23fe88c8a0af9546ba08f912304b07ffb0b4744b525c2d83b13c70952",
       "edits": {
-        "local_path_placeholders": 2
+        "local_path_placeholders": 2,
+        "unpublished_attachment_links": 4
       }
     },
     {
-      "path": "3d-animation-agent/docs/plans/2026-11-22-overnight-react-collection.md",
-      "source": "3d-animation-agent/docs/plans/2026-11-22-overnight-react-collection.md",
+      "path": "research/three-track-data-factory-strategy-20261126/astra-report.md",
+      "source": "research/three-track-data-factory-strategy-20261126/astra-report.md",
       "source_kind": "local_note",
-      "title": "2026-11-22 通宵 ReAct 教师采集与验收计划",
-      "source_sha256": "d8f883568a8ffbc05531fe41e96614527700677cfcb85461731c8a5476499f83",
-      "published_sha256": "2d4d35289e86d258db6c521d39c67473dee6cd0a3b94c0070fe19ad8f5ec5696",
-      "edits": {}
-    },
-    {
-      "path": "3d-animation-agent/docs/plans/2026-11-22-scale-to-1000-react-trajectories.md",
-      "source": "3d-animation-agent/docs/plans/2026-11-22-scale-to-1000-react-trajectories.md",
-      "source_kind": "local_note",
-      "title": "千条级 ReAct 候选轨迹采集与数据组成（执行版）",
-      "source_sha256": "a3c0ae92bc21e0110a2615e641864fb54bccb7c12627c9f2f30eacd4ce416f9c",
-      "published_sha256": "60f264cc6f824ef362eb6eff5911e5830faa268b375a05306e6c12bd29834142",
-      "edits": {}
-    },
-    {
-      "path": "3d-animation-agent/docs/plans/2026-11-23-first-sft-evaluation-and-failure-clusters.md",
-      "source": "3d-animation-agent/docs/plans/2026-11-23-first-sft-evaluation-and-failure-clusters.md",
-      "source_kind": "local_note",
-      "title": "首版 27B 训练后怎么测，下一轮 Kimi 轨迹怎么选题",
-      "source_sha256": "d2e3cb33582e2d2b07a42ffa7bc0583b9594fcb03913e081316fa184160b0cdf",
-      "published_sha256": "bf8cf5c6667799a07ea56c315ffbbb9e7a12dc3849a226a59eb89849b7f97dad",
+      "title": "Astra 独立审核 · 三轨视觉 Agent 数据工厂",
+      "source_sha256": "8db2527f2b68c160d6d98d0e5210b6511809801645726ad15f3e92e3e5e4c812",
+      "published_sha256": "4ecd7909523a37756b3619315ae80c515c26ab91b0faaf9d65bfb1dc51b99dca",
       "edits": {
-        "unpublished_attachment_links": 21
+        "unpublished_attachment_links": 28
       }
     },
     {
-      "path": "3d-animation-agent/docs/plans/2026-11-24-line-c-new-devtest-spec.md",
-      "source": "3d-animation-agent/docs/plans/2026-11-24-line-c-new-devtest-spec.md",
+      "path": "research/three-track-data-factory-strategy-20261126/main-report.md",
+      "source": "research/three-track-data-factory-strategy-20261126/main-report.md",
       "source_kind": "local_note",
-      "title": "C3：新 dev/test 题集规格（v1 已落地为 evals/devtest-v2）",
-      "source_sha256": "e0ec1af5fab81ba569e397a3432b19512e8d3e21630df4f73f31d04cc7a47b66",
-      "published_sha256": "cdfa274bd7ac9cbc76f45925d79b11f53dd1d38c05533a65047dbeaac1e123f6",
-      "edits": {}
-    },
-    {
-      "path": "3d-animation-agent/docs/plans/2026-11-24-next-sft-data-plan.md",
-      "source": "3d-animation-agent/docs/plans/2026-11-24-next-sft-data-plan.md",
-      "source_kind": "local_note",
-      "title": "下一轮 27B 训练的数据补充建议",
-      "source_sha256": "2463f0cf2f0caa6d312a6546d39e3797f562cf935e025877800ea7ea637c4d82",
-      "published_sha256": "49f31814f1bf704e48f1f25f7f38b33cab7c4cbeb30d861743e9501d64bbc72a",
-      "edits": {}
-    },
-    {
-      "path": "3d-animation-agent/docs/plans/2026-11-24-round2-27b-data-and-training-plan.md",
-      "source": "3d-animation-agent/docs/plans/2026-11-24-round2-27b-data-and-training-plan.md",
-      "source_kind": "local_note",
-      "title": "Round 2：27B Dense 3D 动画数据制造、消融训练与三轨准备方案",
-      "source_sha256": "71d860edf66be8271649c0afca9158b0cf0780a56a804173e7940bdea8b47ffa",
-      "published_sha256": "debc0465c09874f6d430349d59cdac9a32b5e1b00f66b56d42580c2b0bb26427",
+      "title": "三轨视觉 Agent（3D 动画 / CAD 打印 / 2D 动画）数据工厂与分类树总方案（主提案）",
+      "source_sha256": "0d1e38cca39566b7af85a3d6b5a349d0951ab320f9d8375d7da48b1aa35d82d3",
+      "published_sha256": "81950c96eb7d4b7f9e4f8a8d6fd6faf4f6ab0cc9cee310d9e45fbba9dff0dd8c",
       "edits": {
-        "unpublished_attachment_links": 1,
-        "local_path_placeholders": 1
+        "local_path_placeholders": 1,
+        "unpublished_attachment_links": 4
       }
     },
     {
-      "path": "3d-animation-agent/reports/aodi-one-shot-sft-review-20261121.md",
-      "source": "3d-animation-agent/reports/aodi-one-shot-sft-review-20261121.md",
+      "path": "research/three-track-pipeline-alignment-audit-20261126/README.md",
+      "source": "research/three-track-pipeline-alignment-audit-20261126/README.md",
       "source_kind": "local_note",
-      "title": "Aodi 万级 one-shot 27B SFT 效果复核",
-      "source_sha256": "3fd8f5524006b6f3aeb122539209c216914ee235ddc45c99e25d2e3d72418b10",
-      "published_sha256": "aa9b29c60eefa1d07deefba36c0072302a538d842af11c545a6b16483443ef88",
+      "title": "三轨合训全链路数据管线对齐与隐患联合审核汇总（主调研方 × Astra）",
+      "source_sha256": "47814a13658fbfab9d6d7effa0204a0af61696e3cee3178fac0f648b37d8ce43",
+      "published_sha256": "aaba9d929ca54373c15c1e072cc89866da066264deecaa7b6f0a8bdf236f20f2",
+      "edits": {
+        "local_path_placeholders": 3,
+        "unpublished_attachment_links": 2
+      }
+    },
+    {
+      "path": "research/three-track-pipeline-alignment-audit-20261126/astra-report.md",
+      "source": "research/three-track-pipeline-alignment-audit-20261126/astra-report.md",
+      "source_kind": "local_note",
+      "title": "三轨合训全链路独立工程审计",
+      "source_sha256": "630b1044c1d2f64171c44580ef6de18fe8ff1e7a86b482fa8ea78c143964c24e",
+      "published_sha256": "29d350e16b4b9cf1889d90b54e51fe9e88e027846df133c170f488adea16ec56",
       "edits": {
         "local_path_placeholders": 6
       }
     },
     {
-      "path": "3d-animation-agent/reports/aodi-one-shot-vs-react-final-20261122.md",
-      "source": "3d-animation-agent/reports/aodi-one-shot-vs-react-final-20261122.md",
+      "path": "research/three-track-pipeline-alignment-audit-20261126/main-report.md",
+      "source": "research/three-track-pipeline-alignment-audit-20261126/main-report.md",
       "source_kind": "local_note",
-      "title": "Aodi one-shot 与 Kimi ReAct 对照报告",
-      "source_sha256": "00b001ed346ff6eaa18a685b5fab5dbc51ca6a9050600451a8baa1981e4b350c",
-      "published_sha256": "ff2c12f44d0b9f6520fb20d1e874c528cd79befa2e99ecd4d29f056833147117",
-      "edits": {}
-    },
-    {
-      "path": "3d-animation-agent/reports/overnight-collection-report-20261122.md",
-      "source": "3d-animation-agent/reports/overnight-collection-report-20261122.md",
-      "source_kind": "local_note",
-      "title": "3D Agent 夜间采集与初审最终报告",
-      "source_sha256": "e4a4bd43ea01b39b718ca2f6a6f069743b6200741588e440469cd9ad32a28d93",
-      "published_sha256": "9b84258c467f63037dd5f3dc1bfc27fcb0a95cc07eec2c98d9659213edc8f388",
-      "edits": {}
-    },
-    {
-      "path": "3d-animation-agent/reports/seed-collection-final-report.md",
-      "source": "3d-animation-agent/reports/seed-collection-final-report.md",
-      "source_kind": "local_note",
-      "title": "3D Agent 首轮双模型种子采集最终报告",
-      "source_sha256": "c8b6242cb9a386f7f696bcd7d4c3f5b682b6a0ef23016ed10276a0c7a4b11748",
-      "published_sha256": "b683f3f16968cd3e73c08574c671aaaa393240cff1b1bcf8bb34f68970cac289",
-      "edits": {}
-    },
-    {
-      "path": "3d-animation-agent/reports/cad-print-seed-baseline-20261125-001/REPORT.md",
-      "source": "3d-animation-agent/reports/cad-print-seed-baseline-20261125-001/REPORT.md",
-      "source_kind": "local_note",
-      "title": "CadQuery 参数化 / 3D 打印建模轨 Phase 0 摸底报告（`evals/print-seed-v1`）",
-      "source_sha256": "1a445eae016d709befded21a7656edd8286ec2956ed4c4aac0d1fd06aa608138",
-      "published_sha256": "6a01ef38d78a5d31be93d7ea70bd26f497884d5a14df1bb675d456728843d33f",
+      "title": "主调研方独立审计报告：三轨合训全链路数据管线对齐与隐患审查",
+      "source_sha256": "fb8b4654edbd432348c4e5ee496c3e8464a1e931e143c07d3897e0a93ce61c57",
+      "published_sha256": "82c0e5179300d9bf990f4041543f82f866c5b77d375ac1a5f038656e085bbb9f",
       "edits": {
-        "unpublished_attachment_links": 9,
-        "local_path_placeholders": 5,
-        "internal_infrastructure": 2
-      }
-    },
-    {
-      "path": "3d-animation-agent/reports/deepseek-teacher-canary-20261124-001/REPORT.md",
-      "source": "3d-animation-agent/reports/deepseek-teacher-canary-20261124-001/REPORT.md",
-      "source_kind": "local_note",
-      "title": "DeepSeek 接入沙盒 Claude Code 教师链路实测报告",
-      "source_sha256": "b7cd77b927d53bd324d25605172da94b54c7a513a0052ff76751693f5cfac99a",
-      "published_sha256": "2563799753f801db79999e0b45976a90e236a10fa0935c3688fc11fad54cffe0",
-      "edits": {
-        "unpublished_attachment_links": 6,
-        "local_path_placeholders": 3
-      }
-    },
-    {
-      "path": "3d-animation-agent/reports/eval-v3-devtest-v2-20261125-001/REPORT.md",
-      "source": "3d-animation-agent/reports/eval-v3-devtest-v2-20261125-001/REPORT.md",
-      "source_kind": "local_note",
-      "title": "3D 动画评测体系升级（Eval v3）与历史基线全量重评报告",
-      "source_sha256": "b9fc9f01cba6564e25c984b7941955ab9b4b3117674b35be76320b33cb40dca0",
-      "published_sha256": "289daeee618b970fa681cd207f437a5db1ab8bde33b21173923d7c9ab9ebd473",
-      "edits": {
-        "unpublished_attachment_links": 11,
-        "local_path_placeholders": 3
-      }
-    },
-    {
-      "path": "3d-animation-agent/reports/first-sft-20261123-001/ISSUES.md",
-      "source": "3d-animation-agent/reports/first-sft-20261123-001/ISSUES.md",
-      "source_kind": "local_note",
-      "title": "首版 SFT 运行问题记录",
-      "source_sha256": "4bf1b59c127ae7687806c471f8c2dcd93787e3f1886c29b89093b85668e00dbc",
-      "published_sha256": "b584515596e8be78d9663b177514abbc4acd002b62cd041d28a73766880c85e3",
-      "edits": {
-        "unpublished_attachment_links": 3,
-        "local_path_placeholders": 1
-      }
-    },
-    {
-      "path": "3d-animation-agent/reports/first-sft-20261123-001/REPORT.md",
-      "source": "3d-animation-agent/reports/first-sft-20261123-001/REPORT.md",
-      "source_kind": "local_note",
-      "title": "3D Agent 首版混合 SFT",
-      "source_sha256": "28f903aab52eaf9fe749023b21a154be649a393b2f0725249baec4956653d300",
-      "published_sha256": "0589fce2461e496b6e8c59e7ac433d318fcaefa67def545ce6fb8e269c8855f5",
-      "edits": {
-        "unpublished_attachment_links": 11,
-        "local_path_placeholders": 1
-      }
-    },
-    {
-      "path": "3d-animation-agent/reports/first-sft-eval-20261123-001/ISSUES.md",
-      "source": "3d-animation-agent/reports/first-sft-eval-20261123-001/ISSUES.md",
-      "source_kind": "local_note",
-      "title": "首版训后测评运行记录",
-      "source_sha256": "7ee7355d7beab4ed2af7ef172fedd33eeb6d147cdf151b021e2f7ea7cd196d7b",
-      "published_sha256": "e93ec852da98bfa21bae070017f51fa1e07c5ff09fe0de4446612e98cdb3557f",
-      "edits": {}
-    },
-    {
-      "path": "3d-animation-agent/reports/first-sft-eval-20261123-001/REPORT.md",
-      "source": "3d-animation-agent/reports/first-sft-eval-20261123-001/REPORT.md",
-      "source_kind": "local_note",
-      "title": "首版 3D Agent 训后配对评测",
-      "source_sha256": "981bda79c24db5cc161bff82a06a5287d29703e4e8afca98a0f48e7871bc6393",
-      "published_sha256": "6dc5c7d4c1d78227940317457a403339d7a017bc628b5752a577121fbccf9774",
-      "edits": {
-        "unpublished_attachment_links": 4
-      }
-    },
-    {
-      "path": "3d-animation-agent/reports/first-sft-eval-20261123-001/protocol.md",
-      "source": "3d-animation-agent/reports/first-sft-eval-20261123-001/protocol.md",
-      "source_kind": "local_note",
-      "title": "首版 3D Agent 配对评测",
-      "source_sha256": "03fa8069212e10d5ccfedc40241714a22e579e46a1c9690ad57441dc4005e54f",
-      "published_sha256": "d5589b86a6ff4f20787fddbf30c2b2e678eea2520898889574a7e36ea67f7256",
-      "edits": {}
-    },
-    {
-      "path": "3d-animation-agent/reports/harness-data-provenance-20261124-001/REPORT.md",
-      "source": "3d-animation-agent/reports/harness-data-provenance-20261124-001/REPORT.md",
-      "source_kind": "local_note",
-      "title": "React 采集数据溯源排查：是否存在\"缺信息的本地历史\"问题",
-      "source_sha256": "c7aa1940353bd992b00f37b883377ab89a25cd77fafd424505b8ca58e9989e96",
-      "published_sha256": "569097bf1158609baf0455b1046a552f1656b9f210305267d235b6ba6595601d",
-      "edits": {
-        "internal_infrastructure": 1
-      }
-    },
-    {
-      "path": "3d-animation-agent/reports/oneshot30-checkpoint10946-20261124-002-xhigh/REPORT.md",
-      "source": "3d-animation-agent/reports/oneshot30-checkpoint10946-20261124-002-xhigh/REPORT.md",
-      "source_kind": "local_note",
-      "title": "checkpoint-10946 的 30 题 xhigh 单轮补测",
-      "source_sha256": "a419ed3f05f7524eaebd4702d325c15d23a74bdbfc838e458ab87e55a0ced375",
-      "published_sha256": "e1298e705a882adfec9c4c26c5989a1a4cf2e6febc0d31d651a33442c95bf2f3",
-      "edits": {
-        "unpublished_attachment_links": 5
-      }
-    },
-    {
-      "path": "3d-animation-agent/reports/round2-canary-20261124-001/REPORT.md",
-      "source": "3d-animation-agent/reports/round2-canary-20261124-001/REPORT.md",
-      "source_kind": "local_note",
-      "title": "Round 2 阶段 1 线 B 交付与 10 题 DeepSeek `high` 全链路 Canary 实测报告",
-      "source_sha256": "80f3e972794c7488d55b74a44482117666c50b5590f1a14e3943c1cb2c5f2887",
-      "published_sha256": "b8573161f6e4aa71a4df568bc6157b0437ef9d0d9f2810049bcbe83937f04853",
-      "edits": {
-        "unpublished_attachment_links": 10,
-        "local_path_placeholders": 1,
-        "internal_infrastructure": 1,
-        "local_preview_links": 1
-      }
-    },
-    {
-      "path": "3d-animation-agent/reports/round2-line-a-eval-20261124-001/REPORT.md",
-      "source": "3d-animation-agent/reports/round2-line-a-eval-20261124-001/REPORT.md",
-      "source_kind": "local_note",
-      "title": "Round 2 阶段 1 · 线 A：评测基线与根因诊断总报告",
-      "source_sha256": "1ec14067186a4818095ad0e38be29172ea4cbbcb1f7f4d46c213408c038f4bef",
-      "published_sha256": "77eeb837e71b70bffe9c18302da8f01ca778cefea34f0b856d1025a13e0d1af2",
-      "edits": {
-        "unpublished_attachment_links": 16,
-        "local_path_placeholders": 1,
-        "internal_infrastructure": 1
-      }
-    },
-    {
-      "path": "3d-animation-agent/reports/round2-line-a-eval-20261124-001/old-dev-failure-diagnosis.md",
-      "source": "3d-animation-agent/reports/round2-line-a-eval-20261124-001/old-dev-failure-diagnosis.md",
-      "source_kind": "local_note",
-      "title": "旧 Dev“空答缺 HTML”与“broken_delivery”根因精准诊断",
-      "source_sha256": "dc27df9ed85b7d2e5b78a5c216b9d13440d73e57b53463590f5baabf9e618fe6",
-      "published_sha256": "69b86f5c0aa5676bf5007df2531f3f48061d755dbddda55001b6a7765238f945",
-      "edits": {
-        "local_path_placeholders": 2
-      }
-    },
-    {
-      "path": "3d-animation-agent/reports/round2-line-c-seeds-20261124-001/REPORT.md",
-      "source": "3d-animation-agent/reports/round2-line-c-seeds-20261124-001/REPORT.md",
-      "source_kind": "local_note",
-      "title": "Round 2 阶段 1 · 线 C（2D 动画与 3D 打印冻结种子评测集建设）验收报告",
-      "source_sha256": "2137af022216df4d5382d7adb34a9bf507adc324e1f62be8e9774a4f014b60ec",
-      "published_sha256": "0633f9f7728847294c9ee0e7cbeebb796925a622394b1cfa8c5cd616801cd2ac",
-      "edits": {
-        "local_path_placeholders": 4
-      }
-    },
-    {
-      "path": "3d-animation-agent/reports/round2-phase2-curation-20261125/FREEZE-REPORT.md",
-      "source": "3d-animation-agent/reports/round2-phase2-curation-20261125/FREEZE-REPORT.md",
-      "source_kind": "local_note",
-      "title": "Round 2 27B SFT Frozen Dataset (`round2-sft-27b-v3`)",
-      "source_sha256": "725d0d69106807295aca6d8ef0e198b6dcb3321d9c168ca1481c61cfa6fe225c",
-      "published_sha256": "8d92c22244c62bff117f2330fb52e616865bda591dae68cda0350dfc89b987f4",
-      "edits": {
-        "local_path_placeholders": 1
-      }
-    },
-    {
-      "path": "3d-animation-agent/reports/round2-prep-20261125/REPORT.md",
-      "source": "3d-animation-agent/reports/round2-prep-20261125/REPORT.md",
-      "source_kind": "local_note",
-      "title": "Round 2 阶段 2 前置封口任务 2 交付报告",
-      "source_sha256": "5571a11716add46d34a97008607a39a30d0b53df96ffcf3f1d19b0c6e0c86907",
-      "published_sha256": "e57abaecfa91699936d206c9c265b6870e5083b72f697423ea796fbb1245092f",
-      "edits": {
-        "unpublished_attachment_links": 1,
-        "local_path_placeholders": 3
-      }
-    },
-    {
-      "path": "3d-animation-agent/reports/sft-conversion-20261123-001/REPORT.md",
-      "source": "3d-animation-agent/reports/sft-conversion-20261123-001/REPORT.md",
-      "source_kind": "local_note",
-      "title": "Kimi ReAct 首版 SFT 转换报告",
-      "source_sha256": "de7b81ccf0bb34fd37eda32aea0037c0ba44586640bcc61c878a85435ee3975c",
-      "published_sha256": "2c0c5dcd5419cfd9537aa0e730b00e7c4124d6ad67c58e989c9a8df180efbda9",
-      "edits": {
-        "local_path_placeholders": 4
-      }
-    },
-    {
-      "path": "3d-animation-agent/reports/student-cot-projection-exp-20261125-001/COT-PRUNE-OFFPOLICY-ISSUE.md",
-      "source": "3d-animation-agent/reports/student-cot-projection-exp-20261125-001/COT-PRUNE-OFFPOLICY-ISSUE.md",
-      "source_kind": "local_note",
-      "title": "问题记录：Round 2 DeepSeek CoT 二次压缩引入 `<think>` 槽位文风错位与 off-policy 分布偏移",
-      "source_sha256": "c2e1c06ef1919849b4e07ec44b78ce5710b3e213d7cd33c95b49d0e96cd8f882",
-      "published_sha256": "34878edfc3277735fed9cbee77a1203fb4c987280d1291052b28cf962bd6c746",
-      "edits": {
-        "unpublished_attachment_links": 3,
-        "local_path_placeholders": 2
-      }
-    },
-    {
-      "path": "3d-animation-agent/reports/student-cot-projection-exp-20261125-001/REPORT.md",
-      "source": "3d-animation-agent/reports/student-cot-projection-exp-20261125-001/REPORT.md",
-      "source_kind": "local_note",
-      "title": "27B 基座 NLL 分布体检与学生原生 CoT 投影实验报告（arXiv:2610.02140 轻量化落地）",
-      "source_sha256": "82c81469afa2ae8a3f661efa9334568ab75cf9d28166a485922d466f5f77ba9e",
-      "published_sha256": "b11971b7ceb4d988d2e5398081af20c70e5d780c770af691c5eb3c02d0b7df6c",
-      "edits": {
-        "unpublished_attachment_links": 6,
-        "local_path_placeholders": 1,
-        "internal_infrastructure": 1
-      }
-    },
-    {
-      "path": "3d-animation-agent/reports/training-pipeline-smoke-20261121/REPORT.md",
-      "source": "3d-animation-agent/reports/training-pipeline-smoke-20261121/REPORT.md",
-      "source_kind": "local_note",
-      "title": "Claude Code 轨迹到 Swift 的双样本烟测",
-      "source_sha256": "8ffe5a32c85c81f5e9d5c0ff2a87b59429430013ec9f619c0aac424cf8bb2eb3",
-      "published_sha256": "83f33b53513eddb7d887047ad51e5e8a6a11a4e728aa70a261507d261bc539bd",
-      "edits": {
-        "local_path_placeholders": 4
-      }
-    },
-    {
-      "path": "history/research/3d-agent-sandbox-distillation-20261120.md",
-      "source": "research/3d-agent-sandbox-distillation-20261120.md",
-      "source_kind": "archived_note",
-      "title": "Three.js 动画 Agent 沙盒蒸馏调研",
-      "source_sha256": "918cf52a526ee5c71d71752ab95316f6c7e9965c56c33ef6807bc02a22241d13",
-      "published_sha256": "43e4b61f07af5a830de8d7e0b8cd65f6817135bb9ed2bb88ee1adaf8a1171087",
-      "edits": {
-        "unpublished_attachment_links": 34
-      }
-    },
-    {
-      "path": "history/research/3d-agent-training-data-composition-20261122.md",
-      "source": "research/3d-agent-training-data-composition-20261122.md",
-      "source_kind": "archived_note",
-      "title": "3D Agent 27B 训练数据组成：通用代码、ReAct 与健康控制",
-      "source_sha256": "432b43a229c652901c8e2d659990ca671cf95a46705bd0d26276367b02cad0c4",
-      "published_sha256": "ff25e7856efb74c598f4885dfe93cbbcc18e0c0d583365d1549ab5bdbfe8eb62",
-      "edits": {}
-    },
-    {
-      "path": "history/research/3d-animation-improvement-and-sft-cases-20261121.md",
-      "source": "research/3d-animation-improvement-and-sft-cases-20261121.md",
-      "source_kind": "archived_note",
-      "title": "纯代码 3D 动画 Agent 的提升点、验收题与教师轨迹筛选",
-      "source_sha256": "8becd7e5b6723fd84234c8f342f983c6c8890f6a92eac84fe51eb43af36e4105",
-      "published_sha256": "ba99a070539578b03177605118da6c7a6cfbef0813a5c42f8feb3acc858f0ada",
-      "edits": {
-        "unpublished_attachment_links": 16
-      }
-    },
-    {
-      "path": "history/research/3d-verifiable-tasks-20261120.md",
-      "source": "research/3d-verifiable-tasks-20261120.md",
-      "source_kind": "archived_note",
-      "title": "给 3D Web 动画选一个可以做 RL 的子任务",
-      "source_sha256": "23327dfe05328eef8eff3526cd0e54a1b3b1ec01f8f939fc3cb209b781517a80",
-      "published_sha256": "a32fff8fa1b6575e2cb561186aa4f77c63c9580ce45b26b081f4d479d8033b21",
-      "edits": {
-        "unpublished_attachment_links": 3
-      }
-    },
-    {
-      "path": "history/research/3d-agent-data-mix-20261121/README.md",
-      "source": "research/3d-agent-data-mix-20261121/README.md",
-      "source_kind": "archived_note",
-      "title": "3D Agent 训练数据配比：通用开源代码与前沿难点任务簇",
-      "source_sha256": "0b96d7eea4491b6862ab74238851dc525d03d97165bb52a5014f377ec740033e",
-      "published_sha256": "bf1d849a3c3dfccf2d618dcc0520aa2625c4fc7349e5c45557384fbb50ca84fe",
-      "edits": {
-        "unpublished_attachment_links": 1
+        "local_path_placeholders": 6
       }
     }
   ]

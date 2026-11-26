@@ -1,0 +1,90 @@
+{
+  "schema_version": "visual-codefactory-contracts-v1.0",
+  "aligned_date": "2026-11-26",
+  "authority": "${WORKSPACE}/ai-employees/shared/3d-animation-agent/decisions.md",
+  "contract_fields": {
+    "needs_http_server": "boolean: false = opens directly via file://; true = served via local http.server",
+    "bundle_mode": "enum: single_file_inline | multi_file_local | parametric_source_plus_exports",
+    "allow_network": "boolean: strictly false across all tracks (zero external CDN/API dependencies)",
+    "motion_type": "enum: continuous_deterministic | interactive_state_switch | static_geometry"
+  },
+  "tracks": {
+    "3d_xhs_scene": {
+      "title": "3D Interactive Scene / Showcase (XHS 3DCodeFactory Aligned)",
+      "status": "active_primary",
+      "engine": "Three.js r180 + vendor/three.module.js + importmap + OrbitControls",
+      "data_strategy": "Reuse full 401-shard XHS 3DCodeFactory Three.js native compaction segments (compact_before + compact_recovery + uncut_main; zero prefix truncation; Blender 0%)",
+      "delivery": {
+        "needs_http_server": true,
+        "bundle_mode": "multi_file_local",
+        "allow_network": false,
+        "motion_type": "interactive_state_switch"
+      }
+    },
+    "3d_offline_mech_anim": {
+      "title": "3D Continuous Physical / Mechanical Animation (Standalone Sub-Capability)",
+      "status": "active_lightweight_subcapability",
+      "engine": "Three.js r180 + esbuild single-file inline + window.renderAt(t) + window.__3D_STATE__",
+      "data_strategy": "Existing Pool 1 (325) + Pool 5b (46) + targeted Astra-audited Rubric Best-of-2 additions",
+      "delivery": {
+        "needs_http_server": false,
+        "bundle_mode": "single_file_inline",
+        "allow_network": false,
+        "motion_type": "continuous_deterministic"
+      }
+    },
+    "cad_print_cq": {
+      "title": "Parametric CAD Modeling & 3D Printing (CadQuery Single-Part & Multi-Part Assembly)",
+      "status": "active_primary_factory",
+      "engine": "CadQuery 2.6.1 (src/model.py or multi-module params.py + parts/*.py + assembly.py -> STEP + 3MF + STL + GLB + 4-view/section inspection)",
+      "taxonomy": "configs/taxonomies/cadquery_tree_v1_1.json",
+      "data_strategy": "Replicate XHS factory philosophy on high-difficulty complex parts (15-45+ faces) & 2-6 part functional assemblies (P07, 5-tier geometric + zero-interference pyramid, staged Best-of-2, turn-mask)",
+      "delivery": {
+        "needs_http_server": false,
+        "bundle_mode": "parametric_source_plus_exports",
+        "allow_network": false,
+        "motion_type": "static_geometry"
+      },
+      "exclusions": ["Blender bpy (0%)", "OpenSCAD (N/A)", "slicer/material/physical fit certification", "figurine/sculptural printing (unverified)"]
+    },
+    "2d_web_interactive_multi": {
+      "title": "2D Web Multi-File Interactive Animation (Primary Top-Tier Deliverable + 1-Cmd MP4 Export)",
+      "status": "active_primary_factory",
+      "engine": "Offline multi-file Web project (index.html + css/styles.css + src/*.js + assets/*.svg + local vendor GSAP/Canvas 2D/SVG) + local http.server + window.renderAt(t) + window.__2D_STATE__ + #play/#pause/#scrub + Playwright/FFmpeg MP4 export",
+      "taxonomy": "configs/taxonomies/anim2d_tree_v1_1.json",
+      "data_strategy": "High-difficulty long-horizon multi-file visual refinement aligned with AnimWeb-Bench & MotionGraphicsBench (zero simple one-shot toys; no Manim)",
+      "delivery": {
+        "needs_http_server": true,
+        "bundle_mode": "multi_file_local",
+        "allow_network": false,
+        "motion_type": "continuous_deterministic"
+      }
+    },
+    "2d_anim_canvas": {
+      "title": "2D Deterministic Animation (Canvas 2D Lightweight Single-File Compat)",
+      "status": "active_lightweight_subcapability",
+      "engine": "HTML5 Canvas 2D (willReadFrequently: true) + window.renderAt(t) + #play/#pause/#scrub",
+      "taxonomy": "configs/taxonomies/anim2d_tree_v1_1.json",
+      "data_strategy": "Lightweight standalone Canvas compatibility & counterexample regression checks",
+      "delivery": {
+        "needs_http_server": false,
+        "bundle_mode": "single_file_inline",
+        "allow_network": false,
+        "motion_type": "continuous_deterministic"
+      }
+    },
+    "2d_anim_svg": {
+      "title": "2D Deterministic Animation (SVG + JS Lightweight Single-File Compat)",
+      "status": "active_lightweight_subcapability",
+      "engine": "Inline SVG (<svg id='stage'>) + deterministic JS DOM/transform driver + window.renderAt(t) + #play/#pause/#scrub",
+      "taxonomy": "configs/taxonomies/anim2d_tree_v1_1.json",
+      "data_strategy": "Lightweight standalone SVG compatibility & dedicated SVG DOM/transform/viewBox/clock counterexample checks",
+      "delivery": {
+        "needs_http_server": false,
+        "bundle_mode": "single_file_inline",
+        "allow_network": false,
+        "motion_type": "continuous_deterministic"
+      }
+    }
+  }
+}
