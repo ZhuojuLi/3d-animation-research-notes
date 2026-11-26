@@ -44,7 +44,7 @@
 ### 2.1 Track 2（2D Web 多文件交互动画）：真实顶级交付长什么样？
 
 #### （1）`AnimWeb-Bench`（12/124 个真实 Awwwards 页面实测）
-对本地 12 个完整 `ground_truth.html` + 资产目录做结构解剖（统计脚本与原始结果见 `sample_study_2026_analysis.json`（本地附件未发布））：
+对本地 12 个完整 `ground_truth.html` + 资产目录做结构解剖（统计脚本与原始结果见 [sample_study_2026_analysis.json](sample_study_2026_analysis.json)）：
 - **工程体量与资产密度**：单页 HTML `p50 = 192.4 KB`（均值 `253.3 KB`，最高 `795.6 KB` 如 `nexola.framer.website`）；HTML 标签 `p50 = 762`（均值 `876`，`p90 = 1,410`，最高 `2,155`）；静态资产 `p50 = 24` 个（均值 `27.8`，最高 `69` 个如 `missioncontrol.co` 含 `37` 个 `.svg`）；内联 `<svg>` 最高 `99` 个、`<canvas>` 最高 `25` 个（`griflan.com/workshop`）、`<script>` 达 `3–42` 个。
 - **高频动效技术栈分布（`n = 12`）**：
   - `svg`：**12/12（100%）**

@@ -1,0 +1,655 @@
+{
+  "itercad": {
+    "members_count": 70,
+    "ext_counts": {
+      ".jsonl": 1,
+      ".png": 69
+    },
+    "sample_names": [
+      "RL/IterCAD_RL.jsonl",
+      "RL/images/sample_000001_img_00.png",
+      "RL/images/sample_000002_img_00.png",
+      "RL/images/sample_000003_img_00.png",
+      "RL/images/sample_000004_img_00.png",
+      "RL/images/sample_000005_img_00.png",
+      "RL/images/sample_000006_img_00.png",
+      "RL/images/sample_000007_img_00.png",
+      "RL/images/sample_000008_img_00.png",
+      "RL/images/sample_000009_img_00.png",
+      "RL/images/sample_000010_img_00.png",
+      "RL/images/sample_000011_img_00.png",
+      "RL/images/sample_000012_img_00.png",
+      "RL/images/sample_000013_img_00.png",
+      "RL/images/sample_000014_img_00.png",
+      "RL/images/sample_000015_img_00.png",
+      "RL/images/sample_000016_img_00.png",
+      "RL/images/sample_000017_img_00.png",
+      "RL/images/sample_000018_img_00.png",
+      "RL/images/sample_000019_img_00.png"
+    ],
+    "json_files_count": 2,
+    "asst_turns": {
+      "n": 2000,
+      "min": 0,
+      "p25": 0.0,
+      "p50": 0.0,
+      "mean": 0.0,
+      "p90": 0.0,
+      "max": 0
+    },
+    "images_per_rec": {
+      "n": 2000,
+      "min": 1,
+      "p25": 1.0,
+      "p50": 1.0,
+      "mean": 1.0,
+      "p90": 1.0,
+      "max": 1
+    },
+    "code_chars_per_rec": {
+      "n": 2000,
+      "min": 0,
+      "p25": 0.0,
+      "p50": 0.0,
+      "mean": 0.0,
+      "p90": 0.0,
+      "max": 0
+    },
+    "think_chars_per_rec": {
+      "n": 2000,
+      "min": 0,
+      "p25": 0.0,
+      "p50": 0.0,
+      "mean": 0.0,
+      "p90": 0.0,
+      "max": 0
+    }
+  },
+  "zero_to_cad_100k": {
+    "val_parquet_shards": 24,
+    "val_total_bytes": 2788083787,
+    "schema_columns_documented": [
+      "uuid",
+      "num_faces",
+      "cadquery_ops_count",
+      "cadquery_ops_json",
+      "cadquery_file",
+      "step_file",
+      "stl_file"
+    ]
+  },
+  "motion_graphics_bench": {
+    "benchmark_rows": 100,
+    "benchmark_cols": [
+      "animation_id",
+      "animation_name",
+      "source_animation_url",
+      "input_svg",
+      "motion_edit_prompt",
+      "verification_program",
+      "source_animation_info"
+    ],
+    "has_inline_svg": 3,
+    "prompt_chars": {
+      "n": 100,
+      "min": 615,
+      "p25": 940.0,
+      "p50": 1098.5,
+      "mean": 1160.9,
+      "p90": 1510.0,
+      "max": 2457
+    },
+    "verifier_loc": {
+      "n": 100,
+      "min": 325,
+      "p25": 465.8,
+      "p50": 521.0,
+      "mean": 529.7,
+      "p90": 646.6,
+      "max": 856
+    },
+    "verifier_checks_per_task": {
+      "n": 100,
+      "min": 5,
+      "p25": 6.0,
+      "p50": 7.0,
+      "mean": 7.1,
+      "p90": 9.0,
+      "max": 11
+    },
+    "verifier_check_keywords": [
+      [
+        "pose",
+        39
+      ],
+      [
+        "scale",
+        17
+      ],
+      [
+        "bound",
+        13
+      ],
+      [
+        "order",
+        12
+      ],
+      [
+        "stagger",
+        10
+      ],
+      [
+        "pulse",
+        9
+      ],
+      [
+        "loop",
+        8
+      ],
+      [
+        "swing",
+        7
+      ],
+      [
+        "bounce",
+        7
+      ],
+      [
+        "easing",
+        6
+      ],
+      [
+        "wave",
+        6
+      ],
+      [
+        "fade",
+        6
+      ],
+      [
+        "timing",
+        4
+      ],
+      [
+        "overlap",
+        4
+      ],
+      [
+        "color",
+        4
+      ],
+      [
+        "rotate",
+        4
+      ],
+      [
+        "opacity",
+        3
+      ],
+      [
+        "clip",
+        3
+      ],
+      [
+        "path",
+        3
+      ],
+      [
+        "stroke",
+        3
+      ]
+    ],
+    "sample_tasks": [
+      {
+        "id": "10116636",
+        "name": "Knife",
+        "ver_fns": [
+          "ver_paper_bobs_up_then_down",
+          "ver_uncut_flat_start",
+          "ver_blade_slides_out_and_retracts",
+          "ver_thumb_slider_in_sync",
+          "ver_cutting_pass_and_curl_timing",
+          "ver_curled_flap_hinge_gap_and_hold",
+          "ver_knife_returns_easing_to_anchor",
+          "ver_artwork_preserved"
+        ],
+        "source_info": "{\"ip\":0,\"op\":60,\"fr\":30}"
+      },
+      {
+        "id": "10175370",
+        "name": "Scissor",
+        "ver_fns": [
+          "ver_rigid_halves",
+          "ver_shared_screw_hinge",
+          "ver_opposed_snip_and_reverse",
+          "ver_nearly_closed_overlap",
+          "ver_eased_brief_hold",
+          "ver_original_open_pose",
+          "ver_screw_fixed_on_top",
+          "ver_artwork_and_opacity_preserved"
+        ],
+        "source_info": "{\"ip\":0,\"op\":90,\"fr\":30}"
+      },
+      {
+        "id": "10299478",
+        "name": "Schedule",
+        "ver_fns": [
+          "ver_frame_zero_artwork",
+          "ver_rigid_vertical_artwork",
+          "ver_one_bob_and_eased_return",
+          "ver_dates_centered_scale",
+          "ver_two_staggered_shrink_sequences",
+          "ver_sequences_straddle_bob_peak"
+        ],
+        "source_info": "{\"ip\":0,\"op\":60,\"fr\":30}"
+      },
+      {
+        "id": "10411624",
+        "name": "Ireland",
+        "ver_fns": [
+          "ver_original_endpoint_poses",
+          "ver_fixed_letter_artwork",
+          "ver_three_upward_jump_hold_cycles",
+          "ver_smooth_eased_slides",
+          "ver_left_to_right_even_cascades",
+          "ver_original_window_clipped_handoffs"
+        ],
+        "source_info": "{\"ip\":0,\"op\":150,\"fr\":30}"
+      },
+      {
+        "id": "10433746",
+        "name": "Vip Badge",
+        "ver_fns": [
+          "ver_artwork_and_start",
+          "ver_rosette_clockwise_half_turn",
+          "ver_stationary_forward_center",
+          "ver_three_alternating_ribbon_swings",
+          "ver_ribbons_pivot_as_intact_pieces",
+          "ver_rotations_together_before_scaling",
+          "ver_uniform_centered_scale_and_ease_out"
+        ],
+        "source_info": "{\"ip\":0,\"op\":61,\"fr\":30}"
+      }
+    ]
+  },
+  "animweb_bench": {
+    "n_samples": 12,
+    "html_bytes": {
+      "n": 12,
+      "min": 53488,
+      "p25": 116412.8,
+      "p50": 192387.5,
+      "mean": 253316.4,
+      "p90": 474638.8,
+      "max": 814702
+    },
+    "html_tags": {
+      "n": 12,
+      "min": 259,
+      "p25": 527.0,
+      "p50": 761.5,
+      "mean": 875.9,
+      "p90": 1410.2,
+      "max": 2155
+    },
+    "assets_per_page": {
+      "n": 12,
+      "min": 3,
+      "p25": 13.5,
+      "p50": 24.0,
+      "mean": 27.8,
+      "p90": 53.2,
+      "max": 69
+    },
+    "tech_and_libs_hit_count": [
+      [
+        "svg",
+        12
+      ],
+      [
+        "transform",
+        12
+      ],
+      [
+        "transition",
+        11
+      ],
+      [
+        "clip-path",
+        9
+      ],
+      [
+        "canvas",
+        8
+      ],
+      [
+        "lenis",
+        8
+      ],
+      [
+        "@keyframes",
+        4
+      ],
+      [
+        "three",
+        4
+      ],
+      [
+        "framer",
+        2
+      ],
+      [
+        "requestanimationframe",
+        2
+      ],
+      [
+        "swiper",
+        2
+      ],
+      [
+        "lottie",
+        1
+      ],
+      [
+        "webgl",
+        1
+      ],
+      [
+        "gsap",
+        1
+      ],
+      [
+        "scrolltrigger",
+        1
+      ]
+    ],
+    "samples": [
+      {
+        "id": "1",
+        "url": "https://pellmell.fr/",
+        "meta_keys": [
+          "id",
+          "url"
+        ],
+        "html_bytes": 255084,
+        "html_tags": 758,
+        "n_assets": 37,
+        "asset_exts": {
+          ".jpg": 12,
+          ".png": 12,
+          ".mp4": 5,
+          ".avif": 4,
+          ".webp": 2,
+          ".ico": 1
+        }
+      },
+      {
+        "id": "5",
+        "url": "https://griflan.com/workshop",
+        "meta_keys": [
+          "id",
+          "url"
+        ],
+        "html_bytes": 491327,
+        "html_tags": 485,
+        "n_assets": 3,
+        "asset_exts": {
+          ".png": 2,
+          ".jpg": 1
+        }
+      },
+      {
+        "id": "12",
+        "url": "https://mariavareva.com",
+        "meta_keys": [
+          "id",
+          "url"
+        ],
+        "html_bytes": 324445,
+        "html_tags": 765,
+        "n_assets": 36,
+        "asset_exts": {
+          ".jpg": 25,
+          ".png": 10,
+          ".svg": 1
+        }
+      },
+      {
+        "id": "23",
+        "url": "https://missioncontrol.co",
+        "meta_keys": [
+          "id",
+          "url"
+        ],
+        "html_bytes": 264969,
+        "html_tags": 1445,
+        "n_assets": 69,
+        "asset_exts": {
+          ".svg": 37,
+          ".webp": 3
+        }
+      },
+      {
+        "id": "35",
+        "url": "https://www.davidalaba.com/about",
+        "meta_keys": [
+          "id",
+          "url"
+        ],
+        "html_bytes": 178083,
+        "html_tags": 1097,
+        "n_assets": 21,
+        "asset_exts": {
+          ".png": 16,
+          ".webp": 5
+        }
+      },
+      {
+        "id": "48",
+        "url": "https://nexorie.bytetown.agency/",
+        "meta_keys": [
+          "id",
+          "url"
+        ],
+        "html_bytes": 170151,
+        "html_tags": 541,
+        "n_assets": 14,
+        "asset_exts": {
+          ".svg": 7,
+          ".mp4": 3,
+          ".png": 2,
+          ".ico": 1,
+          ".webp": 1
+        }
+      },
+      {
+        "id": "60",
+        "url": "https://www.8bit.ai/",
+        "meta_keys": [
+          "id",
+          "url"
+        ],
+        "html_bytes": 206692,
+        "html_tags": 1032,
+        "n_assets": 12,
+        "asset_exts": {
+          ".png": 6,
+          ".jpg": 6
+        }
+      },
+      {
+        "id": "74",
+        "url": "https://forma5.com/en/",
+        "meta_keys": [
+          "id",
+          "url"
+        ],
+        "html_bytes": 120872,
+        "html_tags": 902,
+        "n_assets": 55,
+        "asset_exts": {
+          ".webp": 15,
+          ".jpg": 10,
+          ".png": 10,
+          ".svg": 5
+        }
+      }
+    ]
+  },
+  "webdev_bench": {
+    "n_tasks": 15,
+    "milestones_per_task": {
+      "n": 15,
+      "min": 4,
+      "p25": 4.0,
+      "p50": 5.0,
+      "mean": 4.5,
+      "p90": 5.0,
+      "max": 5
+    },
+    "domains": [
+      [
+        "content & news",
+        3
+      ],
+      [
+        "tool dashboard",
+        3
+      ],
+      [
+        "local services",
+        2
+      ],
+      [
+        "education courses",
+        2
+      ],
+      [
+        "data display",
+        1
+      ],
+      [
+        "marketing landing page",
+        1
+      ],
+      [
+        "booking service",
+        1
+      ],
+      [
+        "e-commerce",
+        1
+      ],
+      [
+        "community forms",
+        1
+      ]
+    ],
+    "operators": [
+      [
+        "restructure layout",
+        9
+      ],
+      [
+        "restyle",
+        9
+      ],
+      [
+        "make interactive",
+        8
+      ],
+      [
+        "add section",
+        7
+      ],
+      [
+        "wire up data",
+        7
+      ],
+      [
+        "remove section",
+        6
+      ],
+      [
+        "repair",
+        6
+      ],
+      [
+        "generate",
+        5
+      ],
+      [
+        "add state",
+        4
+      ],
+      [
+        "replicate",
+        3
+      ],
+      [
+        "make responsive",
+        1
+      ]
+    ],
+    "seed_types": {
+      "brownfield": 7,
+      "replicate": 3,
+      "prd": 5
+    },
+    "checklist_dims": {
+      "coverage": 39,
+      "visual": 96,
+      "functional": 161,
+      "interaction": 90,
+      "data": 1
+    }
+  },
+  "cadgenbench": {
+    "sampled_fixtures": 0,
+    "types": {},
+    "fixture_ids": []
+  },
+  "benchcad_codegen_40": {
+    "families": [
+      [
+        "washer",
+        11
+      ],
+      [
+        "bolt",
+        11
+      ],
+      [
+        "spacer_ring",
+        8
+      ],
+      [
+        "hex_nut",
+        7
+      ],
+      [
+        "pulley",
+        3
+      ]
+    ],
+    "difficulties": {
+      "medium": 16,
+      "easy": 14,
+      "hard": 10
+    },
+    "base_planes": {
+      "XZ": 13,
+      "XY": 11,
+      "YZ": 16
+    },
+    "code_loc": {
+      "n": 40,
+      "min": 11,
+      "p25": 13.0,
+      "p50": 14.0,
+      "mean": 15.1,
+      "p90": 19.0,
+      "max": 36
+    }
+  }
+}

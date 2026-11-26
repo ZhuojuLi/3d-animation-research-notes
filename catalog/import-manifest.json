@@ -88,6 +88,17 @@
       }
     },
     {
+      "path": "3d-animation-agent/docs/XHS-TASK-AND-RUBRIC-SPEC.md",
+      "source": "3d-animation-agent/docs/XHS-TASK-AND-RUBRIC-SPEC.md",
+      "source_kind": "engineering_doc",
+      "title": "小红书 `3DCodeFactory` 出题与 Rubric 体系拆解及 2D / CAD 双轨并发造数规范",
+      "source_sha256": "dd947a094d2935db0e1581ae1c8c9fcd20e63cf6117389245b354e8f94833cc0",
+      "published_sha256": "e9b74d2ee914ad42d143a00c82ffac0489921ca5f14aaed43dfd9376ff2768d0",
+      "edits": {
+        "local_path_placeholders": 1
+      }
+    },
+    {
       "path": "3d-animation-agent/docs/XHS-UNIFIED-SFT-STANDARD.md",
       "source": "3d-animation-agent/docs/XHS-UNIFIED-SFT-STANDARD.md",
       "source_kind": "engineering_doc",
@@ -1105,8 +1116,8 @@
       "source": "research/README.md",
       "source_kind": "local_note",
       "title": "研究笔记索引",
-      "source_sha256": "eaa911cf57f1050610d91560ca9bfa62ae539e8f0c066e0773c1e2d751fd11e9",
-      "published_sha256": "f37b71df27c332cd23a8b856059ff3f98f803952a670ae061c44b843245cd61b",
+      "source_sha256": "0ded74be7ad6d4d20f5f4cc1557540ab44aad8a8e9b8bd07fc0b14a02c90d072",
+      "published_sha256": "c31055d9c22c1b2f7f10e8894a36389f9e3a8cfcf8efd5c99596d32e344a0922",
       "edits": {
         "unpublished_attachment_links": 4
       }
@@ -1172,12 +1183,20 @@
       "source": "research/cad-2d-sample-study-and-taxonomy-v2-20261126/README.md",
       "source_kind": "local_note",
       "title": "2026 外部 2D / CAD 高质样本实测调研、27B 能力缺口与 v2.0 高难分类树报告",
-      "source_sha256": "f7899ce804953b08703384670e7a2231b5ce30ae1c3e1b3a5763728495894fca",
-      "published_sha256": "c5b4f22dafe9178629b943349e42d065f3e6628e18031130c068965182ca4105",
+      "source_sha256": "c6427e9500fe28a8616c79dde493185a02e9aca11855e0733f3038458a8f9ca6",
+      "published_sha256": "3b0c95653e0a38b3690bcde9641aac8c34fc68e81f8bbe0b658a58ea83048e0c",
       "edits": {
-        "local_path_placeholders": 2,
-        "unpublished_attachment_links": 1
+        "local_path_placeholders": 2
       }
+    },
+    {
+      "path": "research/cad-2d-sample-study-and-taxonomy-v2-20261126/sample_study_2026_analysis.json",
+      "source": "research/cad-2d-sample-study-and-taxonomy-v2-20261126/sample_study_2026_analysis.json",
+      "source_kind": "local_note",
+      "title": "sample_study_2026_analysis.json",
+      "source_sha256": "abf4fde6e0c13072bfd651d4e7c1e6ed5333972316e654b8aef5a8feb3d26a93",
+      "published_sha256": "abf4fde6e0c13072bfd651d4e7c1e6ed5333972316e654b8aef5a8feb3d26a93",
+      "edits": {}
     },
     {
       "path": "research/three-track-data-factory-strategy-20261126/README.md",
