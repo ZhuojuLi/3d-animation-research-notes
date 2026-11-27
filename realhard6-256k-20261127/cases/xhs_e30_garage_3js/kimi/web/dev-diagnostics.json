@@ -1,0 +1,250 @@
+{
+  "date": "2026-11-27T11:05:13.720Z",
+  "port": 34807,
+  "viewport": [
+    1536,
+    1024
+  ],
+  "strictOffline": true,
+  "states": {
+    "default": {
+      "ready": true,
+      "revision": "180",
+      "renderer": "WebKit WebGL",
+      "webgl": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "resolution": [
+        1536,
+        1024
+      ],
+      "camera": [
+        3.2799999999999994,
+        1.3299999999999987,
+        -5.179999999999999
+      ],
+      "target": [
+        0,
+        0.82,
+        -0.5499999999999998
+      ],
+      "view": "default",
+      "lift": 0,
+      "liftHeightMeters": 0,
+      "doorOpenAmount": 0,
+      "doorAngleDegrees": 0,
+      "drawCalls": 1329,
+      "triangles": 249208,
+      "geometries": 1448,
+      "textures": 22,
+      "meshes": 1453,
+      "errors": []
+    },
+    "front": {
+      "ready": true,
+      "revision": "180",
+      "renderer": "WebKit WebGL",
+      "webgl": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "resolution": [
+        1536,
+        1024
+      ],
+      "camera": [
+        3.2799999999999994,
+        1.3300000000000005,
+        -5.179999999999999
+      ],
+      "target": [
+        0,
+        0.72,
+        -1.2
+      ],
+      "view": "front",
+      "lift": 0,
+      "liftHeightMeters": 0,
+      "doorOpenAmount": 0,
+      "doorAngleDegrees": 0,
+      "drawCalls": 1332,
+      "triangles": 247464,
+      "geometries": 1448,
+      "textures": 22,
+      "meshes": 1453,
+      "errors": []
+    },
+    "wheel": {
+      "ready": true,
+      "revision": "180",
+      "renderer": "WebKit WebGL",
+      "webgl": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "resolution": [
+        1536,
+        1024
+      ],
+      "camera": [
+        2.2800000000000002,
+        0.7500000000000004,
+        -3.5799999999999996
+      ],
+      "target": [
+        0.5500000000000002,
+        0.5500000000000002,
+        -1.4
+      ],
+      "view": "wheel",
+      "lift": 0,
+      "liftHeightMeters": 0,
+      "doorOpenAmount": 0,
+      "doorAngleDegrees": 0,
+      "drawCalls": 1233,
+      "triangles": 233568,
+      "geometries": 1448,
+      "textures": 22,
+      "meshes": 1453,
+      "errors": []
+    },
+    "interior": {
+      "ready": true,
+      "revision": "180",
+      "renderer": "WebKit WebGL",
+      "webgl": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "resolution": [
+        1536,
+        1024
+      ],
+      "camera": [
+        2.55,
+        1.52,
+        1.5800000000000007
+      ],
+      "target": [
+        -0.030000000000000027,
+        0.98,
+        0.08000000000000007
+      ],
+      "view": "interior",
+      "lift": 0,
+      "liftHeightMeters": 0,
+      "doorOpenAmount": 0.9999999997717091,
+      "doorAngleDegrees": -61.30648406500238,
+      "drawCalls": 986,
+      "triangles": 185718,
+      "geometries": 1448,
+      "textures": 22,
+      "meshes": 1453,
+      "errors": []
+    },
+    "underbody": {
+      "ready": true,
+      "revision": "180",
+      "renderer": "WebKit WebGL",
+      "webgl": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "resolution": [
+        1536,
+        1024
+      ],
+      "camera": [
+        2.6499999999999995,
+        0.20000000000000018,
+        -2.779999999999999
+      ],
+      "target": [
+        0,
+        1.18,
+        -0.03
+      ],
+      "view": "underbody",
+      "lift": 0.999999999251717,
+      "liftHeightMeters": 1.1499999991394745,
+      "doorOpenAmount": 2.47601628752566e-10,
+      "doorAngleDegrees": -1.5179585311053184e-8,
+      "drawCalls": 1329,
+      "triangles": 244912,
+      "geometries": 1448,
+      "textures": 22,
+      "meshes": 1453,
+      "errors": []
+    },
+    "defaultAfterTests": {
+      "ready": true,
+      "revision": "180",
+      "renderer": "WebKit WebGL",
+      "webgl": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "resolution": [
+        1536,
+        1024
+      ],
+      "camera": [
+        3.2799999999999994,
+        1.33,
+        -5.179999999999999
+      ],
+      "target": [
+        0,
+        0.82,
+        -0.5499999999999998
+      ],
+      "view": "default",
+      "lift": 2.1455505765809765e-19,
+      "liftHeightMeters": 2.4673831630681227e-19,
+      "doorOpenAmount": 1.859272490908057e-12,
+      "doorAngleDegrees": -1.1398545936237393e-10,
+      "drawCalls": 1329,
+      "triangles": 249208,
+      "geometries": 1448,
+      "textures": 22,
+      "meshes": 1453,
+      "errors": []
+    }
+  },
+  "checks": {
+    "continuousLift": {
+      "target": 0.57,
+      "actual": 0.5697655595574588,
+      "height": 0.6552303934910776,
+      "carriages": [
+        1.0452303934910776,
+        1.0452303934910776
+      ]
+    },
+    "liftButtonLowered": {
+      "target": 0,
+      "height": 0.00004906537447199213,
+      "pressed": "false"
+    },
+    "liftKeyboardRaised": {
+      "target": 1,
+      "height": 1.1494245054063803
+    },
+    "raycastDoor": {
+      "target": 1,
+      "actual": 0.9999641726863039,
+      "degrees": -61.30428763236139
+    },
+    "doorKeyboardClosed": {
+      "target": 0,
+      "actual": 0.00013020038943907113
+    }
+  },
+  "errors": [],
+  "failedRequests": [],
+  "requests": [
+    "http://127.0.0.1:34807/index.html",
+    "http://127.0.0.1:34807/style.css",
+    "http://127.0.0.1:34807/js/main.js",
+    "http://127.0.0.1:34807/vendor/three.module.js",
+    "http://127.0.0.1:34807/vendor/controls/OrbitControls.js",
+    "http://127.0.0.1:34807/vendor/environments/RoomEnvironment.js",
+    "http://127.0.0.1:34807/js/materials.js",
+    "http://127.0.0.1:34807/js/car.js",
+    "http://127.0.0.1:34807/js/garage.js",
+    "http://127.0.0.1:34807/js/utils.js",
+    "http://127.0.0.1:34807/vendor/geometries/RoundedBoxGeometry.js",
+    "http://127.0.0.1:34807/vendor/three.core.js"
+  ],
+  "externalRequests": [],
+  "threeVendorFiles": [
+    "http://127.0.0.1:34807/vendor/three.module.js",
+    "http://127.0.0.1:34807/vendor/controls/OrbitControls.js",
+    "http://127.0.0.1:34807/vendor/environments/RoomEnvironment.js",
+    "http://127.0.0.1:34807/vendor/geometries/RoundedBoxGeometry.js",
+    "http://127.0.0.1:34807/vendor/three.core.js"
+  ]
+}

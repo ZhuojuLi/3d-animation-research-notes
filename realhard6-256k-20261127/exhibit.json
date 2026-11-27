@@ -1,0 +1,7 @@
+{
+  "title": "真高难基准四方同台实测：BenchCAD 2.1 × 小红书百万Token真题 (256K原生窗口)",
+  "description": "3道官方BenchCAD 2.1无公式工业总装真题（T5/T4/T2）+ 3道小红书3DCodeFactory百万Token真题（Three.js r180 + Blender 4.2.10 bpy），Opus-5.5 vs Kimi-K3.1-Pro vs AGY vs 官方真值/小红书原版教师四方同台盲测与交互检视",
+  "limitations": "小红书教堂废墟原版教师从分片压缩历史重建的代码含1处纹理wrapS小瑕疵（已附原轨迹最终渲染图）；Opus海角片场99.9万面Blender场景的网页预览GLB已做适度流式减面以适配浏览器流畅加载。",
+  "published_at": "2026-11-27T12:36:26+00:00",
+  "thumbnail": "assets/preview.jpg"
+}

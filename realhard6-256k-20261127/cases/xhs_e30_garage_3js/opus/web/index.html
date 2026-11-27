@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>BMW E30 · Classic Restoration Garage</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #111; font-family: system-ui, sans-serif; }
+  #app { position: fixed; inset: 0; }
+  #help { position: fixed; left: 14px; bottom: 12px; color: #ddd; font-size: 12px; line-height: 1.5;
+    background: rgba(10,12,16,.55); padding: 8px 12px; border-radius: 6px; pointer-events: none; }
+  body.clean #help { display: none; }
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "./vendor/three/build/three.module.js",
+  "three/addons/": "./vendor/three/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<div id="app"></div>
+<div id="help">拖拽旋转 · 滚轮缩放 · 右键平移 ｜ ↑/↓ 举升机 ｜ 点击车门或 D/F 开关车门 ｜ 1–6 切换机位</div>
+<script>if (new URLSearchParams(location.search).has('nogui')) document.body.classList.add('clean');</script>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

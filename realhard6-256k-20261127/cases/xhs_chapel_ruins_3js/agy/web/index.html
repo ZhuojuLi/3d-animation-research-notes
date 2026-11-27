@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>落日山间废墟教堂前庭 · Sunset Mountain Chapel Ruins</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #1a1210;
+      font-family: system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+      user-select: none;
+    }
+    #canvas-container {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+    canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Unobtrusive interactive HUD: hidden on initial clean render, fades in smoothly on mouse/key interaction */
+    #hud {
+      position: fixed;
+      left: 20px;
+      bottom: 20px;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 12px 15px;
+      border-radius: 12px;
+      background: rgba(24, 17, 15, 0.72);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 196, 132, 0.20);
+      color: #f2e4d4;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(6px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      max-width: 340px;
+    }
+    #hud.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+    .hud-title {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: #ffca8a;
+    }
+    .hud-sub {
+      font-size: 11px;
+      color: rgba(242, 228, 212, 0.72);
+      line-height: 1.45;
+    }
+    .btn-row {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .preset-btn {
+      appearance: none;
+      border: 1px solid rgba(255, 196, 132, 0.28);
+      background: rgba(52, 36, 28, 0.65);
+      color: #f4e6d6;
+      font-size: 11.5px;
+      padding: 5px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.05s, border-color 0.05s, color 0.05s;
+    }
+    .preset-btn:hover {
+      background: rgba(110, 68, 38, 0.78);
+      border-color: rgba(255, 196, 132, 0.6);
+    }
+    .preset-btn.active {
+      background: rgba(186, 104, 42, 0.85);
+      border-color: #ffd093;
+      color: #fffaf2;
+    }
+    .slider-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 11px;
+      color: rgba(242, 228, 212, 0.85);
+    }
+    .slider-row input[type="range"] {
+      flex: 1;
+      accent-color: #ef9a48;
+      cursor: pointer;
+    }
+  </style>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./vendor/three/build/three.module.js",
+        "three/addons/": "./vendor/three/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="canvas-container"></div>
+
+  <div id="hud">
+    <div class="hud-title">落日山间废墟教堂前庭</div>
+    <div class="hud-sub">拖拽旋转 · 滚轮推进 · 悬停/靠近拱门唤醒烛光 · 注视石阶轻拂微风</div>
+    <div class="btn-row">
+      <button class="preset-btn active" data-preset="default">1 落日主视角</button>
+      <button class="preset-btn" data-preset="archway">2 聚焦拱门烛火</button>
+      <button class="preset-btn" data-preset="steps">3 近观石阶微风</button>
+    </div>
+    <div class="slider-row">
+      <span>拱门烛光溢出</span>
+      <input id="slider-candle" type="range" min="0" max="1" step="0.01" value="0" />
+    </div>
+    <div class="slider-row">
+      <span>前庭枯草微风</span>
+      <input id="slider-wind" type="range" min="0" max="1" step="0.01" value="0" />
+    </div>
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

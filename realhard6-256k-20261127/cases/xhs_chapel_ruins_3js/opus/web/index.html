@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>落日 · 山间废弃教堂前庭 — Three.js</title>
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #1a1218; }
+  canvas { display: block; }
+  #hint { position: fixed; left: 16px; bottom: 14px; color: #f3dcc4; font: 12px/1.5 system-ui, sans-serif; opacity: .75; text-shadow: 0 1px 3px #000; pointer-events: none; }
+  body.capture #hint, body.capture .lil-gui { display: none !important; }
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "./vendor/three/build/three.module.js",
+  "three/addons/": "./vendor/three/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<div id="hint">拖动旋转 · 滚轮缩放 · 靠近/聚焦拱门：烛光渐亮 · 俯看近处石阶：枯草与树影随风轻动 · 按 C 恢复参考机位</div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

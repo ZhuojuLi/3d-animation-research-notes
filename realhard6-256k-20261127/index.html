@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>真高难基准四方同台评测 · BenchCAD 2.1 × 小红书百万Token真题 (256K原生窗口对齐)</title>
+<script type="importmap">
+{
+  "imports": {
+    "three": "./assets/vendor/three/three.module.js",
+    "three/addons/": "./assets/vendor/three/addons/"
+  }
+}
+</script>
+<style>
+  :root {
+    --bg: #0b0f17;
+    --panel: #131a26;
+    --panel2: #192233;
+    --border: #27344d;
+    --text: #e6edf7;
+    --muted: #95a4bd;
+    --accent: #4ea1ff;
+    --green: #38d399;
+    --amber: #f6b93b;
+    --red: #ff6b6b;
+    --purple: #b084ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.5;
+  }
+  header {
+    padding: 24px 32px; border-bottom: 1px solid var(--border);
+    background: linear-gradient(180deg, #111927 0%, #0b0f17 100%);
+  }
+  h1 { margin: 0 0 8px; font-size: 22px; font-weight: 700; }
+  .sub { color: var(--muted); font-size: 13.5px; max-width: 1280px; }
+  .pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .pill {
+    font-size: 12px; padding: 4px 10px; border-radius: 999px;
+    background: var(--panel2); border: 1px solid var(--border); color: #cfe0ff;
+  }
+  main { max-width: 1720px; margin: 0 auto; padding: 20px 28px 60px; }
+  .summary-wrap {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 12px;
+    padding: 16px 20px; margin-bottom: 22px; overflow-x: auto;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { padding: 9px 10px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; background: rgba(255,255,255,0.02); }
+  .score-hi { color: var(--green); font-weight: 700; }
+  .score-mid { color: var(--amber); font-weight: 700; }
+  .score-lo { color: var(--red); font-weight: 700; }
+  .tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .tab-btn {
+    padding: 9px 14px; border-radius: 8px; border: 1px solid var(--border);
+    background: var(--panel); color: var(--muted); cursor: pointer; font-size: 13px; font-weight: 600;
+  }
+  .tab-btn.active { background: #1e3252; color: #fff; border-color: var(--accent); }
+  .case-header {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 12px;
+    padding: 16px 20px; margin-bottom: 16px;
+  }
+  .inputs-strip {
+    display: flex; gap: 12px; overflow-x: auto; padding: 10px 0 4px;
+  }
+  .inp-card {
+    flex: 0 0 auto; width: 250px; background: var(--panel2); border: 1px solid var(--border);
+    border-radius: 8px; padding: 8px;
+  }
+  .inp-card img {
+    width: 100%; height: 150px; object-fit: contain; background: #fff; border-radius: 4px; cursor: zoom-in;
+  }
+  .inp-card .cap { font-size: 11.5px; color: var(--muted); margin-top: 5px; word-break: break-all; }
+  .grid4 {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px;
+  }
+  @media (min-width: 1500px) {
+    .grid4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  }
+  .mcard {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 12px;
+    padding: 14px; display: flex; flex-direction: column; gap: 10px;
+  }
+  .mcard h3 { margin: 0; font-size: 14.5px; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  .stage-box {
+    width: 100%; aspect-ratio: 3 / 2; background: #090d14; border: 1px solid var(--border);
+    border-radius: 8px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center;
+  }
+  .stage-box img { width: 100%; height: 100%; object-fit: contain; cursor: zoom-in; }
+  .stage-box iframe { width: 100%; height: 100%; border: 0; background: #000; }
+  .glb-canvas { width: 100%; height: 100%; display: block; }
+  .btn-row { display: flex; flex-wrap: wrap; gap: 6px; }
+  .btn {
+    padding: 5px 10px; font-size: 12px; border-radius: 6px; border: 1px solid var(--border);
+    background: var(--panel2); color: var(--text); cursor: pointer; text-decoration: none;
+  }
+  .btn:hover { border-color: var(--accent); color: #fff; }
+  .meta-box {
+    font-size: 12px; color: var(--muted); background: var(--panel2); border-radius: 8px; padding: 8px 10px;
+  }
+  details summary { cursor: pointer; color: var(--accent); font-size: 12.5px; margin-top: 8px; }
+  pre.prompt-pre {
+    white-space: pre-wrap; font-size: 12px; color: #c7d4ea; background: #0d131f;
+    padding: 12px; border-radius: 8px; border: 1px solid var(--border); max-height: 260px; overflow: auto;
+  }
+  #lightbox {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.88); display: none;
+    align-items: center; justify-content: center; z-index: 9999; padding: 24px;
+  }
+  #lightbox img { max-width: 95vw; max-height: 92vh; object-fit: contain; border-radius: 8px; background: #111; }
+</style>
+</head>
+<body>
+<header>
+  <h1>真高难基准四方同台实测：官方 BenchCAD 2.1 装配真题 × 小红书百万 Token 复合真题</h1>
+  <div class="sub">
+    彻底摒弃手喂数学公式与玩具级自编题，直接采用 <b>官方 BenchCAD 2.1 无公式工业装配真题（T5 / T4 / T2）</b> 与 <b>小红书 3DCodeFactory 原生 ~1M Token 跨领域真题（Three.js r180 + Blender 4.2.10 bpy）</b>。
+    严格对齐 2026-11-27 最新纠偏规范（统一回归 Qwen3.8-27B 原生满血 <b>256K = 262,144</b> 窗口，自动压缩水位 220K / 85%；外部 Opus 因官方接口 200K 硬上限由 Claude Code 自动钳位）：<b>Claude-Opus-5-5</b> 与 <b>Kimi-K3.1-Pro</b> 共享逐字节一致的隔离沙盒，与 <b>AGY</b> 及 <b>官方真值 / 小红书原版教师</b> 四方同台盲测。
+  </div>
+  <div class="pills">
+    <span class="pill">统一原生满血窗口：AGENT_CONTEXT_WINDOW_TOKENS = 262,144 (256K · 220K/85% Auto-Compact)</span>
+    <span class="pill">纯代码三引擎齐备：CadQuery 2.6.1 · Three.js r180 · Blender 4.2.10 LTS (bpy)</span>
+    <span class="pill">Opus 专用路由：claude-phanthy.sh (18790 · modelUsage=claude-opus-5-5)</span>
+    <span class="pill">零真值泄漏：gt/ 与小红书教师源码物理隔离</span>
+  </div>
+</header>
+
+<main>
+  <div class="summary-wrap">
+    <div style="font-weight:700;margin-bottom:10px;font-size:14.5px;">全矩阵定量成绩与上下文长度总表（点击下方题目切换四方 3D 交互检视）</div>
+    <table id="summary-table">
+      <thead>
+        <tr>
+          <th>真题 ID / 引擎</th>
+          <th>官方标尺 / 小红书原版教师 (~1M tok)</th>
+          <th>Claude-Opus-5-5 (同沙盒对照)</th>
+          <th>Kimi-K3.1-Pro (256K 原生窗口)</th>
+          <th>AGY 沙盒子智能体</th>
+        </tr>
+      </thead>
+      <tbody id="summary-tbody"></tbody>
+    </table>
+  </div>
+
+  <div class="tabs" id="case-tabs"></div>
+  <div id="case-view"></div>
+</main>
+
+<div id="lightbox" onclick="this.style.display='none'"><img id="lightbox-img" src="" alt="zoom" /></div>
+
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+const CASES = [{"id": "bc_t5_shear25", "track": "benchcad", "engine": "cadquery", "title_zh": "BenchCAD 2.1 T5 · 25实例气动剪切单元（总装图 + 5张非标零件图 + 16个打乱位姿外购STEP）", "metric": "part_x_asm_v1", "opus_ref_core_mean": 0.6613, "astra_ref_core_mean": 0.6902, "prompt": "You are solving an official BenchCAD 2.1 engineering CAD assembly task in the current working directory.\n\n# T5 - drawing set + assembly drawing -> assembly\n\n`drawing.png` is the assembly drawing (`drawing_p2.png` per further page).\n`part_drawings/part_NN.png` are the drawings of the parts to model, in\nmillimetres, first-angle projection unless the sheet's header says\nthird-angle. Every sheet is its drawing area (frame, footer and parts-list\ntable cropped away; the parts list is `bom.json`) at a resolution where\nthe dimensions read. Only when a sheet's lettering is too small to read\nwhole is it also on disk as tiles `<sheet>_tile_r<i>c<j>.png` (row i from\nthe top, column j from the left, 10 % overlap); the directory listing shows\nwhether there are any. `step_files/part_NN.step` are the supplied parts,\neach centred on its bounding box and given a random axis-aligned 90-degree\nrotation. `bom.json` gives each part's id, `name`, `source` (`drawing` or\n`step`), `quantity` and `item` (its balloon number on the assembly\ndrawing). The parts list may show standard fasteners that are not in\n`bom.json`; those are not part of the answer.\n\nModel the drawing parts at the drawn size and place every instance of every\npart: `export_part` for each modelled part, `use_part` for each supplied\none, then `submit_assembly` with one `{\"part_id\", \"transform\"}` per\ninstance, `transform` a rigid 4x4 (proper rotation, no mirror or scale,\ntranslation in millimetres) mapping the part file's frame to the assembly\nframe. The whole assembly's position and axis-aligned orientation are free.\n\nDirectory:\n  hires/   drawing.png\n  part_drawings/   hires, part_03.png, part_14.png, part_16.png, part_19.png, part_21.png; 10 tiles <sheet>_tile_r<i>c<j>.png\n  step_files/   part_01.step, part_02.step ... part_20.step (16 files)\n  bom.json\n  drawing.png   + 2 tiles drawing_tile_r<i>c<j>.png\n\ntools.py (importable as `import tools` in Python):\n  export_part(solid_or_step_path, part_id) -> submission/parts/<part_id>.step\n  use_part(part_id)            -> submission/parts/<part_id>.step, the supplied file unchanged\n  submit_assembly(instances)   -> submission/assembly/instances.json; instances = [{part_id, transform[, instance_id]}]\n  export(solid, path)          -> STEP, for your own checks; not the answer\n  crop(png, (l, t, r, b)[, out]) -> a PNG of that box, in the file's own pixel coordinates (a sheet file is larger than shown; the crop is cut from the 2x master under hires/)\n\nPreinstalled offline Python environment (`python3` on PATH):\n- `cadquery` (OCCT B-rep kernel), `numpy`, `scipy`, `PIL` (Pillow), `trimesh`, `matplotlib`.\n- Strict Workspace Isolation: Work ONLY inside the current working directory (`./`) and `$TMPDIR`. NEVER traverse, search, or read any parent directory, `/tmp/benchcad*`, `/mnt/*`, or `/home/*` paths outside your workspace. Zero network access.\n\nRequired Workflow & Final Deliverable on Disk:\n1. Inspect `bom.json` and the input PNG sheets/views (`Read` images, and use `tools.crop(png_path, (l, t, r, b), out_png)` or inspect `*_tile_r*c*.png` tiles to read fine engineering dimensions, section arrows, hole callouts, and balloon numbers clearly).\n2. Write Python analysis scripts to inspect every supplied `step_files/*.step` solid (bounding boxes, principal axes, hole centers, cylindrical faces, multi-solid compounds) and derive exact geometry & rigid 4x4 assembly transforms (`det(R) = +1`, proper rotation, translation in mm).\n3. Render multi-view orthographic/isometric projections and assembly overlays of your modelled parts and assembled mechanism to PNGs, inspect them visually with `Read`, check pairwise solid clearances/interferences, and iteratively fix any flipped orientation, mis-scaled feature, or misaligned mating axis.\n4. Execute your authoritative build/assembly script (`solve.py`) so that the complete BenchCAD submission directory is written on disk:\n   - `submission/parts/<part_id>.step` for EVERY part type in `bom.json` (`tools.export_part(...)` for modelled parts, `tools.use_part(...)` for supplied STEP parts unchanged);\n   - `submission/assembly/instances.json` via `tools.submit_assembly(instances, assembly=...)` (also exporting `submission/assembly/assembly.step` for visual inspection), and confirm `python3 -c \"import tools; assert tools.submission_ready(); print('SUBMISSION_READY')\"` succeeds before finishing!\n", "input_imgs": [{"label": "drawing.png", "src": "cases/bc_t5_shear25/inputs/drawing.png"}, {"label": "part_03.png", "src": "cases/bc_t5_shear25/inputs/part_03.png"}, {"label": "part_14.png", "src": "cases/bc_t5_shear25/inputs/part_14.png"}, {"label": "part_16.png", "src": "cases/bc_t5_shear25/inputs/part_16.png"}, {"label": "part_19.png", "src": "cases/bc_t5_shear25/inputs/part_19.png"}, {"label": "part_21.png", "src": "cases/bc_t5_shear25/inputs/part_21.png"}], "entries": {"gt": {"label": "BenchCAD 2.1 官方真值 (Oracle GT)", "badge": "part_x_asm_v1 = 1.0000 (Opus Core 均值 0.661)", "glb": "cases/bc_t5_shear25/gt/model.glb", "score": 1.0}, "opus": {"label": "Claude-Opus-5-5 (同沙盒对照)", "submitted": true, "score": 0.0120802780104, "formatted": "score=part_x_asm_v1 0.0121 = avg_part 0.7547 (5/21 types modelled) x asm_v1 0.0160 (pairing names) | IoU=0.3216(raw 0.0470) hit=0.000 (0/25 instances) | rubric=0.532 x part_gen 0.915", "avg_part": 0.7546872, "asm_v1": 0.016007, "iou": 0.3216, "hit": 0.0, "glb": "cases/bc_t5_shear25/opus/model.glb", "loc": 76, "stats": {"assistant_turns": 115, "compaction_events": 0, "est_trajectory_tokens": 157838, "image_reads": 50, "elapsed_sec": 3856.52, "deliverable_complete": true}}, "kimi": {"label": "Kimi-K3.1-Pro (256K 原生窗口)", "submitted": true, "score": 0.008692118170600002, "formatted": "score=part_x_asm_v1 0.0087 = avg_part 0.4775 (5/21 types modelled) x asm_v1 0.0182 (pairing names) | IoU=0.3816(raw 0.0888) hit=0.000 (0/25 instances) | rubric=0.470 x part_gen 0.931", "avg_part": 0.47751020000000005, "asm_v1": 0.018203, "iou": 0.3816, "hit": 0.0, "glb": "cases/bc_t5_shear25/kimi/model.glb", "loc": 242, "stats": {"assistant_turns": 253, "compaction_events": 30, "est_trajectory_tokens": 609388, "image_reads": 122, "elapsed_sec": 4391.02, "deliverable_complete": true}}, "agy": {"label": "AGY 独立沙盒子智能体", "submitted": true, "score": 0.970284467766, "formatted": "score=part_x_asm_v1 0.9703 = avg_part 0.9997 (5/21 types modelled) x asm_v1 0.9706 (pairing names) | IoU=0.9997(raw 0.0765) hit=1.000 (25/25 instances) | rubric=0.984 x part_gen 0.972", "avg_part": 0.999678, "asm_v1": 0.970597, "iou": 0.9997, "hit": 1.0, "glb": "cases/bc_t5_shear25/agy/model.glb", "loc": 351, "stats": {"assistant_turns": 53, "compaction_events": 0, "est_trajectory_tokens": 329792, "peak_window_tokens": 329792, "image_reads": 44}}}}, {"id": "bc_t4_chuck9", "track": "benchcad", "engine": "cadquery", "title_zh": "BenchCAD 2.1 T4 · 三爪自定心卡盘全视图逆向建模与啮合装配（0个STEP输入，7类零件/9实例）", "metric": "part_x_asm_v1", "opus_ref_core_mean": 0.4402, "astra_ref_core_mean": 0.5013, "prompt": "You are solving an official BenchCAD 2.1 engineering CAD assembly task in the current working directory.\n\n# T4 - four views -> parts + assembly\n\n`views.png` is a 2x2 sheet of four parallel-projection views of one\nassembled mechanism, all at the same scale. Every camera sits on the given\ndirection from the centre and looks at the centre, with world +Z up in the\nimage:\n\n    top-left     approx. (-1, -1,  1)     top-right     exactly ( 1,  1,  1)\n    bottom-left  approx. (-1,  1, -1)     bottom-right  approx. ( 1, -1, -1)\n\n\"approx.\" means that camera (position and up vector together) is rotated\n3 to 8 degrees about the centre off that direction; the rotation is not given.\n`parts/<part_id>_alone.png` and `parts/<part_id>_in_assembly.png` are 2x2\nsheets with the same four cameras, one pair per part: `_alone` is one\ninstance of the part by itself at its own scale (its shape), `_in_assembly`\nis the part red inside the ghosted assembly at assembly scale (its relative\nsize and position). `bom.json` names each part and gives its `quantity`.\nThere is no 3-D input.\n\nModel every part and place every instance: `export_part` for every part,\nthen `submit_assembly` with one `{\"part_id\", \"transform\"}` per instance,\n`transform` a rigid 4x4 (proper rotation, no mirror or scale, plus a\ntranslation) mapping your part's frame to the assembly frame. World XYZ in\nyour code is world XYZ in the views; position and scale are free (any unit,\nthe same for every part).\n\nDirectory:\n  parts/   body_alone.png, body_in_assembly.png ... scroll_plate_in_assembly.png (14 files)\n  bom.json\n  views.png\n\ntools.py (importable as `import tools` in Python):\n  export_part(solid_or_step_path, part_id) -> submission/parts/<part_id>.step\n  submit_assembly(instances)   -> submission/assembly/instances.json; instances = [{part_id, transform[, instance_id]}]\n  export(solid, path)          -> STEP, for your own checks; not the answer\n  crop(png, (l, t, r, b)[, out]) -> a PNG of that box, in the file's own pixel coordinates\n\nPreinstalled offline Python environment (`python3` on PATH):\n- `cadquery` (OCCT B-rep kernel), `numpy`, `scipy`, `PIL` (Pillow), `trimesh`, `matplotlib`.\n- Strict Workspace Isolation: Work ONLY inside the current working directory (`./`) and `$TMPDIR`. NEVER traverse, search, or read any parent directory, `/tmp/benchcad*`, `/mnt/*`, or `/home/*` paths outside your workspace. Zero network access.\n\nRequired Workflow & Final Deliverable on Disk:\n1. Inspect `bom.json` and the input PNG sheets/views (`Read` images, and use `tools.crop(png_path, (l, t, r, b), out_png)` or inspect `*_tile_r*c*.png` tiles to read fine engineering dimensions, section arrows, hole callouts, and balloon numbers clearly).\n2. Write Python analysis scripts to inspect every supplied `step_files/*.step` solid (bounding boxes, principal axes, hole centers, cylindrical faces, multi-solid compounds) and derive exact geometry & rigid 4x4 assembly transforms (`det(R) = +1`, proper rotation, translation in mm).\n3. Render multi-view orthographic/isometric projections and assembly overlays of your modelled parts and assembled mechanism to PNGs, inspect them visually with `Read`, check pairwise solid clearances/interferences, and iteratively fix any flipped orientation, mis-scaled feature, or misaligned mating axis.\n4. Execute your authoritative build/assembly script (`solve.py`) so that the complete BenchCAD submission directory is written on disk:\n   - `submission/parts/<part_id>.step` for EVERY part type in `bom.json` (`tools.export_part(...)` for modelled parts, `tools.use_part(...)` for supplied STEP parts unchanged);\n   - `submission/assembly/instances.json` via `tools.submit_assembly(instances, assembly=...)` (also exporting `submission/assembly/assembly.step` for visual inspection), and confirm `python3 -c \"import tools; assert tools.submission_ready(); print('SUBMISSION_READY')\"` succeeds before finishing!\n", "input_imgs": [{"label": "views.png", "src": "cases/bc_t4_chuck9/inputs/views.png"}, {"label": "body_alone.png", "src": "cases/bc_t4_chuck9/inputs/body_alone.png"}, {"label": "body_in_assembly.png", "src": "cases/bc_t4_chuck9/inputs/body_in_assembly.png"}, {"label": "cover_alone.png", "src": "cases/bc_t4_chuck9/inputs/cover_alone.png"}, {"label": "cover_in_assembly.png", "src": "cases/bc_t4_chuck9/inputs/cover_in_assembly.png"}, {"label": "jaw_1_alone.png", "src": "cases/bc_t4_chuck9/inputs/jaw_1_alone.png"}, {"label": "jaw_1_in_assembly.png", "src": "cases/bc_t4_chuck9/inputs/jaw_1_in_assembly.png"}, {"label": "jaw_2_alone.png", "src": "cases/bc_t4_chuck9/inputs/jaw_2_alone.png"}, {"label": "jaw_2_in_assembly.png", "src": "cases/bc_t4_chuck9/inputs/jaw_2_in_assembly.png"}, {"label": "jaw_3_alone.png", "src": "cases/bc_t4_chuck9/inputs/jaw_3_alone.png"}, {"label": "jaw_3_in_assembly.png", "src": "cases/bc_t4_chuck9/inputs/jaw_3_in_assembly.png"}, {"label": "pinion_alone.png", "src": "cases/bc_t4_chuck9/inputs/pinion_alone.png"}, {"label": "pinion_in_assembly.png", "src": "cases/bc_t4_chuck9/inputs/pinion_in_assembly.png"}, {"label": "scroll_plate_alone.png", "src": "cases/bc_t4_chuck9/inputs/scroll_plate_alone.png"}, {"label": "scroll_plate_in_assembly.png", "src": "cases/bc_t4_chuck9/inputs/scroll_plate_in_assembly.png"}], "entries": {"gt": {"label": "BenchCAD 2.1 官方真值 (Oracle GT)", "badge": "part_x_asm_v1 = 1.0000 (Opus Core 均值 0.440)", "glb": "cases/bc_t4_chuck9/gt/model.glb", "score": 1.0}, "opus": {"label": "Claude-Opus-5-5 (同沙盒对照)", "submitted": true, "score": 0.007268270267428571, "formatted": "score=part_x_asm_v1 0.0073 = avg_part 0.0634 (7 types) x asm_v1 0.1147 (pairing names) | scale=free (x1.9608) | IoU=0.0889(raw 0.0889) hit=0.000 (0/9 instances) | rubric=0.355 x part_gen 0.308", "avg_part": 0.06335771428571428, "asm_v1": 0.114718, "iou": 0.0889, "hit": 0.0, "glb": "cases/bc_t4_chuck9/opus/model.glb", "loc": 364, "stats": {"assistant_turns": 173, "compaction_events": 0, "est_trajectory_tokens": 131833, "image_reads": 53, "elapsed_sec": 4573.11, "deliverable_complete": true}}, "kimi": {"label": "Kimi-K3.1-Pro (256K 原生窗口)", "submitted": true, "score": 0.018983808424, "formatted": "score=part_x_asm_v1 0.0190 = avg_part 0.2133 (7 types) x asm_v1 0.0890 (pairing names) | scale=free (x0.9390) | IoU=0.5393(raw 0.5393) hit=0.000 (0/9 instances) | rubric=0.569 x part_gen 0.681", "avg_part": 0.21333957142857143, "asm_v1": 0.088984, "iou": 0.5393, "hit": 0.0, "glb": "cases/bc_t4_chuck9/kimi/model.glb", "loc": 335, "stats": {"assistant_turns": 280, "compaction_events": 30, "est_trajectory_tokens": 616350, "image_reads": 133, "elapsed_sec": 3971.54, "deliverable_complete": true}}, "agy": {"label": "AGY 独立沙盒子智能体", "submitted": true, "score": 0.15965814261428576, "formatted": "score=part_x_asm_v1 0.1597 = avg_part 0.5044 (7 types) x asm_v1 0.3165 (pairing names) | scale=free (x1.9900) | IoU=0.0962(raw 0.0962) hit=0.000 (0/9 instances) | rubric=0.340 x part_gen 0.330", "avg_part": 0.5043694285714287, "asm_v1": 0.31655, "iou": 0.0962, "hit": 0.0, "glb": "cases/bc_t4_chuck9/agy/model.glb", "loc": 490, "stats": {"assistant_turns": 80, "compaction_events": 0, "est_trajectory_tokens": 393542, "peak_window_tokens": 393542, "image_reads": 63}}}}, {"id": "bc_t2_dual36", "track": "benchcad", "engine": "cadquery", "title_zh": "BenchCAD 2.1 T2 · 36实例/37实体工业总装（含单STEP双实体复合陷阱 + 密集总装工程图）", "metric": "asm_v1", "opus_ref_core_mean": 0.6665, "astra_ref_core_mean": 0.7207, "prompt": "You are solving an official BenchCAD 2.1 engineering CAD assembly task in the current working directory.\n\n# T2 - part STEPs + assembly drawing -> assembly\n\n`step_files/part_NN.step` are the parts, each centred on its bounding box\nand given a random axis-aligned 90-degree rotation. `drawing.png` is the\nassembly drawing (`drawing_p2.png` per further page): the sheet's drawing\narea (frame, footer and parts-list table cropped away; the parts list is\n`bom.json`) at a resolution where the balloons and dimensions read. Only\nwhen a sheet's lettering is too small to read whole is it also on disk as\ntiles `drawing_tile_r<i>c<j>.png` (row i from the top, column j from the\nleft, 10 % overlap); the directory listing shows whether there are any.\n`bom.json` gives each part's id, `quantity` and `item` (its balloon number\non the drawing); its `parts_list` note says how the drawing's parts list\nis laid out. The parts list may show standard fasteners that are not in\n`bom.json`; those are not part of the answer. Two part ids can be the same\ngeometry under two names; then either file may take either place.\n\nPlace every instance: `use_part` for every part, then `submit_assembly`\nwith one `{\"part_id\", \"transform\"}` per instance, `transform` a rigid 4x4\n(proper rotation, no mirror or scale, translation in millimetres) mapping\nthe part file's frame to the assembly frame. The whole assembly's position\nand axis-aligned orientation are free.\n\nDirectory:\n  hires/   drawing.png\n  step_files/   part_01.step, part_02.step ... part_20.step (20 files)\n  bom.json\n  drawing.png   + 4 tiles drawing_tile_r<i>c<j>.png\n\ntools.py (importable as `import tools` in Python):\n  export_part(solid_or_step_path, part_id) -> submission/parts/<part_id>.step\n  use_part(part_id)            -> submission/parts/<part_id>.step, the supplied file unchanged\n  submit_assembly(instances)   -> submission/assembly/instances.json; instances = [{part_id, transform[, instance_id]}]\n  export(solid, path)          -> STEP, for your own checks; not the answer\n  crop(png, (l, t, r, b)[, out]) -> a PNG of that box, in the file's own pixel coordinates (a sheet file is larger than shown; the crop is cut from the 2x master under hires/)\n\nPreinstalled offline Python environment (`python3` on PATH):\n- `cadquery` (OCCT B-rep kernel), `numpy`, `scipy`, `PIL` (Pillow), `trimesh`, `matplotlib`.\n- Strict Workspace Isolation: Work ONLY inside the current working directory (`./`) and `$TMPDIR`. NEVER traverse, search, or read any parent directory, `/tmp/benchcad*`, `/mnt/*`, or `/home/*` paths outside your workspace. Zero network access.\n\nRequired Workflow & Final Deliverable on Disk:\n1. Inspect `bom.json` and the input PNG sheets/views (`Read` images, and use `tools.crop(png_path, (l, t, r, b), out_png)` or inspect `*_tile_r*c*.png` tiles to read fine engineering dimensions, section arrows, hole callouts, and balloon numbers clearly).\n2. Write Python analysis scripts to inspect every supplied `step_files/*.step` solid (bounding boxes, principal axes, hole centers, cylindrical faces, multi-solid compounds) and derive exact geometry & rigid 4x4 assembly transforms (`det(R) = +1`, proper rotation, translation in mm).\n3. Render multi-view orthographic/isometric projections and assembly overlays of your modelled parts and assembled mechanism to PNGs, inspect them visually with `Read`, check pairwise solid clearances/interferences, and iteratively fix any flipped orientation, mis-scaled feature, or misaligned mating axis.\n4. Execute your authoritative build/assembly script (`solve.py`) so that the complete BenchCAD submission directory is written on disk:\n   - `submission/parts/<part_id>.step` for EVERY part type in `bom.json` (`tools.export_part(...)` for modelled parts, `tools.use_part(...)` for supplied STEP parts unchanged);\n   - `submission/assembly/instances.json` via `tools.submit_assembly(instances, assembly=...)` (also exporting `submission/assembly/assembly.step` for visual inspection), and confirm `python3 -c \"import tools; assert tools.submission_ready(); print('SUBMISSION_READY')\"` succeeds before finishing!\n", "input_imgs": [{"label": "drawing.png", "src": "cases/bc_t2_dual36/inputs/drawing.png"}], "entries": {"gt": {"label": "BenchCAD 2.1 官方真值 (Oracle GT)", "badge": "asm_v1 = 1.0000 (Opus Core 均值 0.666)", "glb": "cases/bc_t2_dual36/gt/model.glb", "score": 1.0}, "opus": {"label": "Claude-Opus-5-5 (同沙盒对照)", "submitted": true, "score": 0.088766, "formatted": "score=asm_v1 0.0888 (18 types, pairing names) | avg_part=1.0000 | IoU=0.2022(raw 0.0215) hit=0.000 (0/36 instances) | rubric=0.859 x part_gen 1.000", "avg_part": 1.0, "asm_v1": 0.088766, "iou": 0.2022, "hit": 0.0, "glb": "cases/bc_t2_dual36/opus/model.glb", "loc": 233, "stats": {"assistant_turns": 271, "compaction_events": 1, "est_trajectory_tokens": 235595, "image_reads": 94, "elapsed_sec": 4262.55, "deliverable_complete": true}}, "kimi": {"label": "Kimi-K3.1-Pro (256K 原生窗口)", "submitted": true, "score": 0.004943, "formatted": "score=asm_v1 0.0049 (18 types, pairing names) | avg_part=1.0000 | IoU=0.2050(raw 0.0105) hit=0.000 (0/36 instances) | rubric=0.641 x part_gen 1.000", "avg_part": 1.0, "asm_v1": 0.004943, "iou": 0.205, "hit": 0.0, "glb": "cases/bc_t2_dual36/kimi/model.glb", "loc": 220, "stats": {"assistant_turns": 320, "compaction_events": 36, "est_trajectory_tokens": 782443, "image_reads": 145, "elapsed_sec": 4800.53, "deliverable_complete": true}}, "agy": {"label": "AGY 独立沙盒子智能体", "submitted": true, "score": 0.938681, "formatted": "score=asm_v1 0.9387 (18 types, pairing names) | avg_part=1.0000 | IoU=1.0000(raw 0.0330) hit=1.000 (36/36 instances) | rubric=0.994 x part_gen 1.000", "avg_part": 1.0, "asm_v1": 0.938681, "iou": 1.0, "hit": 1.0, "glb": "cases/bc_t2_dual36/agy/model.glb", "loc": 150, "stats": {"assistant_turns": 59, "compaction_events": 0, "est_trajectory_tokens": 335688, "peak_window_tokens": 335688, "image_reads": 43}}}}, {"id": "xhs_e30_garage_3js", "track": "xhs_3d", "engine": "threejs", "title_zh": "小红书 3DCodeFactory · 经典车修复车间与可升降双柱举升机宝马E30交互场景（Three.js r180）", "metric": "", "opus_ref_core_mean": null, "astra_ref_core_mean": null, "prompt": "Build the requested editable Three.js 3D scene in ./output.\nSave index.html and all its local dependencies there. Use real WebGL, with\nOrbitControls for inspection. Three.js and addons are available at\n./vendor/three; copy needed dependencies into your output and use relative URLs.\nUse your tools to execute and inspect renders, and save a final screenshot and\nruntime diagnostics in ./output. A screenshot is not a replacement for\nthe editable scene. You may install tools as needed. Work until the task is done.\n\nUSER REQUEST:\n我想做一个经典车修复车库的三维网页场景，主角是一辆深灰蓝色的宝马E30，方正的三厢车身，车头朝画面左前方，停在蓝色双柱举升机之间。前脸保留四个圆形大灯和窄双肾格栅，银色网状轮毂很显眼。车库要高而通透，背后是一整排格子高窗，日光斜着落进来，照在车漆、蓝色举升机立柱和带油渍的水泥地上；右侧靠墙放黑色工具柜、叠满轮胎的高架和零件盒，墙上有宝马标识海报，右下角立着一台发动机，前景有工具车和轮胎，整体是旧但收拾得利落的修理车间氛围。我希望能在场景里把举升机稍微升起来，看车身离地后底盘、支臂和地面阴影怎么变化；也想走到车身侧前方，拉开一扇车门看内饰，并凑近前脸和轮毂观察材质反光。完成后请从实际三维作品的默认状态输出PNG；带图任务与参考图保持相同机位、观察方向、取景范围和画幅比例。在满足上述需求的前提下，请充分发挥创作能力，提升整体美感、构图、材质质感与光影表现，让作品具有吸引力和完成度。\n\nREFERENCE IMAGES: use Read to inspect these files before modeling:\n./task/reference-0.png\n\nPreinstalled rendering tools: read ./TOOLS.md. Playwright and Chromium are installed; use the provided paths and screenshot helper directly. No browser installation is needed.\n\nWorkspace & Verification Note: Stay strictly inside the current workspace directory (`./`) and `$TMPDIR`. Read `./TOOLS.md` and `./task/reference-0.png` first. Deliver your editable multi-file Three.js scene in `./output/` (`index.html`, modular JS, local `./output/vendor/`, and `1536x1024` `./output/final.png`). Across turns, render the reference-matched camera view, alternate angles, close-ups, and interactive states via headless Chromium, inspect them with `Read`, and refine geometry, proportions, PBR materials, lighting, and interactive mechanisms until complete.", "input_imgs": [{"label": "原题参考图 reference-0.png", "src": "cases/xhs_e30_garage_3js/inputs/reference-0.png"}], "entries": {"xhs_teacher": {"label": "小红书原版教师 (DeepSeek-V4.1-Flash · 384K×多段)", "submitted": true, "img": "cases/xhs_e30_garage_3js/xhs_teacher/final.jpg", "web": "cases/xhs_e30_garage_3js/xhs_teacher/web/index.html", "loc": 1659, "runtime_clean": true, "stats": {"assistant_turns": 736, "compaction_events": 4, "est_trajectory_tokens": 938000, "image_reads": 287}}, "opus": {"label": "Claude-Opus-5-5 (同沙盒对照)", "submitted": true, "img": "cases/xhs_e30_garage_3js/opus/rendered_hero.png", "fresh_img": "cases/xhs_e30_garage_3js/opus/fresh_hero.png", "web": "cases/xhs_e30_garage_3js/opus/web/index.html", "glb": null, "loc": 1108, "runtime_clean": true, "mesh_objects": null, "total_polygons": null, "materials": null, "stats": {"assistant_turns": 81, "compaction_events": 0, "est_trajectory_tokens": 98509, "image_reads": 13, "elapsed_sec": 5105.33, "deliverable_complete": false}}, "kimi": {"label": "Kimi-K3.1-Pro (256K 原生窗口)", "submitted": true, "img": "cases/xhs_e30_garage_3js/kimi/final.png", "fresh_img": "cases/xhs_e30_garage_3js/kimi/fresh_hero.png", "web": "cases/xhs_e30_garage_3js/kimi/web/index.html", "glb": null, "loc": 718, "runtime_clean": true, "mesh_objects": null, "total_polygons": null, "materials": null, "stats": {"assistant_turns": 365, "compaction_events": 25, "est_trajectory_tokens": 654246, "image_reads": 106, "elapsed_sec": 4799.91, "deliverable_complete": true}}, "agy": {"label": "AGY 独立沙盒子智能体", "submitted": true, "img": "cases/xhs_e30_garage_3js/agy/final.png", "fresh_img": "cases/xhs_e30_garage_3js/agy/fresh_hero.png", "web": "cases/xhs_e30_garage_3js/agy/web/index.html", "glb": null, "loc": 4382, "runtime_clean": true, "mesh_objects": null, "total_polygons": null, "materials": null, "stats": {"assistant_turns": 56, "compaction_events": 0, "est_trajectory_tokens": 227061, "peak_window_tokens": 227061, "image_reads": 26}}}}, {"id": "xhs_chapel_ruins_3js", "track": "xhs_3d", "engine": "threejs", "title_zh": "小红书 3DCodeFactory · 落日逆光山间风化石砌教堂拱门废墟与烛火/微风枯草交互场景（Three.js r180）", "metric": "", "opus_ref_core_mean": null, "astra_ref_core_mean": null, "prompt": "Build the requested editable Three.js 3D scene in ./output.\nSave index.html and all its local dependencies there. Use real WebGL, with\nOrbitControls for inspection. Three.js and addons are available at\n./vendor/three; copy needed dependencies into your output and use relative URLs.\nUse your tools to execute and inspect renders, and save a final screenshot and\nruntime diagnostics in ./output. A screenshot is not a replacement for\nthe editable scene. You may install tools as needed. Work until the task is done.\n\nUSER REQUEST:\n想做一件三维网页作品，主题是落日时分的废弃山间教堂前庭，参考图里那种逆光很强、安静又荒芜的感觉。画面右侧是一大片风化的石砌教堂外墙，墙体占住近景，带一个深深的拱形门洞；门洞里面可以望见暗色的长椅和靠里的烛台，整体比室外暗很多。教堂前方是一段从近处向拱门抬升的古老石阶，台阶边缘和裂缝里长着成簇的枯草，有的从石缝里探出来。左侧和远处留出山谷、水面反光和稀疏的树影，几棵树的枝干有些扭曲，站在橙粉色的云层和落日前面。希望石材是粗糙、斑驳、带苔痕和风蚀感的灰褐色，枯草偏暖黄，天空从橙红过渡到粉紫，落日附近更亮，门洞内则沉着偏暗。整体氛围要有黄昏的暖光、废墟的荒凉和一点被遗落的安静感。看的时候希望观众靠近或聚焦拱门内部时，烛火轻轻摇曳并逐渐变亮，暖光从门洞溢出，照亮长椅轮廓和石阶边缘，和外面的落日逆光形成层次。也希望观众把视线移到石阶近处时，枯草和远处树影会有轻微风动，草叶轻晃、树影微摆，让荒芜前庭更有呼吸感。完成后请从实际三维作品输出PNG；带参考图，机位、观察方向、取景范围和画幅比例都要和参考图保持一致。在满足上述需求的前提下，请充分发挥创作能力，提升整体美感、构图、材质质感与光影表现，让作品具有吸引力和完成度。\n\nREFERENCE IMAGES: use Read to inspect these files before modeling:\n./task/reference-0.png\n\nPreinstalled rendering tools: read ./TOOLS.md. Playwright and Chromium are installed; use the provided paths and screenshot helper directly. No browser installation is needed.\n\nWorkspace & Verification Note: Stay strictly inside the current workspace directory (`./`) and `$TMPDIR`. Read `./TOOLS.md` and `./task/reference-0.png` first. Deliver your editable multi-file Three.js scene in `./output/` (`index.html`, modular JS, local `./output/vendor/`, and `1536x1024` `./output/final.png`). Across turns, render the reference-matched camera view, alternate angles, close-ups, and interactive states via headless Chromium, inspect them with `Read`, and refine geometry, proportions, PBR materials, lighting, and interactive mechanisms until complete.", "input_imgs": [{"label": "原题参考图 reference-0.png", "src": "cases/xhs_chapel_ruins_3js/inputs/reference-0.png"}], "entries": {"xhs_teacher": {"label": "小红书原版教师 (DeepSeek-V4.1-Flash · 384K×多段)", "submitted": true, "img": "cases/xhs_chapel_ruins_3js/xhs_teacher/final.jpg", "web": "cases/xhs_chapel_ruins_3js/xhs_teacher/web/index.html", "loc": 4608, "runtime_clean": false, "stats": {"assistant_turns": 1005, "compaction_events": 6, "est_trajectory_tokens": 1161000, "image_reads": 359}}, "opus": {"label": "Claude-Opus-5-5 (同沙盒对照)", "submitted": true, "img": "cases/xhs_chapel_ruins_3js/opus/rendered_hero.png", "fresh_img": "cases/xhs_chapel_ruins_3js/opus/fresh_hero.png", "web": "cases/xhs_chapel_ruins_3js/opus/web/index.html", "glb": null, "loc": 955, "runtime_clean": true, "mesh_objects": null, "total_polygons": null, "materials": null, "stats": {"assistant_turns": 101, "compaction_events": 0, "est_trajectory_tokens": 91332, "image_reads": 13, "elapsed_sec": 5105.75, "deliverable_complete": false}}, "kimi": {"label": "Kimi-K3.1-Pro (256K 原生窗口)", "submitted": true, "img": "cases/xhs_chapel_ruins_3js/kimi/final.png", "fresh_img": "cases/xhs_chapel_ruins_3js/kimi/fresh_hero.png", "web": "cases/xhs_chapel_ruins_3js/kimi/web/index.html", "glb": null, "loc": 1040, "runtime_clean": true, "mesh_objects": null, "total_polygons": null, "materials": null, "stats": {"assistant_turns": 384, "compaction_events": 15, "est_trajectory_tokens": 502153, "image_reads": 55, "elapsed_sec": 4458.43, "deliverable_complete": true}}, "agy": {"label": "AGY 独立沙盒子智能体", "submitted": true, "img": "cases/xhs_chapel_ruins_3js/agy/final.png", "fresh_img": "cases/xhs_chapel_ruins_3js/agy/fresh_hero.png", "web": "cases/xhs_chapel_ruins_3js/agy/web/index.html", "glb": null, "loc": 3595, "runtime_clean": true, "mesh_objects": null, "total_polygons": null, "materials": null, "stats": {"assistant_turns": 41, "compaction_events": 0, "est_trajectory_tokens": 214011, "peak_window_tokens": 214011, "image_reads": 16}}}}, {"id": "xhs_headland_set_bpy", "track": "xhs_3d", "engine": "blender", "title_zh": "小红书 3DCodeFactory · 海角冷雨剑斗撤场电影片场（Blender 4.2.10 bpy · 参考图 + scene_spec 附件）", "metric": "", "opus_ref_core_mean": null, "astra_ref_core_mean": null, "prompt": "在 ./output 保存本任务的最终交付物及其所需本地资源。\n最终产物应完全离线运行；不得依赖 CDN、远程字体、远程贴图、远程模型或在线 API。可以使用运行环境提供的本地依赖和资源，不把 node_modules、浏览器、Blender 安装目录或下载缓存复制进交付目录。\n构建可编辑的三维对象或场景，具备合适的相机、灯光和材质。\n通过实际执行、渲染和观察图像检查结果，并修复运行错误与明显视觉故障。保留重建脚本、源工程、本地依赖资源、运行说明及最终预览图，使产物能重新渲染和验收。\n本任务采用纯 Blender 路线：模型、材质和场景均在 Blender 中实现。交付 ./output/scene.blend、可重建的 Python 脚本、本地资产、README 和 final.png，不要求网页。\n保存工程后重新打开 scene.blend，渲染检查；最终预览来自交付工程。贴图及外部资产必须随工程交付或打包。\n\n已验证的运行环境：\n- Node.js：v22.17.0\n- Three.js：180\n- Blender：Blender 4.2.10\n- 浏览器：156.0.8078.4\n\n任务需求：\nPlease build a static 3D reconstruction of the headland film location shown in the reference, at the moment after the swordfight unit has cleared out. The camera should stay in the same position and look direction as the photo: low over the wet stone platform, rock wall closing the left side, open sea and misty cliffs falling away to the right, two rope-wrapped mooring bollards leading the eye toward the water. The narrative props should remain exactly as abandoned: the dark round shield in the left foreground, the sword lying almost horizontally across the lower third, the open armor chest with helmet inside and the black cloak with a red stripe draped beside it; wood shavings collect in the crevices and puddles hold sky reflections. I need the wetness, cold overcast light, sea haze and the contrast between heavy dark props and pale sea to carry the mood, not extra storytelling clutter. Keep the composition quiet and severe.\n\nPlease model the platform, cliff wall, bollards, rope, chest, helmet, cloak, shield, sword, wood debris, water surface and distant headlands as separate named assets. Freeze the wave and mist forms; this is a static model. All placement, dimensions, materials, lighting and camera specifications are in scene_spec.md; follow that document for construction. Deliver an editable .blend, a GLB with materials and textures intact, the local texture/asset folder, and a PNG preview rendered from the finished 3D scene. The final PNG must use the reference image's camera position, observation direction, framing and 3:2 aspect ratio, at 1536×1024.\n\n建模参考图，请先读取：\n./task/reference-0.png\n\n任务规格附件，请在制作前读取，与需求正文共同作为制作依据：\n./task/scene_spec.md\n\n工具与环境补充说明：请先阅读 `./TOOLS.md`。`blender`（Blender 4.2.10 LTS）已在 PATH 中可直接调用（`blender --background --factory-startup --python <script.py>`）；同时请确保在 `./output/` 下交付 `scene.blend`、`scene.glb`、可重建的 Python 脚本、`README.md` 以及从重新打开的 `scene.blend` 渲染出的 `1536x1024` `./output/final.png`。严禁访问外部目录或网络；多轮渲染多角度/局部特写并用 `Read` 仔细比对参考图后再定稿。", "input_imgs": [{"label": "原题参考图 reference-0.png", "src": "cases/xhs_headland_set_bpy/inputs/reference-0.png"}], "entries": {"xhs_teacher": {"label": "小红书原版教师 (DeepSeek-V4.1-Flash · 384K×多段)", "submitted": true, "img": "cases/xhs_headland_set_bpy/xhs_teacher/final.jpg", "web": null, "loc": 2940, "runtime_clean": null, "stats": {"assistant_turns": 713, "compaction_events": 4, "est_trajectory_tokens": 960000, "image_reads": 299}}, "opus": {"label": "Claude-Opus-5-5 (同沙盒对照)", "submitted": true, "img": "cases/xhs_headland_set_bpy/opus/final.png", "fresh_img": null, "web": null, "glb": "cases/xhs_headland_set_bpy/opus/model.glb", "loc": 1404, "runtime_clean": null, "mesh_objects": 27, "total_polygons": 999362, "materials": 22, "stats": {"assistant_turns": 139, "compaction_events": 0, "est_trajectory_tokens": 187404, "image_reads": 32, "elapsed_sec": 4830.05, "deliverable_complete": true}}, "kimi": {"label": "Kimi-K3.1-Pro (256K 原生窗口)", "submitted": true, "img": "cases/xhs_headland_set_bpy/kimi/final.png", "fresh_img": null, "web": null, "glb": "cases/xhs_headland_set_bpy/kimi/model.glb", "loc": 1033, "runtime_clean": null, "mesh_objects": 535, "total_polygons": 234740, "materials": 28, "stats": {"assistant_turns": 463, "compaction_events": 16, "est_trajectory_tokens": 611225, "image_reads": 68, "elapsed_sec": 4906.7, "deliverable_complete": true}}, "agy": {"label": "AGY 独立沙盒子智能体", "submitted": true, "img": "cases/xhs_headland_set_bpy/agy/final.png", "fresh_img": null, "web": null, "glb": "cases/xhs_headland_set_bpy/agy/model.glb", "loc": 2884, "runtime_clean": null, "mesh_objects": 26, "total_polygons": 314904, "materials": 23, "stats": {"assistant_turns": 53, "compaction_events": 0, "est_trajectory_tokens": 280161, "peak_window_tokens": 280161, "image_reads": 29}}}}];
+let activeRenderers = [];
+
+function disposeViewers() {
+  for (const item of activeRenderers) {
+    cancelAnimationFrame(item.raf);
+    item.renderer.dispose();
+  }
+  activeRenderers = [];
+}
+
+window.openZoom = function(src) {
+  const lb = document.getElementById('lightbox');
+  document.getElementById('lightbox-img').src = src;
+  lb.style.display = 'flex';
+};
+
+function fmtTok(n) {
+  if (!n) return '—';
+  return Math.round(n / 1000) + 'K tok';
+}
+
+function scoreClass(s) {
+  if (s >= 0.65) return 'score-hi';
+  if (s >= 0.25) return 'score-mid';
+  return 'score-lo';
+}
+
+function renderSummaryTable() {
+  const tb = document.getElementById('summary-tbody');
+  tb.innerHTML = '';
+  CASES.forEach((c, idx) => {
+    const tr = document.createElement('tr');
+    tr.style.cursor = 'pointer';
+    tr.onclick = () => selectCase(idx);
+    let refCell = '';
+    if (c.track === 'benchcad') {
+      refCell = `<b>Oracle = 1.0000</b><br><span style="color:var(--muted)">Opus Core均值: ${c.opus_ref_core_mean} · Astra: ${c.astra_ref_core_mean}</span>`;
+    } else {
+      const t = c.entries.xhs_teacher;
+      const st = t.stats || {};
+      refCell = `<b>DeepSeek-V4.1-Flash</b><br><span style="color:var(--muted)">${fmtTok(st.est_trajectory_tokens)} · ${st.compaction_events}次压缩 · ${st.assistant_turns}轮 · ${t.loc} LoC</span>`;
+    }
+
+    const mkCell = (mk) => {
+      const e = c.entries[mk] || {};
+      const st = e.stats || {};
+      const tokLine = `${fmtTok(st.est_trajectory_tokens)} · ${st.compaction_events || 0}次压缩 · ${st.assistant_turns || 0}轮 · ${e.loc || 0} LoC`;
+      if (c.track === 'benchcad') {
+        const sc = Number(e.score || 0);
+        const sub = e.submitted ? `<span class="${scoreClass(sc)}">${c.metric} = ${sc.toFixed(4)}</span>` : `<span class="score-lo">未交卷 (0.0000)</span>`;
+        const detail = e.submitted ? `avg_part=${(e.avg_part ?? 0).toFixed(3)} · asm=${(e.asm_v1 ?? 0).toFixed(3)} · IoU=${(e.iou ?? 0).toFixed(3)}` : '';
+        return `${sub}<br><span style="color:var(--muted);font-size:12px">${detail}<br>${tokLine}</span>`;
+      } else if (c.engine === 'threejs') {
+        const badge = e.submitted
+          ? (e.runtime_clean ? `<span class="score-hi">WebGL 零报错交付</span>` : `<span class="score-mid">已交付 (含告警)</span>`)
+          : `<span class="score-lo">未完成</span>`;
+        return `${badge}<br><span style="color:var(--muted);font-size:12px">${tokLine}</span>`;
+      } else {
+        const badge = e.submitted
+          ? `<span class="score-hi">Blender 已交付 (${e.mesh_objects || '?'} 网格 / ${e.total_polygons || '?'} 面)</span>`
+          : `<span class="score-lo">未完成</span>`;
+        return `${badge}<br><span style="color:var(--muted);font-size:12px">${tokLine}</span>`;
+      }
+    };
+
+    tr.innerHTML = `
+      <td><b>${c.id}</b><br><span style="color:var(--muted);font-size:12px">${c.engine.toUpperCase()} · ${c.title_zh}</span></td>
+      <td>${refCell}</td>
+      <td>${mkCell('opus')}</td>
+      <td>${mkCell('kimi')}</td>
+      <td>${mkCell('agy')}</td>
+    `;
+    tb.appendChild(tr);
+  });
+}
+
+function mountGlbViewer(container, glbUrl) {
+  container.innerHTML = '';
+  const w = container.clientWidth || 380;
+  const h = container.clientHeight || 250;
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x0d1320);
+
+  const camera = new THREE.PerspectiveCamera(42, w / h, 0.1, 10000);
+  const renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setSize(w, h);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  container.appendChild(renderer.domElement);
+
+  const controls = new OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true;
+
+  scene.add(new THREE.AmbientLight(0xffffff, 0.85));
+  const d1 = new THREE.DirectionalLight(0xffffff, 1.15);
+  d1.position.set(2, 3, 2.5);
+  scene.add(d1);
+  const d2 = new THREE.DirectionalLight(0x90b8ff, 0.55);
+  d2.position.set(-2, -1.5, -2);
+  scene.add(d2);
+
+  const loader = new GLTFLoader();
+  loader.load(glbUrl, (gltf) => {
+    const root = gltf.scene;
+    scene.add(root);
+    const box = new THREE.Box3().setFromObject(root);
+    const size = box.getSize(new THREE.Vector3());
+    const center = box.getCenter(new THREE.Vector3());
+    const maxDim = Math.max(size.x, size.y, size.z, 1e-3);
+    controls.target.copy(center);
+    camera.near = maxDim / 500;
+    camera.far = maxDim * 50;
+    camera.position.set(center.x + maxDim * 1.35, center.y + maxDim * 1.1, center.z + maxDim * 1.35);
+    camera.updateProjectionMatrix();
+    controls.update();
+  });
+
+  const rec = { renderer, raf: 0 };
+  function tick() {
+    rec.raf = requestAnimationFrame(tick);
+    controls.update();
+    renderer.render(scene, camera);
+  }
+  tick();
+  activeRenderers.push(rec);
+}
+
+window.toggleLiveWeb = function(btn, stageId, webUrl, imgUrl) {
+  const box = document.getElementById(stageId);
+  if (box.dataset.mode === 'web') {
+    box.innerHTML = imgUrl ? `<img src="${imgUrl}" onclick="openZoom('${imgUrl}')" />` : '<div style="color:var(--muted)">无预览图</div>';
+    box.dataset.mode = 'img';
+    btn.textContent = '启动实时 3D WebGL 交互沙盒';
+  } else {
+    box.innerHTML = `<iframe src="${webUrl}" loading="lazy"></iframe>`;
+    box.dataset.mode = 'web';
+    btn.textContent = '切回静态高清渲染图';
+  }
+};
+
+window.toggleGlbPreview = function(btn, stageId, glbUrl, imgUrl) {
+  const box = document.getElementById(stageId);
+  if (box.dataset.mode === 'glb') {
+    box.innerHTML = imgUrl ? `<img src="${imgUrl}" onclick="openZoom('${imgUrl}')" />` : '';
+    box.dataset.mode = 'img';
+    btn.textContent = '切换交互式 3D GLB 模型检视';
+  } else {
+    mountGlbViewer(box, glbUrl);
+    box.dataset.mode = 'glb';
+    btn.textContent = '切回 Cycles 渲染图';
+  }
+};
+
+function selectCase(idx) {
+  disposeViewers();
+  document.querySelectorAll('.tab-btn').forEach((b, i) => b.classList.toggle('active', i === idx));
+  const c = CASES[idx];
+  const root = document.getElementById('case-view');
+
+  const inputsHtml = c.input_imgs.map(im => `
+    <div class="inp-card">
+      <img src="${im.src}" onclick="openZoom('${im.src}')" alt="${im.label}" />
+      <div class="cap">${im.label}</div>
+    </div>
+  `).join('');
+
+  const order = c.track === 'benchcad' ? ['gt', 'opus', 'kimi', 'agy'] : ['xhs_teacher', 'opus', 'kimi', 'agy'];
+  const cardsHtml = order.map((mk) => {
+    const e = c.entries[mk] || {};
+    const st = e.stats || {};
+    const stageId = `stage-${c.id}-${mk}`;
+    let metaLines = '';
+    let actionBtns = '';
+    let initialStage = '<div style="color:var(--muted);font-size:13px">未产出有效三维文件</div>';
+
+    if (c.track === 'benchcad') {
+      if (mk === 'gt') {
+        metaLines = `<b>${e.badge}</b><br>可拖拽旋转缩放查看全部真实工业零件装配关系`;
+      } else {
+        const sc = Number(e.score || 0);
+        metaLines = `<b class="${scoreClass(sc)}">${e.formatted || 'no_submission'}</b><br>` +
+          `上下文: <b>${fmtTok(st.est_trajectory_tokens)}</b> · 自动压缩: <b>${st.compaction_events || 0}次</b> · 轮数: <b>${st.assistant_turns || 0}</b> · 读图: ${st.image_reads || 0}张 · Python: ${e.loc || 0}行`;
+      }
+    } else {
+      if (e.img) {
+        initialStage = `<img src="${e.img}" onclick="openZoom('${e.img}')" alt="${e.label}" />`;
+      }
+      if (e.web) {
+        actionBtns += `<button class="btn" onclick="toggleLiveWeb(this, '${stageId}', '${e.web}', '${e.img || ''}')">启动实时 3D WebGL 交互沙盒</button>`;
+        actionBtns += `<a class="btn" href="${e.web}" target="_blank">新窗口全屏打开</a>`;
+      }
+      if (e.glb) {
+        actionBtns += `<button class="btn" onclick="toggleGlbPreview(this, '${stageId}', '${e.glb}', '${e.img || ''}')">切换交互式 3D GLB 模型检视</button>`;
+      }
+      const extra = c.engine === 'blender' && mk !== 'xhs_teacher' && e.submitted
+        ? ` · 网格:${e.mesh_objects || '?'} / 多边形:${e.total_polygons || '?'} / 材质:${e.materials || '?'}`
+        : (c.engine === 'threejs' && e.runtime_clean !== undefined ? ` · WebGL干净:${e.runtime_clean ? '是' : '否'}` : '');
+      metaLines = `上下文: <b>${fmtTok(st.est_trajectory_tokens)}</b> · 压缩: <b>${st.compaction_events || 0}次</b> · 轮数: <b>${st.assistant_turns || 0}</b> · 读图: ${st.image_reads || 0}张 · 代码: <b>${e.loc || 0} LoC</b>${extra}`;
+    }
+
+    return `
+      <div class="mcard">
+        <h3><span>${e.label || mk}</span></h3>
+        <div class="stage-box" id="${stageId}" data-mode="img">${initialStage}</div>
+        ${actionBtns ? `<div class="btn-row">${actionBtns}</div>` : ''}
+        <div class="meta-box">${metaLines}</div>
+      </div>
+    `;
+  }).join('');
+
+  root.innerHTML = `
+    <div class="case-header">
+      <div style="font-size:17px;font-weight:700;">${c.title_zh}</div>
+      <div style="color:var(--muted);font-size:12.5px;margin-top:4px;">题目输入图像 / 原始工程图（点击任意图纸可全屏放大核对尺寸细节）：</div>
+      <div class="inputs-strip">${inputsHtml}</div>
+      <details>
+        <summary>展开查看完整原始 Prompt（零公式泄题）</summary>
+        <pre class="prompt-pre">${c.prompt.replace(/&/g,'&amp;').replace(/</g,'&lt;')}</pre>
+      </details>
+    </div>
+    <div class="grid4">${cardsHtml}</div>
+  `;
+
+  if (c.track === 'benchcad') {
+    order.forEach((mk) => {
+      const e = c.entries[mk] || {};
+      if (e.glb) {
+        const box = document.getElementById(`stage-${c.id}-${mk}`);
+        mountGlbViewer(box, e.glb);
+      }
+    });
+  }
+}
+
+const tabsEl = document.getElementById('case-tabs');
+CASES.forEach((c, i) => {
+  const b = document.createElement('button');
+  b.className = 'tab-btn';
+  b.textContent = `${i + 1}. ${c.id} (${c.engine})`;
+  b.onclick = () => selectCase(i);
+  tabsEl.appendChild(b);
+});
+
+renderSummaryTable();
+selectCase(0);
+</script>
+</body>
+</html>

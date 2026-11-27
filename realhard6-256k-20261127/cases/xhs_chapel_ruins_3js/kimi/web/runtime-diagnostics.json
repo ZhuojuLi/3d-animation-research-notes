@@ -1,0 +1,719 @@
+{
+  "title": "山间晚祷 / Vesper at the Forgotten Chapel",
+  "version": "1.0",
+  "three": "180",
+  "renderer": "WebGL / real geometry",
+  "reference": {
+    "image": "task/reference-0.png",
+    "aspect": "3:2",
+    "output": "1536 x 1024",
+    "composition": "right foreground chapel wall, deep pointed portal, rising worn stairs, left sunset valley"
+  },
+  "features": [
+    "OrbitControls",
+    "real extruded Gothic arch",
+    "procedural PBR masonry, soil, bark and old wood",
+    "deep nave with pews and candles",
+    "focus-responsive candlelight",
+    "wind-animated dry grass and sparse branches",
+    "layered mountains and animated water",
+    "GTAO, bloom and restrained film finishing"
+  ],
+  "state": {
+    "view": "courtyard",
+    "hover": "none",
+    "focus": 0.5125080044201699,
+    "wind": 0.29298942080656826,
+    "transition": false,
+    "clean": true,
+    "phase": "ready",
+    "autoFocus": "portal",
+    "frames": 68,
+    "fps": 0,
+    "portalPinned": false,
+    "grassPinned": false,
+    "stairLook": 0,
+    "stairNearness": 0.3438159309111879,
+    "doorLook": 0.5758080323288067,
+    "windTarget": 0.28
+  },
+  "errors": [],
+  "fps": 0,
+  "camera": {
+    "position": [
+      -5.4,
+      3.15,
+      12.7
+    ],
+    "target": [
+      -2.5,
+      2.7,
+      -5.7
+    ],
+    "fov": 48,
+    "aspect": 1.5,
+    "state": "courtyard",
+    "candleFocus": 0.506,
+    "wind": 0.293
+  },
+  "gpu": {
+    "vendor": "Google Inc. (Google)",
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "webgl": "WebGL 2.0 (OpenGL ES 3.0 Chromium)"
+  },
+  "meshes": {
+    "geometries": 399,
+    "textures": 28,
+    "composerCalls": 1372,
+    "composerTriangles": 2375571,
+    "points": 76,
+    "grassBlades": 3620,
+    "facadeInstances": 363,
+    "sideCourseInstances": 388,
+    "treeLeafInstances": 18930,
+    "roofForm": "broken-pitched"
+  },
+  "interactions": {
+    "courtyard": "drag / scroll / click masonry",
+    "portal": "approach, look at or click portal: gradual candlelight",
+    "grass": "look near or click steps: stronger wind",
+    "keys": "1,2,3 views · H clean view · R reset · PNG button"
+  },
+  "interactionState": {
+    "portalFocus": 0.5058081159698391,
+    "wind": 0.29316280753999896,
+    "windTarget": 0.28,
+    "stairLook": 0,
+    "stairNearness": 0.3438159309111879,
+    "doorLook": 0.5758080323288067,
+    "hoverPortal": true,
+    "hoverGrass": false,
+    "pinnedPortal": false,
+    "pinnedGrass": false,
+    "windUniform": 0.29316280753999896,
+    "candleIntensities": [
+      5.083350761691413,
+      4.928144019165647,
+      5.666781082645364
+    ],
+    "spillIntensity": 12.35438025335907,
+    "interiorFillIntensity": 2.681431513748517
+  },
+  "clean": {
+    "enabled": true,
+    "bodyClass": "clean",
+    "canvasWidth": 1536,
+    "canvasHeight": 1024
+  },
+  "verification": {
+    "timestamp": "2026-11-27T10:59:02.451Z",
+    "viewport": {
+      "width": 1536,
+      "height": 1024,
+      "deviceScaleFactor": 1
+    },
+    "output": "final.png: synchronous Three.js canvas capture, clean courtyard view",
+    "views": {
+      "courtyard": {
+        "camera": {
+          "position": [
+            -5.4,
+            3.15,
+            12.7
+          ],
+          "target": [
+            -2.5,
+            2.7,
+            -5.7
+          ],
+          "fov": 48,
+          "aspect": 1.5,
+          "state": "courtyard",
+          "candleFocus": 0.369,
+          "wind": 0.297
+        },
+        "interaction": {
+          "portalFocus": 0.3686099161501889,
+          "wind": 0.2966997749293817,
+          "windTarget": 0.28,
+          "stairLook": 0,
+          "stairNearness": 0.3438159309111879,
+          "doorLook": 0.5758080323288067,
+          "hoverPortal": false,
+          "hoverGrass": false,
+          "pinnedPortal": false,
+          "pinnedGrass": false,
+          "windUniform": 0.2966997749293817,
+          "candleIntensities": [
+            4.327641113125991,
+            4.375303599780761,
+            4.134693581391929
+          ],
+          "spillIntensity": 9.327226545969914,
+          "interiorFillIntensity": 2.020606794659468,
+          "bodyClasses": "clean",
+          "treeRotations": [
+            [
+              0.00014981219777649482,
+              0,
+              0.0014515388845483996
+            ],
+            [
+              -0.0000727470958436927,
+              0,
+              -0.0007843085688845582
+            ],
+            [
+              0.0001224456795035626,
+              0,
+              0.0014364969065039498
+            ],
+            [
+              -0.0007858168424074647,
+              0,
+              0.001135410349716702
+            ],
+            [
+              0.0008813677534526447,
+              0,
+              -0.000034702572274928726
+            ]
+          ]
+        },
+        "clean": {
+          "enabled": true,
+          "bodyClass": "clean",
+          "canvasWidth": 1536,
+          "canvasHeight": 1024
+        }
+      },
+      "portal": {
+        "camera": {
+          "position": [
+            3.3,
+            4.25,
+            -1.5
+          ],
+          "target": [
+            4.2,
+            4.9,
+            -12
+          ],
+          "fov": 54,
+          "aspect": 1.5,
+          "state": "portal",
+          "candleFocus": 0.986,
+          "wind": 0.37
+        },
+        "interaction": {
+          "portalFocus": 0.985744302741786,
+          "wind": 0.36977731246209905,
+          "windTarget": 0.3743322657636595,
+          "stairLook": 0,
+          "stairNearness": 0.5347603796623708,
+          "doorLook": 1,
+          "hoverPortal": false,
+          "hoverGrass": false,
+          "pinnedPortal": false,
+          "pinnedGrass": false,
+          "windUniform": 0.36977731246209905,
+          "candleIntensities": [
+            9.556469639697172,
+            8.799549438898335,
+            9.134151435062162
+          ],
+          "spillIntensity": 25.846028486341382,
+          "interiorFillIntensity": 4.511164766199054,
+          "bodyClasses": "clean portal-focus",
+          "treeRotations": [
+            [
+              -0.001068931767678827,
+              0,
+              0.0016879199183181895
+            ],
+            [
+              0.0010389985459563313,
+              0,
+              0.00013164626804610443
+            ],
+            [
+              -0.0010591862651760028,
+              0,
+              0.001719778157947782
+            ],
+            [
+              0.0008884270117866857,
+              0,
+              0.0018442443434840213
+            ],
+            [
+              -0.0006079471850536897,
+              0,
+              -0.0011214397480476034
+            ]
+          ]
+        },
+        "clean": {
+          "enabled": true,
+          "bodyClass": "clean portal-focus",
+          "canvasWidth": 1536,
+          "canvasHeight": 1024
+        }
+      },
+      "interior": {
+        "camera": {
+          "position": [
+            4.2,
+            4.13,
+            -7.65
+          ],
+          "target": [
+            4.2,
+            4.6,
+            -17
+          ],
+          "fov": 58,
+          "aspect": 1.5,
+          "state": "interior",
+          "candleFocus": 0.982,
+          "wind": 0.297
+        },
+        "interaction": {
+          "portalFocus": 0.9817061189476811,
+          "wind": 0.29669636853142345,
+          "windTarget": 0.28,
+          "stairLook": 0,
+          "stairNearness": 0.06535148067816454,
+          "doorLook": 0,
+          "hoverPortal": false,
+          "hoverGrass": false,
+          "pinnedPortal": false,
+          "pinnedGrass": false,
+          "windUniform": 0.29669636853142345,
+          "candleIntensities": [
+            7.95571920855979,
+            9.028181945295023,
+            7.985161887933611
+          ],
+          "spillIntensity": 25.064334682278904,
+          "interiorFillIntensity": 4.437917328042331,
+          "bodyClasses": "clean portal-focus",
+          "treeRotations": [
+            [
+              -0.0006065815414140803,
+              0,
+              -0.0003921225815482832
+            ],
+            [
+              0.0005474810197588284,
+              0,
+              -0.0012102889421015273
+            ],
+            [
+              -0.000586024472474703,
+              0,
+              -0.0004553053848234526
+            ],
+            [
+              0.000886344788717052,
+              0,
+              -0.0010206593994020261
+            ],
+            [
+              -0.0008051235863351507,
+              0,
+              0.0014825120345796168
+            ]
+          ]
+        },
+        "clean": {
+          "enabled": true,
+          "bodyClass": "clean portal-focus",
+          "canvasWidth": 1536,
+          "canvasHeight": 1024
+        }
+      },
+      "grass": {
+        "camera": {
+          "position": [
+            -4.4,
+            1.5,
+            8.25
+          ],
+          "target": [
+            1.4,
+            1.22,
+            1.6
+          ],
+          "fov": 51,
+          "aspect": 1.5,
+          "state": "grass",
+          "candleFocus": 0.519,
+          "wind": 1.315
+        },
+        "interaction": {
+          "portalFocus": 0.518993277415278,
+          "wind": 1.3150177728571453,
+          "windTarget": 1.22,
+          "stairLook": 1,
+          "stairNearness": 0.7035477114654498,
+          "doorLook": 0.7278114813043495,
+          "hoverPortal": false,
+          "hoverGrass": false,
+          "pinnedPortal": false,
+          "pinnedGrass": false,
+          "windUniform": 1.3150177728571453,
+          "candleIntensities": [
+            5.666589538936161,
+            4.761724490820394,
+            5.4647857829247775
+          ],
+          "spillIntensity": 12.297450162446296,
+          "interiorFillIntensity": 2.7263970302846445,
+          "bodyClasses": "clean",
+          "treeRotations": [
+            [
+              -0.0000311573334386576,
+              0,
+              -0.0024139518402148687
+            ],
+            [
+              -0.00031289297105644445,
+              0,
+              0.0065727237238326006
+            ],
+            [
+              0.00009157579860789285,
+              0,
+              -0.002139823279232172
+            ],
+            [
+              0.0031402726565931487,
+              0,
+              0.0007565516157097765
+            ],
+            [
+              -0.003767217149262102,
+              0,
+              -0.0053995140727224975
+            ]
+          ]
+        },
+        "clean": {
+          "enabled": true,
+          "bodyClass": "clean",
+          "canvasWidth": 1536,
+          "canvasHeight": 1024
+        }
+      },
+      "reverse": {
+        "camera": {
+          "position": [
+            -19,
+            11,
+            -24
+          ],
+          "target": [
+            3,
+            3,
+            -1
+          ],
+          "fov": 49,
+          "aspect": 1.5,
+          "state": "reverse",
+          "candleFocus": 0.681,
+          "wind": 0.854
+        },
+        "interaction": {
+          "portalFocus": 0.6806301118081168,
+          "wind": 0.8544091425218362,
+          "windTarget": 0.9719606830513469,
+          "stairLook": 0.7966890844683171,
+          "stairNearness": 0,
+          "doorLook": 1,
+          "hoverPortal": false,
+          "hoverGrass": false,
+          "pinnedPortal": false,
+          "pinnedGrass": false,
+          "windUniform": 0.8544091425218362,
+          "candleIntensities": [
+            6.2651915332510955,
+            6.881582936987033,
+            5.746232542765687
+          ],
+          "spillIntensity": 16.352426552718306,
+          "interiorFillIntensity": 3.3410166798644276,
+          "bodyClasses": "clean portal-focus",
+          "treeRotations": [
+            [
+              0.00004047882212302754,
+              0,
+              0.004018414318814895
+            ],
+            [
+              -0.00026376720632199853,
+              0,
+              -0.00001192099548859029
+            ],
+            [
+              0.00012018562266976211,
+              0,
+              0.004078875859652359
+            ],
+            [
+              0.002003010358256514,
+              0,
+              0.004227256355380534
+            ],
+            [
+              -0.002428969840873453,
+              0,
+              -0.002332810105755302
+            ]
+          ]
+        },
+        "clean": {
+          "enabled": true,
+          "bodyClass": "clean portal-focus",
+          "canvasWidth": 1536,
+          "canvasHeight": 1024
+        }
+      },
+      "detail": {
+        "camera": {
+          "position": [
+            -0.65,
+            4.2,
+            -0.8
+          ],
+          "target": [
+            2.1,
+            4,
+            -6
+          ],
+          "fov": 51,
+          "aspect": 1.5,
+          "state": "detail",
+          "candleFocus": 0.526,
+          "wind": 0.432
+        },
+        "interaction": {
+          "portalFocus": 0.5263918200483135,
+          "wind": 0.4324090446172253,
+          "windTarget": 0.4676158704588175,
+          "stairLook": 0,
+          "stairNearness": 0.668022672084025,
+          "doorLook": 0.7175228432519276,
+          "hoverPortal": false,
+          "hoverGrass": false,
+          "pinnedPortal": false,
+          "pinnedGrass": false,
+          "windUniform": 0.4324090446172253,
+          "candleIntensities": [
+            5.474243152152813,
+            4.911625157819077,
+            5.474460805814245
+          ],
+          "spillIntensity": 12.651258989764997,
+          "interiorFillIntensity": 2.6745481885403097,
+          "bodyClasses": "clean",
+          "treeRotations": [
+            [
+              0.0011938698644042307,
+              0,
+              -0.001866517475141074
+            ],
+            [
+              -0.001145085636219241,
+              0,
+              0.0016637623277762645
+            ],
+            [
+              0.0011775074239491557,
+              0,
+              -0.0018161930168875827
+            ],
+            [
+              -0.001131591979213929,
+              0,
+              -0.0011310817987626055
+            ],
+            [
+              0.0008467419884062092,
+              0,
+              -0.0006340898671466082
+            ]
+          ]
+        },
+        "clean": {
+          "enabled": true,
+          "bodyClass": "clean",
+          "canvasWidth": 1536,
+          "canvasHeight": 1024
+        }
+      }
+    },
+    "interactionBefore": {
+      "portalFocus": 0.33974100295691045,
+      "wind": 0.3009692953760894,
+      "windTarget": 0.28,
+      "stairLook": 0,
+      "stairNearness": 0.3438159309111879,
+      "doorLook": 0.5758080323288067,
+      "hoverPortal": false,
+      "hoverGrass": false,
+      "pinnedPortal": false,
+      "pinnedGrass": false,
+      "windUniform": 0.3009692953760894,
+      "candleIntensities": [
+        4.306519935746163,
+        3.5609470171076865,
+        4.039796586173136
+      ],
+      "spillIntensity": 8.439893644646313,
+      "interiorFillIntensity": 1.977377186454134,
+      "bodyClasses": "clean",
+      "treeRotations": [
+        [
+          0.00007649646871451628,
+          0,
+          0.0014315873524637104
+        ],
+        [
+          0.0000022301866871435403,
+          0,
+          -0.0009255181431328043
+        ],
+        [
+          0.00004847296615868796,
+          0,
+          0.0014095653622112913
+        ],
+        [
+          -0.0007585920323770115,
+          0,
+          0.001043503977602783
+        ],
+        [
+          0.0008802550857800182,
+          0,
+          0.00012321201144320157
+        ]
+      ]
+    },
+    "portalPinned": {
+      "portalFocus": 0.595507911413673,
+      "wind": 0.2930274574656249,
+      "windTarget": 0.28,
+      "stairLook": 0,
+      "stairNearness": 0.3438159309111879,
+      "doorLook": 0.5758080323288067,
+      "hoverPortal": false,
+      "hoverGrass": false,
+      "pinnedPortal": true,
+      "pinnedGrass": false,
+      "windUniform": 0.2930274574656249,
+      "candleIntensities": [
+        5.928888884696678,
+        5.4744865800952125,
+        5.941761179315542
+      ],
+      "spillIntensity": 14.378556690888155,
+      "interiorFillIntensity": 2.976538454067004,
+      "bodyClasses": "clean",
+      "treeRotations": [
+        [
+          -0.0008650690788569899,
+          0,
+          -0.000813380424402291
+        ],
+        [
+          0.0008754051253896203,
+          0,
+          -0.0008668910869558174
+        ],
+        [
+          -0.0008695137193029436,
+          0,
+          -0.0008667232279516675
+        ],
+        [
+          0.0004053490034510846,
+          0,
+          -0.0012920497085957634
+        ],
+        [
+          -0.00011440002086556294,
+          0,
+          0.0013726534171948986
+        ]
+      ]
+    },
+    "grassPinned": {
+      "portalFocus": 0.518993277415278,
+      "wind": 1.3150177728571453,
+      "windTarget": 1.22,
+      "stairLook": 1,
+      "stairNearness": 0.7035477114654498,
+      "doorLook": 0.7278114813043495,
+      "hoverPortal": false,
+      "hoverGrass": false,
+      "pinnedPortal": false,
+      "pinnedGrass": false,
+      "windUniform": 1.3150177728571453,
+      "candleIntensities": [
+        5.666589538936161,
+        4.761724490820394,
+        5.4647857829247775
+      ],
+      "spillIntensity": 12.297450162446296,
+      "interiorFillIntensity": 2.7263970302846445,
+      "bodyClasses": "clean",
+      "treeRotations": [
+        [
+          -0.0000311573334386576,
+          0,
+          -0.0024139518402148687
+        ],
+        [
+          -0.00031289297105644445,
+          0,
+          0.0065727237238326006
+        ],
+        [
+          0.00009157579860789285,
+          0,
+          -0.002139823279232172
+        ],
+        [
+          0.0031402726565931487,
+          0,
+          0.0007565516157097765
+        ],
+        [
+          -0.003767217149262102,
+          0,
+          -0.0053995140727224975
+        ]
+      ]
+    },
+    "hoverSample": {
+      "x": 1145,
+      "y": 405,
+      "result": {
+        "portal": true,
+        "grass": false
+      }
+    },
+    "externalRequests": [],
+    "errors": [],
+    "requestFailures": [],
+    "consoleMessages": [
+      {
+        "type": "log",
+        "text": "CHAPEL_READY {\"title\":\"山间晚祷 / Vesper at the Forgotten Chapel\",\"version\":\"1.0\",\"three\":\"180\",\"renderer\":\"WebGL / real geometry\",\"reference\":{\"image\":\"task/reference-0.png\",\"aspect\":\"3:2\",\"output\":\"1536 x 1024\",\"composition\":\"right foreground chapel wall, deep pointed portal, rising worn stairs, left sunset valley\"},\"features\":[\"OrbitControls\",\"real extruded Gothic arch\",\"procedural PBR masonry, soil, bark and old wood\",\"deep nave with pews and candles\",\"focus-responsive candlelight\",\"wind-animated dry grass and sparse branches\",\"layered mountains and animated water\",\"GTAO, bloom and restrained film finishing\"],\"state\":{\"view\":\"courtyard\",\"hover\":\"none\",\"focus\":0.11111039285359063,\"wind\":0.3341336095758909,\"transition\":false,\"clean\":false,\"phase\":\"ready\",\"autoFocus\":\"none\",\"frames\":3,\"fps\":1,\"portalPinned\":false,\"grassPinned\":false,\"stairLook\":0,\"stairNearness\":0.3438159309111879,\"doorLook\":0.5758080323288067,\"windTarget\":0.28},\"errors\":[],\"fps\":1,\"camera\":{\"position\":[-5.4,3.15,12.7],\"target\":[-2.5,2.7,-5.7],\"fov\":48,\"aspect\":1.5,\"state\":\"courtyard\",\"candleFocus\":0.111,\"wind\":0.334},\"gpu\":{\"vendor\":\"Google Inc. (Google)\",\"renderer\":\"ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)\",\"webgl\":\"WebGL 2.0 (OpenGL ES 3.0 Chromium)\"},\"meshes\":{\"geometries\":389,\"textures\":28,\"composerCalls\":1372,\"composerTriangles\":2375571,\"points\":76,\"grassBlades\":3620,\"facadeInstances\":363,\"sideCourseInstances\":388,\"treeLeafInstances\":18930,\"roofForm\":\"broken-pitched\"},\"interactions\":{\"courtyard\":\"drag / scroll / click masonry\",\"portal\":\"approach, look at or click portal: gradual candlelight\",\"grass\":\"look near or click steps: stronger wind\",\"keys\":\"1,2,3 views · H clean view · R reset · PNG button\"},\"interactionState\":{\"portalFocus\":0.11111039285359063,\"wind\":0.3341336095758909,\"windTarget\":0.28,\"stairLook\":0,\"stairNearness\":0.3438159309111879,\"doorLook\":0.5758080323288067,\"hoverPortal\":false,\"hoverGrass\":false,\"pinnedPortal\":false,\"pinnedGrass\":false,\"windUniform\":0.3341336095758909,\"candleIntensities\":[2.2760297621214254,2.072997843174542,2.478903180392973],\"spillIntensity\":4.761405804091402,\"interiorFillIntensity\":1.0804477179381422},\"clean\":{\"enabled\":false,\"bodyClass\":\"\",\"canvasWidth\":1536,\"canvasHeight\":1024}}"
+      }
+    ],
+    "offline": true
+  }
+}

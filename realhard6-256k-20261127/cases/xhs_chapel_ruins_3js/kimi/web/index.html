@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#2c2522" />
+  <title>山间晚祷 · Vesper at the Forgotten Chapel</title>
+  <style>
+    :root { color-scheme: dark; --ivory:#e7ddca; --muted:#baa997; --line:rgba(232,213,183,.24); }
+    * { box-sizing: border-box; }
+    html,body { margin:0; width:100%; height:100%; overflow:hidden; background:#292220; font-family:"Helvetica Neue","PingFang SC","Microsoft YaHei",sans-serif; }
+    canvas { width:100%; height:100%; display:block; outline:none; }
+    #loading { position:fixed; inset:0; display:grid; place-content:center; text-align:center; z-index:10; background:#292220; transition:opacity 1s ease; pointer-events:none; }
+    #loading.gone { opacity:0; }
+    #loading span { font-family:Georgia,"Times New Roman",serif; font-size:23px; letter-spacing:.30em; color:#d4bd9c; }
+    #loading small { margin-top:16px; font-size:10px; letter-spacing:.35em; color:#968575; }
+    .interface { position:fixed; z-index:2; pointer-events:none; transition:opacity .5s ease; }
+    body.clean .interface, body.clean #crosshair, body.clean #loading { display:none !important; }
+    header { left:30px; top:28px; text-shadow:0 1px 8px #150e0b; }
+    header .eyebrow { font-size:9px; letter-spacing:.28em; color:#dbc3a5; margin-bottom:9px; }
+    h1 { margin:0; font-family:Georgia,"Songti SC",serif; font-size:clamp(21px,2.1vw,31px); font-weight:400; letter-spacing:.14em; color:var(--ivory); }
+    header p { font-family:Georgia,serif; margin:8px 0 0; font-style:italic; font-size:11px; letter-spacing:.05em; color:#c9b39c; }
+    #hint { right:26px; top:30px; text-align:right; font-size:10px; line-height:1.9; letter-spacing:.09em; color:#e0d4c2; text-shadow:0 1px 6px #18100b; }
+    #hint .key { border:1px solid var(--line); padding:2px 5px; margin:0 3px; font-size:9px; border-radius:3px; }
+    footer { display:flex; align-items:flex-end; justify-content:space-between; bottom:23px; left:28px; right:28px; }
+    .views { display:flex; gap:7px; pointer-events:auto; }
+    button { -webkit-tap-highlight-color:transparent; appearance:none; border:1px solid var(--line); border-radius:2px; background:rgba(33,26,22,.49); color:#cdbfae; padding:10px 15px; font-size:10px; letter-spacing:.12em; cursor:pointer; backdrop-filter:blur(10px); transition:color .25s,background .25s,border-color .25s; }
+    button:hover { background:rgba(85,63,43,.65); color:#fff1da; border-color:rgba(245,213,164,.6); }
+    button.active { color:#f4dab1; background:rgba(116,81,47,.46); border-color:rgba(235,181,108,.5); }
+    button .no { font:italic 10px Georgia,serif; padding-right:8px; color:#b89c75; }
+    #state { font-family:Georgia,serif; font-style:italic; letter-spacing:.05em; font-size:11px; color:#dfccb1; text-shadow:0 1px 8px #1d130e; text-align:right; line-height:1.8; }
+    #state small { font-family:"Helvetica Neue",sans-serif; font-size:9px; font-style:normal; color:#bcae9e; letter-spacing:.16em; }
+    #interaction-dot { display:inline-block; width:4px; height:4px; border-radius:50%; background:#cdb58d; margin:0 7px 2px 0; box-shadow:0 0 9px #e9a75c; transition:background .3s; }
+    #tools { position:absolute; bottom:53px; left:0; display:flex; gap:5px; pointer-events:auto; }
+    #tools button { font-size:9px; padding:6px 9px; background:rgba(28,22,20,.3); border-color:rgba(232,213,183,.15); }
+    #crosshair { position:fixed; width:15px; height:15px; left:50%; top:50%; transform:translate(-50%,-50%); z-index:2; opacity:0; pointer-events:none; border:1px solid rgba(240,207,162,.8); border-radius:50%; transition:opacity .35s; }
+    body.portal-focus #crosshair { opacity:.7; }
+    @media(max-width:650px) { header{left:19px;top:20px} #hint{display:none} footer{left:16px;right:16px;bottom:17px;display:block} #state{margin-top:13px;text-align:left} button{padding:9px 11px} }
+  </style>
+  <script type="importmap">
+    { "imports": { "three": "./vendor/three/build/three.module.js", "three/addons/": "./vendor/three/examples/jsm/" } }
+  </script>
+</head>
+<body>
+  <div id="loading"><span>V E S P E R</span><small>光正落在废墟之间</small></div>
+  <header class="interface"><div class="eyebrow">一 处 被 遗 落 的 静 所</div><h1>山间晚祷</h1><p>Vesper at the forgotten chapel</p></header>
+  <div id="hint" class="interface">拖动环视 · 滚轮靠近<br>轻触拱门与石阶，唤醒微光和风<br><span class="key">H</span>隐藏界面 <span class="key">R</span>回到原景</div>
+  <footer class="interface">
+    <div class="views">
+      <button class="view-btn active" data-view="courtyard"><span class="no">01</span>落日庭院</button>
+      <button class="view-btn" data-view="portal"><span class="no">02</span>门内烛火</button>
+      <button class="view-btn" data-view="grass"><span class="no">03</span>石阶微风</button>
+    </div>
+    <div id="state"><span id="interaction-dot"></span><span id="state-label">余晖停在石阶上</span><br><small>REAL-TIME THREE.JS · EDITABLE SCENE</small></div>
+    <div id="tools"><button id="clean" title="隐藏或显示界面 (H)">纯净画面</button><button id="save" title="保存当前三维画面的 PNG">保存 PNG</button></div>
+  </footer>
+  <div id="crosshair"></div>
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
