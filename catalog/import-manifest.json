@@ -93,7 +93,7 @@
       "source_kind": "engineering_doc",
       "title": "小红书 `3DCodeFactory` 出题与 Rubric 体系拆解及 2D / CAD 双轨并发造数规范",
       "source_sha256": "d9c9f314d5479e7ca94145e55aef0c24bdc8e5c11e39aabefab1d9b154811444",
-      "published_sha256": "aa7303d1fef91702643baf6f7f09a71c543107c83fcb0abf9a8d1549c53a49ba",
+      "published_sha256": "fb2867b55a854e0bfd1e6fa2f57efdc0085dd0e0144572e5995490b4d82f64ec",
       "edits": {
         "local_path_placeholders": 1
       }
@@ -832,8 +832,39 @@
       "source": "research/3d-agent-post-sft-rl-survey-20261127/README.md",
       "source_kind": "local_note",
       "title": "3D / 2D / CAD 三轨 Agent 在小红书 SFT 之后的强化学习与自蒸馏前沿调研（v2.0 全面升级版）",
-      "source_sha256": "2e790372304f576de48e4e95f9fdaf8f3a9010bc6415aa0aba6bd85a3b4e7806",
-      "published_sha256": "f5c222f42bb19a6f1162065da1a164790173418ebd472ddcb62e47266aff4fbd",
+      "source_sha256": "cb2d49f2769c0e0652598262c198388f4d3859279d81677069845e16d949aae5",
+      "published_sha256": "d26c3b7bd039ad8f98e9b43dd45a48ea612cd541fdc223adc2297921a45ea4f1",
+      "edits": {}
+    },
+    {
+      "path": "research/3d-agent-rl-opus-review-and-consolidation-20261127/README.md",
+      "source": "research/3d-agent-rl-opus-review-and-consolidation-20261127/README.md",
+      "source_kind": "local_note",
+      "title": "SFT 后强化学习方案联合去杂糅审查与终极收敛蓝图（主调研方 × Claude Opus 5.5）",
+      "source_sha256": "d99eb0bf4e5fbe886220b83ea49df1eb497e114f231ee65ec2de0a1c1c64e203",
+      "published_sha256": "1c5823ae10b19c54a3918f1861c8fc8ed1db877251d952b902e7574042529291",
+      "edits": {
+        "local_path_placeholders": 1
+      }
+    },
+    {
+      "path": "research/3d-agent-rl-opus-review-and-consolidation-20261127/main-consolidation.md",
+      "source": "research/3d-agent-rl-opus-review-and-consolidation-20261127/main-consolidation.md",
+      "source_kind": "local_note",
+      "title": "主调研方独立自审与去杂糅收敛方案（阅读 Opus 结论前独立完成）",
+      "source_sha256": "3116d97d8f6cbdb3de056844f68c6fcb435b3ade5291d7fb0dd4243d5460bbf7",
+      "published_sha256": "95ac883e3bcd133f3f158023f540bdc530b951a5100aeb9613f49e6f8d88f72d",
+      "edits": {
+        "unpublished_attachment_links": 4
+      }
+    },
+    {
+      "path": "research/3d-agent-rl-opus-review-and-consolidation-20261127/opus-review.md",
+      "source": "research/3d-agent-rl-opus-review-and-consolidation-20261127/opus-review.md",
+      "source_kind": "local_note",
+      "title": "Claude Opus 5.5 独立架构审查与去杂糅收敛报告",
+      "source_sha256": "dd2dce9017270a7f0bffb6ef7dafee998b4597c843594cf41563d481302a2b5c",
+      "published_sha256": "970031d600ea8c20fddf09790b3187adb791853e63b2cc24d9fbd85866889d2f",
       "edits": {}
     },
     {
@@ -1125,8 +1156,8 @@
       "source": "research/README.md",
       "source_kind": "local_note",
       "title": "研究笔记索引",
-      "source_sha256": "90ecb3964614511e104ae7cfb92f039697afade77aeb9e5ea94ef91e4e5df282",
-      "published_sha256": "6406639806876edc625cec438c0d88e1931bebf7b4e3bd24c61acaa6fae240e4",
+      "source_sha256": "910fbdbe8ae0d74fbad23a9396c0e897391e9f0bc4a580178b8594e49ba05e94",
+      "published_sha256": "d1dae1cf7569ac1b636ed5c05ede2f7a600e6cb068147bc372f7f8fdd9fe3cdd",
       "edits": {
         "unpublished_attachment_links": 4
       }

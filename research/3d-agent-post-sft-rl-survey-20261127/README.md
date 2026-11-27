@@ -4,7 +4,8 @@
 
 - **成文与升级日期**：2026-11-27（v2.0：融合 **38 篇新下载一手核验文献** + 2026 下半年最新同源视觉/3D/Web 项目 + 一线模型厂后训练技术报告）
 - **调研范围**：紧扣小红书 `3DCodeFactory`（[arXiv:2611.28783](../arxiv-2611.28783/README.md)）第 6 节留白——*“目前完整合成与验证管线仅用于强教师离线过滤，未来将扩展至自蒸馏（Self-Distillation）与强化学习（Reinforcement Learning）”*——系统检索、下载并一手精读 **38 篇核心文献**（重点覆盖 `2026.06–2026.11` 最新发表的 3D/2D/Web/CAD 同源 RL 论文及 `DeepSeek-V4`、`Kimi K3`、`Qwen3.8-Next` 等最新旗舰技术报告），结合本地既有 4 篇精读（`DAgger`、`Sampling SFT`、`3DCodeVerse`、`3DCodeFactory`）与本仓库三轨基建，给出面向 **`Qwen3.8-27B`** 的 **五阶段（Stage 0 $\to$ Stage 4）后训练演进架构**。
-- **姊妹篇直达**：
+- **姊妹篇与终极执行收敛版直达**：
+  0. **【优先必读 · 工程落地唯一准绳】[主调研方 × Claude Opus 5.5 联合去杂糅审查与终极收敛蓝图](../3d-agent-rl-opus-review-and-consolidation-20261127/README.md)**（已完成 19 项机制冲突裁决、指标三层断舍离、现行检查器 4 处硬漏洞定位，并将五阶段压缩为 `2×8 H800` 可在 1 周内跑通的 **`Step 0 SFT -> Step 1 单模型三轨等权 Repair-RL -> Step 2 384K RFT 回灌`** 极简闭环！）；
   1. 作者初始踩坑细节、Appendix 负向消融与防刷分补丁见 **[2026 同源 RL 踩坑避坑大全与大厂实战手册](../visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md)**；
   2. `Qwen4-Max`（09-22 云端未开源，`Qwen3.8-27B` 确认为 2026 H2 头号稠密开源底座）、`Kimi K3.1 Pro`（11-04 开源重点攻克 `Three.js/Unity/Godot` RL）、`GLM-5.3/5.4`（`slime + SAO` 状态 RL 涨 `6×`）、`DeepSeek-V4.1-Flash-1017`、`Anthropic Opus 5.5 / Fable 5.2` 与 `OpenAI GPT-6 / 6.2 Astra` 一手博客时间线见 **[2026 下半年八大前沿实验室 Agentic RL & 视觉代码技术博客专题](../frontier-labs-agentic-rl-blogs-2026h2/README.md)**。
 - **使用边界说明**：本报告严格区分**论文一手实证事实**（标注基座规模、上下文长度、评测集与精确涨跌幅）与**面向本项目的工程迁移推论**；所有建议作为 SFT 收口后的下一阶段路线储备，未改动任何现行线上训练/评测任务与 `decisions.md`。

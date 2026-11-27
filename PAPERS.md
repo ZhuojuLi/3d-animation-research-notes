@@ -176,6 +176,7 @@
 
 ## 非 arXiv 材料与大厂工程博客
 
+- [主审 × Claude Opus 5.5 联合去杂糅审查与终极收敛蓝图](research/3d-agent-rl-opus-review-and-consolidation-20261127/README.md)（含 [Opus 5.5 独立报告](research/3d-agent-rl-opus-review-and-consolidation-20261127/opus-review.md) · [主审独立自审](research/3d-agent-rl-opus-review-and-consolidation-20261127/main-consolidation.md)）：对 19 项候选机制冲突消解、三轨指标断舍离、检查器 4 处硬漏洞与 `2×8 H800` `Repair-RL → 384K RFT` 极简闭环拍板。
 - [2026 下半年八大前沿实验室 Agentic RL & 视觉代码技术博客专题](research/frontier-labs-agentic-rl-blogs-2026h2/README.md)：涵盖 Qwen4-Max / Qwen3.8-27B、Kimi K3.1 Pro、GLM-5.2/5.3/5.4 与 `slime`、DeepSeek-V4.1-Flash-1017、Seed 2.1、MiniMax-M3 / MaxProof、Anthropic Opus 5.5 / Fable 5.2、OpenAI GPT-6 / 6.2 Astra 官方博客时间线与工程深水区复盘。
 - [2026 图文 / 2D / 3D / CAD 同源 RL 25 大踩坑避坑大全](research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md)：汇总同源项目负向消融、防刷分补丁与本仓库脚本级迁移清单。
 - [OpenAI / Anthropic 早期技术分享精读](research/3d-agent-openai-anthropic-reading-notes-20261121.md)：早期技术博客、工程实践与评估方法。
