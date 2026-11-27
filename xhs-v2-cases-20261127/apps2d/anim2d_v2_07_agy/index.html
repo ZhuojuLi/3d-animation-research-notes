@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Four-Stroke DOHC Engine Workbench</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+  <div class="workbench">
+    <!-- Slim Dark Header -->
+    <header class="topbar">
+      <div class="topbar-left" aria-hidden="true">
+        <svg class="menu-mark" viewBox="0 0 22 16" width="20" height="15">
+          <line x1="1" y1="2" x2="21" y2="2" stroke="#cfd5d9" stroke-width="1.8" stroke-linecap="round" />
+          <line x1="1" y1="8" x2="21" y2="8" stroke="#cfd5d9" stroke-width="1.8" stroke-linecap="round" />
+          <line x1="1" y1="14" x2="21" y2="14" stroke="#cfd5d9" stroke-width="1.8" stroke-linecap="round" />
+        </svg>
+      </div>
+      <h1 class="topbar-title">Four-Stroke DOHC Engine Workbench</h1>
+      <div class="topbar-right" aria-label="Workbench status">
+        <span id="live-dot" class="live-dot" aria-hidden="true"></span>
+        <span class="live-label">Live</span>
+      </div>
+    </header>
+
+    <!-- Main Split Area: Left 2/3 Blueprint Cutaway + Right 1/3 Diagnostics -->
+    <main class="workspace">
+      <section class="stage-panel" aria-label="Engine cutaway viewport">
+        <svg id="stage" role="img" aria-label="Animated four-stroke DOHC engine cutaway"></svg>
+      </section>
+
+      <aside class="analysis-column" aria-label="Thermodynamic and phase telemetry">
+        <!-- Upper Right: P-V Otto-cycle Chart -->
+        <section class="pv-card" aria-labelledby="pv-card-heading">
+          <div class="pv-banner">
+            <h2 id="pv-card-heading" class="pv-banner-title">Pressure–Volume (P-V) Otto-cycle</h2>
+          </div>
+          <div class="pv-svg-wrap">
+            <svg id="pv-chart" role="img" aria-label="Closed Otto-cycle Pressure-Volume diagram"></svg>
+          </div>
+        </section>
+
+        <!-- Lower Right: 4-Quadrant Valve-Timing Phase Wheel + Telemetry Readouts -->
+        <section class="lower-analysis-card" aria-label="Valve timing phase wheel and engine telemetry">
+          <div class="phase-panel">
+            <h2 class="subpanel-title">Valve-timing Phase wheel</h2>
+            <div class="phase-svg-wrap">
+              <svg id="phase-wheel" role="img" aria-label="Four-quadrant valve-timing phase wheel"></svg>
+            </div>
+          </div>
+
+          <div class="telemetry-panel" aria-label="Live telemetry readouts">
+            <div class="telemetry-item">
+              <div id="telemetry-rpm" class="telemetry-value">17000</div>
+              <div class="telemetry-caption">RPM</div>
+            </div>
+            <div class="telemetry-item">
+              <div id="telemetry-pressure" class="telemetry-value">1.2</div>
+              <div class="telemetry-caption">Pressure</div>
+            </div>
+            <div class="telemetry-item">
+              <div id="telemetry-temperature" class="telemetry-value">+53.5°C</div>
+              <div class="telemetry-caption">Temperature</div>
+            </div>
+            <div class="telemetry-item">
+              <div id="telemetry-crank-angle" class="telemetry-value">0 TDC</div>
+              <div class="telemetry-caption">Crank-angle</div>
+            </div>
+          </div>
+        </section>
+      </aside>
+    </main>
+
+    <!-- Bottom Inspector & Transport Rail -->
+    <footer class="control-rail" aria-label="Engine parameter and cycle controls">
+      <!-- 1. RPM Slider -->
+      <div class="control-block">
+        <div class="control-head">
+          <label for="rpm-slider" class="control-title">RPM</label>
+          <output id="rpm-value" for="rpm-slider" class="control-readout">17000 RPM</output>
+        </div>
+        <div class="slider-wrap">
+          <input
+            id="rpm-slider"
+            class="workbench-range"
+            type="range"
+            min="600"
+            max="17000"
+            step="100"
+            value="17000"
+          />
+        </div>
+      </div>
+
+      <!-- 2. Spark-Advance Slider -->
+      <div class="control-block">
+        <div class="control-head">
+          <label for="spark-slider" class="control-title">Spark-advance</label>
+          <output id="spark-value" for="spark-slider" class="control-readout">12° BTDC</output>
+        </div>
+        <div class="slider-wrap">
+          <input
+            id="spark-slider"
+            class="workbench-range"
+            type="range"
+            min="-10"
+            max="40"
+            step="1"
+            value="12"
+          />
+        </div>
+      </div>
+
+      <!-- 3. Stroke-Isolation Inspector -->
+      <div class="control-block control-block-inspector">
+        <div class="control-head">
+          <span id="stroke-inspector-label" class="control-title">Stroke-isolation inspector</span>
+        </div>
+        <div class="stroke-btn-group" role="group" aria-labelledby="stroke-inspector-label">
+          <button id="stroke-intake" type="button" class="stroke-btn" aria-pressed="false">Intake</button>
+          <button id="stroke-compression" type="button" class="stroke-btn" aria-pressed="false">Compression</button>
+          <button id="stroke-power" type="button" class="stroke-btn" aria-pressed="false">Power</button>
+          <button id="stroke-exhaust" type="button" class="stroke-btn" aria-pressed="false">Exhaust</button>
+          <button id="stroke-all" type="button" class="stroke-btn is-active" aria-pressed="true">All</button>
+        </div>
+      </div>
+
+      <!-- 4. Cycle Progress & Transport (#play, #pause, #scrub) -->
+      <div class="control-block control-block-cycle">
+        <div class="control-head cycle-head">
+          <label for="scrub" class="control-title">Cycle progress</label>
+          <div class="transport-group" role="group" aria-label="Cycle playback transport">
+            <button id="play" type="button" class="transport-btn is-active" aria-pressed="true">Play</button>
+            <button id="pause" type="button" class="transport-btn" aria-pressed="false">Pause</button>
+          </div>
+          <output id="scrub-value" for="scrub" class="control-readout">0.00s</output>
+        </div>
+
+        <div class="cycle-scrub-wrap">
+          <svg class="cycle-bar-svg" viewBox="0 0 320 28" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <clipPath id="cycle-pill-clip">
+                <rect x="4" y="6" width="312" height="13" rx="6.5" />
+              </clipPath>
+              <clipPath id="cycle-progress-clip">
+                <rect id="cycle-fill-clip-rect" x="0" y="0" width="0" height="28" />
+              </clipPath>
+            </defs>
+            <!-- Inactive track pill -->
+            <g clip-path="url(#cycle-pill-clip)">
+              <rect x="4" y="6" width="312" height="13" fill="#2c3540" />
+              <!-- Active warm-ivory progress fill -->
+              <rect x="4" y="6" width="312" height="13" fill="#dfd5ba" clip-path="url(#cycle-progress-clip)" />
+              <!-- Chevron diagonal segment dividers matching reference-0.jpg -->
+              <path
+                d="M 30 5 L 36 12.5 L 30 20 M 56 5 L 62 12.5 L 56 20 M 82 5 L 88 12.5 L 82 20 M 108 5 L 114 12.5 L 108 20 M 134 5 L 140 12.5 L 134 20 M 160 5 L 166 12.5 L 160 20 M 186 5 L 192 12.5 L 186 20 M 212 5 L 218 12.5 L 212 20 M 238 5 L 244 12.5 L 238 20 M 264 5 L 270 12.5 L 264 20 M 290 5 L 296 12.5 L 290 20"
+                stroke="#182028"
+                stroke-width="1.35"
+                fill="none"
+              />
+            </g>
+            <!-- Hairline scrub cursor + bottom pointer triangle -->
+            <g id="cycle-cursor-group" transform="translate(4, 0)">
+              <line x1="0" y1="2" x2="0" y2="21" stroke="#ece3cc" stroke-width="1.6" />
+              <polygon points="0,22 -3.2,27 3.2,27" fill="#ece3cc" />
+            </g>
+          </svg>
+          <input
+            id="scrub"
+            class="scrub-range"
+            type="range"
+            min="0"
+            max="8"
+            step="0.01"
+            value="0"
+          />
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

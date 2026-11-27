@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An interactive, mechanically synchronized four-stroke DOHC engine workbench.">
+  <title>Four-Stroke DOHC Engine Workbench</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <button class="menu-mark" type="button" aria-label="Workbench menu" title="Four-stroke workbench">
+        <span></span><span></span><span></span>
+      </button>
+      <h1>Four-Stroke DOHC Engine Workbench</h1>
+      <div class="live-status" aria-label="Live simulation"><span class="live-dot"></span><span>Live</span></div>
+    </header>
+
+    <main class="main-workspace">
+      <section class="stage-panel blueprint-grid" aria-label="Animated four-stroke engine cutaway">
+        <div class="stage-kicker" aria-hidden="true">
+          <span class="section-index">01</span>
+          <span>ENGINE CUTAWAY</span>
+          <span class="kicker-rule"></span>
+          <span class="section-detail">DOHC · 16V · INLINE FOUR</span>
+        </div>
+        <div class="stage-notation" aria-hidden="true">SECTION A—A <span>◈</span> CYLINDER 01</div>
+        <div id="engine-stage" class="engine-stage"></div>
+        <div class="stage-footer" aria-hidden="true">
+          <span><i class="key-line intake-key"></i>INTAKE CHARGE</span>
+          <span><i class="key-line exhaust-key"></i>COMBUSTION / EXHAUST</span>
+          <span class="stage-scale">MECHANISM SCALE <b>2 : 1</b></span>
+        </div>
+      </section>
+
+      <aside class="analysis-stack" aria-label="Engine cycle analysis">
+        <section class="pv-panel" aria-labelledby="pv-heading">
+          <div class="panel-heading">
+            <h2 id="pv-heading">Pressure–Volume <span>(P–V)</span> Otto-cycle</h2>
+            <span class="panel-tag">THEORETICAL</span>
+          </div>
+          <div id="pv-chart" class="pv-chart"></div>
+        </section>
+
+        <section class="phase-panel" aria-label="Valve timing and engine telemetry">
+          <div class="wheel-block">
+            <h2>Valve-timing <span>Phase wheel</span></h2>
+            <div id="phase-wheel" class="phase-wheel"></div>
+            <div class="wheel-caption"><span>CAM SPEED</span><b>½ CRANK</b></div>
+          </div>
+          <div class="telemetry" aria-label="Live engine telemetry">
+            <div class="telemetry-item rpm-readout">
+              <div id="rpm-readout" class="readout-value">17000</div>
+              <div class="readout-label">RPM <span>CRANK SPEED</span></div>
+            </div>
+            <div class="telemetry-item">
+              <div id="pressure-readout" class="readout-value">1.0</div>
+              <div class="readout-label">Pressure <span>BAR · ABS</span></div>
+            </div>
+            <div class="telemetry-item">
+              <div id="temperature-readout" class="readout-value">+30.0<span>°C</span></div>
+              <div class="readout-label">Temperature <span>CHAMBER</span></div>
+            </div>
+            <div class="telemetry-item angle-readout">
+              <div id="angle-readout" class="readout-value">0<span>° ATDC</span></div>
+              <div class="readout-label">Crank-angle <span>720° CYCLE</span></div>
+            </div>
+          </div>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="control-rail" aria-label="Simulation controls">
+      <section class="control-group rpm-control">
+        <div class="control-heading">
+          <label for="rpm-slider">RPM</label>
+          <output id="rpm-value" for="rpm-slider">17000 <span>RPM</span></output>
+        </div>
+        <input id="rpm-slider" class="instrument-slider" type="range" min="600" max="17000" step="100" value="17000" aria-describedby="rpm-range">
+        <div class="range-labels" id="rpm-range"><span>600 · IDLE</span><span>17K · REDLINE</span></div>
+      </section>
+
+      <section class="control-group spark-control">
+        <div class="control-heading">
+          <label for="spark-slider">Spark-advance</label>
+          <output id="spark-value" for="spark-slider">12° <span>BTDC</span></output>
+        </div>
+        <input id="spark-slider" class="instrument-slider" type="range" min="-10" max="40" step="1" value="12" aria-describedby="spark-range">
+        <div class="range-labels" id="spark-range"><span>−10°</span><span>+40°</span></div>
+      </section>
+
+      <section class="control-group inspector-control" aria-labelledby="inspector-label">
+        <div class="control-heading">
+          <span id="inspector-label">Stroke-isolation inspector</span>
+          <span id="inspector-status" class="inspector-status">ALL STROKES</span>
+        </div>
+        <div class="stroke-buttons" role="group" aria-labelledby="inspector-label">
+          <button id="stroke-intake" type="button" data-stroke="intake" aria-pressed="false"><span>01</span>Intake</button>
+          <button id="stroke-compression" type="button" data-stroke="compression" aria-pressed="false"><span>02</span>Compression</button>
+          <button id="stroke-power" type="button" data-stroke="power" aria-pressed="false"><span>03</span>Power</button>
+          <button id="stroke-exhaust" type="button" data-stroke="exhaust" aria-pressed="false"><span>04</span>Exhaust</button>
+          <button id="stroke-all" class="active" type="button" data-stroke="all" aria-pressed="true">All</button>
+        </div>
+      </section>
+
+      <section class="control-group progress-control">
+        <div class="control-heading progress-heading">
+          <label for="scrub">Cycle progress</label>
+          <div class="transport" role="group" aria-label="Playback controls">
+            <button id="play" type="button" aria-label="Play cycle"><span class="play-symbol">▶</span>Play</button>
+            <button id="pause" type="button" aria-label="Pause cycle"><span class="pause-symbol">Ⅱ</span>Pause</button>
+          </div>
+        </div>
+        <div class="scrub-track">
+          <div class="cycle-ticks" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          <input id="scrub" type="range" min="0" max="8" step="0.01" value="0" aria-label="Cycle progress in seconds" aria-valuetext="0 seconds of 8 seconds">
+        </div>
+        <div class="cycle-readout"><span id="active-stroke">INTAKE</span><span id="time-readout">0.00 / 8.00 s</span></div>
+      </section>
+    </footer>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>ROAD / DAIMN — Full-frame rangefinder</title>
+  <meta name="description" content="An interactive eight-second optical study of a retro full-frame digital rangefinder.">
+  <link rel="stylesheet" href="./css/styles.css">
+  <script defer src="./app.js"></script>
+</head>
+<body>
+  <main class="publication" aria-label="Road Daimn camera interactive product study">
+    <header class="masthead">
+      <a class="brand" href="#camera-stage" aria-label="Leica camera study home">
+        <span class="brand-disc" aria-hidden="true">Leica</span>
+      </a>
+      <div class="masthead-title">
+        <span class="edition">OPTICAL JOURNAL&nbsp;&nbsp; / &nbsp;&nbsp;No. 036–24</span>
+        <p>FLAGSHIP RETRO FULL-FRAME DIGITAL RANGEFINDER</p>
+      </div>
+      <div class="issue-mark" aria-hidden="true">M<br><span>01</span></div>
+      <button id="menu-btn" class="menu-button" type="button" aria-label="Open product index" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <section id="product-index" class="product-index" hidden aria-label="Product index">
+      <strong>ROAD / DAIMN</strong><span>FULL-FRAME DIGITAL RANGEFINDER</span><span>OPTICAL STUDY 01 — ENGINEERING EDITION</span>
+    </section>
+
+    <div class="workspace">
+      <aside class="editorial" aria-labelledby="product-title">
+        <div class="editorial-heading">
+          <p class="eyebrow">THE MECHANICAL COLLECTION</p>
+          <h1 id="product-title"><span>ROAD</span><span>DAIMN</span></h1>
+          <p class="intro">Flagship retro full-frame<br>digital rangefinder camera.<br><span>Character, resolved by light.</span></p>
+        </div>
+        <div class="specifications">
+          <article class="spec-card">
+            <h2>SPECIFICATION</h2>
+            <p>36 × 24 mm full-frame<br>Back-illuminated sensor<br>60.3 million pixels</p>
+          </article>
+          <article class="spec-card">
+            <h2>SPECIFICATION</h2>
+            <p>7 individual glass elements<br>9-blade mechanical iris<br>Dual focal-plane shutters</p>
+          </article>
+          <article class="spec-card">
+            <h2>SPECIFICATION</h2>
+            <p>Machined brass &amp; magnesium<br>Brilliant frameline optics<br>Made for the decisive moment</p>
+          </article>
+        </div>
+        <p class="editorial-foot"><span>DESIGN NOTES</span> WETZLAR · GERMANY</p>
+      </aside>
+
+      <section class="stage-column" aria-label="Interactive camera optical bench">
+        <div class="stage-frame">
+          <div class="stage-meta" aria-hidden="true">
+            <span>OPTICAL BENCH / 01</span>
+            <span id="section-inset">SECTION R · FOCAL PLANE</span>
+          </div>
+          <svg id="stage" viewBox="0 0 820 600" role="img" aria-labelledby="stage-title stage-description" preserveAspectRatio="xMidYMid meet">
+            <title id="stage-title">Explorable retro rangefinder camera</title>
+            <desc id="stage-description">Seven glass lens elements, a nine-blade aperture, focal-plane shutter curtains, sensor and coupled rangefinder windows on a common optical axis.</desc>
+          </svg>
+          <div class="stage-caption" aria-hidden="true">
+            <span class="hairline"></span>
+            <span id="mechanism-caption">ASSEMBLED EXTERIOR</span>
+            <span class="drawing-number">FIG. M–036</span>
+          </div>
+        </div>
+
+        <div class="transport" aria-label="Animation timeline controls">
+          <div class="transport-buttons">
+            <button id="play" class="icon-button" type="button" aria-label="Play eight-second demonstration" title="Play">
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 4.2 15 10 6 15.8Z" fill="currentColor"/></svg>
+            </button>
+            <button id="pause" class="icon-button" type="button" aria-label="Pause demonstration" title="Pause">
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 4h3v12H6zm5 0h3v12h-3z" fill="currentColor"/></svg>
+            </button>
+          </div>
+          <div class="scrub-wrap">
+            <div class="scrub-labels"><span id="phase-name">LENS / ASSEMBLY</span><span>8 SEC · ONE SHOT</span></div>
+            <input id="scrub" type="range" min="0" max="8" step="0.001" value="0" aria-label="Demonstration position in seconds">
+          </div>
+          <output id="time-display" class="time-display" for="scrub">00.0 <span>/ 08.0</span></output>
+        </div>
+      </section>
+
+      <aside class="control-panel" aria-label="Optical and finish controls">
+        <div class="view-tabs" role="group" aria-label="Highlighted optical control">
+          <button id="tab-aperture" class="active" type="button" aria-pressed="true">APERTURE</button>
+          <button id="tab-focus" type="button" aria-pressed="false">FOCUS</button>
+        </div>
+
+        <section id="aperture-readout" class="readout active" aria-label="Current aperture">
+          <div class="readout-heading"><span>F / APERTURE</span><span>9 BLADES</span></div>
+          <div class="readout-value"><small>f/</small><output id="aperture-value">2.5</output><em>IRIS</em></div>
+        </section>
+        <section id="focus-readout" class="readout" aria-label="Current focus distance">
+          <div class="readout-heading"><span>FOCUS DISTANCE</span><span>M / ∞ COUPLING</span></div>
+          <div class="readout-value"><output id="focus-value">0.7</output><em id="focus-unit">m</em></div>
+        </section>
+
+        <div class="slider-bank">
+          <div class="optical-slider">
+            <label for="aperture-slider">APERTURE <span>1.7 — 16</span></label>
+            <div class="slider-line">
+              <button id="aperture-prev" type="button" aria-label="Previous aperture stop">←</button>
+              <input id="aperture-slider" type="range" min="1.7" max="16" step="0.1" value="2.5" aria-valuetext="f/2.5">
+              <button id="aperture-next" type="button" aria-label="Next aperture stop">→</button>
+            </div>
+          </div>
+          <div class="optical-slider">
+            <label for="focus-slider">FOCUS <span>0.7 m — ∞</span></label>
+            <div class="slider-line">
+              <button id="focus-prev" type="button" aria-label="Focus nearer">←</button>
+              <input id="focus-slider" type="range" min="0" max="1" step="0.001" value="0" aria-valuetext="0.7 metres">
+              <button id="focus-next" type="button" aria-label="Focus farther">→</button>
+            </div>
+          </div>
+        </div>
+
+        <section class="section-control" aria-labelledby="section-title">
+          <div class="control-heading"><h2 id="section-title">SECTION VIEW</h2><span>CUTAWAY PLANE</span></div>
+          <div class="section-buttons" role="group" aria-label="Camera section side">
+            <button id="section-left" type="button" aria-pressed="false">←&nbsp; LEFT</button>
+            <button id="section-right" class="active" type="button" aria-pressed="true">RIGHT &nbsp;→</button>
+          </div>
+        </section>
+
+        <div class="finish-control">
+          <label for="finish-select">BODY FINISH <span>03 AVAILABLE</span></label>
+          <div class="select-row">
+            <span id="finish-swatch" class="finish-swatch" aria-hidden="true"></span>
+            <select id="finish-select">
+              <option value="silver">SILVER / BLACK</option>
+              <option value="black">ALL BLACK</option>
+              <option value="champagne">CHAMPAGNE TITANIUM</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="active-control">
+          <div class="control-heading"><h2>ACTIVE CONTROL</h2><span id="mode-status">ASSEMBLED</span></div>
+          <button id="exploded-toggle" type="button" aria-pressed="false"><span class="explode-icon" aria-hidden="true">↔</span> EXPLODED OPTICAL</button>
+        </div>
+
+        <div class="control-footer">
+          <p><span class="status-dot" aria-hidden="true"></span><span id="playback-status">READY / ONE SHOT</span></p>
+          <button id="reset-btn" type="button">RESET STUDY <span aria-hidden="true">↺</span></button>
+        </div>
+      </aside>
+    </div>
+
+    <nav class="chapter-nav" aria-label="Demonstration chapters">
+      <button id="nav-lens" class="active" data-phase="lens" type="button"><span class="chapter-number">01</span><span>LENS</span><small>SEVEN ELEMENTS</small></button>
+      <button id="nav-aperture" data-phase="aperture" type="button"><span class="chapter-number">02</span><span>APERTURE</span><small>NINE BLADES</small></button>
+      <button id="nav-focus" data-phase="focus" type="button"><span class="chapter-number">03</span><span>FOCUS</span><small>COUPLED IMAGE</small></button>
+      <button id="nav-exposure" data-phase="exposure" type="button"><span class="chapter-number">04</span><span>EXPOSURE</span><small>FOCAL PLANE</small></button>
+    </nav>
+  </main>
+  <noscript>This interactive study requires JavaScript. All resources are stored locally.</noscript>
+</body>
+</html>

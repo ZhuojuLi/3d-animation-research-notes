@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <title>都市轨道数字孪生调度控制台</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <main class="console-shell" aria-label="都市轨道数字孪生调度控制台">
+    <header class="topbar panel">
+      <section class="brand" aria-label="控制台标题">
+        <div class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40"><path d="M10 29V12c0-5 4-8 10-8s10 3 10 8v17"/><path d="M8 29h24M13 34l4-5m10 5-4-5"/><rect x="14" y="10" width="12" height="8" rx="2"/><path d="M15 24h2m6 0h2"/></svg>
+        </div>
+        <div class="brand-copy">
+          <h1>都市轨道数字孪生调度控制台</h1>
+          <p>URBAN RAIL TRANSIT <span>·</span> DIGITAL TWIN OPERATIONS</p>
+        </div>
+      </section>
+
+      <section class="clock-block" aria-label="模拟运行状态">
+        <div class="clock-row">
+          <span class="clock-caption">数字模拟时钟</span>
+          <time id="sim-clock" datetime="15:38:45">15:38:45</time>
+        </div>
+        <div class="system-status"><i></i><span>系统运行正常</span><small>全线网在线</small></div>
+      </section>
+
+      <section class="kpi-grid" aria-label="关键运行指标">
+        <article class="kpi-card cyan">
+          <div class="kpi-label"><span>准点率</span><i>OT</i></div>
+          <div class="kpi-value"><strong id="punctuality-value">98</strong><span>%</span></div>
+          <div class="kpi-trend"><span>较上一时段</span><b>+0.6%</b></div>
+        </article>
+        <article class="kpi-card blue">
+          <div class="kpi-label"><span>列车密度</span><i>TD</i></div>
+          <div class="kpi-value"><strong>35</strong><span>列/小时</span></div>
+          <div class="kpi-trend"><span>运行图兑现</span><b>稳定</b></div>
+        </article>
+        <article class="kpi-card violet">
+          <div class="kpi-label"><span>客流量</span><i>PF</i></div>
+          <div class="kpi-value"><strong id="passenger-value">1.2</strong><span>万人次</span></div>
+          <div class="kpi-trend"><span>实时客流</span><b id="passenger-trend">基准</b></div>
+        </article>
+        <article class="kpi-card amber">
+          <div class="kpi-label"><span>能耗</span><i>EN</i></div>
+          <div class="kpi-value"><strong>1450</strong><span>kWh</span></div>
+          <div class="kpi-trend"><span>单位牵引能耗</span><b>优</b></div>
+        </article>
+      </section>
+    </header>
+
+    <section class="workspace">
+      <section class="stage-panel panel" aria-label="线网实时运行主舞台">
+        <div class="stage-heading">
+          <div class="section-title"><span class="title-glyph">⌁</span><strong>线网数字孪生</strong><span class="section-subtitle">实时运行图</span></div>
+          <div class="stage-meta"><span class="live-pill"><i></i>LIVE</span><span>4 条线路</span><b></b><span id="train-count">18 列在运</span><span class="north-mark">N <i>↑</i></span></div>
+        </div>
+        <div id="stage-wrap" data-stage="hybrid">
+          <svg id="stage" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1064 560" role="img" aria-label="黄浦江两岸四线轨道交通动态运行图"></svg>
+          <div class="map-corner top-left" aria-hidden="true"></div><div class="map-corner top-right" aria-hidden="true"></div>
+          <div class="map-corner bottom-left" aria-hidden="true"></div><div class="map-corner bottom-right" aria-hidden="true"></div>
+          <div class="map-scale" aria-hidden="true"><span>0</span><i></i><span>2</span><i></i><span>4 km</span></div>
+          <div class="map-coordinate">31.2304° N&nbsp;&nbsp; 121.4737° E</div>
+        </div>
+      </section>
+
+      <aside class="analysis-panel panel" aria-label="线路负载与换乘站压力分析">
+        <div class="analysis-heading"><div><span class="mini-bars">▥</span><strong>运行载荷分析</strong></div><span>REAL-TIME</span></div>
+        <div id="charts" class="chart-stack">
+          <article class="chart-card" data-chart="cyan"><div class="chart-title"><span><i></i>青线 · 断面满载率</span><b id="load-cyan">--%</b></div><svg id="chart-cyan" viewBox="0 0 280 82" role="img" aria-label="青线一到六时断面满载率曲线"></svg></article>
+          <article class="chart-card" data-chart="orange"><div class="chart-title"><span><i></i>橙红线 · 断面满载率</span><b id="load-orange">--%</b></div><svg id="chart-orange" viewBox="0 0 280 82" role="img" aria-label="橙红线一到六时断面满载率曲线"></svg></article>
+          <article class="chart-card" data-chart="purple"><div class="chart-title"><span><i></i>紫色线 · 断面满载率</span><b id="load-purple">--%</b></div><svg id="chart-purple" viewBox="0 0 280 82" role="img" aria-label="紫色线一到六时断面满载率曲线"></svg></article>
+        </div>
+        <section class="pressure-panel" aria-labelledby="pressure-title">
+          <div class="pressure-title"><div><span>⇄</span><strong id="pressure-title">换乘站压力</strong></div><small>指数 / 0—100</small></div>
+          <svg id="pressure-chart" viewBox="0 0 280 136" role="img" aria-label="五项换乘站压力横向条形排行"></svg>
+        </section>
+      </aside>
+    </section>
+
+    <footer class="control-panel panel" aria-label="仿真控制区">
+      <section class="flow-control" aria-labelledby="flow-label">
+        <div class="control-label"><label id="flow-label" for="flow-multiplier">AM / PM 客流倍率</label><output id="flow-output" for="flow-multiplier">1.0<span>×</span></output></div>
+        <div class="range-row"><span>AM</span><input id="flow-multiplier" type="range" min="0.6" max="2.0" step="0.1" value="1.0" aria-label="客流倍率，最低零点六，最高二点零"><span>PM</span></div>
+      </section>
+
+      <section class="line-control" aria-label="线路聚焦">
+        <button class="line-focus" data-line="cyan" style="--line-color:#28d7df" aria-pressed="false"><i></i><span>青线</span><small>01</small></button>
+        <button class="line-focus" data-line="orange" style="--line-color:#ff765f" aria-pressed="false"><i></i><span>橙红线</span><small>02</small></button>
+        <button class="line-focus" data-line="purple" style="--line-color:#b77bf4" aria-pressed="false"><i></i><span>紫色线</span><small>03</small></button>
+        <button class="line-focus" data-line="green" style="--line-color:#55df8a" aria-pressed="false"><i></i><span>绿线</span><small>04</small></button>
+      </section>
+
+      <section class="speed-control">
+        <button id="speed-limit-toggle" class="speed-button active" type="button" aria-pressed="true"><span class="speed-icon">20</span><span id="speed-button-text">解除限速</span></button>
+        <div id="speed-status" class="speed-status active"><i></i><span>绿线 · 限速中</span></div>
+      </section>
+
+      <section class="transport" aria-label="运行时间轴">
+        <div class="transport-buttons">
+          <button id="play" type="button" aria-label="播放仿真"><span>▶</span><b>播放</b></button>
+          <button id="pause" type="button" aria-label="暂停仿真"><span>Ⅱ</span><b>暂停</b></button>
+        </div>
+        <div class="timeline-control">
+          <div class="timeline-label"><label for="scrub">运行时间轴</label><span id="play-state"><i></i>已暂停</span><output id="time-output" for="scrub">00:00.0</output></div>
+          <input id="scrub" type="range" min="0" max="8" step="0.01" value="0" aria-label="八秒仿真时间轴">
+          <div class="timeline-ticks"><span>00:00</span><span>02:00</span><span>04:00</span><span>06:00</span><span>08:00</span></div>
+        </div>
+      </section>
+    </footer>
+  </main>
+  <script src="./app.js" defer></script>
+</body>
+</html>

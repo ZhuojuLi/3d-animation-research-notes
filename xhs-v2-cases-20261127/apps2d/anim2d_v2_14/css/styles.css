@@ -1,0 +1,192 @@
+:root {
+  color-scheme: light;
+  --navy: #172b3a;
+  --navy-2: #263d4c;
+  --ink: #24343b;
+  --cream: #f7edcf;
+  --brass: #c9a258;
+  --paper: #f7edcf;
+  --blue-gray: #98a3a4;
+  --fill: 0%;
+  font-family: "Courier New", Courier, monospace;
+}
+* { box-sizing: border-box; }
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: #142531; }
+body { min-width: 320px; min-height: 240px; }
+#atelier { width: 100%; height: 100%; display: grid; place-items: center; }
+#stage { display: block; width: 100vw; height: 100vh; background: #d8d0bd; shape-rendering: geometricPrecision; text-rendering: geometricPrecision; }
+text { font-family: "Courier New", Courier, monospace; user-select: none; }
+path, line, rect, circle, ellipse, polygon, polyline { vector-effect: non-scaling-stroke; }
+
+/* Architecture and drawing surface */
+.navy-header { fill: #182d3d; }
+.header-rule { fill: #0e202d; stroke: none; }
+.menu-mark { fill: #bdac7d; stroke: none; }
+.header-label { fill: #c4ab76; font-size: 12px; letter-spacing: 1.2px; }
+.header-title { fill: #e9ddbd; font-weight: 700; font-size: 12px; letter-spacing: 1.1px; }
+.table-caption { fill: #5d6058; font-size: 9px; letter-spacing: 1.3px; font-weight: 700; }
+.rail-divider { stroke: #586c76; stroke-width: 1.5; }
+.board-outline { stroke: #392c24; stroke-width: 2; }
+.board-grain { fill: none; stroke: #b18a61; stroke-width: 1.2; opacity: 0.22; }
+.board-grain.grain-dark { stroke: #3f2c24; stroke-width: 2; opacity: 0.3; }
+.board-grain.grain-fine { stroke-width: 0.65; opacity: 0.22; }
+.board-knot { fill: none; stroke: #39271f; stroke-width: 1.4; opacity: 0.27; }
+.board-bevel-light { fill: none; stroke: #b38b64; stroke-width: 1.2; opacity: 0.7; }
+.board-inner-rule { fill: none; stroke: #412e23; stroke-width: 1; opacity: 0.6; }
+.board-pin { fill: #3e3026; stroke: #aa835c; stroke-width: 0.7; }
+.stack-sheet { fill: #dfd2b2; stroke: #665d4c; stroke-width: 1; }
+.stack-sheet:nth-child(even) { fill: #f2e7c9; }
+.stack-top { fill: #f4e9ca; stroke: #6f6450; stroke-width: 1.3; }
+.stack-deckle { fill: none; stroke: #baa982; stroke-width: 0.8; }
+.linen-thread { fill: none; stroke: #f0e6cf; stroke-width: 4; stroke-linecap: round; }
+.thread-1 { stroke: #9b8b72; stroke-width: 1.1; }
+.thread-2 { stroke: #d4c5aa; stroke-width: 1.2; }
+.thread-3 { stroke: #766b5b; stroke-width: 0.7; }
+.supply-label { fill: #34454b; font-size: 12px; font-weight: 700; letter-spacing: 0.8px; }
+.leader-line { fill: none; stroke: #6c6e5e; stroke-width: 0.8; }
+.paper-inner-rule { fill: none; stroke: #ad9870; stroke-width: 0.65; opacity: 0.7; }
+.index-minor { stroke: #9e8b62; stroke-width: 0.65; }
+.index-major { stroke: #5d5f51; stroke-width: 1; }
+.paper-index { fill: #9a8c6a; font-size: 7px; text-anchor: middle; }
+.registration-crosses circle { fill: none; stroke: #857e64; stroke-width: 0.55; opacity: 0.48; }
+.registration-crosses path { fill: none; stroke: #4d5a58; stroke-width: 1.1; }
+.paper-heading { fill: #2f3a39; font-size: 13px; font-weight: 700; letter-spacing: 1px; }
+.paper-micro { fill: #8a7f61; font-size: 8px; letter-spacing: 0.8px; }
+.paper-underline { stroke: #a18d61; stroke-width: 0.7; }
+
+/* Brass instruments */
+.tool-shadow { fill: #1d2526; opacity: 0.17; }
+.ruler-tick { stroke: #564b34; stroke-width: 0.8; }
+.ruler-tick.major { stroke: #303b39; stroke-width: 1; }
+.ruler-number { fill: #433e2f; font-size: 7px; font-weight: 700; }
+.tool-caption { fill: #c9b27e; font-size: 8px; letter-spacing: 0.8px; font-weight: 700; }
+.tool-micro { fill: #9d8b64; font-size: 8px; letter-spacing: 0.55px; }
+.tool-label { fill: #2f3a39; font-size: 11px; font-weight: 700; letter-spacing: 0.6px; }
+.tsquare-screws circle { fill: url(#hinge-metal); stroke: #4f3e28; stroke-width: 0.8; }
+.tsquare-screws path { stroke: #2d3737; stroke-width: 0.7; }
+.position-tick { stroke: #34454b; stroke-width: 1.2; }
+.compass-shadow-line { fill: none; stroke: #17252a; stroke-width: 15; stroke-linecap: round; }
+.cutter-mark { fill: #5c4729; font-size: 8px; font-weight: 700; }
+.cutter-guide { fill: none; stroke: #657b7c; stroke-width: 0.8; stroke-dasharray: 3 5; opacity: 0.7; }
+.construction-label { fill: #7b806f; font-size: 8px; letter-spacing: 1px; }
+
+/* Construction marks */
+.construction-underlay { fill: none; stroke: #e9d7a9; stroke-width: 7; opacity: 0.55; }
+.construction-ghost { fill: none; stroke: #af934f; stroke-width: 1; stroke-dasharray: 3 7; opacity: 0.45; }
+.golden-arc { fill: none; stroke: #c99c3f; stroke-width: 2.5; stroke-linecap: round; }
+.construction-conjugate { fill: none; stroke: #bdab7b; stroke-width: 0.75; opacity: 0.45; }
+.construction-radius-ghost { fill: none; stroke: #cabb94; stroke-width: 0.5; stroke-dasharray: 1 10; opacity: 0.28; }
+.trim-line { fill: none; stroke: #9b663c; stroke-width: 1.8; stroke-linecap: round; }
+.ribbon-shadow { fill: none; stroke: #3b3429; stroke-width: 25; opacity: 0.14; transform: translate(4px, 5px); }
+.ribbon-outline { fill: none; stroke: #766c54; stroke-width: 21; stroke-linecap: round; opacity: 1; }
+.ribbon-body { fill: none; stroke: #f5e9c8; stroke-width: 18; stroke-linecap: butt; }
+.ribbon-highlight { fill: none; stroke: #fffbee; stroke-width: 1.3; opacity: 0.8; }
+.phase-badge-bg { fill: #eee4c6; stroke: #b8a87f; stroke-width: 0.7; opacity: 0.93; }
+#phase-dot { fill: #b48437; }
+#phase-dot.phase-1 { fill: #687c7c; }
+#phase-dot.phase-2 { fill: #9b6747; }
+#phase-dot.phase-3 { fill: #576b73; }
+.phase-label { fill: #4e584f; font-size: 9px; font-weight: 700; letter-spacing: 0.7px; }
+
+/* Inspector diagrams and controls */
+.inspector-card { fill: #aab0ab; fill-opacity: 0.23; stroke: #63777e; stroke-width: 0.8; }
+.inspector-card.active { fill: #c4b887; fill-opacity: 0.17; }
+#pivot-card { transition: none; }
+.inspector-kicker { fill: #2b424e; font-size: 9px; font-weight: 700; letter-spacing: 0.85px; }
+.diamond-frame { fill: #4f6671; fill-opacity: 0.09; stroke: #334f5e; stroke-width: 1; }
+.diamond-solid { fill: none; stroke: #d5d6c7; stroke-width: 1.1; }
+.diagram-arc { fill: none; stroke: #c8a360; stroke-width: 1.1; }
+.diagram-brass { fill: none; stroke: #d2ae64; stroke-width: 1; }
+.diagram-axis { fill: none; stroke: #e6ddbb; stroke-width: 0.65; stroke-dasharray: 3 3; opacity: 0.78; }
+.diagram-node { fill: #dabc7a; stroke: #263e4d; stroke-width: 1; }
+.diagram-active { fill: none; stroke: #f5d47e; stroke-width: 1; }
+.diagram-cross { fill: none; stroke: #f5d47e; stroke-width: 0.8; stroke-dasharray: 2 2; }
+.angle-ray { fill: none; stroke: #294858; stroke-width: 1.8; stroke-linecap: round; }
+.angle-arc { fill: none; stroke: #d2ae64; stroke-width: 1.4; }
+.angle-node { fill: #ecd18a; stroke: #304655; stroke-width: 1; }
+.diagram-greek { fill: #9c783d; font-family: Georgia, serif; font-size: 19px; font-style: italic; }
+.diagram-caption { fill: #405660; font-size: 8px; letter-spacing: 0.7px; }
+.pivot-ring { fill: #aeb3a8; stroke: #294555; stroke-width: 1.4; }
+.inspector-separator { stroke: #647b83; stroke-width: 0.8; }
+.speed-readout, .phase-readout { fill: #213b49; font-size: 10px; font-weight: 700; }
+.range-min { fill: #344e5a; font-size: 8px; }
+
+input[type="range"] {
+  --fill: 0%;
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%; height: 18px; margin: 0; display: block;
+  background: transparent; cursor: pointer; outline-offset: 2px;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 5px; border-radius: 4px; border: 1px solid #334c58;
+  background: linear-gradient(to right, #d2ae62 0 var(--fill), #2a4352 var(--fill) 100%);
+}
+input[type="range"]::-moz-range-track {
+  height: 5px; border-radius: 4px; border: 1px solid #334c58;
+  background: linear-gradient(to right, #d2ae62 0 var(--fill), #2a4352 var(--fill) 100%);
+}
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none; -webkit-appearance: none;
+  width: 14px; height: 14px; border-radius: 50%; margin-top: -5.5px;
+  background: #d9b66c; border: 1.5px solid #273f4e; box-shadow: inset 0 0 0 2px #edd08c;
+}
+input[type="range"]::-moz-range-thumb {
+  width: 12px; height: 12px; border-radius: 50%;
+  background: #d9b66c; border: 1.5px solid #273f4e; box-shadow: inset 0 0 0 2px #edd08c;
+}
+#speed-slider { --fill: 60%; }
+#scrub::-webkit-slider-runnable-track { background: linear-gradient(to right, #a26f5a 0 var(--fill), #2a4352 var(--fill) 100%); }
+#scrub::-moz-range-track { background: linear-gradient(to right, #a26f5a 0 var(--fill), #2a4352 var(--fill) 100%); }
+.inspector-toggle, .transport-btn {
+  font-family: "Courier New", Courier, monospace; cursor: pointer;
+  border: 1px solid #36515f; color: #263f4c; background: #b3b6aa;
+  font-size: 9px; font-weight: 700; letter-spacing: 0.55px;
+  width: 100%; height: 100%; margin: 0; padding: 0 4px;
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  border-radius: 2px; outline-offset: 2px;
+}
+.inspector-toggle:hover, .transport-btn:hover { background: #d4c699; color: #172f3e; }
+.inspector-toggle.is-active { background: #263f4d; color: #f0d38e; border-color: #183240; }
+.toggle-glyph { font-size: 13px; line-height: 1; }
+.transport-btn { font-size: 8px; letter-spacing: 0.4px; background: #a4aba5; }
+.transport-btn.is-active { background: #263f4d; color: #e4c67e; }
+button:focus-visible, input:focus-visible { outline: 2px solid #f1ce78; }
+
+/* Five-gauge live telemetry strip */
+.telemetry-shell { fill: #99a2a0; stroke: #5c7077; stroke-width: 1; }
+.telemetry-intro { fill: #1c3343; }
+.intro-title { fill: #e8dfc1; font-size: 12px; font-weight: 700; letter-spacing: 0.6px; }
+.intro-cross { stroke: #b3985c; stroke-width: 0.8; opacity: 0.75; }
+.telemetry-bg { fill: #a6ada7; }
+.telemetry-card:nth-of-type(even) .telemetry-bg { fill: #9ea8a5; }
+.telemetry-topline { stroke: #c8c8b4; stroke-width: 0.8; }
+.telemetry-title { fill: #233c49; font-size: 10px; font-weight: 700; letter-spacing: 0.3px; }
+.telemetry-value { fill: #182f3e; font-size: 18px; font-weight: 700; letter-spacing: -0.4px; }
+.telemetry-unit { fill: #4a6168; font-size: 7.1px; letter-spacing: 0.15px; }
+.telemetry-phase { fill: #51666b; font-size: 6.5px; letter-spacing: 0.35px; }
+.gauge-track { fill: none; stroke: #324b58; stroke-width: 6; stroke-linecap: round; }
+.gauge-fill { fill: none; stroke: #d1ad60; stroke-width: 3; stroke-linecap: round; }
+.gauge-tick { stroke: #d7c697; stroke-width: 0.75; }
+.gauge-needle { fill: #1b3545; }
+.gauge-pin { fill: #d2af65; stroke: #243d4a; stroke-width: 1; }
+.meter-track { fill: #657c82; opacity: 0.55; }
+.meter-fill { fill: #314d5b; }
+.telemetry-edge { stroke: #566e77; stroke-width: 1; }
+.loop-ring { fill: none; stroke: #c8a55f; stroke-width: 1.2; stroke-dasharray: 3 2; }
+.loop-check { fill: none; stroke: #263f4d; stroke-width: 1.5; }
+.sync-label { fill: #29434f; font-size: 8px; font-weight: 700; letter-spacing: 1px; }
+
+/* Coordinated pivot overlay */
+.overlay-lines { fill: none; stroke: #466d79; stroke-width: 1; stroke-dasharray: 4 3; }
+#overlay-hinge-ring { stroke: #b68b42; stroke-dasharray: 2 3; }
+#construction-radius { stroke: #b68b42; stroke-dasharray: 6 4; }
+.axis-label { fill: #274b5a; font-size: 9px; font-weight: 700; letter-spacing: 0.45px; paint-order: stroke; stroke: #f4e8c8; stroke-width: 3px; stroke-linejoin: round; }
+
+@media (max-aspect-ratio: 4/3) {
+  #stage { width: 100vw; height: 100vh; }
+}
+@media print {
+  html, body { background: white; }
+  #stage { width: 1280px; height: 720px; }
+}

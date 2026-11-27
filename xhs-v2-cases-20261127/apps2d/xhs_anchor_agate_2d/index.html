@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111712">
+  <meta name="description" content="离线互动地质博物馆：观察玛瑙的羽状纹、树枝纹与同心纹，探索岩石抛光工作台。">
+  <title>地球的记忆 · 玛瑙切片展陈</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <main id="museum" aria-label="玛瑙切片互动展陈与抛光工作台">
+    <div id="stage-wrap" data-stage="hybrid">
+      <canvas id="canvas" width="1600" height="900" tabindex="0" role="img" aria-label="深色地质博物馆。左侧三排十四枚透光玛瑙切片及中国玛瑙产地地图，右侧抛光工作台、双臂灯与双排岩芯盒。点击切片可筛选纹理；键盘回车可依次选择。"></canvas>
+      <div class="corner-mark" aria-hidden="true"><span>馆藏研究</span><i></i><span>04 / MINERAL</span></div>
+    </div>
+    <footer id="control-panel" aria-label="展陈互动控制栏">
+      <div class="primary-controls">
+        <section class="control-group timeline-group" aria-label="动画时间轴">
+          <div class="group-heading"><span>展陈时间轴</span><span class="micro">8 S LOOP</span></div>
+          <div class="timeline-row">
+            <button id="play" class="icon-button" type="button" aria-label="播放 8 秒时间轴" aria-pressed="false" title="播放（空格）"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 4.5 15 10 6 15.5Z"></path></svg></button>
+            <button id="pause" class="icon-button is-active" type="button" aria-label="暂停时间轴" aria-pressed="true" title="暂停（空格）"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 5h2.6v10H6zm5.4 0H14v10h-2.6z"></path></svg></button>
+            <div class="scrub-wrap"><input id="scrub" type="range" min="0" max="8" step="0.001" value="0" aria-label="时间轴拖动，0 至 8 秒"><output id="timecode" for="scrub">00.00 / 08.00</output></div>
+          </div>
+        </section>
+        <section class="control-group filter-group" aria-label="玛瑙纹理筛选">
+          <label class="group-heading" for="pattern-filter"><span>纹理观察</span><span class="micro">CLICK TO EXPLORE</span></label>
+          <div class="filter-row"><select id="pattern-filter" aria-label="筛选玛瑙纹理"><option value="all">全部纹理 · 14 枚切片</option><option value="feather">01 / 羽状纹</option><option value="dendrite">02 / 树枝纹</option><option value="concentric">03 / 同心纹</option></select><span id="selection-status">暖白背光 · 自由观察</span></div>
+        </section>
+        <section class="control-group tools-group" aria-label="抛光工作台互动">
+          <div class="group-heading"><span>工作台实验</span><span class="micro">SPECIMEN PREPARATION</span></div>
+          <div class="tools-row">
+            <button id="polisher-toggle" type="button" class="power-button" aria-pressed="false"><span class="status-light" aria-hidden="true"></span><span id="polisher-label">启动抛光</span></button>
+            <label class="lamp-control" for="lamp-slider"><span>工作灯</span><input id="lamp-slider" type="range" min="0" max="100" step="1" value="72" aria-label="工作灯亮度"><output id="lamp-value" for="lamp-slider">72%</output></label>
+            <button id="reset" class="reset-button" type="button" aria-label="复位全部互动状态" title="复位（R）"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M15.1 6.2A6 6 0 1 0 16 12h-1.8a4.2 4.2 0 1 1-.6-4.4L11 10h6V4l-1.9 2.2Z"></path></svg><span>复位</span></button>
+          </div>
+        </section>
+      </div>
+      <div class="footer-notes"><span><i class="legend-dot"></i><span id="mode-note">背光切片展柜</span><b>·</b> 拖动时间轴，观察矿物透光层次</span><span>离线馆藏演示 <b>／</b> 原创矢量绘制 <b>／</b> 8.0 s periodic</span></div>
+    </footer>
+  </main>
+  <div id="announcer" class="sr-only" role="status" aria-live="polite"></div>
+  <noscript>此互动展陈需要启用 JavaScript。</noscript>
+  <!-- Offline IIFE built from the seven ES modules in src/. No network imports. -->
+  <script defer src="./src/bundle.js"></script>
+</body>
+</html>

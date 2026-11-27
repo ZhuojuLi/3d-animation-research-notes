@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101a28">
+  <title>Tidal Clock — Harbor No. 18</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main class="observatory" aria-label="潮汐钟楼互动剧场">
+    <header class="harbor-bar">
+      <div class="identity">
+        <svg class="anchor" viewBox="0 0 32 40" aria-hidden="true"><path d="M16 9v25M8 19h16M5 25C5 33 11 36 16 37c5-1 11-4 11-10M2 25l3-5 4 5M22 25l4-5 4 5"/><circle cx="16" cy="5" r="3"/></svg>
+        <div><h1>TIDAL CLOCK <span>/ HARBOR No. 18</span></h1><p>MECHANICAL MARINE OBSERVATORY</p></div>
+      </div>
+      <div class="harbor-statuses" aria-label="港口实时状态">
+        <div class="status-pill status-active"><i></i><span>HARBOR STATUS:</span><strong>ACTIVE</strong></div>
+        <div class="status-pill status-weather"><span>WEATHER:</span><strong id="weather-status">STORM</strong></div>
+        <div class="status-pill status-time"><span>TIME:</span><strong id="utc-time">22:38 UTC</strong></div>
+      </div>
+    </header>
+
+    <section class="workbench">
+      <div id="stage-wrap" class="stage-wrap" data-stage="canvas">
+        <canvas id="canvas" width="1200" height="760" aria-label="暴风雨中的双桅帆船、石砌灯塔、发光菲涅尔透镜与塔内精密机械"></canvas>
+        <div class="scene-corner"><span class="corner-dot"></span> LIVE DIORAMA <b>•</b> SECTION A—A</div>
+        <div class="scene-index" aria-hidden="true">18<span>°</span></div>
+        <div class="stage-vignette" aria-hidden="true"></div>
+      </div>
+
+      <aside class="control-panel" aria-label="灯塔仪表控制栏">
+        <div class="panel-heading"><span>CONTROL ROOM</span><i></i><b>01</b></div>
+
+        <section class="control-group day-group" aria-labelledby="day-label">
+          <div class="control-title"><label id="day-label" for="day-night-slider">DAY–NIGHT</label><output id="day-value" for="day-night-slider">NIGHT</output></div>
+          <div class="range-with-icons">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.8 15.5A8 8 0 0 1 8.5 5.2 8 8 0 1 0 18.8 15.5Z"/></svg>
+            <input id="day-night-slider" type="range" min="0" max="1" step="0.001" value="0" aria-label="昼夜：0 为深夜，1 为白昼">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 1v3m0 16v3M1 12h3m16 0h3M4.2 4.2l2.1 2.1m11.4 11.4 2.1 2.1m0-15.6-2.1 2.1M6.3 17.7l-2.1 2.1"/></svg>
+          </div>
+        </section>
+
+        <section class="control-group storm-group" aria-labelledby="storm-label">
+          <div class="control-title"><label id="storm-label" for="storm-slider">STORM SEVERITY</label><output id="storm-value" for="storm-slider">78%</output></div>
+          <div class="range-with-icons storm-range">
+            <svg viewBox="0 0 28 24" aria-hidden="true"><path d="M2 19c4-3 7 3 11 0s7 3 12 0M5 14l5-7 6 7M17 8c0-4 7-4 7 0 4 0 4 6 0 6h-9"/><path class="rain-icon" d="m7 19-2 3m7-3-2 3m9-3-2 3"/></svg>
+            <input id="storm-slider" type="range" min="0" max="1" step="0.001" value="0.78" aria-label="风暴强度">
+            <span class="gale-mark">G09</span>
+          </div>
+          <div class="scale-labels"><span>CALM</span><span>GALE</span></div>
+        </section>
+
+        <section class="control-group beam-group" aria-labelledby="beam-label">
+          <div class="control-title"><label id="beam-label" for="beam-elevation">BEAM ELEVATION</label><output id="beam-value" for="beam-elevation">28°</output></div>
+          <div class="dial-wrap">
+            <div class="dial-ticks" aria-hidden="true"></div>
+            <div class="dial-face" aria-hidden="true"><div class="dial-needle" id="dial-needle"></div><div class="dial-cap"></div><span>LENS</span></div>
+            <input id="beam-elevation" class="dial-input" type="range" min="0" max="90" step="1" value="28" aria-label="光束仰角，单位度">
+            <span class="dial-min">0°</span><span class="dial-max">90°</span>
+          </div>
+        </section>
+
+        <button id="foghorn-btn" class="foghorn-button" type="button" aria-label="触发雾号和信标脉冲">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4h4l6 4V6l-6 4H4Zm12-2c2 2 2 6 0 8m3-11c4 4 4 10 0 14"/></svg>
+          <span>FOGHORN / BEACON</span><i></i>
+        </button>
+
+        <section class="readouts" aria-label="持续海洋仪表读数">
+          <div class="readout-heading"><span>LIVE TELEMETRY</span><i></i></div>
+          <canvas id="telemetry-canvas" width="400" height="42" aria-hidden="true"></canvas>
+          <dl>
+            <div><dt>WAVEFORM</dt><dd id="wave-reading">4.8 m <span>|</span> 7.2 s</dd></div>
+            <div><dt>WIND</dt><dd id="wind-reading">42 kts <span>WNW</span></dd></div>
+            <div><dt>LAMP</dt><dd id="lamp-reading">89% POWER</dd></div>
+            <div><dt>TIDAL FLOW</dt><dd id="tide-reading">EBBING <b>↘</b></dd></div>
+          </dl>
+        </section>
+
+        <button id="reset-btn" class="reset-button" type="button"><span>↺</span> RESET OBSERVATORY <kbd>R</kbd></button>
+        <div class="panel-footer"><span>LAT 51° 18′ N</span><span>EST. 1896</span></div>
+      </aside>
+    </section>
+
+    <footer class="transport" aria-label="场景播放时间轴">
+      <div class="transport-buttons"><button id="play" type="button" aria-label="播放"><svg viewBox="0 0 18 18"><path d="m5 3 10 6-10 6Z"/></svg></button><button id="pause" type="button" aria-label="暂停"><svg viewBox="0 0 18 18"><path d="M5 4v10M13 4v10"/></svg></button></div>
+      <div class="loop-signature"><span>THE TIDAL ENGINE</span><small>08 SECOND LOOP</small></div>
+      <div class="timeline-wrap"><input id="scrub" type="range" min="0" max="8" step="0.001" value="0" aria-label="场景时间，0 到 8 秒"><div class="timeline-marks" aria-hidden="true"><span>00</span><span>02</span><span>04</span><span>06</span><span>08s</span></div></div>
+      <output id="timecode" for="scrub">00:00.00 <span>/ 00:08.00</span></output>
+      <div class="loop-state"><i></i><span id="play-state">RUNNING</span><b>↻</b></div>
+    </footer>
+  </main>
+  <script type="module" src="src/timeline.js"></script>
+</body>
+</html>
