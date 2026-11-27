@@ -1,8 +1,8 @@
 {
   "date": "2026-11-27",
-  "count": 116,
+  "count": 132,
   "deep_read_count": 42,
-  "metadata_status": "42 single-paper deep-reads verified directly against arXiv HTML/XML with SHA-256; remaining entries extracted from notes.",
+  "metadata_status": "42 single-paper deep-reads verified directly against arXiv HTML/XML with SHA-256; 2026 H2 context-compaction & SFT citations verified and indexed.",
   "papers": [
     {
       "arxiv_id": "2605.12913",
@@ -91,7 +91,9 @@
         "research/README.md",
         "research/three-track-data-factory-strategy-20261126/aodi-phase1-phase2-retrospective-20261126.md",
         "research/three-track-data-factory-strategy-20261126/astra-report.md",
-        "research/three-track-data-factory-strategy-20261126/main-report.md"
+        "research/three-track-data-factory-strategy-20261126/main-report.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
       ]
     },
     {
@@ -107,7 +109,8 @@
         "research/arxiv-2611.10768/README.md",
         "research/3d-agent-post-sft-rl-survey-20261127/README.md",
         "research/README.md",
-        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
       ]
     },
     {
@@ -163,7 +166,9 @@
         "history/research/3d-animation-improvement-and-sft-cases-20261121.md",
         "research/3d-agent-post-sft-rl-survey-20261127/README.md",
         "research/README.md",
-        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
       ]
     },
     {
@@ -225,7 +230,9 @@
         "research/arxiv-2611.05151/README.md",
         "research/3d-agent-post-sft-rl-survey-20261127/README.md",
         "research/README.md",
-        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
       ]
     },
     {
@@ -241,7 +248,8 @@
         "research/arxiv-2610.28610/README.md",
         "research/3d-agent-post-sft-rl-survey-20261127/README.md",
         "research/README.md",
-        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
       ]
     },
     {
@@ -470,7 +478,8 @@
         "research/3d-agent-post-sft-rl-survey-20261127/README.md",
         "research/README.md",
         "research/frontier-labs-agentic-rl-blogs-2026h2/README.md",
-        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
       ]
     },
     {
@@ -478,7 +487,7 @@
       "name_in_notes": "Kimi K3",
       "category": "单篇精读",
       "subcategory": "2026 大厂旗舰与生产 RL 基建精读",
-      "focus": "9 专家截断 MOPD、3D/WebGL 盲评净胜 +59.1%、多脚手架与 AgentENV 微虚机",
+      "focus": "9 专家截断 MOPD、3D/WebGL 盲评净胜 +59.1%、200K-300K 压缩反超 1M",
       "url": "https://arxiv.org/abs/2607.24653",
       "reading_status": "单篇精读",
       "primary_note": "research/arxiv-2607.24653/README.md",
@@ -487,7 +496,9 @@
         "research/3d-agent-post-sft-rl-survey-20261127/README.md",
         "research/README.md",
         "research/frontier-labs-agentic-rl-blogs-2026h2/README.md",
-        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
       ]
     },
     {
@@ -495,7 +506,7 @@
       "name_in_notes": "Qwen3.8-Next",
       "category": "单篇精读",
       "subcategory": "2026 大厂旗舰与生产 RL 基建精读",
-      "focus": "含 Qwen3.8-27B 14 榜基线、GDN+QSA+GR 4×LR 零尖峰与预/后训练背离",
+      "focus": "含 Qwen3.8-27B 262K 原生 RoPE 基线、GDN+QSA+GR 与预/后训练背离",
       "url": "https://arxiv.org/abs/2608.30320",
       "reading_status": "单篇精读",
       "primary_note": "research/arxiv-2608.30320/README.md",
@@ -504,7 +515,9 @@
         "research/3d-agent-post-sft-rl-survey-20261127/README.md",
         "research/README.md",
         "research/frontier-labs-agentic-rl-blogs-2026h2/README.md",
-        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
       ]
     },
     {
@@ -573,7 +586,8 @@
         "research/README.md",
         "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
         "research/frontier-labs-agentic-rl-blogs-2026h2/README.md",
-        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md"
       ]
     },
     {
@@ -605,7 +619,9 @@
         "research/arxiv-2611.31258/README.md",
         "research/3d-agent-post-sft-rl-survey-20261127/README.md",
         "research/README.md",
-        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
       ]
     },
     {
@@ -621,7 +637,9 @@
         "research/arxiv-2607.05378/README.md",
         "research/3d-agent-post-sft-rl-survey-20261127/README.md",
         "research/README.md",
-        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md"
+        "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
       ]
     },
     {
@@ -1056,7 +1074,9 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
       "referenced_in": [
-        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
       ]
     },
     {
@@ -1275,7 +1295,8 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
       "referenced_in": [
-        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md"
       ]
     },
     {
@@ -1287,7 +1308,8 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
       "referenced_in": [
-        "research/agent-sft-lessons-and-data-recipes-20261125/README.md"
+        "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
       ]
     },
     {
@@ -1669,6 +1691,210 @@
       "primary_note": "research/arxiv-2505.19713/README.md",
       "referenced_in": [
         "research/arxiv-2505.19713/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2508.09123",
+      "name_in_notes": "OpenCUA",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "多模态计算机操作 Agent 近期 K 帧截图滑窗 SFT 基线",
+      "url": "https://arxiv.org/abs/2508.09123",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+      "referenced_in": [
+        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md"
+      ]
+    },
+    {
+      "arxiv_id": "2508.21433",
+      "name_in_notes": "The Complexity Trap",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "JetBrains 实测确定性工具输出掩码胜过 LLM 滚动摘要且防死循环",
+      "url": "https://arxiv.org/abs/2508.21433",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+      "referenced_in": [
+        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md"
+      ]
+    },
+    {
+      "arxiv_id": "2510.11967",
+      "name_in_notes": "FoldGRPO",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "早期动态上下文折叠强化学习基线",
+      "url": "https://arxiv.org/abs/2510.11967",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+      "referenced_in": [
+        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md"
+      ]
+    },
+    {
+      "arxiv_id": "2512.22733",
+      "name_in_notes": "FoldAct",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "上下文折叠动作梯度稀释分离与全上下文自洽约束",
+      "url": "https://arxiv.org/abs/2512.22733",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+      "referenced_in": [
+        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md"
+      ]
+    },
+    {
+      "arxiv_id": "2606.10728",
+      "name_in_notes": "DeNovoSWE",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "128K SFT 窗口训练 256K/500 轮从零建仓轨迹与坏轮掩码（5.8%→47.2%）",
+      "url": "https://arxiv.org/abs/2606.10728",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/xhs-384k-to-200k-data-adaptation-20261127/README.md",
+      "referenced_in": [
+        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2606.23525",
+      "name_in_notes": "SelfCompact",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "元认知阶段收敛自压缩（排错中途抑制硬切，+5~9 pp）",
+      "url": "https://arxiv.org/abs/2606.23525",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/xhs-384k-to-200k-data-adaptation-20261127/README.md",
+      "referenced_in": [
+        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2607.11185",
+      "name_in_notes": "ScaleCUA",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "Visual Context Segmentation 分段视觉滑窗消除单序列失明监督（快 2.83×）",
+      "url": "https://arxiv.org/abs/2607.11185",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/xhs-384k-to-200k-data-adaptation-20261127/README.md",
+      "referenced_in": [
+        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2607.20064",
+      "name_in_notes": "PRO-LONG",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "程序化交互状态日志支撑超长程探索",
+      "url": "https://arxiv.org/abs/2607.20064",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/xhs-384k-to-200k-data-adaptation-20261127/README.md",
+      "referenced_in": [
+        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2608.01326",
+      "name_in_notes": "Context Compaction Theory",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "通信复杂度下界证明结构化账本优于自由散文摘要",
+      "url": "https://arxiv.org/abs/2608.01326",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/xhs-384k-to-200k-data-adaptation-20261127/README.md",
+      "referenced_in": [
+        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2608.21690",
+      "name_in_notes": "Scroll",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "将长上下文视为可执行文件系统环境按需检阅",
+      "url": "https://arxiv.org/abs/2608.21690",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/xhs-384k-to-200k-data-adaptation-20261127/README.md",
+      "referenced_in": [
+        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2608.22752",
+      "name_in_notes": "The Compaction Cliff",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "20 套 Agent 5 轮递归摘要硬约束暴跌至 10% 与首轮硬钉死 Triage",
+      "url": "https://arxiv.org/abs/2608.22752",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/xhs-384k-to-200k-data-adaptation-20261127/README.md",
+      "referenced_in": [
+        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2609.20715",
+      "name_in_notes": "ActObs",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "环境观测 Token SFT 掩码（λ=0 保直出 pass@1 vs λ=1 助 RL 探索）",
+      "url": "https://arxiv.org/abs/2609.20715",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/xhs-384k-to-200k-data-adaptation-20261127/README.md",
+      "referenced_in": [
+        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2609.26779",
+      "name_in_notes": "CliffCompaction",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "确定性截断禁改写与禁递归摘要（省 50% 成本，KernelBench 3.58×）",
+      "url": "https://arxiv.org/abs/2609.26779",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/xhs-384k-to-200k-data-adaptation-20261127/README.md",
+      "referenced_in": [
+        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2609.36526",
+      "name_in_notes": "PAIR",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "197 切点反事实同态续写诊断压缩边界风险稀疏性",
+      "url": "https://arxiv.org/abs/2609.36526",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/xhs-384k-to-200k-data-adaptation-20261127/README.md",
+      "referenced_in": [
+        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2610.02163",
+      "name_in_notes": "AutoCompact",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "子阶段完成边界主动压缩与单调段切分（SWE +9.2 pp）",
+      "url": "https://arxiv.org/abs/2610.02163",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/xhs-384k-to-200k-data-adaptation-20261127/README.md",
+      "referenced_in": [
+        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
+      ]
+    },
+    {
+      "arxiv_id": "2610.04838",
+      "name_in_notes": "MemTrace",
+      "category": "Agent SFT、数据配比与纠偏",
+      "focus": "状态一致溯源记忆锚点折叠过期源码（DeepSWE +21.2 pp）",
+      "url": "https://arxiv.org/abs/2610.04838",
+      "reading_status": "专题 / 引用",
+      "primary_note": "research/xhs-384k-to-200k-data-adaptation-20261127/README.md",
+      "referenced_in": [
+        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
       ]
     }
   ]

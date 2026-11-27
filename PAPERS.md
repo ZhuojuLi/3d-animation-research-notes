@@ -1,10 +1,10 @@
 # Paper list
 
-从全部研究笔记提取并按 arXiv 编号去重，共 **116 条引用**，其中 **42 篇有独立一手精读**（均核验原件 HTML/TXT 与附录超参）。其余条目来自专题综述或背景引用，不代表每篇均已完整精读。
+从全部研究笔记提取并按 arXiv 编号去重，共 **132 条引用**，其中 **42 篇有独立一手精读**（均核验原件 HTML/TXT 与附录超参）。其余条目来自专题综述（含 2026 下半年长轨迹上下文折叠与 `384K → 200K` SFT 适配调研）或背景引用，不代表每篇均已完整精读。
 
-本次更新一并修正了旧表中 `Video-Coder (2611.09894)` 与 `3DCodeEdit (2610.38231)` 的编号互换，并彻底厘清了三篇同名 `CAD-Coder`（北航 `2505.19713` Text-to-CAD、MIT `2505.14646` Image-to-CAD、He et al. `2505.08686`）的对应关系。全部引用位置见 [机器可读索引](catalog/papers.json)。
+本次更新一并增补了 2026 下半年长程编码与多模态上下文压缩核心文献（`CliffCompaction 2609.26779`、`The Compaction Cliff 2608.22752`、`AutoCompact 2610.02163`、`MemTrace 2610.04838`、`ScaleCUA 2607.11185`、`PAIR 2609.36526`、`ActObs 2609.20715`、`DeNovoSWE 2606.10728` 等），全部引用位置见 [机器可读索引](catalog/papers.json)。
 
-建议阅读顺序：先读 [3DCodeFactory](research/arxiv-2611.28783/README.md) 理解 SFT 底座，再读 [SFT 后强化学习与自蒸馏总报告 v2.0](research/3d-agent-post-sft-rl-survey-20261127/README.md)、[2026 同源 25 大踩坑避坑大全](research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md) 与 [2026 H2 大厂技术博客专题](research/frontier-labs-agentic-rl-blogs-2026h2/README.md)，最后按需下钻各篇单篇精读。
+建议阅读顺序：先读 [3DCodeFactory](research/arxiv-2611.28783/README.md) 与 [384K → 200K 超长轨迹适配方案（HCPF-200K）](research/xhs-384k-to-200k-data-adaptation-20261127/README.md) 理解 SFT 底座与窗口改造，再读 [Opus 5.5 联合去杂糅与终极收敛蓝图](research/3d-agent-rl-opus-review-and-consolidation-20261127/README.md)、[SFT 后强化学习全景调研 v3.0](research/3d-agent-post-sft-rl-survey-20261127/README.md) 与 [2026 H2 大厂技术博客专题](research/frontier-labs-agentic-rl-blogs-2026h2/README.md)，最后按需下钻各篇单篇精读。
 
 ## 单篇精读（共 42 篇）
 
@@ -59,8 +59,8 @@
 | 论文 / 笔记中的简称 | arXiv | 关注点 | 阅读记录 |
 | --- | --- | --- | --- |
 | DeepSeek-V4 | [2606.19348](https://arxiv.org/abs/2606.19348) | 分域 RL → 缓存末层状态全词表 OPD 合模、全轮保 think 与 WAL 防短偏置 | [单篇精读](research/arxiv-2606.19348/README.md) |
-| Kimi K3 | [2607.24653](https://arxiv.org/abs/2607.24653) | 9 专家截断 MOPD、3D/WebGL 盲评净胜 +59.1%、多脚手架与 AgentENV 微虚机 | [单篇精读](research/arxiv-2607.24653/README.md) |
-| Qwen3.8-Next | [2608.30320](https://arxiv.org/abs/2608.30320) | 含 Qwen3.8-27B 14 榜基线、GDN+QSA+GR 4×LR 零尖峰与预/后训练背离 | [单篇精读](research/arxiv-2608.30320/README.md) |
+| Kimi K3 | [2607.24653](https://arxiv.org/abs/2607.24653) | 9 专家截断 MOPD、3D/WebGL 盲评净胜 +59.1%、200K-300K 压缩反超 1M | [单篇精读](research/arxiv-2607.24653/README.md) |
+| Qwen3.8-Next | [2608.30320](https://arxiv.org/abs/2608.30320) | 含 Qwen3.8-27B 262K 原生 RoPE 基线、GDN+QSA+GR 与预/后训练背离 | [单篇精读](research/arxiv-2608.30320/README.md) |
 | GLM-5 / slime | [2602.15763](https://arxiv.org/abs/2602.15763) | TITO 零重分词网关、确定性 topk + IcePop、三级防作弊与跨阶段 OPD | [单篇精读](research/arxiv-2602.15763/README.md) |
 | Kimi K2.5 | [2602.02276](https://arxiv.org/abs/2602.02276) | 视觉看图自修闭环起源与 Toggle 熟题条件交替预算控制算法 | [单篇精读](research/arxiv-2602.02276/README.md) |
 | Anthropic Production RL Hacking | [2511.18397](https://arxiv.org/abs/2511.18397) | 生产代码 RL 篡改 pytest/exit 黑客跨域失调与物理只读隔离铁律 | [单篇精读](research/arxiv-2511.18397/README.md) |
@@ -117,7 +117,7 @@
 | Webdev-Bench / WebCoder-27B | [2610.23104](https://arxiv.org/abs/2610.23104) | 多文件前端工程里程碑演进评测架 | [专题 / 引用](research/cad-2d-sample-study-and-taxonomy-v2-20261126/README.md) |
 | WebUniverse | [2610.33149](https://arxiv.org/abs/2610.33149) | 多轮 Web Agent 轨迹与自定义许可边界 | [专题 / 引用](3d-animation-agent/docs/THREE-TRACK-DELIVERABLE-SPEC.md) |
 
-## Agent SFT、数据配比与纠偏（31 条）
+## Agent SFT、数据配比与纠偏（47 条）
 
 | 论文 / 笔记中的简称 | arXiv | 关注点 | 阅读记录 |
 | --- | --- | --- | --- |
@@ -152,6 +152,22 @@
 | Data Mixing Optimization for SFT | [2508.11953](https://arxiv.org/abs/2508.11953) | 数据混合优化 | [专题 / 引用](research/3d-agent-data-mix-20261121/kimi-report.md) |
 | Hephaestus | [2502.06589](https://arxiv.org/abs/2502.06589) | Agent 工具训练 | [专题 / 引用](research/3d-agent-data-mix-20261121/kimi-report.md) |
 | DeepSeek-R1 | [2501.12948](https://arxiv.org/abs/2501.12948) | 推理与后训练 | [专题 / 引用](research/3d-agent-data-mix-20261121/kimi-report.md) |
+| OpenCUA | [2508.09123](https://arxiv.org/abs/2508.09123) | 多模态计算机操作 Agent 近期 K 帧截图滑窗 SFT 基线 | [专题 / 引用](research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md) |
+| The Complexity Trap | [2508.21433](https://arxiv.org/abs/2508.21433) | JetBrains 实测确定性工具输出掩码胜过 LLM 滚动摘要且防死循环 | [专题 / 引用](research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md) |
+| FoldGRPO | [2510.11967](https://arxiv.org/abs/2510.11967) | 早期动态上下文折叠强化学习基线 | [专题 / 引用](research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md) |
+| FoldAct | [2512.22733](https://arxiv.org/abs/2512.22733) | 上下文折叠动作梯度稀释分离与全上下文自洽约束 | [专题 / 引用](research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md) |
+| DeNovoSWE | [2606.10728](https://arxiv.org/abs/2606.10728) | 128K SFT 窗口训练 256K/500 轮从零建仓轨迹与坏轮掩码（5.8%→47.2%） | [专题 / 引用](research/xhs-384k-to-200k-data-adaptation-20261127/README.md) |
+| SelfCompact | [2606.23525](https://arxiv.org/abs/2606.23525) | 元认知阶段收敛自压缩（排错中途抑制硬切，+5~9 pp） | [专题 / 引用](research/xhs-384k-to-200k-data-adaptation-20261127/README.md) |
+| ScaleCUA | [2607.11185](https://arxiv.org/abs/2607.11185) | Visual Context Segmentation 分段视觉滑窗消除单序列失明监督（快 2.83×） | [专题 / 引用](research/xhs-384k-to-200k-data-adaptation-20261127/README.md) |
+| PRO-LONG | [2607.20064](https://arxiv.org/abs/2607.20064) | 程序化交互状态日志支撑超长程探索 | [专题 / 引用](research/xhs-384k-to-200k-data-adaptation-20261127/README.md) |
+| Context Compaction Theory | [2608.01326](https://arxiv.org/abs/2608.01326) | 通信复杂度下界证明结构化账本优于自由散文摘要 | [专题 / 引用](research/xhs-384k-to-200k-data-adaptation-20261127/README.md) |
+| Scroll | [2608.21690](https://arxiv.org/abs/2608.21690) | 将长上下文视为可执行文件系统环境按需检阅 | [专题 / 引用](research/xhs-384k-to-200k-data-adaptation-20261127/README.md) |
+| The Compaction Cliff | [2608.22752](https://arxiv.org/abs/2608.22752) | 20 套 Agent 5 轮递归摘要硬约束暴跌至 10% 与首轮硬钉死 Triage | [专题 / 引用](research/xhs-384k-to-200k-data-adaptation-20261127/README.md) |
+| ActObs | [2609.20715](https://arxiv.org/abs/2609.20715) | 环境观测 Token SFT 掩码（λ=0 保直出 pass@1 vs λ=1 助 RL 探索） | [专题 / 引用](research/xhs-384k-to-200k-data-adaptation-20261127/README.md) |
+| CliffCompaction | [2609.26779](https://arxiv.org/abs/2609.26779) | 确定性截断禁改写与禁递归摘要（省 50% 成本，KernelBench 3.58×） | [专题 / 引用](research/xhs-384k-to-200k-data-adaptation-20261127/README.md) |
+| PAIR | [2609.36526](https://arxiv.org/abs/2609.36526) | 197 切点反事实同态续写诊断压缩边界风险稀疏性 | [专题 / 引用](research/xhs-384k-to-200k-data-adaptation-20261127/README.md) |
+| AutoCompact | [2610.02163](https://arxiv.org/abs/2610.02163) | 子阶段完成边界主动压缩与单调段切分（SWE +9.2 pp） | [专题 / 引用](research/xhs-384k-to-200k-data-adaptation-20261127/README.md) |
+| MemTrace | [2610.04838](https://arxiv.org/abs/2610.04838) | 状态一致溯源记忆锚点折叠过期源码（DeepSWE +21.2 pp） | [专题 / 引用](research/xhs-384k-to-200k-data-adaptation-20261127/README.md) |
 
 ## 评估方法与背景引用（16 条）
 
@@ -176,9 +192,10 @@
 
 ## 非 arXiv 材料与大厂工程博客
 
+- [小红书 `3DCodeFactory`（384K YaRN）适配 `≤200K` 训练窗口调研与 `HCPF-200K` 改造方案](research/xhs-384k-to-200k-data-adaptation-20261127/README.md)（含 [2026 H2 文献与大厂精读专题](research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md) · [实测分词与模拟账本 JSON](research/xhs-384k-to-200k-data-adaptation-20261127/empirical_audit_200k_ledger.json)）：对落盘 `v1-dense` / `v1` 真实分词解剖、2026 H2 压缩悬崖与非递归折叠共识、原生 `262K` RoPE 免插值红利与 4 机全参分块 CE 补丁实证。
 - [主审 × Claude Opus 5.5 联合去杂糅审查与终极收敛蓝图](research/3d-agent-rl-opus-review-and-consolidation-20261127/README.md)（含 [Opus 5.5 独立报告](research/3d-agent-rl-opus-review-and-consolidation-20261127/opus-review.md) · [主审独立自审](research/3d-agent-rl-opus-review-and-consolidation-20261127/main-consolidation.md)）：对 19 项候选机制冲突消解、三轨指标断舍离、检查器 4 处硬漏洞与 `2×8 H800` `Repair-RL → 384K RFT` 极简闭环拍板。
 - [2026 下半年八大前沿实验室 Agentic RL & 视觉代码技术博客专题](research/frontier-labs-agentic-rl-blogs-2026h2/README.md)：涵盖 Qwen4-Max / Qwen3.8-27B、Kimi K3.1 Pro、GLM-5.2/5.3/5.4 与 `slime`、DeepSeek-V4.1-Flash-1017、Seed 2.1、MiniMax-M3 / MaxProof、Anthropic Opus 5.5 / Fable 5.2、OpenAI GPT-6 / 6.2 Astra 官方博客时间线与工程深水区复盘。
-- [2026 图文 / 2D / 3D / CAD 同源 RL 25 大踩坑避坑大全](research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md)：汇总同源项目负向消融、防刷分补丁与本仓库脚本级迁移清单。
+- [2026 图文 / 2D / 3D / CAD 同源 RL 31 大踩坑避坑大全](research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md)：汇总同源项目负向消融、防刷分补丁与本仓库脚本级迁移清单。
 - [OpenAI / Anthropic 早期技术分享精读](research/3d-agent-openai-anthropic-reading-notes-20261121.md)：早期技术博客、工程实践与评估方法。
 - [数据与题源盘点](research/3d-animation-distillation-datasets-20261121.md)：GitHub、Hugging Face、任务规格与数据使用边界。
 - [3D / CAD 数据与基准调研](research/3d-and-cad-benchmarks-datasets-27b-boundaries-20261125/README.md)：公开数据、格式与能力边界。

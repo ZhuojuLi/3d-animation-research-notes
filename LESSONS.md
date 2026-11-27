@@ -56,7 +56,7 @@
 2. **`2×8 H800` 物理算力现实：短程 `Repair-RL` 破局，离线 `RFT` 写回 `384K` 长程能力**：在 16 卡集群上直接跑从零 `384K` 多图在线 RL 单步需 ~15 小时（物理不可行）；改为从 SFT 自身 `L1–L3` 中等瑕疵快照起步跑 `≤64K`、`≤12` 轮 `Repair-RL`（单步 `20–30 分钟`，5–6 天跑完 300 步），再用该检查点采全长 `384K` 轨迹经五维门控 + 双序 `Best-of-2` 做 1 epoch `RFT` 回灌，即可在单周周期内兼得精修深度与长程稳定性。
 3. **三轨同模按题组归一化 + 轨内 Token 均值 `(1/3, 1/3, 1/3)` 等权合并**：组相对优势本就在同题 $G$ 条候选内部算，三轨绝不跨组混比；只需先在每轨内部按可训输出 token 总数做均值、再按 `(1/3, 1/3, 1/3)` 等权求和（配 `10–15%` 通用 SWE 回放 + `low-var KL` $\beta=0.01$），防止 3D 长轨迹吞没 CAD 短轨迹梯度；仅当某轨连续两次评测倒退 `>2 pp` 时才解锁单轨 LoRA + `OPD` 备选。
 
-来源：[主审 × Claude Opus 5.5 联合去杂糅与终极收敛蓝图](research/3d-agent-rl-opus-review-and-consolidation-20261127/README.md)、[Opus 5.5 独立审查报告](research/3d-agent-rl-opus-review-and-consolidation-20261127/opus-review.md)、[SFT 后强化学习全景调研 v2.0](research/3d-agent-post-sft-rl-survey-20261127/README.md)、[2026 同源 25 大踩坑避坑大全](research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md)。
+来源：[主审 × Claude Opus 5.5 联合去杂糅与终极收敛蓝图](research/3d-agent-rl-opus-review-and-consolidation-20261127/README.md)、[Opus 5.5 独立审查报告](research/3d-agent-rl-opus-review-and-consolidation-20261127/opus-review.md)、[SFT 后强化学习全景调研 v3.0](research/3d-agent-post-sft-rl-survey-20261127/README.md)、[2026 同源 31 大踩坑避坑大全](research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md)。
 
 ## 10. 视觉与几何验证器铁律：先补 4 处脚本硬漏洞，在线异族判秩，本地 27B 仅作影子共谋监控
 
@@ -64,3 +64,11 @@
 2. **防同源自我共谋（Self-Judge Collusion）**：静态相关性高（`r=0.838`）不代表抗得住几百步对抗性 RL，且本地自托管 `27B` 裁判在 `16×H800` 上会占走一半显卡。在线仅对 $L_3$ 幸存样本（约占 30%–50%）调用**异族模型（如 `kimi-k3.1-pro`）**输出带前置 `"reasoning"` 的 Rubric 分并**只取层内秩**；本地 `27B` 仅作离线影子裁判监控 `27B 分 − 异族分` 漂移（`>0.15` 立即熔断回滚），正反双序成对盲评专用于离线 `Best-of-2` 与留出终审。
 
 来源：[LEGO-Anything](research/arxiv-2609.36380/README.md)、[3DCodeEdit](research/arxiv-2610.38231/README.md)、[ManimCode](research/arxiv-2611.08294/README.md)、[AeSlides](research/arxiv-2604.22840/README.md)、[RULER](research/arxiv-2609.25270/README.md)、[InterWebCoder](research/arxiv-2610.28610/README.md)、[Anthropic 生产黑客复盘](research/arxiv-2511.18397/README.md)。
+
+## 11. 超长轨迹（`384K YaRN`）适配有界窗口（`≤200K`）：禁无脊柱硬切与递归摘要，走四层因果折叠（`HCPF-200K`）与原生 `262K` RoPE
+
+1. **真实 Token 构成决定必须拆段而非硬删 `<think>`**：在 `3DCodeFactory` 落盘段中，工具文本返回（`18.2%`）+ 视口截图（`5.3%`）合计仅占 `23.5%`，而可训 `<think>`（`45.6%`）+ `tool_call`（`23.5%`）独占 **`69.1%`（中位 `255.3K > 200K`）**；直接筛 `≤200K` 会丢掉 `100%` 从零起步段（`compact_before`），无重叠无脊柱硬切窗会制造孤立文件幻觉（`DAG-SFT` `-4.0 pp`），多轮递归 LLM 摘要则在 5 次后丢失 `90%` 硬约束（`The Compaction Cliff`）。
+2. **四层因果折叠 + `ct_diet` 摘要段瘦身**：按无异常干净相位边界（`AutoCompact`）将 `384K` 段拆为 `~2.59` 个 `≤198K` 子段，续接子段采用 **① 永久钉死首轮题面与参考图 `I_ref` + ② 远端非递归确定性溯源脊柱（`≤24K`, `CliffCompaction + MemTrace + ScaleCUA`）+ ③ 近端 12 轮逐字含图滑窗（置 `loss=False` 零重复计梯度）+ ④ `100%` 原样活跃监督区**，实现 `100.0000%` 监督 `U` 保留且仅多 `+12%–18%` 优化步；同时对 `compact_task` 剥离 `q_sum` 前旧 `<think>` 与超长日志（`394K → 151K`, `99.8% ≤ 200K`），保留 `~185K` 水位 9 节摘要交接能力。
+3. **原生 `262K` RoPE 免插值与全参分块 CE 补丁**：`200K < 262,144` 可直接换回原生 `Qwen3.8-27B` 关掉 `YaRN 1.5×` 保住满血位置分辨率；移除分块交叉熵插件对 `output_layer.weight.requires_grad` 的误拦截可在全参 SFT 下立省末卡 `11–18 GiB` logits 峰值，推理端用 `CLAUDE_CODE_AUTO_COMPACT_WINDOW=185000` / `CLAUDE_AUTOCOMPACT_PCT_OVERRIDE=85` 实现 `1:1` 训推对齐。
+
+来源：[小红书 `384K → 200K` 数据改造总报告](research/xhs-384k-to-200k-data-adaptation-20261127/README.md)、[2026 H2 上下文折叠文献精读专题](research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md)、[CompactionRL](research/arxiv-2607.05378/README.md)、[RECAP](research/arxiv-2611.31258/README.md)、[Kimi K3](research/arxiv-2607.24653/README.md)、[Qwen3.8-Next](research/arxiv-2608.30320/README.md)。

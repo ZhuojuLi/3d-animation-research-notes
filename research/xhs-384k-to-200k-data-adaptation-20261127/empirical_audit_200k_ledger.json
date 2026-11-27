@@ -1,0 +1,240 @@
+{
+  "schema_version": "1.0",
+  "audit_date": "2026-11-27",
+  "tokenizer_verified": "${MODEL_ROOT}/Qwen3.8-27B (vocab_size=248320, native max_position_embeddings=262144, rope_type=default)",
+  "visual_token_budget_per_image": 512,
+  "canonical_datasets_audited": {
+    "v1_dense": {
+      "path": "${SHARED_DATA}/code2video/training/data/3dcodefactory-paper-s3-v1-dense",
+      "total_segments": 18108,
+      "unique_tasks_total": 5532,
+      "train_segments": 17384,
+      "val_segments": 724,
+      "by_split_track_kind": {
+        "train_blender_compact_recovery": 7071,
+        "train_threejs_compact_recovery": 3976,
+        "train_blender_compact_before": 3961,
+        "train_threejs_compact_before": 2095,
+        "train_unknown_compact_recovery": 171,
+        "train_blender_main": 72,
+        "train_threejs_main": 38,
+        "val_blender_compact_recovery": 307,
+        "val_blender_compact_before": 174,
+        "val_threejs_compact_recovery": 155,
+        "val_threejs_compact_before": 80,
+        "val_unknown_compact_recovery": 6,
+        "val_blender_main": 1,
+        "val_threejs_main": 1
+      }
+    },
+    "v1_full": {
+      "path": "${SHARED_DATA}/code2video/training/data/3dcodefactory-paper-s3-v1",
+      "total_segments": 29795,
+      "train_segments": 28602,
+      "val_segments": 1193,
+      "compact_task_segments_total": 11686,
+      "compact_task_val_segments": 468
+    }
+  },
+  "raw_length_distribution_on_val": {
+    "v1_dense_main": {
+      "val_n": 2,
+      "train_n": 110,
+      "tok_p50": 386037,
+      "tok_p90": 386037,
+      "tok_max": 386037,
+      "fit_le_192k_count": 0,
+      "fit_le_192k_pct": 0.0,
+      "fit_le_200k_count": 0,
+      "fit_le_200k_pct": 0.0
+    },
+    "v1_dense_compact_before": {
+      "val_n": 254,
+      "train_n": 6056,
+      "tok_p50": 385837,
+      "tok_p90": 396451,
+      "tok_max": 404579,
+      "fit_le_192k_count": 0,
+      "fit_le_192k_pct": 0.0,
+      "fit_le_200k_count": 0,
+      "fit_le_200k_pct": 0.0
+    },
+    "v1_dense_compact_recovery": {
+      "val_n": 468,
+      "train_n": 11218,
+      "tok_p50": 363917,
+      "tok_p90": 393351,
+      "tok_max": 414506,
+      "fit_le_192k_count": 95,
+      "fit_le_192k_pct": 20.3,
+      "fit_le_200k_count": 97,
+      "fit_le_200k_pct": 20.7
+    },
+    "v1_dense_all": {
+      "val_n": 724,
+      "train_n": 17384,
+      "tok_p50": 380480,
+      "tok_p90": 394477,
+      "tok_max": 414506,
+      "fit_le_192k_count": 95,
+      "fit_le_192k_pct": 13.1,
+      "fit_le_200k_count": 97,
+      "fit_le_200k_pct": 13.4
+    },
+    "v1_full_compact_task": {
+      "val_n": 468,
+      "train_n": 11686,
+      "tok_p50": 394075,
+      "tok_p90": 406106,
+      "tok_max": 424391,
+      "trainable_summary_tok_p50": 11011,
+      "trainable_summary_tok_p90": 14227,
+      "fit_le_192k_count": 0,
+      "fit_le_192k_pct": 0.0,
+      "fit_le_200k_count": 0,
+      "fit_le_200k_pct": 0.0
+    }
+  },
+  "component_token_anatomy_120_exec_segments": {
+    "sample_composition": "60 Blender + 60 Three.js execution segments",
+    "mean_total_tokens": 343319,
+    "p50_total_tokens": 390747,
+    "p90_total_tokens": 408653,
+    "components": {
+      "sys_plus_tools": {
+        "mean": 15878,
+        "p50": 15313,
+        "p90": 16929,
+        "share_pct": 4.6,
+        "loss": false
+      },
+      "user0_anchor": {
+        "mean": 4196,
+        "p50": 5255,
+        "p90": 7323,
+        "share_pct": 1.2,
+        "loss": false
+      },
+      "asst_think_train": {
+        "mean": 156409,
+        "p50": 168256,
+        "p90": 224243,
+        "share_pct": 45.6,
+        "loss": true
+      },
+      "asst_tc_train": {
+        "mean": 80602,
+        "p50": 87004,
+        "p90": 124054,
+        "share_pct": 23.5,
+        "loss": true
+      },
+      "asst_think_masked_bad_turn": {
+        "mean": 2088,
+        "p50": 421,
+        "p90": 6640,
+        "share_pct": 0.6,
+        "loss": false
+      },
+      "asst_tc_masked_bad_turn": {
+        "mean": 1013,
+        "p50": 118,
+        "p90": 3758,
+        "share_pct": 0.3,
+        "loss": false
+      },
+      "tool_obs_txt": {
+        "mean": 62481,
+        "p50": 65417,
+        "p90": 99627,
+        "share_pct": 18.2,
+        "loss": false
+      },
+      "vis_512": {
+        "mean": 18144,
+        "p50": 17476,
+        "p90": 31354,
+        "share_pct": 5.3,
+        "loss": false
+      }
+    },
+    "tool_obs_share_by_tool": {
+      "Bash": 76.6,
+      "Read": 22.2,
+      "Edit": 0.9,
+      "Write": 0.1,
+      "WebSearch": 0.1,
+      "Other": 0.1
+    },
+    "single_segment_diet_only_ablation": {
+      "recipe": "Aggressive causal observation + image pruning without splitting (S3)",
+      "tok_p50": 302672,
+      "tok_p90": 370779,
+      "tok_max": 397003,
+      "fit_le_192k_pct": 16.7,
+      "conclusion": "Insufficient without splitting because trainable assistant <think>+tool_call alone has P50=255,260 (69.1%)."
+    }
+  },
+  "oom_384k_root_causes": [
+    {
+      "run_id": "smoke-384k-2n16g-tp4pp2cp2",
+      "error_signature": "CUDA out of memory. Tried to allocate 14.90 GiB (64.70 GiB in use on rank0/rank5; 78.52 GiB in use on rank6)",
+      "root_cause": "gdn_v3_plugin.py:213 disables chunked LM-head CE when self.output_layer.weight.requires_grad is True (--tuner_type full), materializing full [196608, 62080] logits (~22.7 GiB peak)."
+    },
+    {
+      "run_id": "smoke-384k-57-38-fvit",
+      "error_signature": "CUDA out of memory. Tried to allocate 1.86 GiB (77.72 GiB in use across PP0 ranks)",
+      "root_cause": "66-148 viewport images in a single 384K pack concentrate unsharded ViT + Aligner activations on PP Stage 0 alongside full-attention workspace."
+    }
+  ],
+  "hcpf_200k_verified_simulation": {
+    "target_max_length": 204800,
+    "per_subsegment_budget_cap": 198000,
+    "distant_spine_cap_tokens": 24000,
+    "verbatim_working_tail_turns": 12,
+    "val_original_segments": 724,
+    "val_hcpf_subsegments": 1876,
+    "expansion_ratio": 2.591,
+    "subsegments_per_segment_dist": {
+      "1": 95,
+      "2": 106,
+      "3": 523,
+      "4_plus": 0
+    },
+    "val_trainable_U_original": 164699528,
+    "val_trainable_U_preserved": 164699528,
+    "trainable_U_retention_pct": 100.0,
+    "duplicate_supervised_tokens": 0,
+    "phase_clean_cut_hits": 1152,
+    "phase_clean_cut_total": 1152,
+    "phase_clean_cut_rate_pct": 100.0,
+    "subsegment_tok_p50": 192565,
+    "subsegment_tok_p90": 197647,
+    "subsegment_tok_max": 197997,
+    "subsegments_over_204800": 0,
+    "val_binpack_204800_packs": 1719,
+    "binpack_fill_efficiency_pct": 88.3,
+    "projected_full_train_exec_subsegments": 45045,
+    "projected_full_train_exec_packs": 41275,
+    "projected_exec_optimizer_steps_gbs48": 859,
+    "paper_baseline_384k_steps_gbs48": 765,
+    "step_overhead_vs_384k_pct": 12.3
+  },
+  "ct_diet_compact_task_rescue": {
+    "val_n": 468,
+    "raw_p50": 394075,
+    "raw_p90": 406106,
+    "raw_fit_le_200k_pct": 0.0,
+    "strip_think_only_p50": 196120,
+    "strip_think_only_fit_le_200k_pct": 61.5,
+    "ct_diet_full_p50": 151072,
+    "ct_diet_full_p90": 174637,
+    "ct_diet_full_max": 206215,
+    "ct_diet_fit_le_192k_count": 464,
+    "ct_diet_fit_le_192k_pct": 99.1,
+    "ct_diet_fit_le_200k_count": 467,
+    "ct_diet_fit_le_200k_pct": 99.8,
+    "recommended_stratified_mix_rows": 2500,
+    "combined_total_steps_gbs48": 904
+  }
+}
