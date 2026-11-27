@@ -1176,8 +1176,8 @@
       "source": "research/README.md",
       "source_kind": "local_note",
       "title": "研究笔记索引",
-      "source_sha256": "496d308adcb2bb6881820c7347da8d323f3237d204096a3c5b6e6b6996681d00",
-      "published_sha256": "468345ad610af2911c1780aadea946f7fb66cc2879d17f538d0985bf3032315a",
+      "source_sha256": "a24a50ef0f80733919175bdd4a4a5c62d9d37c8037b49acb4c7040d2fe9bbb3c",
+      "published_sha256": "bc67bf02ceb091a02269e0e921b485fe85b02461b9088e942a5a05421d77ec70",
       "edits": {
         "unpublished_attachment_links": 4
       }
@@ -1827,8 +1827,8 @@
       "source": "research/xhs-384k-to-200k-data-adaptation-20261127/README.md",
       "source_kind": "local_note",
       "title": "小红书 `3DCodeFactory`（384K YaRN）超长多模态轨迹适配 `≤200K` 训练窗口深度调研与改造方案",
-      "source_sha256": "54b5c3ab04359190d5ba18d4f6ab35d0572adb63b42a959d623bc4e70f0e28b4",
-      "published_sha256": "e080e295cc8fc8fe7d8c7b924349c8971752ebdbd36b75996d555f78ca60eff8",
+      "source_sha256": "6d1893881baecffbf3977a429db820689ba3f38d04d8d716ffa0b5ce98291312",
+      "published_sha256": "ab4b7b98acd5009e87ae126cf6799f0789196b45429ab61eab43ff795b9402fd",
       "edits": {
         "local_path_placeholders": 4,
         "unpublished_attachment_links": 3
@@ -1842,6 +1842,28 @@
       "source_sha256": "6b7893ef0e9cb6821f770735899ec72e2f294ed79213f1ea943e9ab20a8d71af",
       "published_sha256": "01aa6b8a445e9a005712ba781f910c57980d015e808343840000bee495126cb1",
       "edits": {}
+    },
+    {
+      "path": "research/xhs-384k-to-200k-data-adaptation-20261127/joint-consolidation.md",
+      "source": "research/xhs-384k-to-200k-data-adaptation-20261127/joint-consolidation.md",
+      "source_kind": "local_note",
+      "title": "主调研 × Claude Opus 5.5 联合审查收敛结论：`HCPF-Lite`（方案 C）与 4 机落地定案",
+      "source_sha256": "774d60f6baaaa259df89cd5944dcc1bf40e05f7cfd609951f5f493b80e4e27a8",
+      "published_sha256": "a072f2c775911a2b45c945c81570a2e8f0786fb0c0a10de3776504a7aaa28987",
+      "edits": {
+        "local_path_placeholders": 1
+      }
+    },
+    {
+      "path": "research/xhs-384k-to-200k-data-adaptation-20261127/opus-review.md",
+      "source": "research/xhs-384k-to-200k-data-adaptation-20261127/opus-review.md",
+      "source_kind": "local_note",
+      "title": "独立架构审查：小红书 `3DCodeFactory`（384K）→ `≤200K` 数据处理方法与双方案硬碰硬裁决",
+      "source_sha256": "7283072e053af35146b99dd0183c3f471fc4a0ae9f71bed1f7251f30f2546763",
+      "published_sha256": "9a21142d2ae093d94dae532c4bd87b3188c36968f2259ee8c17d9ef57b47c876",
+      "edits": {
+        "local_path_placeholders": 1
+      }
     }
   ]
 }
