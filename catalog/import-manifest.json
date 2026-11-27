@@ -78,22 +78,23 @@
       "source": "3d-animation-agent/docs/STANDARD-PARAMS.md",
       "source_kind": "engineering_doc",
       "title": "3D Agent 全链路统一参数与避坑规范（造数 · 转写 · 验收 · 27B 推理与提交）",
-      "source_sha256": "86d0cb25646a4daac8ce44550d2a10f63e83bbf4abb20a1ce496abe911eb865c",
-      "published_sha256": "1f5a052439f36024f4524e86db30eca3a278ed6dbbe2cba69a8a2b6366072807",
+      "source_sha256": "c77d55c7cf010924ca872425508cf811428a929de447c51a835126e11e3681af",
+      "published_sha256": "5536d11f0bce6eea2907f8da3671aec3d61a06e2a35ae39b38731584dbd39ad0",
       "edits": {
-        "local_path_placeholders": 4,
-        "unpublished_attachment_links": 2
+        "local_path_placeholders": 6,
+        "unpublished_attachment_links": 3
       }
     },
     {
       "path": "3d-animation-agent/docs/THREE-TRACK-DELIVERABLE-SPEC.md",
       "source": "3d-animation-agent/docs/THREE-TRACK-DELIVERABLE-SPEC.md",
       "source_kind": "engineering_doc",
-      "title": "三轨顶级交付产物规格与高难长程造数指南（v2.0）",
-      "source_sha256": "3aeea71eb02a74f4344be3209a1c8a015ba5bad86574f85f34c0fabcdc48bb1d",
-      "published_sha256": "80f67237c975c34b8ad34f1ea18617db1836eefc871771bc0620e65307ea3a20",
+      "title": "三轨顶级交付产物规格与高难长程造数指南（v2.1）",
+      "source_sha256": "dc1058353c1837d482109fe07628143a5f51864b6615ee675e5b4783d594e62d",
+      "published_sha256": "42f4f82ffc01333cf6f28de3aeaf694ed512e2fc4f00848b84aaa54c2df62077",
       "edits": {
-        "local_path_placeholders": 1
+        "local_path_placeholders": 1,
+        "unpublished_attachment_links": 2
       }
     },
     {
@@ -112,11 +113,11 @@
       "source": "3d-animation-agent/docs/XHS-UNIFIED-SFT-STANDARD.md",
       "source_kind": "engineering_doc",
       "title": "XHS 对齐统一训练数据与上下文标准规范（3D 展示 · CAD 打印 · 2D 动画三轨共用）",
-      "source_sha256": "a5b4b16f87fdb83b285eb233e3f76838d17e4f9d28e246c9e1ab8fd9f17c4740",
-      "published_sha256": "47a795107387747e50e4eb5419ce1ffea2cd4b9c906898750426f534157328f9",
+      "source_sha256": "efd6014cc37da8810be6cf6027c7a5f65efddd58227df11b68bd47c9bfc1301c",
+      "published_sha256": "5fa983f2bdd465642a0dd8682a3fdc30caa027b326d03442c1f19e54586a55de",
       "edits": {
-        "local_path_placeholders": 2,
-        "unpublished_attachment_links": 2
+        "local_path_placeholders": 4,
+        "unpublished_attachment_links": 7
       }
     },
     {
@@ -1176,8 +1177,8 @@
       "source": "research/README.md",
       "source_kind": "local_note",
       "title": "研究笔记索引",
-      "source_sha256": "a24a50ef0f80733919175bdd4a4a5c62d9d37c8037b49acb4c7040d2fe9bbb3c",
-      "published_sha256": "bc67bf02ceb091a02269e0e921b485fe85b02461b9088e942a5a05421d77ec70",
+      "source_sha256": "b7f4091a819d44eb709be553f1b9f0a84abcceb69c7d3905852051c6b4843ba9",
+      "published_sha256": "c0c180ad6866dac80c763c6fd13589a52751eb0f6a76a17bdcc613798e0fe7a6",
       "edits": {
         "unpublished_attachment_links": 4
       }
@@ -1827,8 +1828,8 @@
       "source": "research/xhs-384k-to-200k-data-adaptation-20261127/README.md",
       "source_kind": "local_note",
       "title": "小红书 `3DCodeFactory`（384K YaRN）超长多模态轨迹适配 `≤200K` 训练窗口深度调研与改造方案",
-      "source_sha256": "6d1893881baecffbf3977a429db820689ba3f38d04d8d716ffa0b5ce98291312",
-      "published_sha256": "ab4b7b98acd5009e87ae126cf6799f0789196b45429ab61eab43ff795b9402fd",
+      "source_sha256": "4db384fd55a85c68456f705ce9b6af86fd3617e625388c5960de1ef68b3d5bb6",
+      "published_sha256": "1f6b37d7f4b76361f08edc5e01b82a230a2d9e311a0dacae0b0026900b7f55c3",
       "edits": {
         "local_path_placeholders": 4,
         "unpublished_attachment_links": 3
@@ -1839,17 +1840,17 @@
       "source": "research/xhs-384k-to-200k-data-adaptation-20261127/empirical_audit_200k_ledger.json",
       "source_kind": "local_note",
       "title": "empirical_audit_200k_ledger.json",
-      "source_sha256": "6b7893ef0e9cb6821f770735899ec72e2f294ed79213f1ea943e9ab20a8d71af",
-      "published_sha256": "01aa6b8a445e9a005712ba781f910c57980d015e808343840000bee495126cb1",
+      "source_sha256": "5cff717bffc112231cdb98d0c72bf96b481df2f6198a0b6f8fa7d1da9b349763",
+      "published_sha256": "8618e4f6cac14d348a619afb92517fa5533336e4f1ea488fcd3d35bce7bf2f44",
       "edits": {}
     },
     {
       "path": "research/xhs-384k-to-200k-data-adaptation-20261127/joint-consolidation.md",
       "source": "research/xhs-384k-to-200k-data-adaptation-20261127/joint-consolidation.md",
       "source_kind": "local_note",
-      "title": "主调研 × Claude Opus 5.5 联合审查收敛结论：`HCPF-Lite`（方案 C）与 4 机落地定案",
-      "source_sha256": "774d60f6baaaa259df89cd5944dcc1bf40e05f7cfd609951f5f493b80e4e27a8",
-      "published_sha256": "a072f2c775911a2b45c945c81570a2e8f0786fb0c0a10de3776504a7aaa28987",
+      "title": "主调研 × Claude Opus 5.5 联合审定与最终纠偏定案：回归原生 `256K`（`262,144`）+ `HCPF-Lite@256K`",
+      "source_sha256": "74457624cb11456728eda3332dcb66025c7ac1897e8f5cbd887661c75f9a426a",
+      "published_sha256": "e4a511b8fb3c9ecb6b3b70369cb9eee9f39cb45ca71a77c8b0b64c7c7ca2c092",
       "edits": {
         "local_path_placeholders": 1
       }

@@ -1,10 +1,10 @@
-# 三轨顶级交付产物规格与高难长程造数指南（v2.0）
+# 三轨顶级交付产物规格与高难长程造数指南（v2.1）
 
 > 公开整理版 · 2026-11-27。保留成文时点的记录；计划、文献结果和本地实测请分别理解。 环境路径已泛化，未收录的附件已标注；发布范围见 [整理说明](../../PROVENANCE.md)。
 
-> **生效状态**：工程落盘规格书（2026-11-26，待同步入共享 `decisions.md`）  
-> **目标基座**：Dense `Qwen3.8-27B`（BF16，16×H800 `ms-swift 4.5.2` 全参 SFT，384K YaRN + `MAX_PIXELS=401408`）  
-> **配套规范**：[XHS 对齐统一训练数据与上下文标准](XHS-UNIFIED-SFT-STANDARD.md) · [全链路统一参数与避坑规范](STANDARD-PARAMS.md) · [2026 样本学习与 v2.0 高难分类树报告](../../research/cad-2d-sample-study-and-taxonomy-v2-20261126/README.md) · [Anim2D-Tree v2.0](../configs/taxonomies/anim2d_tree_v2_0.json) · [CadQuery-Tree v2.0](../configs/taxonomies/cadquery_tree_v2_0.json) · [三轨数据工厂联合审核总方案](../../research/three-track-data-factory-strategy-20261126/README.md) · [小红书长程策略复盘](../reports/oneshot-vs-longhorizon-3dcodefactory-20261126/REPORT.md)
+> **生效状态**：工程落盘规格书（`2026-11-27` 按 `decisions.md`（本地附件未发布） 最新拍板更新：**正式纳入 Blender 4.2.10 LTS `bpy` 纯代码主线**，训练与沙盒上下文统一对齐基座**原生 `256K`（`262,144` tokens，关闭 YaRN，不再设非标 `200K` 窗口）**）  
+> **目标基座**：Dense `Qwen3.8-27B`（BF16 **原生 `262,144` [256K] RoPE 基座、关闭 YaRN**，4 机 `32×80GB` `ms-swift 4.5.2` 全参 SFT，`max_length=262,144` + `MAX_PIXELS=401408` + `freeze_vit=false, freeze_aligner=false`）  
+> **配套规范**：[XHS 对齐统一训练数据与上下文标准](XHS-UNIFIED-SFT-STANDARD.md) · [全链路统一参数与避坑规范](STANDARD-PARAMS.md) · [`HCPF-Lite` 拆段方法参考](../../research/xhs-384k-to-200k-data-adaptation-20261127/joint-consolidation.md) · [2026 样本学习与 v2.0 高难分类树报告](../../research/cad-2d-sample-study-and-taxonomy-v2-20261126/README.md) · [Anim2D-Tree v2.0](../configs/taxonomies/anim2d_tree_v2_0.json) · [CadQuery-Tree v2.0](../configs/taxonomies/cadquery_tree_v2_0.json) · [三轨数据工厂联合审核总方案](../../research/three-track-data-factory-strategy-20261126/README.md) · [小红书长程策略复盘](../reports/oneshot-vs-longhorizon-3dcodefactory-20261126/REPORT.md)
 
 ---
 
@@ -23,16 +23,16 @@
 
 所有任务在 `manifest`、评测集与入训元数据中均以统一契约字段登记（`needs_http_server`、`bundle_mode`、`allow_network`、`motion_type`、`export_formats`）：
 
-| 维度 | Track 1 · 3D 场景与交互动画（主力） | Track 2 · 2D Web 多文件交互动画（主力） | Track 3 · CAD 参数化建模与 3D 打印（主力） |
+| 维度 | Track 1 · 3D 纯代码建模与交互场景（Blender + Three.js 主力） | Track 2 · 2D Web 多文件交互动画（主力） | Track 3 · CAD 参数化建模与 3D 打印（主力） |
 | --- | --- | --- | --- |
-| **主交付形态** | **离线多文件 ES6 Web 工程**（对齐小红书 Three.js）<br>*轻量保留：`esbuild` 单文件物理机械动画子能力* | **离线多文件 Web 交互动画工程**<br>+ **一键 Playwright/FFmpeg 导出 MP4/WebM** | **参数化多模块 Python 工程 + 制造交换产物包**<br>（单零件或 2–6 件功能装配体） |
-| **标准目录结构** | `output/`<br>`├── index.html`<br>`├── styles.css`<br>`├── src/{main,world,props,textures,shaders,ui}.js`<br>`└── vendor/three.module.js (+ addons)` | `output/`<br>`├── index.html`<br>`├── css/styles.css`<br>`├── src/{main,scene,motion,renderer,ui,data}.js`<br>`├── assets/*.svg`（可选）<br>`└── vendor/{gsap,pixi,...}`（按需本地化） | `output/`<br>`├── src/{params.py, parts/*.py, assembly.py, export.py}`<br>*（复杂单件可为 `src/model.py`）*<br>`├── exports/{model.step, model.3mf, model.stl, model.glb}`<br>`└── views/{views_grid.png, section_view.png, exploded_view.png}` |
-| **核心引擎与库** | `Three.js r180` + `importmap` + `OrbitControls` + 本地 `http.server`（**Blender `bpy` = 0%**） | **HTML5 Canvas 2D + Inline/External SVG + CSS/GSAP**（离线本地库，0 CDN；**不走 Manim**） | **`CadQuery 2.6.1`**（OCCT 内核，强参数化 `DEFAULT_PARAMS`；`OpenSCAD = N/A`） |
-| **必含控制 / 导出契约** | 本地 HTTP 零报错加载、多相机/视角可交互、0–3 清晰控件；动画子类额外暴露 `window.renderAt(t)` 与 `__3D_STATE__` | 必须暴露：`window.__SCENE_READY__ = true`、`window.renderAt(seconds)`、`window.__2D_STATE__`、`#play/#pause/#scrub` 与场景/参数交互；**凭 `renderAt(t)` 可 1 条命令无损录出 30/60fps MP4** | 必须暴露参数表 `DEFAULT_PARAMS` 且改参几何联动；同时导出 **`STEP`（工业 CAD 交换）+ `3MF`（2026 3D 打印主流多体格式）+ `STL`（向后兼容）+ `GLB`** |
-| **网络与安全红线** | `allow_network = false`；0 外部 CDN；0 宿主机路径泄漏 | `allow_network = false`；0 外部 CDN/外链字体；0 宿主机路径泄漏 | `allow_network = false`；AST 禁网络/子进程/越界 IO；0 宿主机路径泄漏 |
-| **典型目标复杂度（砍掉简单题）** | 中位 3,000–6,000 行 JS，多层级建筑/器物/光影/材质/着色器/交互场景 | 对标 `AnimWeb-Bench`（2026.11）与 `MotionGraphicsBench`（2026.11）：多图层复合时间轴动效、叙事长页/交互科普/数据可视化/商业 SVG 精准动效，典型 800–3,000+ 行模块化代码 | ① 高复杂单件（**15–45+ B-rep 面**、多平面切换/抽壳/倒角/阵列/工程图复刻/缺陷返修）；<br>② **2–6 件功能装配体**（齿轮/铰链/卡扣壳体/导轨滑块/风道盒，含显式配合间隙） |
-| **确定性硬验 + 视觉精修双闸** | 零控制台报错 + 多视角/特写渲染 + 纯 WebGL 帧差防假动（动画类） + 五维盲评高分闸 | ① 确定性时空硬检（去 HUD 纯主体帧差、逆序 `renderAt(t)` 逐像素一致、周期接缝位置+速度连续、多分辨率 0 文字重叠/裁切、SVG/Canvas 轨迹与事件断言）；<br>② 多关键帧 + 交互前后 Contact Sheet 视觉精修 + 五维美学盲评高分闸 | **五层几何金字塔**：① AST 沙盒 + 四格式独立回读；② 水密 2-流形 & 连通体数匹配；③ 包络/体积/孔轴探针/参数回归差分/真值 `STEP` Voxel IoU；④ **多体零非法干涉（两两布尔交集体积 ≤ 容差）与配合间隙探针**；⑤ `flatShading + Z_range` 4 视角 + 剖视图/爆炸图审图 |
-| **不越界声明** | 静态展示类不冒充连续刚体物理动画；Blender 0% 混入 | 不与像素扩散视频模型拼写实人物拍片；不声称支持在线外链 API | 不做切片机 G-code、实物打印成功率、材料力学强度或工业 GD&T 公差认证；有机雕塑/手办打印单标 `unverified` |
+| **主交付形态** | ① **Blender `bpy` 纯 Python 工程**（高精度 3D 建模 / Cycles·EEVEE 静帧·视频 / `.blend + .glb` 资产）；<br>② **Three.js 离线多文件 ES6 Web 工程**（浏览器实时交互 3D 场景）<br>*轻量保留：`esbuild` 单文件物理机械动画子能力* | **离线多文件 Web 交互动画工程**<br>+ **一键 Playwright/FFmpeg 导出 MP4/WebM** | **参数化多模块 Python 工程 + 制造交换产物包**<br>（单零件或 2–6 件功能装配体） |
+| **标准目录结构** | **Blender**：`output/{scene.blend, scene.glb, build_scene.py, assets/, README.md, final.png}`<br>**Three.js**：`output/{index.html, styles.css, src/*.js, vendor/three/, final.png}` | `output/`<br>`├── index.html`<br>`├── css/styles.css`<br>`├── src/{main,scene,motion,renderer,ui,data}.js`<br>`├── assets/*.svg`（可选）<br>`└── vendor/{gsap,pixi,...}`（按需本地化） | `output/`<br>`├── src/{params.py, parts/*.py, assembly.py, export.py}`<br>*（复杂单件可为 `src/model.py`）*<br>`├── exports/{model.step, model.3mf, model.stl, model.glb}`<br>`└── views/{views_grid.png, section_view.png, exploded_view.png}` |
+| **核心引擎与库** | **`Blender 4.2.10 LTS`**（`bpy / bmesh / mathutils / numpy`，无头 CLI `--background --factory-startup --python-exit-code 1`）+ **`Three.js r180`**（`importmap + OrbitControls` + 本地 `http.server` + SwiftShader Playwright） | **HTML5 Canvas 2D + Inline/External SVG + CSS/GSAP**（离线本地库，0 CDN；**不走 Manim**） | **`CadQuery 2.6.1`**（OCCT 内核，强参数化 `DEFAULT_PARAMS`；`OpenSCAD = N/A`） |
+| **必含控制 / 导出契约** | **Blender**：自包含 `scene.blend`（有序 Collection / 命名对象 / 打包本地贴图）、`scene.glb`、可复现 `.py` 脚本，且 `1536×1024` `final.png` 必须由**重新打开 `scene.blend`** 渲染；<br>**Three.js**：本地 HTTP 零报错加载、多相机/视角可交互、0–3 清晰控件与 `1536×1024` `final.png`（动画子类另暴露 `window.renderAt(t)` 与 `__3D_STATE__`） | 必须暴露：`window.__SCENE_READY__ = true`、`window.renderAt(seconds)`、`window.__2D_STATE__`、`#play/#pause/#scrub` 与场景/参数交互；**凭 `renderAt(t)` 可 1 条命令无损录出 30/60fps MP4** | 必须暴露参数表 `DEFAULT_PARAMS` 且改参几何联动；同时导出 **`STEP`（工业 CAD 交换）+ `3MF`（2026 3D 打印主流多体格式）+ `STL`（向后兼容）+ `GLB`** |
+| **网络与安全红线** | `allow_network = false`；0 外部 CDN / 在线素材下载；0 宿主机路径泄漏 | `allow_network = false`；0 外部 CDN/外链字体；0 宿主机路径泄漏 | `allow_network = false`；AST 禁网络/子进程/越界 IO；0 宿主机路径泄漏 |
+| **典型目标复杂度（砍掉简单题）** | 中位 1,600–6,000 行 JS / Python (`bpy`)，多层级建筑/器物/光影/PBR 材质/着色器/复杂曲面与交互场景 | 对标 `AnimWeb-Bench`（2026.11）与 `MotionGraphicsBench`（2026.11）：多图层复合时间轴动效、叙事长页/交互科普/数据可视化/商业 SVG 精准动效，典型 800–3,000+ 行模块化代码 | ① 高复杂单件（**15–45+ B-rep 面**、多平面切换/抽壳/倒角/阵列/工程图复刻/缺陷返修）；<br>② **2–6 件功能装配体**（齿轮/铰链/卡扣壳体/导轨滑块/风道盒，含显式配合间隙） |
+| **确定性硬验 + 视觉精修双闸** | **Blender**：无头重开 `scene.blend` 审计对象/网格/顶点数/面数/材质/灯光/相机/Collection + `scene.glb` & `final.png` 回验（见 `verify_realhard6.py`（本地附件未发布））；<br>**Three.js**：零控制台报错 + 零外链请求 + 多视角/特写渲染 + 纯 WebGL 帧差防假动（动画类）+ 五维盲评高分闸 | ① 确定性时空硬检（去 HUD 纯主体帧差、逆序 `renderAt(t)` 逐像素一致、周期接缝位置+速度连续、多分辨率 0 文字重叠/裁切、SVG/Canvas 轨迹与事件断言）；<br>② 多关键帧 + 交互前后 Contact Sheet 视觉精修 + 五维美学盲评高分闸 | **五层几何金字塔**：① AST 沙盒 + 四格式独立回读；② 水密 2-流形 & 连通体数匹配；③ 包络/体积/孔轴探针/参数回归差分/真值 `STEP` Voxel IoU；④ **多体零非法干涉（两两布尔交集体积 ≤ 容差）与配合间隙探针**；⑤ `flatShading + Z_range` 4 视角 + 剖视图/爆炸图审图 |
+| **不越界声明** | 静态展示类不冒充连续刚体物理动画；Blender 仅限纯 Python `bpy` 程序化建模渲染，不混入 Tripo/Meshy 等神经网络黑盒网格生成 | 不与像素扩散视频模型拼写实人物拍片；不声称支持在线外链 API | 不做切片机 G-code、实物打印成功率、材料力学强度或工业 GD&T 公差认证；有机雕塑/手办打印单标 `unverified` |
 
 ---
 
@@ -40,10 +40,10 @@
 
 严格衔接 [XHS-UNIFIED-SFT-STANDARD.md](XHS-UNIFIED-SFT-STANDARD.md) 与小红书 vs 我方 DeepSeek 实测复盘，所有自产高难长程轨迹必须遵守以下 6 条采集规范：
 
-1. **松绑单轮与轮数天花板（默认教师切至 `kimi-k3.1-pro`）**：使用 `claude --bare`（不传 `--tools` / `--effort`）+ `repos-logging-proxy`；随着专用 DeepSeek 额度用尽且 `3d-animation-agent/.env` 的 **`kimi-k3.1-pro`** 恢复（`/v1/chat/completions` 与 `/v1/messages` 双接口均实测返回原生 `thinking + text`），CAD 与 2D 自产长程轨迹优先使用 `kimi-k3.1-pro`；单轮输出上限提升至 **`64K–128K`**（彻底消除大模块架构思考 + `Write` 截断）；**废除 `≤12–30` 轮紧箍咒**，仅设防死循环安全护栏（如 120–150 轮），允许教师充分完成“搭建 → 渲染看图 → 局部 `Edit` 精修”闭环。
+1. **统一原生 `256K` 窗口、自动压缩与轮数护栏（默认教师 `kimi-k3.1-pro` / 对照 `claude-opus-5-5`）**：使用 `claude --bare`（不传 `--tools` / `--effort`）+ 隔离工作区；沙盒统一设定 `AGENT_CONTEXT_WINDOW_TOKENS=262144`（默认 `32K` 输出配 `CLAUDE_CODE_MAX_OUTPUT_TOKENS=32768`、`CLAUDE_CODE_AUTO_COMPACT_WINDOW=220000`、`CLAUDE_AUTOCOMPACT_PCT_OVERRIDE=85`；若放宽 `64K` 输出则压缩水位下调至 `190000` 保证 `< 262,144 - 65,536`），**废除 `≤12–30` 轮紧箍咒**，仅设防死循环安全护栏（如 `--max-turns 120` 并支持自动 `--continue`），允许教师在原生 `256K` 物理窗口内通过自动压缩无缝完成“搭建 → 渲染看图 → 局部 `Edit` 精修”长程闭环。
 2. **原生思考链 0 改写**：完整保留教师模型（`kimi-k3.1-pro` 或同级原生推理教师）第一人称 `<think>`，严禁二次改写为 Markdown 报告腔；仅通过 5 规则轮级异常掩码（`tool_execution_error`、`protocol_leakage`、`repetitive_reasoning_loop`、`duplicate_tool_target`、`abnormal_ending`）在 `ms-swift` 中对坏轮置 `"loss": False`，完整保留紧邻的纠错轮与终轮 EOS。
-3. **强制多文件模块化 + 小步 `Edit` 习惯**：提示词与验收明确鼓励按职责拆分模块文件（前端 `src/*.js` / CAD `parts/*.py`），在首轮搭建后通过小步局部 `Edit` 做多轮视觉微调，避免把 3,000 行代码反复整块 `Write` 重写。
-4. **多模态载荷有界（Contact Sheet 拼图纪律）**：每轮视觉自检必须将 4–6 个视角/关键帧/交互态拼成单张 Contact Sheet，统一以 `MAX_PIXELS = 401408`（约 512 视觉 token/张）入模，控制单条轨迹看图次数在 **8–16 次**（兼顾视觉细节与上下文效率，确保单段流畅落入 `180K–384K` 窗口）。
+3. **强制多文件模块化 + 小步 `Edit` 习惯**：提示词与验收明确鼓励按职责拆分模块文件（前端 `src/*.js` / Blender 模块脚本 / CAD `parts/*.py`），在首轮搭建后通过小步局部 `Edit` 做多轮视觉微调，避免把 3,000 行代码反复整块 `Write` 重写。
+4. **多模态载荷有界（Contact Sheet 拼图纪律）**：每轮视觉自检必须将 4–6 个视角/关键帧/交互态拼成单张 Contact Sheet，统一以 `MAX_PIXELS = 401408`（约 512 视觉 token/张）入模，控制单段看图次数在 **8–16 次**（兼顾视觉细节与上下文效率，确保每段流畅落入原生 `≤256K` 窗口并在压缩水位前自然收敛或干净交接）。
 5. **高门槛准入（只收顶尖产物）**：硬检未全过者直接淘汰（0 VLM 评审费）；通过硬检后走匿名五维视觉与工程盲评 + 境界阈值过滤（平庸“勉强能跑”的产物一律不入训练集），复杂题走 **阶梯式 Best-of-2** 优中选优。
 6. **零宿主机污染与零泄漏**：独立 `/tmp` 沙盒执行，全量扫描确保 0 宿主机路径、0 跨 trial 抄袭、按任务祖先家族严格隔离 `train / val / test` 与外部 OOD 尺子。
 
@@ -57,7 +57,7 @@
 
 | 外部资产（时间） | 协议 | 实际定位与用法 |
 | --- | --- | --- |
-| **`3DCodeFactory/3DCodeFactory`**（2026.11，小红书） | **Apache-2.0** | **唯一主力直接入训源**：复用完整 401 分片中的 Three.js 合法分段（`compact_before + compact_recovery + uncut_main`，Blender = 0%），零 API 成本直接吸收顶级多文件工程与审美 |
+| **`3DCodeFactory/3DCodeFactory`**（2026.11，小红书） | **Apache-2.0** | **唯一主力直接入训源**：复用完整 `401 / 401` 分片全轨（**Blender `bpy` + Three.js 全轨** + `main / compact_before / compact_task / compact_recovery` 全段，超 `256K` 段按 `HCPF-Lite + ct_diet` 无损适配至原生 `≤256K` 窗口），零 API 成本直接吸收顶级多文件工程与审美 |
 | **`3dcodeverse/3dcodeverse-2m`**（2026.10） | `CC-BY-NC-SA-4.0` | 单轮脚本 + NC-SA 协议，**严禁直灌商用训练**；仅借鉴其验证器/载荷有界工程经验 |
 
 ### 2. Track 2（2D Web 多文件交互动画）

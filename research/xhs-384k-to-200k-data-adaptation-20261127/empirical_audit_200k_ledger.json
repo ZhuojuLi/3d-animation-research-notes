@@ -236,5 +236,62 @@
     "ct_diet_fit_le_200k_pct": 99.8,
     "recommended_stratified_mix_rows": 2500,
     "combined_total_steps_gbs48": 904
+  },
+  "hcpf_lite_256k_ratified_final_simulation": {
+    "status": "RATIFIED_PRIMARY_STANDARD_20261127 (supersedes 200K intermediate target)",
+    "target_max_length": 262144,
+    "per_subsegment_budget_cap": 254000,
+    "distant_spine_cap_tokens": 12000,
+    "verbatim_working_tail": "max(12 turns, <=32000 tokens)",
+    "exec_without_active_obs_diet": {
+      "untouched_pct": 18.4,
+      "val_subsegments": 1320,
+      "expansion_ratio": 1.82,
+      "subsegments_per_segment_dist": {
+        "1": 133,
+        "2": 586,
+        "3": 5,
+        "4_plus": 0
+      },
+      "total_cuts_val": 596,
+      "cut_reduction_vs_200k_pct": -48.4,
+      "phase_clean_cut_rate_pct": 100.0,
+      "trainable_U_retention_pct": 100.0,
+      "projected_train_subsegments": 31695,
+      "projected_train_input_tokens_B": 6.6,
+      "projected_packs_262144": 28933,
+      "fill_pct": 87.1,
+      "steps_gbs48": 602
+    },
+    "exec_with_light_active_obs_diet": {
+      "untouched_pct": 18.4,
+      "val_subsegments": 1267,
+      "expansion_ratio": 1.75,
+      "subsegments_per_segment_dist": {
+        "1": 181,
+        "2": 543,
+        "3": 0,
+        "4_plus": 0
+      },
+      "total_cuts_val": 543,
+      "phase_clean_cut_rate_pct": 100.0,
+      "trainable_U_retention_pct": 100.0,
+      "projected_train_subsegments": 30422,
+      "projected_train_input_tokens_B": 5.45,
+      "projected_packs_262144": 21778,
+      "fill_pct": 95.5,
+      "steps_gbs48": 453
+    },
+    "compact_task_at_256k": {
+      "val_n": 468,
+      "empty_think_only_zero_log_or_img_loss_p50": 200396,
+      "empty_think_only_zero_log_or_img_loss_p90": 244477,
+      "empty_think_only_fit_le_256k_count": 456,
+      "empty_think_only_fit_le_256k_pct": 97.4,
+      "ct_diet_with_whitelist_p50": 91506,
+      "ct_diet_with_whitelist_p90": 120797,
+      "ct_diet_with_whitelist_max": 158001,
+      "ct_diet_fit_le_256k_pct": 100.0
+    }
   }
 }

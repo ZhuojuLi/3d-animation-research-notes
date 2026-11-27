@@ -6,9 +6,11 @@
 > **针对数据**：
 > - 高密度主力集（18,108 段 / 5,532 独立任务）：`${SHARED_DATA}/code2video/training/data/3dcodefactory-paper-s3-v1-dense`
 > - 原始完整集（29,795 段，含 11,686 条 `compact_task`）：`${SHARED_DATA}/code2video/training/data/3dcodefactory-paper-s3-v1`  
-> **目标基座与硬件约束**：Dense `Qwen3.8-27B`（原生 `max_position_embeddings = 262,144`），4 机 `32×80GB` 集群稳定训练上限 **`~200K`（`196,608` [192K] – `204,800` [200K]）**。  
-> **【优先必读 · 经独立 `claude-opus-5-5` 审查收敛定案】**：[**主审 × Opus 5.5 联合收敛结论（`HCPF-Lite` + 拓扑 0 `TP2·PP4·CP2·DP2`）**](joint-consolidation.md) · [**Opus 5.5 独立毒舌审查原文（401 行）**](opus-review.md)  
-> **本目录配套附件**：[2026 H2 上下文折叠与长轨迹 SFT 文献精读专题](2026h2-compaction-literature-deep-dive.md) · [真实分词解剖与 `HCPF-200K` 模拟账本 JSON](empirical_audit_200k_ledger.json)  
+> **目标基座与硬件约束**：Dense `Qwen3.8-27B`（原生 `max_position_embeddings = 262,144` [256K]），4 机 `32×80GB` 集群。  
+> **本目录配套附件**：[2026 H2 上下文折叠与长轨迹 SFT 文献精读专题](2026h2-compaction-literature-deep-dive.md) · [真实分词解剖与 `256K / 200K` 模拟账本 JSON](empirical_audit_200k_ledger.json)  
+
+> [!IMPORTANT]
+> **2026-11-27 最终纠偏定案（以此为准）**：本文初稿曾按保守 `200K`（`204,800`）推演；经独立 `claude-opus-5-5` 审查与用户拍板纠偏，**已彻底废除非标 `200K` 中间窗口，全链路统一回归 `Qwen3.8-27B` 原生满窗 `256K`（`262,144` tokens，关闭 YaRN，`32 卡 / 48 卡 = 256K / 384K = 2/3`）+ `HCPF-Lite@256K`（80.9% 超长段仅需对半切 1 刀，`97.4%` `compact_task` 零删图零删日志直通）**！正式执行规格请直接阅读 **[联合审定与原生 `256K` 最终定案 `joint-consolidation.md`](joint-consolidation.md)** 与 **[Opus 5.5 独立审查原文 `opus-review.md`](opus-review.md)**。
 > **关联文档**：[3DCodeFactory 精读](../arxiv-2611.28783/README.md) · [27B 并行与显存实测](../3d-agent-training-efficiency-packing-parallelism-20261124/README.md) · [2026 H2 大厂博客调研](../frontier-labs-agentic-rl-blogs-2026h2/README.md) · [CompactionRL 精读](../arxiv-2607.05378/README.md) · [RECAP 精读](../arxiv-2611.31258/README.md)
 
 ---

@@ -4,7 +4,7 @@
 
 本次更新一并增补了 2026 下半年长程编码与多模态上下文压缩核心文献（`CliffCompaction 2609.26779`、`The Compaction Cliff 2608.22752`、`AutoCompact 2610.02163`、`MemTrace 2610.04838`、`ScaleCUA 2607.11185`、`PAIR 2609.36526`、`ActObs 2609.20715`、`DeNovoSWE 2606.10728` 等），全部引用位置见 [机器可读索引](catalog/papers.json)。
 
-建议阅读顺序：先读 [3DCodeFactory](research/arxiv-2611.28783/README.md) 与 [384K → 200K 超长轨迹适配方案（HCPF-200K）](research/xhs-384k-to-200k-data-adaptation-20261127/README.md) 理解 SFT 底座与窗口改造，再读 [Opus 5.5 联合去杂糅与终极收敛蓝图](research/3d-agent-rl-opus-review-and-consolidation-20261127/README.md)、[SFT 后强化学习全景调研 v3.0](research/3d-agent-post-sft-rl-survey-20261127/README.md) 与 [2026 H2 大厂技术博客专题](research/frontier-labs-agentic-rl-blogs-2026h2/README.md)，最后按需下钻各篇单篇精读。
+建议阅读顺序：先读 [3DCodeFactory](research/arxiv-2611.28783/README.md) 与 [原生 `256K`（`262,144`）无损适配定案（`HCPF-Lite@256K`）](research/xhs-384k-to-200k-data-adaptation-20261127/joint-consolidation.md) 理解 SFT 底座与窗口改造，再读 [Opus 5.5 联合去杂糅与终极收敛蓝图](research/3d-agent-rl-opus-review-and-consolidation-20261127/README.md)、[SFT 后强化学习全景调研 v3.0](research/3d-agent-post-sft-rl-survey-20261127/README.md) 与 [2026 H2 大厂技术博客专题](research/frontier-labs-agentic-rl-blogs-2026h2/README.md)，最后按需下钻各篇单篇精读。
 
 ## 单篇精读（共 42 篇）
 
@@ -192,7 +192,7 @@
 
 ## 非 arXiv 材料与大厂工程博客
 
-- [小红书 `3DCodeFactory`（384K YaRN）适配有界窗口调研与 Opus 5.5 联合审定 `HCPF-Lite` 方案](research/xhs-384k-to-200k-data-adaptation-20261127/joint-consolidation.md)（含 [Opus 5.5 独立审查原文](research/xhs-384k-to-200k-data-adaptation-20261127/opus-review.md) · [初版改造总报告](research/xhs-384k-to-200k-data-adaptation-20261127/README.md) · [2026 H2 文献精读](research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md) · [实测分词账本 JSON](research/xhs-384k-to-200k-data-adaptation-20261127/empirical_audit_200k_ledger.json)）：对落盘 `v1-dense` / `v1` / `ct10pct` 真实分词与 4 机 `smoke32` 实测复盘，经独立 `claude-opus-5-5` 纠偏砍掉自造归档文案与 Shell 文件覆盖猜测（满血保护 vLLM Prefix Cache），定案 `HCPF-Lite` 纯原生截断规则与原生 `262K` RoPE 方案。
+- [小红书 `3DCodeFactory`（384K YaRN）回归原生 `256K`（`262,144`）与 Opus 5.5 联合审定 `HCPF-Lite@256K` 定案](research/xhs-384k-to-200k-data-adaptation-20261127/joint-consolidation.md)（含 [Opus 5.5 独立审查原文](research/xhs-384k-to-200k-data-adaptation-20261127/opus-review.md) · [初版探索报告](research/xhs-384k-to-200k-data-adaptation-20261127/README.md) · [2026 H2 文献精读](research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md) · [实测分词与 256K 账本 JSON](research/xhs-384k-to-200k-data-adaptation-20261127/empirical_audit_200k_ledger.json)）：废除非标 `200K` 中间窗口，锁定原生 `262,144` 满窗（`80.9%` 超长段仅对半切 1 刀、切口减半、`97.4%` `compact_task` 零删图零删日志直通，满血保护 vLLM Prefix Cache）。
 - [主审 × Claude Opus 5.5 联合去杂糅审查与终极收敛蓝图](research/3d-agent-rl-opus-review-and-consolidation-20261127/README.md)（含 [Opus 5.5 独立报告](research/3d-agent-rl-opus-review-and-consolidation-20261127/opus-review.md) · [主审独立自审](research/3d-agent-rl-opus-review-and-consolidation-20261127/main-consolidation.md)）：对 19 项候选机制冲突消解、三轨指标断舍离、检查器 4 处硬漏洞与 `2×8 H800` `Repair-RL → 384K RFT` 极简闭环拍板。
 - [2026 下半年八大前沿实验室 Agentic RL & 视觉代码技术博客专题](research/frontier-labs-agentic-rl-blogs-2026h2/README.md)：涵盖 Qwen4-Max / Qwen3.8-27B、Kimi K3.1 Pro、GLM-5.2/5.3/5.4 与 `slime`、DeepSeek-V4.1-Flash-1017、Seed 2.1、MiniMax-M3 / MaxProof、Anthropic Opus 5.5 / Fable 5.2、OpenAI GPT-6 / 6.2 Astra 官方博客时间线与工程深水区复盘。
 - [2026 图文 / 2D / 3D / CAD 同源 RL 31 大踩坑避坑大全](research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md)：汇总同源项目负向消融、防刷分补丁与本仓库脚本级迁移清单。
