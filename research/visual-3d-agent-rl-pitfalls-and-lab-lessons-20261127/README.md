@@ -5,9 +5,10 @@
 - **成文日期**：2026-11-27
 - **时间锚点说明**：针对 **2026 年下半年（`2026.06–2026.11`）** 最新技术格局编写——模型代际对齐至 `Qwen3.8 / Qwen4`、`Kimi K3 / K3.1 Pro`、`DeepSeek-V4 / V4.1`、`GLM-5.2 / 5.4`、`Seed-2`、`Claude Opus 5.5 / Fable 5.2`、`GPT-6 Astra / 6.1 Sol`；同源论文聚焦 `arXiv:2606–2611` 最新发表；少量 2025 下半年至 2026 年初工作（如 `GSPO`、`ReLook`、`cadrille`、`GLM-5 slime TITO`、`Anthropic 生产黑客复盘`）仅保留其**至今仍在沿用的底层算法/算子机制**并明确标注代际定位。
 - **配套报告**：
-  1. 架构级五阶段演进蓝图见 [SFT 后强化学习与自蒸馏总报告 v2.0](../3d-agent-post-sft-rl-survey-20261127/README.md)；
-  2. 2026.06–11 八大实验室官方发布与工程博客一手核查（`Qwen4-Max` 云端 vs `Qwen3.8-27B` 开源定位、`Kimi K3.1 Pro` Three.js RL、`GLM-5.3/5.4` `SAO`、`DeepSeek-V4.1-Flash-1017`、`Anthropic`、`OpenAI`）见 [2026 下半年大厂 Agentic RL & 视觉代码技术博客专题](../frontier-labs-agentic-rl-blogs-2026h2/README.md)。
-  本册专门汇总**同源项目作者在正文与 Appendix 中亲身记录的 25 个初始深坑/负向消融**，并逐条映射到我们的三轨任务范围（`Track 1: 3D Three.js`、`Track 2: 2D Web Canvas+SVG+GSAP`、`Track 3: CAD CadQuery`，基座 `Qwen3.8-27B`）。
+  0. **【终极收敛执行版】[主审 × Claude Opus 5.5 联合去杂糅审查与终极收敛蓝图](../3d-agent-rl-opus-review-and-consolidation-20261127/README.md)** · **[可执行计划书](../../3d-animation-agent/docs/plans/2026-11-27-post-sft-repair-rl-and-rft-plan.md)**；
+  1. 架构级演进调研见 [SFT 后强化学习全景调研 v3.0](../3d-agent-post-sft-rl-survey-20261127/README.md)；
+  2. 2026.06–11 八大实验室官方发布与工程博客一手核查见 [2026 下半年大厂 Agentic RL & 视觉代码技术博客专题](../frontier-labs-agentic-rl-blogs-2026h2/README.md)。
+  本册汇总**同源项目作者亲历的 25 个初始深坑**以及 **Claude Opus 5.5 审查我方方案与验收源码新抓出的 6 个系统耦合/脚本漏洞（共 31 坑）**，逐条映射到三轨任务范围。
 
 ---
 
@@ -167,6 +168,35 @@
     - **一手出处**：`SRaR`（[2605.17291](../arxiv-2605.17291/README.md) Appendix 19–20）& `AeSlides`（[2604.22840](../arxiv-2604.22840/README.md) §6.2）& `RULER`（[2609.25270](../arxiv-2609.25270/README.md) App. A）。
     - **惨烈现象**：`SRaR` 去掉跨轨迹同轮中心化后得分从 `72.53%` 崩至 `56.76%`；`AeSlides` 去掉 `low_var_kl`（$\beta=0.1$）后策略熵坍缩成单一死板配色版式；`RULER` 若离线合成 Rubric 未经 Ideal 样本自洽过滤（`<0.9` 占不小比例），裁判会自相矛盾！
     - **本项目避坑法**：(1) 轮次奖励强制跨同题轨迹做零均值中心化（或只用 `PITFALL = -1.0` 惩罚重复死循环）；(2) 多维审美/排版 RL 保留轻量 `low_var_kl`（$\beta \in [0.01, 0.04]$）；(3) 所有合成 Rubric 入库前先对教师满分产物跑一次自洽打分（得分 `<0.9` 的病态 Rubric 直接打回重写！）。
+
+---
+
+### F 类：Claude Opus 5.5 架构与源码审查新抓出的 6 个“机制互殴与现行脚本硬漏洞”（必避！）
+
+> 出处：[Opus 5.5 独立审查报告](../3d-agent-rl-opus-review-and-consolidation-20261127/opus-review.md) 与 [联合收敛蓝图](../3d-agent-rl-opus-review-and-consolidation-20261127/README.md)。提醒我们：**把多篇好论文的技巧不加推演地叠在同一优势张量上，比不加技巧更危险**！
+
+26. **【坑 26 · `PhyCAD HBA` 叠加 `GDPO` / `SRaR` 直接击穿跨层保序，叠加 `GVPM max(A,0)` 破坏零均值诱发死循环】**
+    - **数学病理**：`GDPO` 将层分量除以 $\sigma_L$ 并把视觉分白化到 $\pm 2.6$，直接破坏 `HBA` 的 $\lambda_L > 2\lambda_w$ 保序条件（让 `L2` 残次品拿到比 `L3` 合格品更高的优势）；`GVPM` 的 $\max(\hat{A}, 0)$ 单边抹去失败轨迹的负优势，使组均值变为正偏置，变相奖励反复失败的长轨迹！
+    - **收敛解法**：**彻底砍掉 `GDPO`、在线 `SRaR` 与 `GVPM max(A,0)`**（只留 `GVPM` 零偏置后缀 `loss_mask=0`），全系统只用唯一四层 `HBA` 居中秩公式。
+
+27. **【坑 27 · 本地同源 `Qwen3.8-27B` 既当演员又当在线主裁判的“自我偏好共谋（Self-Judge Collusion）”】**
+    - **对抗病理**：静态相关性 `r=0.838` 测的是分布内诚实样本；一旦进入几百步对抗性在线 RL，同架构同预训练源的 Actor 会迅速搜出共享视觉编码器的盲区刷分（正如 `WebCatalyst` 中 `Self-Anchor` 在 40–70 步失稳），且本机部署 `27B` 裁判会占走 `16×H800` 的一半显卡！
+    - **收敛解法**：在线仅对 `$L_3$ 幸存样本`（约 30%–50%）调用**异族模型（`kimi-k3.1-pro`）**并**只取层内秩**；本地 `27B` 退居离线影子裁判监测 `27B 分 − 异族分` 漂移（`>0.15` 立即熔断回滚）。
+
+28. **【坑 28 · 盲开“从零 `384K` 在线 RL”陷入 15 小时/步算力死局，以及全局 Token 归一化让 3D 吞噬 CAD 梯度】**
+    - **算力病理**：`384K` 下单条 KV 约 `25 GB`，8 卡推理仅并发 ~20 条，单步 192 条耗时 ~15 小时；且全局 $|\mathcal{M}|$ 归一化下，数万 token 的 3D 轨迹会淹没几千 token 的 CAD 梯度。
+    - **收敛解法**：走 **`≤64K Repair-RL（单步 20~30 分钟）→ 全长 384K RFT 离线回灌`**；损失按**每轨内部先做 token 均值、再按 `(1/3, 1/3, 1/3)` 等权合并**！
+
+29. **【坑 29 · 现行 `cad_inspect.py` 第 221 行布尔求交失败静默放行漏洞】**
+    - **源码实查**：`_check_pairwise_brep_interference` 中 `if not common.IsDone(): continue` 把 OpenCascade 布尔求交崩溃的病态自交几何静默当成“零干涉”放行！RL 策略会专门造相切奇异面让布尔报错白拿满分。
+    - **补丁**：凡 `not common.IsDone()` 一律记入 `issues` 判为 $L_2$ 干涉失败；且在线先传 `--no-render` 秒级短路非 $L_3$ 样本。
+
+30. **【坑 30 · 现行 `verify_xhs_output.cjs` 被场景自转、HTML 浮层弹窗与 200KB 注释填充轻松刷分】**
+    - **源码实查**：未冻结 `rAF` 时钟且截全屏（含 HTML HUD）算 `MAD >= 1.5/3.0`，场景微转或点按钮弹纯文字框即可骗过 `orbit.responds` 与交互检查；且允许 `index.html >= 200KB` 替代本地 `three.js`。
+    - **补丁**：`page.clock.install()` 冻结时钟 + 仅截 WebGL `<canvas>` 像素 + 取消 200KB 豁免 + `threejs_rubric_judge.py` 兼容多文件 `http.server` 契约。
+
+31. **【坑 31 · 同题常数项（如 `s_vis_adj` 几何难度补偿）与全成对双序盲评（56 次调用/组）误入在线环】**
+    - **数学/成本病理**：`s_vis_adj` 在同一题 $G$ 条候选上完全相同，组内减均值后 `100%` 恒等抵消；而 $G=8$ 全成对双序盲评需 $G(G-1)=56$ 次调用（是单点打分取秩的 `14×` 开销）。两者均应严格留在**离线 RFT 准入与 Best-of-2 / Eval 阶段**。
 
 ---
 

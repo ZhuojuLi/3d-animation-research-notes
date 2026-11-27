@@ -14,6 +14,7 @@
 | [Anim2D-Tree v1.1（初版 36 叶归档对照）](../configs/taxonomies/anim2d_tree_v1_1.json) | `3d-animation-agent/configs/taxonomies/anim2d_tree_v1_1.json` |
 | [CadQuery-Tree v1.1（初版 36 叶归档对照）](../configs/taxonomies/cadquery_tree_v1_1.json) | `3d-animation-agent/configs/taxonomies/cadquery_tree_v1_1.json` |
 | [Round 3 全链路对齐改造总计划（Big Picture）](plans/2026-11-25-round3-big-picture-alignment-plan.md) | `3d-animation-agent/docs/plans/2026-11-25-round3-big-picture-alignment-plan.md` |
+| [SFT 后阶段强化学习执行方案：单模型三轨等权 Repair-RL 与 384K RFT 回灌计划（Opus 5.5 联合审定版）](plans/2026-11-27-post-sft-repair-rl-and-rft-plan.md) | `3d-animation-agent/docs/plans/2026-11-27-post-sft-repair-rl-and-rft-plan.md` |
 | [3D Agent 造数总守则与 `Qwen3.8-27B` 能力边界手册（Data Playbook）](DATA-PLAYBOOK.md) | `3d-animation-agent/docs/DATA-PLAYBOOK.md` |
 | [3D Agent 全链路统一参数与避坑规范（造数 · 转写 · 验收 · 27B 推理与提交）](STANDARD-PARAMS.md) | `3d-animation-agent/docs/STANDARD-PARAMS.md` |
 | [初版结构与边界](architecture.md) | `3d-animation-agent/docs/architecture.md` |

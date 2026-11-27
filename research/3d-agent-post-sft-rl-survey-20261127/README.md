@@ -1,8 +1,8 @@
-# 3D / 2D / CAD 三轨 Agent 在小红书 SFT 之后的强化学习与自蒸馏前沿调研（v2.0 全面升级版）
+# 3D / 2D / CAD 三轨 Agent 在小红书 SFT 之后的强化学习与自蒸馏前沿调研（v3.0 · Opus 5.5 联合审定收敛版）
 
 > 公开整理版 · 2026-11-27。保留成文时点的记录；计划、文献结果和本地实测请分别理解。 环境路径已泛化，未收录的附件已标注；发布范围见 [整理说明](../../PROVENANCE.md)。
 
-- **成文与升级日期**：2026-11-27（v2.0：融合 **38 篇新下载一手核验文献** + 2026 下半年最新同源视觉/3D/Web 项目 + 一线模型厂后训练技术报告）
+- **成文与审定日期**：2026-11-27（v1.0 首轮 12 篇 $\to$ v2.0 扩充 38 篇新下文献与大厂报告 $\to$ **v3.0 经独立 `claude-opus-5-5` 源码级去杂糅审查收敛定型**）
 - **调研范围**：紧扣小红书 `3DCodeFactory`（[arXiv:2611.28783](../arxiv-2611.28783/README.md)）第 6 节留白——*“目前完整合成与验证管线仅用于强教师离线过滤，未来将扩展至自蒸馏（Self-Distillation）与强化学习（Reinforcement Learning）”*——系统检索、下载并一手精读 **38 篇核心文献**（重点覆盖 `2026.06–2026.11` 最新发表的 3D/2D/Web/CAD 同源 RL 论文及 `DeepSeek-V4`、`Kimi K3`、`Qwen3.8-Next` 等最新旗舰技术报告），结合本地既有 4 篇精读（`DAgger`、`Sampling SFT`、`3DCodeVerse`、`3DCodeFactory`）与本仓库三轨基建，给出面向 **`Qwen3.8-27B`** 的 **五阶段（Stage 0 $\to$ Stage 4）后训练演进架构**。
 - **姊妹篇与终极执行收敛版直达**：
   0. **【优先必读 · 工程落地唯一准绳】[主调研方 × Claude Opus 5.5 联合去杂糅审查与终极收敛蓝图](../3d-agent-rl-opus-review-and-consolidation-20261127/README.md)**（已完成 19 项机制冲突裁决、指标三层断舍离、现行检查器 4 处硬漏洞定位，并将五阶段压缩为 `2×8 H800` 可在 1 周内跑通的 **`Step 0 SFT -> Step 1 单模型三轨等权 Repair-RL -> Step 2 384K RFT 回灌`** 极简闭环！）；
@@ -68,44 +68,48 @@
 
 ---
 
-## 3. 面向我们 `Qwen3.8-27B` 三轨项目的五阶段后训练总蓝图（v2.0）
+## 3. 面向我们 `Qwen3.8-27B` 三轨项目的收敛版落地架构（v3.0 · 经 Opus 5.5 去杂糅审定）
 
-结合 `DeepSeek-V4` 与 `Kimi K3` 最新验证的 **「分轨专精 RL $\to$ 多教师在线蒸馏合模」** 架构，我们将原四阶段路线正式升级为 **五阶段闭环**：
+> **为什么从 v2.0 初稿的“五阶段 + 15 项机制全开”大幅瘦身为以下三步闭环？**
+> 经主审与独立 `claude-opus-5-5` 联合数学与源码推演（详见[联合去杂糅审查报告](../3d-agent-rl-opus-review-and-consolidation-20261127/README.md)与[可执行工程计划书](../../3d-animation-agent/docs/plans/2026-11-27-post-sft-repair-rl-and-rft-plan.md)），原 v2.0 初稿存在三处致命工程隐患：
+> 1. **优势张量叠床架屋**：把 `GDPO`（多指标白化达 $\pm 2.6$）、`GVPM max(A,0)`（破坏零均值注入正偏置）、`SRaR`（轮次偏置）叠在 `PhyCAD HBA` 上会**直接击穿 $\lambda_L > 2\lambda_w$ 严格跨层保序条件**；
+> 2. **`384K` 从零在线 RL 算力死局**：在 `2×8 H800` 上单条 `384K` 多图 KV 约 `25 GB`，8 卡仅并发 ~20 条，单步（192 条）需 **~15 小时**（300 步要半年）；
+> 3. **无需预拆 3 个单轨专家再跑 `MOPD`**：组相对优势本就在**同一题 $x$ 的 $G=8$ 条候选内**归一化，三轨绝不跨组混比；只需在每轨内部先做可训 token 均值、再按 `(1/3, 1/3, 1/3)` 等权求和，即可防止 3D 长轨迹吞没 CAD 短轨迹梯度！
 
 ```mermaid
-flowchart TD
-    S0["Stage 0（当前推进中）：XHS 对齐三轨长程 SFT<br/>384K YaRN · 全轮保原生 think · 5 规则掩坏轮 · 契约钩子 2x 加权 · 1 Epoch + 通用锚点"]
-    S1["Stage 1（低成本在线分布桥接）：学生状态纠偏与自蒸馏<br/>1A: AggreVaTe 学生错例前缀强师接管（黑盒 API 可用）<br/>1B: SDFT 参考蓝图条件化自蒸馏（G=1 词表解析 KL，抬升难例 Pass@8）"]
-    S2["Stage 2（分轨专精防黑客 RL，不混异构奖励！）：<br/>先训 Track 3 CAD 专家 → Track 2 2D 专家 → Track 1 3D 专家（27B LoRA/ckpt）<br/>GSPO-token + TITO + 全局 Token 归一化 + GVPM 前缀保护<br/>PhyCAD 四层 HBA + Visual Anchor 防审美退化 + CDP 调用栈信用 + POW3R/GDPO"]
-    S3["Stage 3（超长程跨压缩异步增强）：攻克 384K+ 多段 auto-compact 大工程<br/>RECAP 单跳局部摘要失真自蒸馏 + CompactionRL 跨段折扣 + Pause/Fork 异步沙盒池"]
-    S4["Stage 4（旗舰级多专家无损合模）：Multi-Teacher On-Policy Distillation（MOPD）<br/>按 DeepSeek-V4 / Kimi K3 范式，在统一 27B 自采轨迹上融合<br/>{3D RL 专家, 2D RL 专家, CAD RL 专家, 通用锚点底座} 全词表精确反向 KL！"]
+flowchart LR
+    S0["Step 0（当前收口）：三轨 XHS 标准 SFT<br/>384K YaRN · 全轮保 think · 9节摘要保梯度<br/>+ 修复现行三轨检查器 4 处可刷分漏洞"]
+    P["48h 三道准入探针<br/>P1 信号密度 ≥60%<br/>P2 异族裁判抗刷分 ≥85%<br/>P3 30步微型稳定性与 TITO 校验"]
+    S1["Step 1（核心 RL 破局 · 5~6 天）：单模型三轨等权 Repair-RL<br/>从 SFT 自身 L1~L3 瑕疵快照起步 · ≤64K 窗 · ≤12 轮<br/>唯一四层 HBA 公式 + 异族 L3 判秩 + 轨内 Token 均值等权合并<br/>+ 10~15% SWE 回放 + low-var KL (β=0.01)"]
+    S2["Step 2（长程能力写回 · 1~2 天）：全长 384K RFT 回灌<br/>用 Step 1 RL 权重在 384K 题上离线采样<br/>过五维木桶 + 正反双序 Best-of-2 筛优 → 1 Epoch SFT"]
 
-    S0 --> S1 --> S2 --> S3 --> S4
+    S0 --> P --> S1 --> S2
 ```
 
-### 关键设计升级点（对比 v1.0 的四大质变）
+### 收敛后的四大核心工程规范
 
-1. **新增 Stage 4 多专家在线蒸馏合模（`DeepSeek-V4 OPD` + `Kimi K3 MOPD`）——彻底解放单轨 RL 迭代效率！**
-   - 过去最大的顾虑是：“如果同时混训 `3D + 2D + CAD + 通用` 在线 RL，CAD 的秒级几何分和 3D 的慢速多视角 VLM 分怎么对齐尺度？单训一轨把另外两轨训忘怎么办？”
-   - 现在答案极其清晰：**Stage 2 完全按轨道独立训专精 `Qwen3.8-27B` LoRA 专家**（例如先用几天纯 CPU/OpenCascade 秒级硬检查把 `CAD-RL-Expert` 训透，再训 `2D-RL-Expert` 和 `3D-RL-Expert`）；随后在 **Stage 4**，因为所有专家共享同一个 `Qwen3.8-27B` 底座与词表，只需在四类混合题池上让学生采样 **$G=1$ 条**轨迹，按题所属轨道切换对应 LoRA 专家算 **全词表精确反向 KL（`DeepSeek-V4` §5.1.2）或截断对数比优势（`Kimi K3` Eq. 15）**，仅需约 `1/5` 常规 RL 算力即可把三轨峰值能力与通用底座无损合入单一权重！
-2. **Stage 2 植入 `WebCatalyst` 冻结 `Visual Anchor` + `CDP Action-Trace Credit` + 本地 `Qwen3.8-27B` 零 API 费裁判**：
-   - 在 `L3` 合格层内同时约束“相对强教师参考帧的单边视觉不退化惩罚”与“Playwright CDP 真实触发 JS 函数调用栈的局部 token 信用回传（$\gamma=0.9, \beta=0.5$）”，彻底堵死“删光材质阴影换交互通过率”的漏洞并加速 `1.84×` 收敛；
-   - **重磅成本突破（`WebCatalyst` Table 10 & `ManimCode`）**：实测本地部署 **`Qwen3.8-27B`** 充当交互视觉裁判与人类专家相关性达 **`r = 0.838`**（反超闭源 `GPT-5.6 Terra` 的 `0.812`），且用 `Qwen3.8-27B` 执行正反交换双序成对盲评（`b1 == b2 == new -> +1`）完全规避了标量 VLM 在微差 `<0.25` 时仅 `29%` 一致率的失灵区——我们在空闲 `H800` 上自托管 `27B` 裁判即可实现 **`$0` 外部 API 账单**！
-3. **Stage 0 $\to$ Stage 2 植入 `InterWebCoder` 契约钩子 `2×` 加权、`CompactionRL` 原生 9 节摘要保梯度与双层公开/隐藏探针**：
-   - SFT 阶段对 `window.renderAt(t)`、`__SCENE_READY__`、`DEFAULT_PARAMS` 等 `<1%` 关键契约 token 乘 `loss_scale = 2.0`，且**100% 保留 Claude Code 原生 9 节 `<summary>` 梯度监督**（`CompactionRL` 实测抹掉同构摘要 loss 会暴跌 `-7.8 pp`，且 `RECAP` 仅需拼接压缩前单工作窗 $\le 2L_{\mathrm{work}}$ 即不爆显存）；
-   - RL 阶段用“公开诊断探针 + 随机时间戳 `renderAt(t+δ)` / 隐藏环绕相机机位 + 空目录 Fork 副本冷测”阻断硬编码特判。
-4. **问题自适应动态预算（`Kimi Toggle` + `K3 Budget Curriculum`）**：
-   - 仅当某题组内 `L3` 合格率已超过 $\lambda = 0.75$ 时才温和奖励更少冗余轮数，在未攻克的复杂装配与大场景题上 `100%` 放开多轮看图与自修探索空间。
+1. **唯一无冲突的四层优势合成公式（砍掉 `GDPO / SRaR / SDFT / GVPM max(A,0)`）**：
+   - 确定性检查器零 VLM 成本定层 $L_i \in \{0,1,2,3\}$；**仅对 $L_i=3$ 幸存样本**（约占 30%–50%）调用**异族模型（`kimi-k3.1-pro`）**计算带前置 `"reasoning"` 的 Rubric 均分减单边 `Visual Anchor` 退化扣分 $q_i \in [0,1]$，并在 $L_3$ 内部取居中并列秩 $\tilde{A}_i \in [-1,1]$（其余层 $\tilde{A}_i = 0$）；
+   - 合成优势 $A_i = \frac{(L_i - \bar{L}) + 0.25\,\tilde{A}_i}{\max(\sigma_{\mathrm{grp}}, 0.50)}$（严格保证 $L_3 > L_2$ 至少高出 $+0.50$ 且组内精确零均值）；token 级仅用二值掩码（5 类坏轮 + GVPM 连续 2 轮退化后缀置 `0`），绝不乘加改写优势符号。
+2. **防同源自我共谋（Self-Judge Collusion）与显卡保吞吐**：
+   - 不在 `2×8 H800` 上划走一半显卡部署本地 `27B` 在线主裁判（既腰斩吞吐，又因与 `27B` Actor 共享视觉编码器盲区在 50–100 步内诱发共谋刷分）；本地 `27B` 仅作**离线影子裁判**监控 `27B 分 − 异族分` 漂移（`>0.15` 立即熔断回滚）。
+3. **开工前必补的 4 处现行检查脚本漏洞**：
+   - `cad_inspect.py`：`BRepAlgoAPI_Common.IsDone()==False` 判为 $L_2$ 干涉失败（禁 `continue` 静默放行），在线先传 `--no-render` 秒判；
+   - `verify_xhs_output.cjs`：`page.clock.install()` 冻结自转时钟、仅截 `<canvas>` 测 `MAD`、取消 `index.html >= 200KB` 免 `three.js` 豁免；
+   - `threejs_rubric_judge.py`：按四字段契约兼容小红书多文件 `http.server`；
+   - `check_2d_v2.mjs`：补普通 HTML 文本重叠与剥离伪装 `overflow: hidden` 检查。
+4. **按瓶颈解锁的触发式备选库（绝不预设全开）**：
+   - 某轨留出 `Accepted@1` 连续两次比 SFT 倒退 `>2 pp` $\to$ 解锁该轨独立 LoRA 专家 + `DeepSeek-V4` 同底座单师全词表 `OPD` 回灌；
+   - 某轨候选池 $L_0$ 全挂死组率 `>40%` $\to$ 定向启用 `AggreVaTe` 强师前缀接管；
+   - Step 2 `384K RFT` 后跨压缩边界恢复仍为头号败因 $\to$ Phase 2 再评估 `RECAP / CompactionRL`。
 
 ---
 
-## 4. 启动在线 RL 前的五道硬性准入门禁（Go / No-Go Checklist v2.0）
+## 4. 启动正式 Repair-RL 前的 48 小时三道可证伪探针（Go / No-Go Gates）
 
-1. **`TITO` 与训推一致性门禁（源自 `GLM-5` & `GSPO`）**：确认异步采样管线直接传递原始 token IDs 与采样 logprobs（零文本重分词），压测前 30 步训推概率比与策略熵无异常尖峰；沙盒超时/容器异常标记为 `infra_error` 剔除重采，绝不混入 `0` 分梯度，且绝不丢弃长未完请求制造短偏置（`DeepSeek-V4`）。
-2. **组内有效方差与难例挖掘门禁（源自 `POW3R`、`cadrille` & `AeSlides`）**：剔除 SFT 已 `4/4` 饱和的简单题与 `4/4` 全挂 `L0` 的超纲题（后者先走 Stage 1A `AggreVaTe` 强师前缀纠偏），结合 `GDPO` 分项标准化确保有效非零方差组占比 **`>= 85%`**。
-3. **反作弊确定性硬门禁（源自 `AeSlides`、`RULER`、`Video-Coder` & `Anthropic`）**：验证脚本与工作区只读隔离、空目录副本冷启动、剥离伪装 `overflow: hidden`、审计 `<text>` 字牌作弊、附加随机非整数探针点。
-4. **视觉锚点与双向盲评防偏置门禁（源自 `WebCatalyst`、`ManimCode` & `2605.12474`）**：每道 RL 题备妥冻结强参考图 `Visual Anchor`；修订优劣采用正反双向一致胜出判定；Rubric 含 `25%–30%` 负向洁净度项。
-5. **OOD 外部留出榜与 $\Delta^{(t)}$ 早停门禁**：每 25–50 步在无污染留出集（`BenchCAD`、`AnimWeb-Bench`、`MotionGraphicsBench`、`xhs-threejs-val-v1`、`ModelForge`）同步监控 Rubric-Free 整体盲评与 Self-Internalization Gap $\Delta^{(t)}$。
+1. **`P1` 信号密度探针（~10h，纯推理零训练）**：SFT 检查点在三轨各 20 道 Repair 题采 $G=8$（`T=1.0`），要求新公式非死组率 **`>= 60%`**、每轨 $L_3 \in [15\%, 85\%]$、沙盒 `infra_error < 5%`（有效组 `<35%` 则重筛题池难度，绝不盲开 RL）。
+2. **`P2` 裁判抗刷分与抗共谋探针（~12h）**：对 200 个真实 $L_3$ 产物构造三类作弊扰动（去材质留裸块 / 塞 `<text>` 字牌 / 微改），要求异族裁判识别原件胜率 **`>= 85%`**、与 Opus 双序盲评一致率 `>= 70%`。
+3. **`P3` 30 步微型稳定性与吞吐探针（~20h，CAD + 2D 先行）**：`16 题 × G=8`、`≤32K` Repair 模式跑 30 步，要求单步 **`<= 25 分钟`**、训推 `|Δlogp| p99 < 0.1`（验真 `TITO`）、熵降 `<30%`、$L$ 均值单调上升且留出 SWE 掉点 `<1 pp`（若熵崩且调 $\beta=0.04$ 无效，立即止损退回纯 `RFT` 路线）。
 
 ---
 

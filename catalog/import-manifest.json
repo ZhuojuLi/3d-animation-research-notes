@@ -53,6 +53,15 @@
       }
     },
     {
+      "path": "3d-animation-agent/docs/CANARY-12-AND-AGY-PROBE-REPORT-20261127.md",
+      "source": "3d-animation-agent/docs/CANARY-12-AND-AGY-PROBE-REPORT-20261127.md",
+      "source_kind": "engineering_doc",
+      "title": "2D / CAD 高难度双轨 Canary 12（含小红书官方锚点）与 AGY 纯净沙盒盲测复盘报告",
+      "source_sha256": "357288c87e6c5b2a8d15b44fa66162c690975fdaed207ca4e63bea7046357c8c",
+      "published_sha256": "357288c87e6c5b2a8d15b44fa66162c690975fdaed207ca4e63bea7046357c8c",
+      "edits": {}
+    },
+    {
       "path": "3d-animation-agent/docs/DATA-PLAYBOOK.md",
       "source": "3d-animation-agent/docs/DATA-PLAYBOOK.md",
       "source_kind": "local_note",
@@ -294,6 +303,17 @@
       "edits": {
         "local_path_placeholders": 3,
         "unpublished_attachment_links": 6
+      }
+    },
+    {
+      "path": "3d-animation-agent/docs/plans/2026-11-27-post-sft-repair-rl-and-rft-plan.md",
+      "source": "3d-animation-agent/docs/plans/2026-11-27-post-sft-repair-rl-and-rft-plan.md",
+      "source_kind": "engineering_doc",
+      "title": "SFT 后阶段强化学习执行方案：单模型三轨等权 Repair-RL 与 384K RFT 回灌计划（Opus 5.5 联合审定版）",
+      "source_sha256": "b1025ca51fadc42ad1815d35bb33d09fc663f26511b71430b0ef5ed26b4be15d",
+      "published_sha256": "76cdea8521f1427cade033b437010dd8134cfd754d4a33d7fdab7cd9eba93561",
+      "edits": {
+        "local_path_placeholders": 1
       }
     },
     {
@@ -831,9 +851,9 @@
       "path": "research/3d-agent-post-sft-rl-survey-20261127/README.md",
       "source": "research/3d-agent-post-sft-rl-survey-20261127/README.md",
       "source_kind": "local_note",
-      "title": "3D / 2D / CAD 三轨 Agent 在小红书 SFT 之后的强化学习与自蒸馏前沿调研（v2.0 全面升级版）",
-      "source_sha256": "cb2d49f2769c0e0652598262c198388f4d3859279d81677069845e16d949aae5",
-      "published_sha256": "d26c3b7bd039ad8f98e9b43dd45a48ea612cd541fdc223adc2297921a45ea4f1",
+      "title": "3D / 2D / CAD 三轨 Agent 在小红书 SFT 之后的强化学习与自蒸馏前沿调研（v3.0 · Opus 5.5 联合审定收敛版）",
+      "source_sha256": "490f590b3789372785e38cec62d0cdc374803d04eff0a204e4f941272ca02521",
+      "published_sha256": "7a33387ee0e0acf75dd32064fc1ce6a57c661c77f0d67318a6f3e3648cfbd075",
       "edits": {}
     },
     {
@@ -1789,8 +1809,8 @@
       "source": "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md",
       "source_kind": "local_note",
       "title": "2026 图文 / 2D / 3D / CAD 同源 Agent 强化学习踩坑避坑大全与大厂最新后训练实战手册",
-      "source_sha256": "17cf57d2f265074b4a2a5bd6a5d3e5b7d07d32329bc704d953b8b69eafa21c7a",
-      "published_sha256": "171eb17473a8dcd7270ade243daac21a30e920936f1c4c30af958c1a5db99e5c",
+      "source_sha256": "86a6c7addaa4a3c5293a580adf4f8e82b368348d1e96f34f0113f43075b9d399",
+      "published_sha256": "7f7eaafcb4d99cc769e070d802444bc0c7cc518d1ff4048db9f8c51b4e76f11c",
       "edits": {}
     }
   ]
