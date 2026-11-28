@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-27",
+  "date": "2026-11-28",
   "documents": [
     {
       "path": "3d-animation-agent/configs/taxonomies/anim2d_tree_v1_1.json",
@@ -57,20 +57,54 @@
       "source": "3d-animation-agent/docs/CANARY-12-AND-AGY-PROBE-REPORT-20261127.md",
       "source_kind": "engineering_doc",
       "title": "2D / CAD 高难度双轨 Canary 12（含小红书官方锚点）与 AGY 纯净沙盒盲测复盘报告",
-      "source_sha256": "357288c87e6c5b2a8d15b44fa66162c690975fdaed207ca4e63bea7046357c8c",
-      "published_sha256": "357288c87e6c5b2a8d15b44fa66162c690975fdaed207ca4e63bea7046357c8c",
-      "edits": {}
+      "source_sha256": "21959b75bbaf02403e3933b2cf30ac1fa8e7b69de9bc19f1bdd891edf3f19767",
+      "published_sha256": "d247c6549dfc9b46d9ad8937d87c03ebd5e50bca8c041006b26ccdd2a9fbc233",
+      "edits": {
+        "rewritten_internal_links": 4,
+        "unpublished_attachments": 1,
+        "public_notice_added": 1
+      }
     },
     {
       "path": "3d-animation-agent/docs/DATA-PLAYBOOK.md",
       "source": "3d-animation-agent/docs/DATA-PLAYBOOK.md",
-      "source_kind": "local_note",
+      "source_kind": "engineering_doc",
       "title": "3D Agent 造数总守则与 `Qwen3.8-27B` 能力边界手册（Data Playbook）",
-      "source_sha256": "399e66be29649bee0e8be517e2d6fa6440fa1d3785afd77c75375c75842e0d28",
-      "published_sha256": "5c8d821e70181664b32672630d69038a3e214d441e20772ef1c2e3ca77392545",
+      "source_sha256": "42dd16e18491f5a366c2d665659ddbc71d3dd14e1900cbfedfeeafbe49e27248",
+      "published_sha256": "1cf62b51aac4502be4a41dea3f9d7fd70006186a056c64f6c706d6cfcf9659de",
       "edits": {
-        "unpublished_attachment_links": 1,
-        "local_path_placeholders": 3
+        "unpublished_attachments": 2,
+        "rewritten_internal_links": 14,
+        "local_path_placeholders": 3,
+        "public_notice_added": 1
+      }
+    },
+    {
+      "path": "3d-animation-agent/docs/OPTION2-VERSION-DIFF-AND-CHANGE-CHECKLIST.md",
+      "source": "3d-animation-agent/docs/OPTION2-VERSION-DIFF-AND-CHANGE-CHECKLIST.md",
+      "source_kind": "engineering_doc",
+      "title": "Revision 3 / Option 2 全工作区版本差异与逐文件改动对照清单",
+      "source_sha256": "75c5a3e26ae853b3b666bb24dd25d1e617985f466d3060848a8dcb2c97e90535",
+      "published_sha256": "26af097ca983e3544a0b4e6c36def9a680445d05e80d1782392058407249c412",
+      "edits": {
+        "rewritten_internal_links": 6,
+        "unpublished_attachments": 1,
+        "local_path_placeholders": 5,
+        "public_notice_added": 1
+      }
+    },
+    {
+      "path": "3d-animation-agent/docs/REALHARD6-AND-3D-TO-2D-CAD-BLUEPRINT-20261127.md",
+      "source": "3d-animation-agent/docs/REALHARD6-AND-3D-TO-2D-CAD-BLUEPRINT-20261127.md",
+      "source_kind": "engineering_doc",
+      "title": "真高难四方盲测（`realhard6_20261127`）尸检复盘与从 3D 迈向工业 CAD / 高精 2D 蒸馏总方案档案",
+      "source_sha256": "c42209496ece462a2da1bd319e0d8c25082176cd4b1df1746a8aff731dc39f1f",
+      "published_sha256": "6d9f5b6def6cd947fa28c2265f8dcd359100e790fb9b861a28ff0255f9c0672d",
+      "edits": {
+        "rewritten_internal_links": 28,
+        "unpublished_attachments": 15,
+        "local_path_placeholders": 1,
+        "public_notice_added": 1
       }
     },
     {
@@ -78,11 +112,13 @@
       "source": "3d-animation-agent/docs/STANDARD-PARAMS.md",
       "source_kind": "engineering_doc",
       "title": "3D Agent 全链路统一参数与避坑规范（造数 · 转写 · 验收 · 27B 推理与提交）",
-      "source_sha256": "c77d55c7cf010924ca872425508cf811428a929de447c51a835126e11e3681af",
-      "published_sha256": "5536d11f0bce6eea2907f8da3671aec3d61a06e2a35ae39b38731584dbd39ad0",
+      "source_sha256": "f010e7f504b3ff52f01e21c021f987825859b4965c9a3eea4cd1f9fff5ab5f98",
+      "published_sha256": "c6fd98a875ad50cc4218f5d8f462403b2bce94b092408f452b7e2ce133d6aba0",
       "edits": {
-        "local_path_placeholders": 6,
-        "unpublished_attachment_links": 3
+        "rewritten_internal_links": 3,
+        "unpublished_attachments": 3,
+        "local_path_placeholders": 4,
+        "public_notice_added": 1
       }
     },
     {
@@ -90,11 +126,13 @@
       "source": "3d-animation-agent/docs/THREE-TRACK-DELIVERABLE-SPEC.md",
       "source_kind": "engineering_doc",
       "title": "三轨顶级交付产物规格与高难长程造数指南（v2.1）",
-      "source_sha256": "dc1058353c1837d482109fe07628143a5f51864b6615ee675e5b4783d594e62d",
-      "published_sha256": "42f4f82ffc01333cf6f28de3aeaf694ed512e2fc4f00848b84aaa54c2df62077",
+      "source_sha256": "8b86fec39eab3c91039da422680cfc48f52f644f963b555f133923f9fcd53e60",
+      "published_sha256": "18f9502725c8d2b609b3ddbafd3408a37cd9fbff0b2de102fc9f364bb8f0222f",
       "edits": {
+        "rewritten_internal_links": 17,
+        "unpublished_attachments": 2,
         "local_path_placeholders": 1,
-        "unpublished_attachment_links": 2
+        "public_notice_added": 1
       }
     },
     {
@@ -102,10 +140,12 @@
       "source": "3d-animation-agent/docs/XHS-TASK-AND-RUBRIC-SPEC.md",
       "source_kind": "engineering_doc",
       "title": "小红书 `3DCodeFactory` 出题与 Rubric 体系拆解及 2D / CAD 双轨并发造数规范",
-      "source_sha256": "d9c9f314d5479e7ca94145e55aef0c24bdc8e5c11e39aabefab1d9b154811444",
-      "published_sha256": "fb2867b55a854e0bfd1e6fa2f57efdc0085dd0e0144572e5995490b4d82f64ec",
+      "source_sha256": "453f48798aff3c1ed7edbda84ba27a9b027f820a68fe02489572a72ba5d81da4",
+      "published_sha256": "ec8501a0753205436d35e3533164d0ee1a38552a5a2e2a8f24059bfc6b5266da",
       "edits": {
-        "local_path_placeholders": 1
+        "rewritten_internal_links": 4,
+        "local_path_placeholders": 1,
+        "public_notice_added": 1
       }
     },
     {
@@ -113,11 +153,13 @@
       "source": "3d-animation-agent/docs/XHS-UNIFIED-SFT-STANDARD.md",
       "source_kind": "engineering_doc",
       "title": "XHS 对齐统一训练数据与上下文标准规范（3D 展示 · CAD 打印 · 2D 动画三轨共用）",
-      "source_sha256": "efd6014cc37da8810be6cf6027c7a5f65efddd58227df11b68bd47c9bfc1301c",
-      "published_sha256": "5fa983f2bdd465642a0dd8682a3fdc30caa027b326d03442c1f19e54586a55de",
+      "source_sha256": "f98072b0b2ca8ac6a442d6d5eb7b73727d91c5b197f20db1a302d17a2d5508aa",
+      "published_sha256": "d7a4adfb343b1b5fdcaa77c0b23f480326084d356b2ccf5b113b4c2631151020",
       "edits": {
-        "local_path_placeholders": 4,
-        "unpublished_attachment_links": 7
+        "rewritten_internal_links": 10,
+        "unpublished_attachments": 7,
+        "local_path_placeholders": 3,
+        "public_notice_added": 1
       }
     },
     {
@@ -285,13 +327,15 @@
     {
       "path": "3d-animation-agent/docs/plans/2026-11-24-round2-27b-data-and-training-plan.md",
       "source": "3d-animation-agent/docs/plans/2026-11-24-round2-27b-data-and-training-plan.md",
-      "source_kind": "local_note",
+      "source_kind": "engineering_doc",
       "title": "Round 2：27B Dense 3D 动画数据制造、消融训练与三轨准备方案",
-      "source_sha256": "71d860edf66be8271649c0afca9158b0cf0780a56a804173e7940bdea8b47ffa",
-      "published_sha256": "debc0465c09874f6d430349d59cdac9a32b5e1b00f66b56d42580c2b0bb26427",
+      "source_sha256": "9e984097be830a79dd1673a24c4efc612d21a564739e38db61b1ada2d6f364bb",
+      "published_sha256": "da34e89837aca8851c72d06b6aa7b011349463a6a025a03363c6cf282aa4e280",
       "edits": {
-        "unpublished_attachment_links": 1,
-        "local_path_placeholders": 1
+        "unpublished_attachments": 2,
+        "rewritten_internal_links": 5,
+        "local_path_placeholders": 1,
+        "public_notice_added": 1
       }
     },
     {
@@ -299,22 +343,40 @@
       "source": "3d-animation-agent/docs/plans/2026-11-25-round3-big-picture-alignment-plan.md",
       "source_kind": "engineering_doc",
       "title": "3D Agent 全链路对齐改造与 Round 3 演进总计划（Big-Picture Plan）",
-      "source_sha256": "f8f97440c3f0fd0b904e3a8e12b5858d488f77724a680103b7d8285b2a3f9b65",
-      "published_sha256": "a3aba9e638e7193238476152f792fb3cba0e963dd271235f5b77d0d3c852c756",
+      "source_sha256": "357b37720d48bff2fd4b29368420955f3cced790f0b31caf6507fd532a732697",
+      "published_sha256": "7dd4db65364ef02d2584feb9e9834380f0df0ec428e148772b277058b3f43d1e",
       "edits": {
+        "unpublished_attachments": 7,
+        "rewritten_internal_links": 8,
         "local_path_placeholders": 3,
-        "unpublished_attachment_links": 6
+        "public_notice_added": 1
       }
     },
     {
       "path": "3d-animation-agent/docs/plans/2026-11-27-post-sft-repair-rl-and-rft-plan.md",
       "source": "3d-animation-agent/docs/plans/2026-11-27-post-sft-repair-rl-and-rft-plan.md",
       "source_kind": "engineering_doc",
-      "title": "SFT 后阶段强化学习执行方案：单模型三轨等权 Repair-RL 与 384K RFT 回灌计划（Opus 5.5 联合审定版）",
-      "source_sha256": "b1025ca51fadc42ad1815d35bb33d09fc663f26511b71430b0ef5ed26b4be15d",
-      "published_sha256": "76cdea8521f1427cade033b437010dd8134cfd754d4a33d7fdab7cd9eba93561",
+      "title": "SFT 后阶段强化学习执行方案：Stage 3 Repair-RL（40:25:25:10）与 Stage 4 256K 在策略 RFT（+20% 384K 回放）计划（Revision 3 / Option 2 对齐版）",
+      "source_sha256": "e4b456d8e91726522dfab11e981d7392aaab67ece41323b68a1123aa72601dc3",
+      "published_sha256": "8529096e3990466c843639c78542b602e928515647563ed3f7cf0e56c404a614",
       "edits": {
-        "local_path_placeholders": 1
+        "rewritten_internal_links": 7,
+        "unpublished_attachments": 1,
+        "public_notice_added": 1
+      }
+    },
+    {
+      "path": "3d-animation-agent/reports/CONSOLIDATED-REPORT-20261127.md",
+      "source": "3d-animation-agent/reports/CONSOLIDATED-REPORT-20261127.md",
+      "source_kind": "experiment_report",
+      "title": "3D 项目阶段实验与策略整合总报告（2026-11-23 ～ 2026-11-27）",
+      "source_sha256": "6771480560032a5aa1cfcee6ddc6044c25afca07dc1606980008d133b819e50c",
+      "published_sha256": "afd6f246fe148ee448f4a4719bfe93a3d83794103ba1ff310aeba2efc9e3a1a5",
+      "edits": {
+        "unpublished_attachments": 13,
+        "rewritten_internal_links": 22,
+        "local_path_placeholders": 3,
+        "public_notice_added": 1
       }
     },
     {
@@ -447,6 +509,18 @@
       "published_sha256": "71ee21a05c26665a9ded5f704931cb6e1acd0d1a00a2c054add9da7d32139737",
       "edits": {
         "unpublished_attachment_links": 3
+      }
+    },
+    {
+      "path": "3d-animation-agent/reports/oneshot30-checkpoint10946-20261124-001/REPORT.md",
+      "source": "3d-animation-agent/reports/oneshot30-checkpoint10946-20261124-001/REPORT.md",
+      "source_kind": "experiment_report",
+      "title": "checkpoint-10946 的 30 题单轮 Three.js 补测",
+      "source_sha256": "a8bf72c9a5eca7c2c2402f12cd206b5fe2554c21c48826dd3ccae0d4c46481ac",
+      "published_sha256": "3593afdb6a57b8a748a59e4b6ab8ff2707ce1762dd9d1e26ed1b0d0729f46740",
+      "edits": {
+        "unpublished_attachments": 10,
+        "public_notice_added": 1
       }
     },
     {
@@ -629,6 +703,17 @@
       "source_sha256": "cbaf45e02d63321a15eaff1d12b0845793ce1360f9faf2b24013ec16b7e8fce4",
       "published_sha256": "54dbdff9ac2a8c6d3aa4825ee2fbe32c62319472700f2df4c0eb84b52353e6a4",
       "edits": {}
+    },
+    {
+      "path": "3d-animation-agent/reports/xhs-threejs-eval-core20-20261126/REPORT.md",
+      "source": "3d-animation-agent/reports/xhs-threejs-eval-core20-20261126/REPORT.md",
+      "source_kind": "experiment_report",
+      "title": "XHS Three.js 沙盒长程评测报告 (`xhs-threejs-val-v1 / core20`)",
+      "source_sha256": "f61c577527bcb8c2cf4873b063aa88f72987d587dba0c53f226de2c293a7bed9",
+      "published_sha256": "329da952dd16266c256bb4ca56add6dc1cc5f7c199f9ba0ce0bd852ef6c3a864",
+      "edits": {
+        "public_notice_added": 1
+      }
     },
     {
       "path": "3d-animation-agent/reports/xhs-threejs-segment-audit-20261126/REPORT.md",
@@ -1716,6 +1801,62 @@
       "edits": {}
     },
     {
+      "path": "research/distill-3d-to-2d-cad-blueprint-20261127/01-sandbox-context-spec.md",
+      "source": "research/distill-3d-to-2d-cad-blueprint-20261127/01-sandbox-context-spec.md",
+      "source_kind": "research_note",
+      "title": "Blueprint Track 01 · Option 2 Context Architecture: Unsplit `384K` (`Static YaRN 1.5×`) Training + Unified `256K` Sandbox & Serving Specification (3D · 2D · CAD)",
+      "source_sha256": "304817bc78571e248a4166ab81a3b7c9c575c4e1aa9319dcce57313a766d33d6",
+      "published_sha256": "696773aec7ce4e4d390a2805e2af897f2cf125d1ca75864903cb245f0c34f95d",
+      "edits": {
+        "rewritten_internal_links": 17,
+        "unpublished_attachments": 12,
+        "local_path_placeholders": 4,
+        "public_notice_added": 1
+      }
+    },
+    {
+      "path": "research/distill-3d-to-2d-cad-blueprint-20261127/02-cad-capability-plan.md",
+      "source": "research/distill-3d-to-2d-cad-blueprint-20261127/02-cad-capability-plan.md",
+      "source_kind": "research_note",
+      "title": "Question 2A Blueprint: Elevating Industrial CAD Capability Under Option 2 (`384K Static YaRN 1.5×` Train + `256K` Sandbox)",
+      "source_sha256": "1ec068a05f6f0e9f0291d38d350192e5a715ddb3d958230aef2499e3e6987dd4",
+      "published_sha256": "6665d203443e730d356dc7badb586e22dc6beea90b805fd8f36a91f1bd748524",
+      "edits": {
+        "rewritten_internal_links": 9,
+        "unpublished_attachments": 14,
+        "local_path_placeholders": 1,
+        "public_notice_added": 1
+      }
+    },
+    {
+      "path": "research/distill-3d-to-2d-cad-blueprint-20261127/03-2d-capability-and-mixing-plan.md",
+      "source": "research/distill-3d-to-2d-cad-blueprint-20261127/03-2d-capability-and-mixing-plan.md",
+      "source_kind": "research_note",
+      "title": "蓝图分册 03（Question 2B）：Option 2（384K 硬训 + 256K 沙盒）下的 2D 视觉/真机构跃迁与四阶段联合配比方案",
+      "source_sha256": "71edf73b74cb4d4eed10ad2591b3e5ed0b6c5fc20aa63a68edabdea1e56bd863",
+      "published_sha256": "c83ac3f0ddf8861e62783a451856ed643b6a98802d21f7173a7a29856c34d0e2",
+      "edits": {
+        "rewritten_internal_links": 13,
+        "unpublished_attachments": 21,
+        "local_path_placeholders": 2,
+        "public_notice_added": 1
+      }
+    },
+    {
+      "path": "research/distill-3d-to-2d-cad-blueprint-20261127/README.md",
+      "source": "research/distill-3d-to-2d-cad-blueprint-20261127/README.md",
+      "source_kind": "research_note",
+      "title": "从 3D 纯代码底座迈向工业 CAD 与高精 2D 交互：384K 硬训（Static YaRN 1.5×）+ 统一 256K 沙盒与四阶段渐进蒸馏总蓝图",
+      "source_sha256": "9cbfeba5acce292b397ab2c211c2c2540f020262a8bf9bdd3d84dd0892b25b3f",
+      "published_sha256": "88623d5db5d37a7f8667eda36596cdb84063bdfc5fa18e9f0341f612fbd1518a",
+      "edits": {
+        "rewritten_internal_links": 18,
+        "unpublished_attachments": 8,
+        "local_path_placeholders": 3,
+        "public_notice_added": 1
+      }
+    },
+    {
       "path": "research/frontier-labs-agentic-rl-blogs-2026h2/README.md",
       "source": "research/frontier-labs-agentic-rl-blogs-2026h2/README.md",
       "source_kind": "local_note",
@@ -1815,55 +1956,136 @@
       "edits": {}
     },
     {
-      "path": "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
-      "source": "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
-      "source_kind": "local_note",
-      "title": "2026 下半年（`2026.06–2026.11`）长程 Agent 上下文折叠、窗口切分与训推对齐前沿文献精读专题",
-      "source_sha256": "0751322a92cbd8a158307ddadb1d692ea8a7cf88280c8f9d0a9c6a23b0f3a1bb",
-      "published_sha256": "44f476ae73eb8fc8aa56a4ba02c3c8c1744ed332239c72e1dccdb384051c2ceb",
-      "edits": {}
+      "path": "research/xhs-384k-to-200k-data-adaptation-20261127/CLEANROOM-4MODEL-VERDICT-384K-TRAIN-256K-SERVE.md",
+      "source": "research/xhs-384k-to-200k-data-adaptation-20261127/CLEANROOM-4MODEL-VERDICT-384K-TRAIN-256K-SERVE.md",
+      "source_kind": "research_note",
+      "title": "四模型无尘室（Clean-Room）独立联网调研与交叉辩论裁决：全 384K vs 硬训 384K + 256K 沙盒 vs 切分 256K",
+      "source_sha256": "e56b6e93e8490ba6aeed0c17857767561fb257f18bc380109dd81eeba3843438",
+      "published_sha256": "c37ee266d7dcd689aed8cb5cf2dd448a1ca77b71201ab9b3e8fbd0cbd074b163",
+      "edits": {
+        "public_notice_added": 1
+      }
+    },
+    {
+      "path": "research/xhs-384k-to-200k-data-adaptation-20261127/OPTION2-CAD-2D-DATA-EVAL-MIX-MASTER-PLAN.md",
+      "source": "research/xhs-384k-to-200k-data-adaptation-20261127/OPTION2-CAD-2D-DATA-EVAL-MIX-MASTER-PLAN.md",
+      "source_kind": "research_note",
+      "title": "Option 2 落地总蓝图：384K 硬训 + 256K 沙盒下的 CAD / 2D 数据设计、独立提效评估与多轨混训配比全案",
+      "source_sha256": "58aa70a88d2af2c8f808f5e4a793ba1b2c860fb9315aec1cf2d32bf2aa16896b",
+      "published_sha256": "676915c9cbba1cc1a0ac98491dd534046611c3d5937b0e7b5a715ad72925c78b",
+      "edits": {
+        "rewritten_internal_links": 1,
+        "public_notice_added": 1
+      }
     },
     {
       "path": "research/xhs-384k-to-200k-data-adaptation-20261127/README.md",
       "source": "research/xhs-384k-to-200k-data-adaptation-20261127/README.md",
-      "source_kind": "local_note",
-      "title": "小红书 `3DCodeFactory`（384K YaRN）超长多模态轨迹适配 `≤200K` 训练窗口深度调研与改造方案",
-      "source_sha256": "4db384fd55a85c68456f705ce9b6af86fd3617e625388c5960de1ef68b3d5bb6",
-      "published_sha256": "1f6b37d7f4b76361f08edc5e01b82a230a2d9e311a0dacae0b0026900b7f55c3",
+      "source_kind": "research_note",
+      "title": "小红书 `384K` 不切分硬训 + `256K` 沙盒造数评测与多轨混训定版目录（Revision 3 / Option 2）",
+      "source_sha256": "3baa36783b2e3c9f5f64e2293300c7f81093f300a081e51ba1a4331af275da24",
+      "published_sha256": "b10f12b3f3981244221fa395e291680b79b6275c77a08dfa6f0b7e2cb9c9e150",
       "edits": {
-        "local_path_placeholders": 4,
-        "unpublished_attachment_links": 3
+        "rewritten_internal_links": 4,
+        "public_notice_added": 1
       }
     },
     {
-      "path": "research/xhs-384k-to-200k-data-adaptation-20261127/empirical_audit_200k_ledger.json",
-      "source": "research/xhs-384k-to-200k-data-adaptation-20261127/empirical_audit_200k_ledger.json",
-      "source_kind": "local_note",
-      "title": "empirical_audit_200k_ledger.json",
-      "source_sha256": "5cff717bffc112231cdb98d0c72bf96b481df2f6198a0b6f8fa7d1da9b349763",
-      "published_sha256": "8618e4f6cac14d348a619afb92517fa5533336e4f1ea488fcd3d35bce7bf2f44",
+      "path": "research/xhs-384k-to-200k-data-adaptation-20261127/archive/2026h2-compaction-literature-deep-dive.md",
+      "source": "research/xhs-384k-to-200k-data-adaptation-20261127/archive/2026h2-compaction-literature-deep-dive.md",
+      "source_kind": "research_archive",
+      "title": "2026 下半年（`2026.06–2026.11`）长程 Agent 上下文折叠、窗口切分与训推对齐前沿文献精读专题",
+      "source_sha256": "0751322a92cbd8a158307ddadb1d692ea8a7cf88280c8f9d0a9c6a23b0f3a1bb",
+      "published_sha256": "ff70527d048a8944cf24b5abca0197fb994054809b735499dd0265f27d89b607",
+      "edits": {
+        "rewritten_internal_links": 2,
+        "unpublished_attachments": 8,
+        "public_notice_added": 1
+      }
+    },
+    {
+      "path": "research/xhs-384k-to-200k-data-adaptation-20261127/archive/QWEN38-27B-32xH100-TRAINING-PLAN.md",
+      "source": "research/xhs-384k-to-200k-data-adaptation-20261127/archive/QWEN38-27B-32xH100-TRAINING-PLAN.md",
+      "source_kind": "research_archive",
+      "title": "Qwen3.8-27B × 384K 高质量长轨迹 × 32×H100 (80GB) 终极训练方案（Swarm 四专家多轮红队辩论定案版）",
+      "source_sha256": "5c5c7ec256e70e9c2913f04e44fbc3d6fadb1be992e9b7d018b2cf5d143030ce",
+      "published_sha256": "a43f3b3427d9ee36e7093a8b987239519d2a51797b94ce966521579650444744",
+      "edits": {
+        "rewritten_internal_links": 1,
+        "local_path_placeholders": 3,
+        "public_notice_added": 1
+      }
+    },
+    {
+      "path": "research/xhs-384k-to-200k-data-adaptation-20261127/archive/README.md",
+      "source": "research/xhs-384k-to-200k-data-adaptation-20261127/archive/README.md",
+      "source_kind": "research_archive",
+      "title": "归档说明：小红书 384K 轨迹适配早期调研（Revision 1 / Revision 2）",
+      "source_sha256": "fd3192823f2100edf074cb6b59b2d5e79347981499c742110a6887ac28c652cd",
+      "published_sha256": "a33245205a03674dd817ba6522fd30656000210d41cb09c730e61ce253b7d5ca",
+      "edits": {
+        "rewritten_internal_links": 15,
+        "unpublished_attachments": 4,
+        "local_path_placeholders": 2,
+        "public_notice_added": 1
+      }
+    },
+    {
+      "path": "research/xhs-384k-to-200k-data-adaptation-20261127/archive/a100-experiments/exp1_gpu1_verified_results.json",
+      "source": "research/xhs-384k-to-200k-data-adaptation-20261127/archive/a100-experiments/exp1_gpu1_verified_results.json",
+      "source_kind": "research_stats_json",
+      "title": "exp1_gpu1_verified_results.json",
+      "source_sha256": "5bb687e18c9de96a7d7ade227b416296f133f9ee440856c546e380ed7171a76c",
+      "published_sha256": "5bb687e18c9de96a7d7ade227b416296f133f9ee440856c546e380ed7171a76c",
       "edits": {}
     },
     {
-      "path": "research/xhs-384k-to-200k-data-adaptation-20261127/joint-consolidation.md",
-      "source": "research/xhs-384k-to-200k-data-adaptation-20261127/joint-consolidation.md",
-      "source_kind": "local_note",
+      "path": "research/xhs-384k-to-200k-data-adaptation-20261127/archive/empirical_audit_200k_ledger.json",
+      "source": "research/xhs-384k-to-200k-data-adaptation-20261127/archive/empirical_audit_200k_ledger.json",
+      "source_kind": "research_stats_json",
+      "title": "empirical_audit_200k_ledger.json",
+      "source_sha256": "5cff717bffc112231cdb98d0c72bf96b481df2f6198a0b6f8fa7d1da9b349763",
+      "published_sha256": "5cff717bffc112231cdb98d0c72bf96b481df2f6198a0b6f8fa7d1da9b349763",
+      "edits": {}
+    },
+    {
+      "path": "research/xhs-384k-to-200k-data-adaptation-20261127/archive/joint-consolidation.md",
+      "source": "research/xhs-384k-to-200k-data-adaptation-20261127/archive/joint-consolidation.md",
+      "source_kind": "research_archive",
       "title": "主调研 × Claude Opus 5.5 联合审定与最终纠偏定案：回归原生 `256K`（`262,144`）+ `HCPF-Lite@256K`",
       "source_sha256": "74457624cb11456728eda3332dcb66025c7ac1897e8f5cbd887661c75f9a426a",
-      "published_sha256": "e4a511b8fb3c9ecb6b3b70369cb9eee9f39cb45ca71a77c8b0b64c7c7ca2c092",
+      "published_sha256": "3c7f9d5978d54d13d6f69be9465ce6974e08db33b548e2c1f5118e0c1282a916",
       "edits": {
-        "local_path_placeholders": 1
+        "rewritten_internal_links": 4,
+        "local_path_placeholders": 1,
+        "public_notice_added": 1
       }
     },
     {
-      "path": "research/xhs-384k-to-200k-data-adaptation-20261127/opus-review.md",
-      "source": "research/xhs-384k-to-200k-data-adaptation-20261127/opus-review.md",
-      "source_kind": "local_note",
+      "path": "research/xhs-384k-to-200k-data-adaptation-20261127/archive/opus-review.md",
+      "source": "research/xhs-384k-to-200k-data-adaptation-20261127/archive/opus-review.md",
+      "source_kind": "research_archive",
       "title": "独立架构审查：小红书 `3DCodeFactory`（384K）→ `≤200K` 数据处理方法与双方案硬碰硬裁决",
       "source_sha256": "7283072e053af35146b99dd0183c3f471fc4a0ae9f71bed1f7251f30f2546763",
-      "published_sha256": "9a21142d2ae093d94dae532c4bd87b3188c36968f2259ee8c17d9ef57b47c876",
+      "published_sha256": "1d7d15ecc412d76597b8dd2a56d2b1b0fb9636d6332f72986373c50c059872f0",
       "edits": {
-        "local_path_placeholders": 1
+        "rewritten_internal_links": 3,
+        "local_path_placeholders": 1,
+        "public_notice_added": 1
+      }
+    },
+    {
+      "path": "research/xhs-384k-to-200k-data-adaptation-20261127/archive/rev1-200k-README.md",
+      "source": "research/xhs-384k-to-200k-data-adaptation-20261127/archive/rev1-200k-README.md",
+      "source_kind": "research_archive",
+      "title": "小红书 `3DCodeFactory`（384K YaRN）超长多模态轨迹适配 `≤200K` 训练窗口深度调研与改造方案",
+      "source_sha256": "4db384fd55a85c68456f705ce9b6af86fd3617e625388c5960de1ef68b3d5bb6",
+      "published_sha256": "19f5ce4694717f225043921802507c3fa980f39cd5d59a9b99ea33302b301b59",
+      "edits": {
+        "rewritten_internal_links": 4,
+        "unpublished_attachments": 8,
+        "local_path_placeholders": 4,
+        "public_notice_added": 1
       }
     }
   ]

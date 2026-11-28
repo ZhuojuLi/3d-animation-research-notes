@@ -1,6 +1,9 @@
+> [!WARNING]
+> **历史规划快照（已被 `2026-11-27` Revision 3 / Option 2 全面替代，SUPERSEDED）**：本文为 `2026-11-24` Round 2 早期规划文档，其中关于 `deepseek-v4.1-flash-1017`（L17, L33, L45；旧 `.env.deepseek` 额度已耗尽停用）、CoT 改写提纯与 `65K` 切包（`scripts/prune_oneshot_cot.py` / `prune_react_cot.py`，L18, L33, L44–49）、Round 2 四合一池与旧 val 口径（L19, L26–38）、`thinking=0.5 / content=1.0 / tool_calls=2.0` 权重（L50）及 `M7` `TP4·PP2·DP2 + binpack@65536 + gbs=8` 单文件 Three.js 训练（L74–75）均已被 **Revision 3 / Option 2**（`Qwen3.8-27B` `Static YaRN 1.5×` 不切分硬训 `384K` [`MAX_LENGTH=PACK_LEN=393216`、`(tok<=393216, img<=80)`、`32×H100` `[8,20,20,16]`、`--is_binary_loss_scale false`、空 `<think>` `0.0 / w_ch` 拆分、`validation.jsonl` `loss_scale=1.0`、严禁改写活跃区 `<think>`] + `256K` 沙盒 `208000 / 80% / 32768 / 16384` + `80–85% kimi + 15–20% opus`）替代。现行唯一标准参见 `decisions.md`（本地附件未发布）、[XHS-UNIFIED-SFT-STANDARD.md](../XHS-UNIFIED-SFT-STANDARD.md)、[STANDARD-PARAMS.md](../STANDARD-PARAMS.md) 及 Option 2 主方案（[CLEANROOM-4MODEL-VERDICT-384K-TRAIN-256K-SERVE.md](../../../research/xhs-384k-to-200k-data-adaptation-20261127/CLEANROOM-4MODEL-VERDICT-384K-TRAIN-256K-SERVE.md)、[OPTION2-CAD-2D-DATA-EVAL-MIX-MASTER-PLAN.md](../../../research/xhs-384k-to-200k-data-adaptation-20261127/OPTION2-CAD-2D-DATA-EVAL-MIX-MASTER-PLAN.md)）。下文原样保留供历史审计对照。
+
 # Round 2：27B Dense 3D 动画数据制造、消融训练与三轨准备方案
 
-> 公开整理版 · 2026-11-25。保留成文时点的记录；计划、文献结果和本地实测请分别理解。 环境路径已泛化，未收录的附件已标注；发布范围见 [整理说明](../../../PROVENANCE.md)。
+> 公开整理版 · 2026-11-28。保留成文时点的记录；计划、文献结果和本地实测请分别理解。环境路径已泛化，未收录的附件已标注；发布范围见 [整理说明](../../../PROVENANCE.md)。
 
 日期：2026-11-24（经 `/grill-me` 与用户逐层对齐确认）  
 目标基座：`Qwen3.8-27B` Dense BF16（`${MODEL_ROOT}/Qwen3.8-27B`，`model_type=qwen3_5`，`template=qwen3_8`）  
@@ -70,7 +73,7 @@
 - 执行 CoT 提纯、池 3 分层抽样、池 4 前缀合并、分轨 val 切分与 27B Ready 全量模板验收，冻结 `round2-sft-27b-v1` manifest。
 
 ### 阶段 3：双臂训练（`M7` 冠军配置）与 `devtest-v2` 终验（Day 2.5–3）
-- **主臂 `v2-full`**（四合一全池，~65M tok）：使用 `M7`（`TP4·PP2·DP2 + binpack@65536 + gbs=8 + CUDA causal_conv1d`，插件（本地附件未发布）），从原版 `Qwen3.8-27B` 训 2–3 epochs（~350–400 步，约 8h），保存 epoch 1 / 2 / 3 ckpt；
+- **主臂 `v2-full`**（四合一全池，~65M tok）：使用 `M7`（`TP4·PP2·DP2 + binpack@65536 + gbs=8 + CUDA causal_conv1d`，`mcore_gdn_cuda_conv1d_plugin.py`（本地附件未发布）），从原版 `Qwen3.8-27B` 训 2–3 epochs（~350–400 步，约 8h），保存 epoch 1 / 2 / 3 ckpt；
 - **消融臂 `v2-oneshot-only`**（去掉池 1 ReAct，保留同池 2+3+4 与同超参，约 5h）：直接测量多轮 ReAct 的独立净增量；
 - **统一验收**：在 `evals/devtest-v2`（60 题）与 `Aodi 单轮 30 题` 上对比 `原版 27B` / `ckpt-10946` / `v2-oneshot-only` / `v2-full`：
   - 主报 `Accepted@1（3D 动画）`（拆生成/修复/编辑/健康误改率）；

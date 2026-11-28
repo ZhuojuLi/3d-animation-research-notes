@@ -65,10 +65,19 @@
 
 来源：[LEGO-Anything](research/arxiv-2609.36380/README.md)、[3DCodeEdit](research/arxiv-2610.38231/README.md)、[ManimCode](research/arxiv-2611.08294/README.md)、[AeSlides](research/arxiv-2604.22840/README.md)、[RULER](research/arxiv-2609.25270/README.md)、[InterWebCoder](research/arxiv-2610.28610/README.md)、[Anthropic 生产黑客复盘](research/arxiv-2511.18397/README.md)。
 
-## 11. 超长轨迹（`384K YaRN`）回归原生 `256K`（`262,144`）：废除非标 `200K` 中间窗口，走 `HCPF-Lite@256K` 对半切分与 1 行分块 CE 补丁
+## 11. （历史过渡方案，已被第 12 条 Option 2 替代）原生 `256K` `HCPF-Lite@256K` 探索与 1 行分块 CE 补丁
 
-1. **拒绝非标 `200K` 中间数，直接吃满基座原生 `256K`（`262,144`）**：4 机 `32` 卡对标小红书 6 机 `48` 卡恰好满足 `32/48 = 256K/384K = 2/3`，且 `262,144` 正是 `Qwen3.8-27B` 预训练原生 `max_position_embeddings` 上限（关掉 `YaRN 1.5×` 零位置分辨率折损）。实测从 `200K` 回归 `256K` 后，`80.9%` 的超长执行段只需在中间干净相位点**对半切 1 刀**（消灭 `200K` 下 `72%` 三截碎裂，人工切口锐减 **`-48.4%`**），且 **`97.4%`（`456/468`）的 `compact_task` 仅置空前序旧 `<think>` 即可在零删图、零删日志下无损装入 `256K`**！
-2. **`HCPF-Lite@256K`（方案 C）消除 OOD 占位符并满血保护 Prefix Cache**：经 `claude-opus-5-5` 独立审查，砍掉线上命中率为 `0%` 的 `[archived]` / `[updated in later turns]` 自造文本与易错的 Shell 文件覆盖猜测；下半场续接子段采用 **① 钉死首轮契约与参考图 `I_ref` + ② `≤12K` 纯原生截断远端流水账（远端 `<think>` 置空壳 `<think>\n\n</think>`、远端旧视口图直接移除、工具返回留首尾 `200 tok` + 报错行/路径白名单）+ ③ `max(12轮, ≤32K)` 逐字滑窗（强制 `loss=False`）+ ④ `100%` 原样活跃监督区**，线上代理 `0` 历史改写、100% 满血命中 `vLLM` Prefix Cache。
-3. **1 行修复全参分块 CE 释放 `22.7 GiB` 显存**：移除 `gdn_v3_plugin.py:213` 对 `output_layer.weight.requires_grad` 的拦截并保持 `PREC_AWARE=false`（FP32 `main_grad` 精确原地累加），将 `256K` 末级 PP 卡 `lm_head` 峰值从 `30.3 GiB` 压至 `3.8–7.6 GiB`，使 4 机 32 卡在放开 `freeze_vit=false, freeze_aligner=false` 下稳态运行于 `~52–64 GiB`。
+> 注：本条记录的 `HCPF-Lite@256K` 切分与关闭 YaRN 策略已于 2026-11-27 晚被 4 模型独立裁决（第 12 条 **Revision 3 / Option 2**）正式废止并归档至 `archive/`；其中 **全参分块 CE `16384` + FP32 `main_grad` 省下 `22.7 GiB` 显存** 的实测机制继续沿用。
 
-来源：[联合审定与原生 `256K` 最终定案](research/xhs-384k-to-200k-data-adaptation-20261127/joint-consolidation.md)、[XHS 原生 `256K` 统一标准规范](3d-animation-agent/docs/XHS-UNIFIED-SFT-STANDARD.md)、[Opus 5.5 独立审查原文](research/xhs-384k-to-200k-data-adaptation-20261127/opus-review.md)、[2026 H2 上下文折叠文献专题](research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md)。
+1. **拒绝非标 `200K` 中间数，确认原生 `256K`（`262,144`）为合理线上沙盒基准**。
+2. **1 行修复全参分块 CE 释放 `22.7 GiB` 显存**：移除 `gdn_v3_plugin.py:213` 对 `output_layer.weight.requires_grad` 的拦截并保持 `PREC_AWARE=false`（FP32 `main_grad` 精确原地累加），在 `32×H100` 上直接解锁 `384K` 完整序列全参训练（含 `freeze_vit=false, freeze_aligner=false`）。
+
+来源：[Rev 1/2 历史方案归档说明](research/xhs-384k-to-200k-data-adaptation-20261127/archive/README.md)、[历史 Rev 2 联合审定原文](research/xhs-384k-to-200k-data-adaptation-20261127/archive/joint-consolidation.md)、[A100 分块 CE 实测 JSON](research/xhs-384k-to-200k-data-adaptation-20261127/archive/a100-experiments/exp1_gpu1_verified_results.json)。
+
+## 12. Revision 3 / Option 2 终局定案：全链路 `Static YaRN 1.5×` 不切分硬训 `384K` + `256K` 统一沙盒，以及 `realhard6` 反作弊尸检（2026-11-28 唯一真值）
+
+1. **Train Long (`384K` Unsplit), Synthesize & Serve Short (`256K` Sandbox)**：4 模型独立无尘室裁决与 `32×H100` 实测（`start-full-32g-s3-v1` Step 1 `peak_alloc=61.97 GiB / peak_reserved=73.48 GiB, loss=1.0625`）证实：`Qwen3.8-27B` 仅 `6.25%` 维度使用 RoPE，开启 **`Static YaRN 1.5×`**（`max_position_embeddings=393216, factor=1.5, original_max_position_embeddings=262144`）全参 SFT 后在 `≤256K` 残余误差 `<0.5%`，且彻底消灭 `HCPF-Lite` 切分造成的 `200K–384K` Off-Policy 因果泄漏。**全链路（Stage 1–4 与 `vLLM --max-model-len 327680`）严格锁定同一套 `Static YaRN 1.5×` `config.json`**；全新造数、评测与线上沙盒统一锁定 `256K (262,144)` + `auto-compact=208000 (80%)` + `max_output=32768` + `MAX_TOOL_RESULT_TOKENS=16384`，且压缩提示词严禁写死 `/384K` 或 `/256K` 分母。
+2. **封堵 `ms-swift 4.5.2` 双暗坑与统一 7 通道 PyArrow Schema**：写入自定义 `loss_scale` 会静默绕过 `IgnoreEmptyThinkLossScale`，必须把空 `<think>` 拆分为 `{"loss": False, "loss_scale": 0.0}` + 正文 `{"loss": True, "loss_scale": w_ch}`；`validation.jsonl` 强制 `loss_scale=1.0` 确保分轨 `val_loss` 无偏；全轨统一为无顶层 `tools` 键的 7 通道 Schema（`--is_binary_loss_scale false`，`[8, 20, 20, 16]` 层切分 + 2D `(tok<=393216, img<=80)` 守卫）。
+3. **`realhard6` 尸检与反作弊硬检教训**：纯肉眼看着色渲染图与静态零干涉无法阻止“透视分裂”（`xhs_anchor_agate_2d`）、“静态死壳假机构”（`xhs_anchor_press_cad`）与“文本喂饭公式题”（`hell6`）。真正能拉升 `Qwen3.8-27B` 跨越 `Qwen3.8-Max` 的高难轨迹，必须依赖 **CAD 解析内省（`BRepAdaptor_Surface` + `HLRBRep_Algo` 红线叠图 + `!common.IsDone()` 硬拦截 + 多相位/变参 `--probe`）** 与 **2D 统一相机投影（`projection25d.js` + `overlay_diff_2d.mjs` + `check_2d_v3.mjs` 去作弊后门 + 非 HUD 运动门禁）**。
+
+来源：[4 模型无尘室独立裁决（Option 2）](research/xhs-384k-to-200k-data-adaptation-20261127/CLEANROOM-4MODEL-VERDICT-384K-TRAIN-256K-SERVE.md)、[Option 2 CAD/2D 与混训配比总蓝图](research/xhs-384k-to-200k-data-adaptation-20261127/OPTION2-CAD-2D-DATA-EVAL-MIX-MASTER-PLAN.md)、[`realhard6` 尸检与跨轨总方案档案](3d-animation-agent/docs/REALHARD6-AND-3D-TO-2D-CAD-BLUEPRINT-20261127.md)、[全工作区版本差异与改动对照清单](3d-animation-agent/docs/OPTION2-VERSION-DIFF-AND-CHANGE-CHECKLIST.md)。

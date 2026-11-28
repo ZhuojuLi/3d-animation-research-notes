@@ -4,6 +4,9 @@
 
 | 文档 | 内容 |
 | --- | --- |
+| [**3D 项目阶段实验与策略整合总报告（2026-11-23 ～ 2026-11-27）**](CONSOLIDATED-REPORT-20261127.md) | `3d-animation-agent/reports/CONSOLIDATED-REPORT-20261127.md` |
+| [XHS Three.js 沙盒长程评测报告（`xhs-threejs-val-v1 / core20`）](xhs-threejs-eval-core20-20261126/REPORT.md) | `3d-animation-agent/reports/xhs-threejs-eval-core20-20261126/REPORT.md` |
+| [checkpoint-10946 单轮补测（`oneshot30-20261124-001`）](oneshot30-checkpoint10946-20261124-001/REPORT.md) | `3d-animation-agent/reports/oneshot30-checkpoint10946-20261124-001/REPORT.md` |
 | [小红书 `3DCodeFactory` 训练策略拆解与单轮 vs 长程多轮对照报告](oneshot-vs-longhorizon-3dcodefactory-20261126/REPORT.md) | `3d-animation-agent/reports/oneshot-vs-longhorizon-3dcodefactory-20261126/REPORT.md` |
 | [小红书 `3DCodeFactory` 分片分段与视觉 Token 分布审计报告](xhs-threejs-segment-audit-20261126/REPORT.md) | `3d-animation-agent/reports/xhs-threejs-segment-audit-20261126/REPORT.md` |
 | [XHS Three.js 留出集 `core20` 沙盒评测报告（3600s 原生基准）](xhs-threejs-eval-core20-20261126-3600s-noprefix/REPORT.md) | `3d-animation-agent/reports/xhs-threejs-eval-core20-20261126-3600s-noprefix/REPORT.md` |

@@ -81,7 +81,7 @@
    - **修复剥尾图片同步**：剥除尾部非 assistant 消息时同步弹出对应数量的尾部 `images`；
    - **保留 sidecar 账本**：为每条输出保留 `uuid / task_key / track / segment_type / terminal_kind` 对账文件，且当任一轨道整轨拒收或异常拒收超阈值时非零退出。
 5. **[P0-5] 统一图像归档挂载与全量宿主路径扫描**：
-   - 合并数据集时将所有引用图片按 SHA-256 统一归集/硬链至 `$DATA_DIR/images/` 并校验容器内可读性；扩充宿主路径扫描覆盖用户名、`/mnt/data/`、`/tmp/*ws*` 及 `tools` 描述文本。
+   - 合并数据集时将所有引用图片按 SHA-256 统一归集/硬链至 `$DATA_DIR/images/` 并校验容器内可读性；扩充宿主路径扫描覆盖用户名、`${SHARED_DATA}/`、`/tmp/*ws*` 及 `tools` 描述文本。
 6. **[P0-6] 厘清 SWE 回放末轮协议与重新转换**：
    - 回溯 SWE 原始未拆分 Native 数据重走统一转换器；明确评估 `COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT` 终止动作与主轨自然语言收尾的兼容性（必要时仅保留自然收尾通用多轮样本，或严格验证其独立 `bash` 工具命名空间不串扰 `Bash`）。
 7. **[P0-7] 修复评测基准提取与缓存污染**（`build_xhs_val_suite.py` + `run_xhs_eval.py`）：

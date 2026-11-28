@@ -92,7 +92,7 @@
         "research/three-track-data-factory-strategy-20261126/aodi-phase1-phase2-retrospective-20261126.md",
         "research/three-track-data-factory-strategy-20261126/astra-report.md",
         "research/three-track-data-factory-strategy-20261126/main-report.md",
-        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/archive/2026h2-compaction-literature-deep-dive.md",
         "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
       ]
     },
@@ -167,7 +167,7 @@
         "research/3d-agent-post-sft-rl-survey-20261127/README.md",
         "research/README.md",
         "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md",
-        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/archive/2026h2-compaction-literature-deep-dive.md",
         "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
       ]
     },
@@ -231,7 +231,7 @@
         "research/3d-agent-post-sft-rl-survey-20261127/README.md",
         "research/README.md",
         "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md",
-        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/archive/2026h2-compaction-literature-deep-dive.md",
         "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
       ]
     },
@@ -497,7 +497,7 @@
         "research/README.md",
         "research/frontier-labs-agentic-rl-blogs-2026h2/README.md",
         "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md",
-        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/archive/2026h2-compaction-literature-deep-dive.md",
         "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
       ]
     },
@@ -516,7 +516,7 @@
         "research/README.md",
         "research/frontier-labs-agentic-rl-blogs-2026h2/README.md",
         "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md",
-        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/archive/2026h2-compaction-literature-deep-dive.md",
         "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
       ]
     },
@@ -587,7 +587,7 @@
         "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
         "research/frontier-labs-agentic-rl-blogs-2026h2/README.md",
         "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md",
-        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md"
+        "research/xhs-384k-to-200k-data-adaptation-20261127/archive/2026h2-compaction-literature-deep-dive.md"
       ]
     },
     {
@@ -620,7 +620,7 @@
         "research/3d-agent-post-sft-rl-survey-20261127/README.md",
         "research/README.md",
         "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md",
-        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/archive/2026h2-compaction-literature-deep-dive.md",
         "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
       ]
     },
@@ -638,7 +638,7 @@
         "research/3d-agent-post-sft-rl-survey-20261127/README.md",
         "research/README.md",
         "research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md",
-        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/archive/2026h2-compaction-literature-deep-dive.md",
         "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
       ]
     },
@@ -1075,7 +1075,7 @@
       "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
       "referenced_in": [
         "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
-        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/archive/2026h2-compaction-literature-deep-dive.md",
         "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
       ]
     },
@@ -1296,7 +1296,7 @@
       "primary_note": "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
       "referenced_in": [
         "research/agent-sft-lessons-and-data-recipes-20261125/README.md",
-        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md"
+        "research/xhs-384k-to-200k-data-adaptation-20261127/archive/2026h2-compaction-literature-deep-dive.md"
       ]
     },
     {
@@ -1700,9 +1700,9 @@
       "focus": "多模态计算机操作 Agent 近期 K 帧截图滑窗 SFT 基线",
       "url": "https://arxiv.org/abs/2508.09123",
       "reading_status": "专题 / 引用",
-      "primary_note": "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+      "primary_note": "research/xhs-384k-to-200k-data-adaptation-20261127/archive/2026h2-compaction-literature-deep-dive.md",
       "referenced_in": [
-        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md"
+        "research/xhs-384k-to-200k-data-adaptation-20261127/archive/2026h2-compaction-literature-deep-dive.md"
       ]
     },
     {
@@ -1712,9 +1712,9 @@
       "focus": "JetBrains 实测确定性工具输出掩码胜过 LLM 滚动摘要且防死循环",
       "url": "https://arxiv.org/abs/2508.21433",
       "reading_status": "专题 / 引用",
-      "primary_note": "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+      "primary_note": "research/xhs-384k-to-200k-data-adaptation-20261127/archive/2026h2-compaction-literature-deep-dive.md",
       "referenced_in": [
-        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md"
+        "research/xhs-384k-to-200k-data-adaptation-20261127/archive/2026h2-compaction-literature-deep-dive.md"
       ]
     },
     {
@@ -1724,9 +1724,9 @@
       "focus": "早期动态上下文折叠强化学习基线",
       "url": "https://arxiv.org/abs/2510.11967",
       "reading_status": "专题 / 引用",
-      "primary_note": "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+      "primary_note": "research/xhs-384k-to-200k-data-adaptation-20261127/archive/2026h2-compaction-literature-deep-dive.md",
       "referenced_in": [
-        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md"
+        "research/xhs-384k-to-200k-data-adaptation-20261127/archive/2026h2-compaction-literature-deep-dive.md"
       ]
     },
     {
@@ -1736,9 +1736,9 @@
       "focus": "上下文折叠动作梯度稀释分离与全上下文自洽约束",
       "url": "https://arxiv.org/abs/2512.22733",
       "reading_status": "专题 / 引用",
-      "primary_note": "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+      "primary_note": "research/xhs-384k-to-200k-data-adaptation-20261127/archive/2026h2-compaction-literature-deep-dive.md",
       "referenced_in": [
-        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md"
+        "research/xhs-384k-to-200k-data-adaptation-20261127/archive/2026h2-compaction-literature-deep-dive.md"
       ]
     },
     {
@@ -1750,7 +1750,7 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/xhs-384k-to-200k-data-adaptation-20261127/README.md",
       "referenced_in": [
-        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/archive/2026h2-compaction-literature-deep-dive.md",
         "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
       ]
     },
@@ -1763,7 +1763,7 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/xhs-384k-to-200k-data-adaptation-20261127/README.md",
       "referenced_in": [
-        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/archive/2026h2-compaction-literature-deep-dive.md",
         "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
       ]
     },
@@ -1776,7 +1776,7 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/xhs-384k-to-200k-data-adaptation-20261127/README.md",
       "referenced_in": [
-        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/archive/2026h2-compaction-literature-deep-dive.md",
         "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
       ]
     },
@@ -1789,7 +1789,7 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/xhs-384k-to-200k-data-adaptation-20261127/README.md",
       "referenced_in": [
-        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/archive/2026h2-compaction-literature-deep-dive.md",
         "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
       ]
     },
@@ -1802,7 +1802,7 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/xhs-384k-to-200k-data-adaptation-20261127/README.md",
       "referenced_in": [
-        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/archive/2026h2-compaction-literature-deep-dive.md",
         "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
       ]
     },
@@ -1815,7 +1815,7 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/xhs-384k-to-200k-data-adaptation-20261127/README.md",
       "referenced_in": [
-        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/archive/2026h2-compaction-literature-deep-dive.md",
         "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
       ]
     },
@@ -1828,7 +1828,7 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/xhs-384k-to-200k-data-adaptation-20261127/README.md",
       "referenced_in": [
-        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/archive/2026h2-compaction-literature-deep-dive.md",
         "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
       ]
     },
@@ -1841,7 +1841,7 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/xhs-384k-to-200k-data-adaptation-20261127/README.md",
       "referenced_in": [
-        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/archive/2026h2-compaction-literature-deep-dive.md",
         "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
       ]
     },
@@ -1854,7 +1854,7 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/xhs-384k-to-200k-data-adaptation-20261127/README.md",
       "referenced_in": [
-        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/archive/2026h2-compaction-literature-deep-dive.md",
         "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
       ]
     },
@@ -1867,7 +1867,7 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/xhs-384k-to-200k-data-adaptation-20261127/README.md",
       "referenced_in": [
-        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/archive/2026h2-compaction-literature-deep-dive.md",
         "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
       ]
     },
@@ -1880,7 +1880,7 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/xhs-384k-to-200k-data-adaptation-20261127/README.md",
       "referenced_in": [
-        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/archive/2026h2-compaction-literature-deep-dive.md",
         "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
       ]
     },
@@ -1893,7 +1893,7 @@
       "reading_status": "专题 / 引用",
       "primary_note": "research/xhs-384k-to-200k-data-adaptation-20261127/README.md",
       "referenced_in": [
-        "research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md",
+        "research/xhs-384k-to-200k-data-adaptation-20261127/archive/2026h2-compaction-literature-deep-dive.md",
         "research/xhs-384k-to-200k-data-adaptation-20261127/README.md"
       ]
     }

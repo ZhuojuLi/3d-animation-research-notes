@@ -1,6 +1,9 @@
+> [!WARNING]
+> **历史规划快照（已被 `2026-11-27` Revision 3 / Option 2 全面替代，SUPERSEDED）**：本文为 `2026-11-25` Round 3 早期单点打穿草案，其中“剔除 100% Blender (`0%` 混入)、删除 `compact_task`、只留 `180K / 262K` 不开 YaRN、`freeze_vit=true / freeze_aligner=true`、单文件 3D 输出及 CAD/2D `0%` 暂缓”等策略已于 `2026-11-27` 全面撤销并被 **Revision 3 / Option 2**（`Static YaRN 1.5×` 不切分硬训 `384K` XHS 全 401 分片 + `256K` 沙盒 `208000 / 80% / 32768 / 16384` + Blender/Three.js/CAD/2D 四子轨多轮混训）替代。现行口径以 `decisions.md`（本地附件未发布）、[XHS-UNIFIED-SFT-STANDARD.md](../XHS-UNIFIED-SFT-STANDARD.md) 及 Option 2 主方案（[CLEANROOM-4MODEL-VERDICT-384K-TRAIN-256K-SERVE.md](../../../research/xhs-384k-to-200k-data-adaptation-20261127/CLEANROOM-4MODEL-VERDICT-384K-TRAIN-256K-SERVE.md)、[OPTION2-CAD-2D-DATA-EVAL-MIX-MASTER-PLAN.md](../../../research/xhs-384k-to-200k-data-adaptation-20261127/OPTION2-CAD-2D-DATA-EVAL-MIX-MASTER-PLAN.md)）为准。下文保留作 `2026-11-25` 历史审计归档。
+
 # 3D Agent 全链路对齐改造与 Round 3 演进总计划（Big-Picture Plan）
 
-> 公开整理版 · 2026-11-27。保留成文时点的记录；计划、文献结果和本地实测请分别理解。 环境路径已泛化，未收录的附件已标注；发布范围见 [整理说明](../../../PROVENANCE.md)。
+> 公开整理版 · 2026-11-28。保留成文时点的记录；计划、文献结果和本地实测请分别理解。环境路径已泛化，未收录的附件已标注；发布范围见 [整理说明](../../../PROVENANCE.md)。
 
 > 制定日期：2026-11-25（已按确认收口为 **纯代码 Three.js 3D 动画单点打穿版**：剔除全部 Blender 数据，CadQuery 与 2D 动画暂缓，等 Three.js 3D 动画彻底打穿后再扩域）  
 > 目标基座：`${MODEL_ROOT}/Qwen3.8-27B`（Dense 27B，BF16，16×H800 `ms-swift 4.5.2` Megatron SFT）  

@@ -22,7 +22,7 @@
 3. **本地已经有可复用的 Qwen3.6-35B-A3B 原版 BF16：**
 
    ```text
-   /mnt/contest_ceph/i-wangaodi/model/Qwen3.6-35B-A3B
+   /mnt/contest_ceph/i-upstream-ref/model/Qwen3.6-35B-A3B
    ```
 
    - `Qwen3_5MoeForConditionalGeneration` / `qwen3_5_moe`；BF16。

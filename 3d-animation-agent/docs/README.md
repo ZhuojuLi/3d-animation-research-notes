@@ -4,7 +4,9 @@
 
 | 文档 | 内容 |
 | --- | --- |
-| [三轨顶级交付产物规格与高难长程造数指南（v2.0）](THREE-TRACK-DELIVERABLE-SPEC.md) | `3d-animation-agent/docs/THREE-TRACK-DELIVERABLE-SPEC.md` |
+| [**Revision 3 / Option 2 全工作区版本差异与逐文件改动对照清单**](OPTION2-VERSION-DIFF-AND-CHANGE-CHECKLIST.md) | `3d-animation-agent/docs/OPTION2-VERSION-DIFF-AND-CHANGE-CHECKLIST.md` |
+| [**真高难四方盲测（`realhard6_20261127`）尸检复盘与 3D $\to$ CAD/2D 总方案档案**](REALHARD6-AND-3D-TO-2D-CAD-BLUEPRINT-20261127.md) | `3d-animation-agent/docs/REALHARD6-AND-3D-TO-2D-CAD-BLUEPRINT-20261127.md` |
+| [三轨顶级交付产物规格与高难长程造数指南（v2.1 · Option 2 对齐）](THREE-TRACK-DELIVERABLE-SPEC.md) | `3d-animation-agent/docs/THREE-TRACK-DELIVERABLE-SPEC.md` |
 | [小红书 `3DCodeFactory` 出题与 Rubric 体系拆解及 2D / CAD 双轨并发造数规范](XHS-TASK-AND-RUBRIC-SPEC.md) | `3d-animation-agent/docs/XHS-TASK-AND-RUBRIC-SPEC.md` |
 | [2D / CAD 高难度双轨 Canary 12（含小红书官方锚点）与 AGY 纯净沙盒盲测复盘报告](CANARY-12-AND-AGY-PROBE-REPORT-20261127.md) | `3d-animation-agent/docs/CANARY-12-AND-AGY-PROBE-REPORT-20261127.md` |
 | [XHS 对齐统一训练数据与上下文标准规范（三轨共用）](XHS-UNIFIED-SFT-STANDARD.md) | `3d-animation-agent/docs/XHS-UNIFIED-SFT-STANDARD.md` |

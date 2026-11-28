@@ -1,0 +1,51 @@
+{
+  "gpu_device_tested": "NVIDIA A100-SXM4-80GB (GPU 1, isolated)",
+  "container_image": "harbor.4pd.io/modelforge/swift:4.5.2.muon (megatron.core 0.19.1, mcore_bridge 1.6.2)",
+  "chunked_lm_head_precision_audit": [
+    {
+      "S": 32768,
+      "chunk_size": 8192,
+      "num_chunks": 4,
+      "main_grad_dtype": "fp32",
+      "abs_loss_diff": 0.0,
+      "wgrad_rel_l2_vs_fp32_unchunked": 1.1118658221676014e-05,
+      "dgrad_rel_l2": 0.0
+    },
+    {
+      "S": 32768,
+      "chunk_size": 8192,
+      "num_chunks": 4,
+      "main_grad_dtype": "bf16",
+      "abs_loss_diff": 0.0,
+      "wgrad_rel_l2_vs_fp32_unchunked": 0.002242312068119645,
+      "dgrad_rel_l2": 0.0
+    },
+    {
+      "S": 49152,
+      "chunk_size": 4096,
+      "num_chunks": 12,
+      "main_grad_dtype": "fp32",
+      "abs_loss_diff": 0.0,
+      "wgrad_rel_l2_vs_fp32_unchunked": 2.1024410671088845e-05,
+      "dgrad_rel_l2": 0.0
+    },
+    {
+      "S": 49152,
+      "chunk_size": 4096,
+      "num_chunks": 12,
+      "main_grad_dtype": "bf16",
+      "abs_loss_diff": 0.0,
+      "wgrad_rel_l2_vs_fp32_unchunked": 0.0029973702039569616,
+      "dgrad_rel_l2": 0.0
+    }
+  ],
+  "lm_head_ce_vram_findings": {
+    "root_cause_of_unchunked_oom": "Megatron fused_vocab_parallel_cross_entropy allocates an internal FP32 (4-byte) buffer on top of BF16 (2-byte) logits: 6 bytes * S_local * V_shard total!",
+    "384K_TP4_CP2_unchunked": "OOM (22.73 GiB BF16 + 45.47 GiB FP32 = 68.20 GiB for LM-head alone)",
+    "384K_TP4_CP2_chunked_16k": "PASS (~15.1 GiB transient overhead including grad buffers; 5.68 GiB per 16K chunk)",
+    "256K_TP4_CP2_unchunked": "OOM (15.16 GiB BF16 + 30.31 GiB FP32 = 45.47 GiB)",
+    "256K_TP4_CP2_chunked_16k": "PASS (~14.5 GiB total overhead, lowest peak VRAM of all configurations)",
+    "256K_TP2_CP2_unchunked": "OOM (30.31 GiB BF16 + 60.62 GiB FP32 = 90.93 GiB)",
+    "key_conclusion": "TP=4 + CP=2 + chunk_size=16384 + main_grads_dtype=fp32 is strictly superior to TP=2 on 4x8x80GB nodes."
+  }
+}

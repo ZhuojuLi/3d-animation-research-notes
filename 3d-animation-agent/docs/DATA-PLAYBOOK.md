@@ -1,6 +1,9 @@
+> [!WARNING]
+> **历史文档声明（已被 `2026-11-27` Revision 3 / Option 2 替代，SUPERSEDED）**：本文撰写于 `2026-11-25`（Round 2 时期），其中关于 `reasoning_effort=medium` 默认分布（L7, L72–73）、`DeepSeek 1017` 评测与造数（L60）、固定轮数紧箍咒 `≤36 / ≤24 / ≤18`（L64）、CoT 摘要压缩与投影（L69–70）、`think=0.5 / content=1.0 / tool_call=2.0`（L73）及第 3 节 Round 2 路由（L83–90）均已被 **`2026-11-27` Revision 3 / Option 2** 替代。现行唯一标准请参见 `decisions.md`（本地附件未发布）、[XHS-UNIFIED-SFT-STANDARD.md](XHS-UNIFIED-SFT-STANDARD.md)、[STANDARD-PARAMS.md](STANDARD-PARAMS.md) 及 Option 2 主方案（[CLEANROOM-4MODEL-VERDICT-384K-TRAIN-256K-SERVE.md](../../research/xhs-384k-to-200k-data-adaptation-20261127/CLEANROOM-4MODEL-VERDICT-384K-TRAIN-256K-SERVE.md)、[OPTION2-CAD-2D-DATA-EVAL-MIX-MASTER-PLAN.md](../../research/xhs-384k-to-200k-data-adaptation-20261127/OPTION2-CAD-2D-DATA-EVAL-MIX-MASTER-PLAN.md)）。下文 §1 实跑边界证据原样保留供历史对照。
+
 # 3D Agent 造数总守则与 `Qwen3.8-27B` 能力边界手册（Data Playbook）
 
-> 公开整理版 · 2026-11-25。保留成文时点的记录；计划、文献结果和本地实测请分别理解。 环境路径已泛化，未收录的附件已标注；发布范围见 [整理说明](../../PROVENANCE.md)。
+> 公开整理版 · 2026-11-28。保留成文时点的记录；计划、文献结果和本地实测请分别理解。环境路径已泛化，未收录的附件已标注；发布范围见 [整理说明](../../PROVENANCE.md)。
 
 > 归档日期：2026-11-25  
 > 目标基座：`${MODEL_ROOT}/Qwen3.8-27B`（Dense 27B，BF16，默认主测档位 `reasoning_effort=medium`）  
@@ -42,7 +45,7 @@
 
 ### 守则 1：全量走真实执行沙盒与 `repos-logging-proxy` 抓包，零宿主污染
 - **必须**在干净隔离的 Claude Code / 工具沙盒中由教师真实执行“写代码 → 运行渲染 → 看图自检 → 修正 → 收尾”，全量经 `repos-logging-proxy` 落盘，100% 保留真实 `system` prompt、完整工具 schema（绝不 `tools=[]`）与多模态视觉轮次。
-- **0 宿主机路径泄漏**：工作区工具脚本与运行回溯严禁包含 `/mnt/disk1`、`${USER_HOME}` 等宿主机路径；导出前强制跑静态与轨迹扫描断言（参考 test_cad_pipeline.py（本地附件未发布） `test_workspace_tools_contain_zero_host_paths`）。
+- **0 宿主机路径泄漏**：工作区工具脚本与运行回溯严禁包含 `/mnt/disk1`、`${USER_HOME}` 等宿主机路径；导出前强制跑静态与轨迹扫描断言（参考 `test_cad_pipeline.py`（本地附件未发布） `test_workspace_tools_contain_zero_host_paths`）。
 
 ### 守则 2：以 27B 真实能力甜点区定题，拒绝“太水”与“超纲”两头浪费
 - **砍掉已饱和简单题**：如 6–15 面基础单件 CadQuery 草图+拉伸、纯基础无动效 Three.js 几何体。

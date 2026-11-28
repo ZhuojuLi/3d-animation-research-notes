@@ -1,4 +1,13 @@
+> [!WARNING]
+> **勘误与口径说明（Errata Notice，保留下文历史实测记录）**：依据 [REALHARD6-AND-3D-TO-2D-CAD-BLUEPRINT-20261127.md](REALHARD6-AND-3D-TO-2D-CAD-BLUEPRINT-20261127.md) §1.4 及 `decisions.md`（本地附件未发布）（`2026-11-27` 勘误条款），本报告表二中的三项历史高分样本已被事后逐帧/逐源码尸检确认为**验证器漏筛导致的假阳性（False Positives）**：
+> 1. `xhs_anchor_agate_2d`（`0.910`）：存在 5 套互殴局部坐标系透视分裂，且旧版 `check_2d_v2.mjs` 漏检 Canvas `fillText`（`checked_labels = 0`）；
+> 2. `xhs_anchor_press_cad`（`0.960`）：竖直正齿轮误画为水平、立柱缺导槽且双螺杆无真实运动副耦合；
+> 3. `anim2d_v2_11`（`1.000`）：节点连线发光拓扑图玩具饱和样本（后连同 `anim2d_v2_09/10/12` 列入 `0%` 黑名单；另注 `xhs_v2_synth.py:303` 在 Option 2 §0 #7 中重新放行高复杂多幕联动 `D03` 动态数据可视化，仅继续封杀静态 KPI 卡片与移动点地图）。
+> 现行验收已全面升级为 `check_2d_v3.mjs` 与 `cad_inspect.py --probe` 物理防作弊门禁（参见 Option 2 §0）。下文 §1–4 为当时的历史实测原件留档，指标未做修改。
+
 # 2D / CAD 高难度双轨 Canary 12（含小红书官方锚点）与 AGY 纯净沙盒盲测复盘报告
+
+> 公开整理版 · 2026-11-28。保留成文时点的记录；计划、文献结果和本地实测请分别理解。环境路径已泛化，未收录的附件已标注；发布范围见 [整理说明](../../PROVENANCE.md)。
 
 > **日期**：2026-11-27  
 > **配套规范**：[XHS-TASK-AND-RUBRIC-SPEC.md](XHS-TASK-AND-RUBRIC-SPEC.md) · [Anim2D-Tree v2.0](../configs/taxonomies/anim2d_tree_v2_0.json) · [CadQuery-Tree v2.0](../configs/taxonomies/cadquery_tree_v2_0.json)

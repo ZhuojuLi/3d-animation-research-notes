@@ -4,7 +4,7 @@
 
 本次更新一并增补了 2026 下半年长程编码与多模态上下文压缩核心文献（`CliffCompaction 2609.26779`、`The Compaction Cliff 2608.22752`、`AutoCompact 2610.02163`、`MemTrace 2610.04838`、`ScaleCUA 2607.11185`、`PAIR 2609.36526`、`ActObs 2609.20715`、`DeNovoSWE 2606.10728` 等），全部引用位置见 [机器可读索引](catalog/papers.json)。
 
-建议阅读顺序：先读 [3DCodeFactory](research/arxiv-2611.28783/README.md) 与 [原生 `256K`（`262,144`）无损适配定案（`HCPF-Lite@256K`）](research/xhs-384k-to-200k-data-adaptation-20261127/joint-consolidation.md) 理解 SFT 底座与窗口改造，再读 [Opus 5.5 联合去杂糅与终极收敛蓝图](research/3d-agent-rl-opus-review-and-consolidation-20261127/README.md)、[SFT 后强化学习全景调研 v3.0](research/3d-agent-post-sft-rl-survey-20261127/README.md) 与 [2026 H2 大厂技术博客专题](research/frontier-labs-agentic-rl-blogs-2026h2/README.md)，最后按需下钻各篇单篇精读。
+建议阅读顺序：先读 [3DCodeFactory](research/arxiv-2611.28783/README.md) 与 [原生 `256K`（`262,144`）无损适配定案（`HCPF-Lite@256K`）](research/xhs-384k-to-200k-data-adaptation-20261127/archive/joint-consolidation.md) 理解 SFT 底座与窗口改造，再读 [Opus 5.5 联合去杂糅与终极收敛蓝图](research/3d-agent-rl-opus-review-and-consolidation-20261127/README.md)、[SFT 后强化学习全景调研 v3.0](research/3d-agent-post-sft-rl-survey-20261127/README.md) 与 [2026 H2 大厂技术博客专题](research/frontier-labs-agentic-rl-blogs-2026h2/README.md)，最后按需下钻各篇单篇精读。
 
 ## 单篇精读（共 42 篇）
 
@@ -152,10 +152,10 @@
 | Data Mixing Optimization for SFT | [2508.11953](https://arxiv.org/abs/2508.11953) | 数据混合优化 | [专题 / 引用](research/3d-agent-data-mix-20261121/kimi-report.md) |
 | Hephaestus | [2502.06589](https://arxiv.org/abs/2502.06589) | Agent 工具训练 | [专题 / 引用](research/3d-agent-data-mix-20261121/kimi-report.md) |
 | DeepSeek-R1 | [2501.12948](https://arxiv.org/abs/2501.12948) | 推理与后训练 | [专题 / 引用](research/3d-agent-data-mix-20261121/kimi-report.md) |
-| OpenCUA | [2508.09123](https://arxiv.org/abs/2508.09123) | 多模态计算机操作 Agent 近期 K 帧截图滑窗 SFT 基线 | [专题 / 引用](research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md) |
-| The Complexity Trap | [2508.21433](https://arxiv.org/abs/2508.21433) | JetBrains 实测确定性工具输出掩码胜过 LLM 滚动摘要且防死循环 | [专题 / 引用](research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md) |
-| FoldGRPO | [2510.11967](https://arxiv.org/abs/2510.11967) | 早期动态上下文折叠强化学习基线 | [专题 / 引用](research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md) |
-| FoldAct | [2512.22733](https://arxiv.org/abs/2512.22733) | 上下文折叠动作梯度稀释分离与全上下文自洽约束 | [专题 / 引用](research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md) |
+| OpenCUA | [2508.09123](https://arxiv.org/abs/2508.09123) | 多模态计算机操作 Agent 近期 K 帧截图滑窗 SFT 基线 | [专题 / 引用](research/xhs-384k-to-200k-data-adaptation-20261127/archive/2026h2-compaction-literature-deep-dive.md) |
+| The Complexity Trap | [2508.21433](https://arxiv.org/abs/2508.21433) | JetBrains 实测确定性工具输出掩码胜过 LLM 滚动摘要且防死循环 | [专题 / 引用](research/xhs-384k-to-200k-data-adaptation-20261127/archive/2026h2-compaction-literature-deep-dive.md) |
+| FoldGRPO | [2510.11967](https://arxiv.org/abs/2510.11967) | 早期动态上下文折叠强化学习基线 | [专题 / 引用](research/xhs-384k-to-200k-data-adaptation-20261127/archive/2026h2-compaction-literature-deep-dive.md) |
+| FoldAct | [2512.22733](https://arxiv.org/abs/2512.22733) | 上下文折叠动作梯度稀释分离与全上下文自洽约束 | [专题 / 引用](research/xhs-384k-to-200k-data-adaptation-20261127/archive/2026h2-compaction-literature-deep-dive.md) |
 | DeNovoSWE | [2606.10728](https://arxiv.org/abs/2606.10728) | 128K SFT 窗口训练 256K/500 轮从零建仓轨迹与坏轮掩码（5.8%→47.2%） | [专题 / 引用](research/xhs-384k-to-200k-data-adaptation-20261127/README.md) |
 | SelfCompact | [2606.23525](https://arxiv.org/abs/2606.23525) | 元认知阶段收敛自压缩（排错中途抑制硬切，+5~9 pp） | [专题 / 引用](research/xhs-384k-to-200k-data-adaptation-20261127/README.md) |
 | ScaleCUA | [2607.11185](https://arxiv.org/abs/2607.11185) | Visual Context Segmentation 分段视觉滑窗消除单序列失明监督（快 2.83×） | [专题 / 引用](research/xhs-384k-to-200k-data-adaptation-20261127/README.md) |
@@ -192,7 +192,7 @@
 
 ## 非 arXiv 材料与大厂工程博客
 
-- [小红书 `3DCodeFactory`（384K YaRN）回归原生 `256K`（`262,144`）与 Opus 5.5 联合审定 `HCPF-Lite@256K` 定案](research/xhs-384k-to-200k-data-adaptation-20261127/joint-consolidation.md)（含 [Opus 5.5 独立审查原文](research/xhs-384k-to-200k-data-adaptation-20261127/opus-review.md) · [初版探索报告](research/xhs-384k-to-200k-data-adaptation-20261127/README.md) · [2026 H2 文献精读](research/xhs-384k-to-200k-data-adaptation-20261127/2026h2-compaction-literature-deep-dive.md) · [实测分词与 256K 账本 JSON](research/xhs-384k-to-200k-data-adaptation-20261127/empirical_audit_200k_ledger.json)）：废除非标 `200K` 中间窗口，锁定原生 `262,144` 满窗（`80.9%` 超长段仅对半切 1 刀、切口减半、`97.4%` `compact_task` 零删图零删日志直通，满血保护 vLLM Prefix Cache）。
+- [小红书 `3DCodeFactory`（384K YaRN）回归原生 `256K`（`262,144`）与 Opus 5.5 联合审定 `HCPF-Lite@256K` 定案](research/xhs-384k-to-200k-data-adaptation-20261127/archive/joint-consolidation.md)（含 [Opus 5.5 独立审查原文](research/xhs-384k-to-200k-data-adaptation-20261127/archive/opus-review.md) · [初版探索报告](research/xhs-384k-to-200k-data-adaptation-20261127/README.md) · [2026 H2 文献精读](research/xhs-384k-to-200k-data-adaptation-20261127/archive/2026h2-compaction-literature-deep-dive.md) · [实测分词与 256K 账本 JSON](research/xhs-384k-to-200k-data-adaptation-20261127/archive/empirical_audit_200k_ledger.json)）：废除非标 `200K` 中间窗口，锁定原生 `262,144` 满窗（`80.9%` 超长段仅对半切 1 刀、切口减半、`97.4%` `compact_task` 零删图零删日志直通，满血保护 vLLM Prefix Cache）。
 - [主审 × Claude Opus 5.5 联合去杂糅审查与终极收敛蓝图](research/3d-agent-rl-opus-review-and-consolidation-20261127/README.md)（含 [Opus 5.5 独立报告](research/3d-agent-rl-opus-review-and-consolidation-20261127/opus-review.md) · [主审独立自审](research/3d-agent-rl-opus-review-and-consolidation-20261127/main-consolidation.md)）：对 19 项候选机制冲突消解、三轨指标断舍离、检查器 4 处硬漏洞与 `2×8 H800` `Repair-RL → 384K RFT` 极简闭环拍板。
 - [2026 下半年八大前沿实验室 Agentic RL & 视觉代码技术博客专题](research/frontier-labs-agentic-rl-blogs-2026h2/README.md)：涵盖 Qwen4-Max / Qwen3.8-27B、Kimi K3.1 Pro、GLM-5.2/5.3/5.4 与 `slime`、DeepSeek-V4.1-Flash-1017、Seed 2.1、MiniMax-M3 / MaxProof、Anthropic Opus 5.5 / Fable 5.2、OpenAI GPT-6 / 6.2 Astra 官方博客时间线与工程深水区复盘。
 - [2026 图文 / 2D / 3D / CAD 同源 RL 31 大踩坑避坑大全](research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md)：汇总同源项目负向消融、防刷分补丁与本仓库脚本级迁移清单。
