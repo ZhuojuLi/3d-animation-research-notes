@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>地质博物馆玛瑙展厅 · 2.5D Agate Gallery Diorama</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main id="stage-wrap" class="stage-wrap">
+    <canvas id="scene-canvas" width="1536" height="1024" aria-label="地质博物馆玛瑙互动展厅"></canvas>
+
+    <aside id="specimen-hud" class="hud specimen-card" data-hud="true" aria-live="polite">
+      <div class="specimen-header">
+        <span id="act-badge" class="act-badge">Act 1 · 全景建立</span>
+        <span id="specimen-tag" class="specimen-tag">点击玛瑙鉴赏</span>
+      </div>
+      <div id="specimen-title" class="specimen-title">玛瑙的多样纹理 · Agate Patterns</div>
+      <div id="specimen-meta" class="specimen-meta">共 16 枚程序化切片 · 点击展墙切片查看纹理与产地</div>
+    </aside>
+
+    <section id="hud" class="hud control-dock" data-hud="true" aria-label="展厅交互控制">
+      <div class="dock-group transport-group">
+        <button id="play" type="button" class="ctrl-btn" title="播放">▶ 播放</button>
+        <button id="pause" type="button" class="ctrl-btn" title="暂停">⏸ 暂停</button>
+        <button id="reset" type="button" class="ctrl-btn" title="重置默认状态">↺ 重置</button>
+        <label class="scrub-wrap" for="scrub">
+          <span class="ctrl-label">时间</span>
+          <input id="scrub" type="range" min="0" max="16" step="0.02" value="0">
+          <span id="time-readout" class="ctrl-val">0.0s</span>
+        </label>
+      </div>
+
+      <div class="dock-divider" aria-hidden="true"></div>
+
+      <div class="dock-group domain-group">
+        <label class="slider-item" for="lamp-elevation">
+          <span class="ctrl-label">台灯仰角</span>
+          <input id="lamp-elevation" type="range" min="15" max="75" step="1" value="44">
+          <span id="lamp-elevation-val" class="ctrl-val">44°</span>
+        </label>
+
+        <label class="slider-item" for="backlight-intensity">
+          <span class="ctrl-label">展柜背光</span>
+          <input id="backlight-intensity" type="range" min="20" max="100" step="1" value="84">
+          <span id="backlight-intensity-val" class="ctrl-val">84%</span>
+        </label>
+
+        <label class="slider-item" for="polisher-speed">
+          <span class="ctrl-label">砂轮转速</span>
+          <input id="polisher-speed" type="range" min="0" max="1200" step="15" value="480">
+          <span id="polisher-speed-val" class="ctrl-val">480 rpm</span>
+        </label>
+      </div>
+    </section>
+  </main>
+
+  <script src="./vendor/gsap/gsap.min.js"></script>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

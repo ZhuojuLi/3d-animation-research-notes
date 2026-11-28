@@ -1,0 +1,244 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #090a0b;
+  color: #e9e4db;
+  font-family: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+}
+
+.stage-wrap {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #090a0b;
+}
+
+#scene-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: default;
+  touch-action: none;
+}
+
+/* Compact top-right museum curatorial badge positioned over dark top exhibition margin */
+.specimen-card {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 344px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: rgba(14, 15, 17, 0.80);
+  border: 1px solid rgba(212, 188, 146, 0.24);
+  backdrop-filter: blur(8px);
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  z-index: 10;
+}
+
+.specimen-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.act-badge {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #e8c384;
+  white-space: nowrap;
+}
+
+.specimen-tag {
+  font-size: 10px;
+  color: #b7afa2;
+  white-space: nowrap;
+}
+
+.specimen-title {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #f4efe6;
+  line-height: 1.32;
+}
+
+.specimen-meta {
+  font-size: 11px;
+  color: #c9c1b4;
+  line-height: 1.35;
+}
+
+/* Sleek matte-black obsidian dock aligned over the dark lower cabinet plinth */
+.control-dock {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 8px;
+  height: 44px;
+  padding: 0 12px;
+  border-radius: 7px;
+  background: rgba(11, 12, 14, 0.84);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  z-index: 12;
+}
+
+.dock-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.transport-group {
+  flex: 0 0 auto;
+}
+
+.domain-group {
+  flex: 1 1 auto;
+  justify-content: flex-end;
+  gap: 14px;
+}
+
+.dock-divider {
+  width: 1px;
+  height: 22px;
+  background: rgba(255, 255, 255, 0.12);
+  flex: 0 0 1px;
+}
+
+.ctrl-btn {
+  appearance: none;
+  border: 1px solid rgba(232, 195, 132, 0.28);
+  background: rgba(28, 30, 34, 0.88);
+  color: #f0eadf;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.ctrl-btn:hover {
+  background: rgba(54, 48, 38, 0.92);
+  border-color: rgba(232, 195, 132, 0.65);
+}
+
+.ctrl-btn.is-active {
+  background: rgba(186, 132, 58, 0.28);
+  border-color: #e8c384;
+  color: #fff5e1;
+}
+
+.scrub-wrap,
+.slider-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.ctrl-label {
+  font-size: 11px;
+  color: #b7afa2;
+  white-space: nowrap;
+}
+
+.ctrl-val {
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  color: #f0d7a8;
+  min-width: 36px;
+  text-align: right;
+  white-space: nowrap;
+}
+
+#polisher-speed-val {
+  min-width: 52px;
+}
+
+#time-readout {
+  min-width: 34px;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.16);
+  outline: none;
+  cursor: pointer;
+}
+
+#scrub {
+  width: 148px;
+}
+
+.slider-item input[type="range"] {
+  width: 96px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #e8c384;
+  border: 1px solid #2b2114;
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #e8c384;
+  border: 1px solid #2b2114;
+  cursor: pointer;
+}
+
+@media (max-width: 1320px) {
+  .control-dock {
+    padding: 0 10px;
+    gap: 8px;
+  }
+  .domain-group {
+    gap: 10px;
+  }
+  #scrub {
+    width: 120px;
+  }
+  .slider-item input[type="range"] {
+    width: 82px;
+  }
+  .ctrl-btn {
+    padding: 6px 8px;
+    font-size: 11px;
+  }
+}

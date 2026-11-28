@@ -1,0 +1,794 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:,">
+<title>Frontier v3.0 4-Case 试点互动展台 · 2 2D + 2 CAD</title>
+<style>
+:root {
+  --bg: #080d16;
+  --panel: #101827;
+  --panel2: #162134;
+  --panel3: #0b1220;
+  --border: #23334b;
+  --border-hi: #3b587e;
+  --text: #edf3fa;
+  --muted: #93a7c0;
+  --teal: #3ed3b4;
+  --blue: #5ea3ff;
+  --gold: #f0b95b;
+  --green: #6ee7b7;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background:
+    radial-gradient(1200px 520px at 14% -6%, rgba(94, 163, 255, 0.12), transparent 60%),
+    radial-gradient(920px 460px at 88% 0%, rgba(62, 211, 180, 0.10), transparent 56%),
+    var(--bg);
+  color: var(--text);
+  font: 14px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+a { color: var(--blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+button { font-family: inherit; cursor: pointer; }
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(12px);
+  background: rgba(8, 13, 22, 0.92);
+  border-bottom: 1px solid var(--border);
+}
+.topbar-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 11px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 750;
+  font-size: 15px;
+  color: #fff;
+}
+.pill {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(62, 211, 180, 0.14);
+  color: var(--teal);
+  border: 1px solid rgba(62, 211, 180, 0.35);
+}
+.top-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.top-links a {
+  padding: 5px 11px;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #c8d6e8;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+}
+.top-links a.hi {
+  color: var(--teal);
+  border-color: rgba(62, 211, 180, 0.38);
+}
+.top-links a:hover {
+  text-decoration: none;
+  background: var(--panel2);
+  color: #fff;
+}
+
+main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px 22px 64px;
+}
+
+/* 4-Case Switcher Dock */
+.case-switcher {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.sw-btn {
+  text-align: left;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text);
+  transition: 0.15s;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.sw-btn:hover { border-color: var(--border-hi); background: var(--panel2); }
+.sw-btn.active {
+  border-color: var(--teal);
+  background: linear-gradient(135deg, rgba(62, 211, 180, 0.14), rgba(94, 163, 255, 0.10));
+  box-shadow: 0 0 0 1px rgba(62, 211, 180, 0.25);
+}
+.sw-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--teal);
+}
+.sw-btn.cad .sw-tag { color: var(--blue); }
+.sw-btn.ov .sw-tag { color: var(--gold); }
+.sw-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+}
+.sw-sub {
+  font-size: 11.8px;
+  color: var(--muted);
+}
+
+/* Stage Container */
+.stage-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.32);
+}
+.case-head {
+  padding: 18px 22px 14px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.case-title-wrap h1, .case-title-wrap h2 {
+  margin: 0 0 6px;
+  font-size: 20px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-wrap: wrap;
+}
+.case-title-wrap p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13.5px;
+  max-width: 920px;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 700;
+}
+.b-2d { background: rgba(62, 211, 180, 0.14); color: var(--teal); border: 1px solid rgba(62, 211, 180, 0.35); }
+.b-cad { background: rgba(94, 163, 255, 0.14); color: var(--blue); border: 1px solid rgba(94, 163, 255, 0.35); }
+.b-gold { background: rgba(240, 185, 91, 0.15); color: var(--gold); border: 1px solid rgba(240, 185, 91, 0.35); }
+.b-pass { background: rgba(52, 211, 153, 0.15); color: var(--green); border: 1px solid rgba(52, 211, 153, 0.35); }
+
+.btn-launch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #06131a;
+  background: linear-gradient(135deg, #4be3c4, #5ea3ff);
+  border: none;
+}
+.btn-launch:hover { text-decoration: none; opacity: 0.94; }
+
+.metrics-strip {
+  padding: 10px 22px;
+  background: var(--panel3);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  font-size: 12.5px;
+  color: #c2d1e4;
+}
+.metrics-strip strong { color: #fff; }
+.metrics-strip .ok { color: var(--teal); font-weight: 700; }
+
+.tabs-bar {
+  padding: 10px 22px;
+  background: rgba(22, 33, 52, 0.7);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+.tab-btn {
+  padding: 6px 13px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--panel3);
+  color: var(--muted);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+.tab-btn:hover { color: #fff; border-color: var(--border-hi); }
+.tab-btn.active {
+  background: rgba(62, 211, 180, 0.16);
+  color: var(--teal);
+  border-color: rgba(62, 211, 180, 0.5);
+}
+.hint-inline { font-size: 12px; color: var(--gold); }
+
+.stage-body { padding: 18px 22px 22px; }
+
+.iframe-shell {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 540px;
+  max-height: 760px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-hi);
+  background: #05080f;
+}
+.iframe-shell iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+.glb-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(300px, 0.85fr);
+  gap: 16px;
+  align-items: stretch;
+}
+.glb-stage {
+  height: 560px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-hi);
+  background: #0b1220;
+  position: relative;
+}
+.glb-side { display: flex; flex-direction: column; gap: 12px; }
+.side-card {
+  background: var(--panel3);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+.side-card h3 { margin: 0 0 8px; font-size: 14px; color: #fff; }
+.side-card ul { margin: 0; padding-left: 18px; color: #b9c9dd; font-size: 12.8px; }
+.side-card li { margin-bottom: 5px; }
+.side-thumb {
+  width: 100%;
+  border-radius: 9px;
+  border: 1px solid var(--border);
+  display: block;
+  cursor: zoom-in;
+}
+
+.grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.fig-box {
+  background: var(--panel3);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.fig-head {
+  padding: 9px 13px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: #dbe6f4;
+  font-weight: 600;
+}
+.fig-box img { width: 100%; height: auto; display: block; background: #070b12; cursor: zoom-in; }
+
+.ov-card {
+  background: var(--panel3);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: 0.15s;
+}
+.ov-card:hover { border-color: var(--teal); transform: translateY(-2px); }
+.ov-card img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; background: #060a11; cursor: pointer; }
+.ov-card .ov-body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.ov-card h3 { margin: 0; font-size: 16px; color: #fff; }
+.ov-card p { margin: 0; font-size: 13px; color: var(--muted); }
+.ov-card .ov-actions { margin-top: auto; display: flex; gap: 8px; padding-top: 6px; }
+.ov-open {
+  padding: 7px 13px;
+  border-radius: 8px;
+  border: 1px solid rgba(62, 211, 180, 0.45);
+  background: rgba(62, 211, 180, 0.14);
+  color: var(--teal);
+  font-size: 12.5px;
+  font-weight: 700;
+}
+.ov-open:hover { background: rgba(62, 211, 180, 0.24); }
+
+.video-shell {
+  max-width: 1080px;
+  margin: 0 auto;
+  background: #04070d;
+  border: 1px solid var(--border-hi);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.video-shell video { width: 100%; display: block; aspect-ratio: 16 / 9; }
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(4, 8, 15, 0.92);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  cursor: zoom-out;
+}
+.lightbox.open { display: flex; }
+.lightbox img {
+  max-width: 96vw;
+  max-height: 92vh;
+  border-radius: 10px;
+  border: 1px solid var(--border-hi);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.65);
+}
+
+footer {
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 12.5px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+@media (max-width: 1080px) {
+  .case-switcher { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .glb-layout, .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  .iframe-shell { min-height: 400px; }
+  .glb-stage { height: 420px; }
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <span>Frontier v3.0 · 4-Case 试点互动展台</span>
+      <span class="pill">4/4 ALL GATES PASSED</span>
+    </div>
+    <div class="top-links">
+      <a class="hi" href="./apps2d/agate25d/" target="_blank" rel="noopener">独立全屏：玛瑙 2.5D ↗</a>
+      <a class="hi" href="./apps2d/tourbillon/" target="_blank" rel="noopener">独立全屏：飞行陀飞轮 ↗</a>
+      <a href="../">← 返回总展台</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <nav class="case-switcher" id="case-switcher" aria-label="Case selector">
+    <button class="sw-btn active" data-case="agate25d">
+      <span class="sw-tag">2D-1 · 2D-F1</span>
+      <span class="sw-title">小红书斜拍玛瑙展厅</span>
+      <span class="sw-sub">0.0px 灭点 · 16 玛瑙可点击</span>
+    </button>
+    <button class="sw-btn" data-case="tourbillon">
+      <span class="sw-tag">2D-2 · 2D-F2</span>
+      <span class="sw-title">瑞士飞行陀飞轮实验室</span>
+      <span class="sw-sub">RK4 10节点 · 摆轮直接拖动</span>
+    </button>
+    <button class="sw-btn cad" data-case="gearbox">
+      <span class="sw-tag">CAD-2 · C-F2</span>
+      <span class="sw-title">两速同步器变速箱</span>
+      <span class="sw-sub">42 实例 · 12/12 零干涉 GLB</span>
+    </button>
+    <button class="sw-btn cad" data-case="scissor32">
+      <span class="sw-tag">CAD-1 · C-F1</span>
+      <span class="sw-title">32件气动剪叉平台</span>
+      <span class="sw-sub">盲测 GT 0.9988 IoU · GLB</span>
+    </button>
+    <button class="sw-btn ov" data-case="overview">
+      <span class="sw-tag">SUMMARY · 4/4</span>
+      <span class="sw-title">四题总览对比</span>
+      <span class="sw-sub">指标对比 · 快速切换</span>
+    </button>
+  </nav>
+
+  <section class="stage-card" id="stage-root"></section>
+
+  <footer>
+    <span>Frontier v3.0 4-Case Pilot Showcase · 全静态离线自包含 · 按需挂载单活舞台保证 60fps 流畅交互</span>
+    <span><a href="../">返回 3D / 2D / CAD 展示总台</a></span>
+  </footer>
+</main>
+
+<div class="lightbox" id="lightbox" onclick="this.classList.remove('open')">
+  <img id="lightbox-img" src="" alt="Zoomed preview">
+</div>
+
+<script src="./vendor/glb-viewer.js"></script>
+<script>
+const CASES = {
+  agate25d: {
+    title: '2D-1 · 地质博物馆玛瑙展厅（小红书斜拍 2.5D 复赛）',
+    badges: [
+      { text: '2D-F1 · Unified 2.5D Camera', cls: 'b-2d' },
+      { text: 'check_2d_v3 PASS', cls: 'b-pass' }
+    ],
+    desc: '共享 3D→2D 透视相机 projection25d.js 重建左背光展柜、16 枚程序化半透明玛瑙薄片、18° 斜面中国玛瑙产地地图箱、右侧双臂台灯与卧式双轮抛光机、右前榫接岩芯木盒。',
+    launchUrl: './apps2d/agate25d/',
+    launchLabel: '新标签页全屏试玩 ↗',
+    metrics: [
+      ['架构', '9 ES modules / 5,682 LoC（纯 Canvas 2D，零 WebGL）', false],
+      ['透视叠加', 'cos = 0.97474 · mashup = false · 灭点残差 0.0 px', true],
+      ['双视口排版', '0 重叠 / 0 截断', true],
+      ['16s 循环', 't00 == t100 比特级一致（seam = 0）', true],
+      ['背光隔离', '展柜 MAD 103.38 vs 右室 MAD 0.0', true]
+    ],
+    hint: '试试：直接点展墙任意玛瑙切片 · 拖动右侧台灯灯罩 · 调背光强度与砂轮转速',
+    tabs: [
+      { id: 'live', label: '实时互动试玩' },
+      { id: 'overlay', label: '原图 vs 透视叠加审计' },
+      { id: 'frames', label: '三幕关键帧 & 交互实测' },
+      { id: 'video', label: '16s 确定性 MP4 录屏' }
+    ],
+    renderTab(tabId) {
+      if (tabId === 'live') {
+        return `<div class="iframe-shell"><iframe src="./apps2d/agate25d/index.html" title="2D-1 Agate 2.5D Gallery"></iframe></div>`;
+      }
+      if (tabId === 'overlay') {
+        return `<div class="grid-2">
+          <div class="fig-box"><div class="fig-head"><span>小红书真实参考原图 (reference-0.png)</span><span class="badge b-gold">Target Reference</span></div><img class="zoom-img" src="./assets/agate25d/reference.jpg" alt="Agate Reference"></div>
+          <div class="fig-box"><div class="fig-head"><span>50% 半透明 + 青/品红边缘叠加审计</span><span class="badge b-pass">cos = 0.975 · mashup = false</span></div><img class="zoom-img" src="./assets/agate25d/overlay_audit.png" alt="Agate Overlay Audit"></div>
+        </div>`;
+      }
+      if (tabId === 'frames') {
+        return `<div class="grid-3">
+          <div class="fig-box"><div class="fig-head"><span>Act 1 全景建立 (t = 0.0s)</span></div><img class="zoom-img" src="./assets/agate25d/t00.jpg" alt="Act 1"></div>
+          <div class="fig-box"><div class="fig-head"><span>Act 2 玛瑙微距色带与透明托脚 (t = 8.0s)</span></div><img class="zoom-img" src="./assets/agate25d/t50.jpg" alt="Act 2"></div>
+          <div class="fig-box"><div class="fig-head"><span>Act 3 双臂台灯与卧式双轮抛光机 (t = 12.8s)</span></div><img class="zoom-img" src="./assets/agate25d/t80.jpg" alt="Act 3"></div>
+          <div class="fig-box"><div class="fig-head"><span>交互 1：点击玛瑙轮廓贴合聚光 + 产地卡片</span></div><img class="zoom-img" src="./assets/agate25d/interaction_agate_selected.jpg" alt="Agate Click"></div>
+          <div class="fig-box"><div class="fig-head"><span>交互 2：背光 20%（仅展柜变暗，右室 MAD=0）</span></div><img class="zoom-img" src="./assets/agate25d/interaction_backlight_20.jpg" alt="Backlight Isolation"></div>
+          <div class="fig-box"><div class="fig-head"><span>交互 3：台灯仰角拖至 72°（双臂 IK + 光锥）</span></div><img class="zoom-img" src="./assets/agate25d/interaction_lamp_high72.jpg" alt="Lamp IK"></div>
+        </div>`;
+      }
+      return `<div class="video-shell"><video controls loop playsinline muted preload="none" src="./assets/agate25d/preview.mp4"></video></div>`;
+    }
+  },
+
+  tourbillon: {
+    title: '2D-2 · 瑞士一分钟飞行陀飞轮与锚式擒纵物理实验室',
+    badges: [
+      { text: '2D-F2 · Coupled Horology Solver', cls: 'b-2d' },
+      { text: 'check_2d_v3 PASS', cls: 'b-pass' }
+    ],
+    desc: 'Ciechanowski 级高级制表交互实验室：10 节点 / 8 枢轴 RK4 扭转振子实时求解、精确 -Na/Nb 齿轮传动、同轴 60s 飞行陀飞轮笼架、实时相图与摆轮直接圆周拖动。',
+    launchUrl: './apps2d/tourbillon/',
+    launchLabel: '新标签页全屏试玩 ↗',
+    metrics: [
+      ['架构', '9 ES modules / 4,869 LoC（Canvas 2D + SVG 混合，零 WebGL）', false],
+      ['齿数比', '-80/12 · -75/10 · -70/8 · -15/2（误差 0）', true],
+      ['关节闭合', '0.00000 px（<= 0.5 px）', true],
+      ['擒纵状态机', 'LOCK / RELEASE / IMPULSE / RELOCK', true],
+      ['双视口 & 叠加', '0 重叠 / 0 截断 · cos = 0.99413', true]
+    ],
+    hint: '试试：直接在画布上圆周拖动右侧摆轮看相图跃迁 · 拖动 4 组制表参数滑块',
+    tabs: [
+      { id: 'live', label: '实时互动试玩' },
+      { id: 'overlay', label: '参考图 vs 边缘叠加' },
+      { id: 'frames', label: '三幕实渲染视图' },
+      { id: 'video', label: '16s 确定性 MP4 录屏' }
+    ],
+    renderTab(tabId) {
+      if (tabId === 'live') {
+        return `<div class="iframe-shell"><iframe src="./apps2d/tourbillon/index.html" title="2D-2 Swiss Tourbillon Lab"></iframe></div>`;
+      }
+      if (tabId === 'overlay') {
+        return `<div class="grid-2">
+          <div class="fig-box"><div class="fig-head"><span>参考基准图 (原图无陀飞轮笼架)</span><span class="badge b-gold">Base Reference</span></div><img class="zoom-img" src="./assets/tourbillon/reference.jpg" alt="Tourbillon Reference"></div>
+          <div class="fig-box"><div class="fig-head"><span>新增同轴飞行陀飞轮笼架后的边缘叠加审计</span><span class="badge b-pass">cos = 0.994</span></div><img class="zoom-img" src="./assets/tourbillon/overlay_audit.png" alt="Tourbillon Overlay"></div>
+        </div>`;
+      }
+      if (tabId === 'frames') {
+        return `<div class="grid-3">
+          <div class="fig-box"><div class="fig-head"><span>Act I 全轮系建立与动力路径 (t = 0.0s)</span></div><img class="zoom-img" src="./assets/tourbillon/full_1280x720_t0.jpg" alt="Act 1"></div>
+          <div class="fig-box"><div class="fig-head"><span>Act II 擒纵区慢动作微距 + 蓝宝石盖板剖切 (t = 8.0s)</span></div><img class="zoom-img" src="./assets/tourbillon/full_1280x720_t8.jpg" alt="Act 2"></div>
+          <div class="fig-box"><div class="fig-head"><span>Act III 陀飞轮公转与 IMPULSE 实时诊断 (t = 12.8s)</span></div><img class="zoom-img" src="./assets/tourbillon/full_1280x720_t12_8.jpg" alt="Act 3"></div>
+        </div>`;
+      }
+      return `<div class="video-shell"><video controls loop playsinline muted preload="none" src="./assets/tourbillon/preview.mp4"></video></div>`;
+    }
+  },
+
+  gearbox: {
+    title: 'CAD-2 · 两速同步器齿轮变速箱（含拨叉与外露竖直锁止塔）',
+    badges: [
+      { text: 'C-F2 · Dynamic Parametric Mechanism', cls: 'b-cad' },
+      { text: '12/12 ZERO INTERFERENCE', cls: 'b-pass' }
+    ],
+    desc: '纯 CadQuery / OCCT 参数化建模：28 零件类 / 42 实例 / 2,258 B-rep 面，含真实数学渐开线直齿与反旋向 ±16° 斜齿轮、3D 放样双臂拨叉、3 环向锁止槽滑杆及外露窗口竖直锁止塔（独立钢球 + 螺旋扫掠弹簧 + 内六角压盖）。',
+    metrics: [
+      ['拓扑规模', '28 零件类 · 42 实例 · 2,258 B-rep 面 · 8 类 OCCT 特征', false],
+      ['默认包络', '256.0 × 178.9 × 158.2 mm（水密全过）', false],
+      ['双参数探针', 'center_distance_mm=96 & sleeve_travel_mm=28 全过', true],
+      ['干涉审计', '4 相位 × 3 配置（12 总成 × 861 对）= 0.000000 mm³', true]
+    ],
+    hint: '3D 窗口：左键拖动旋转 · 右键平移 · 滚轮放大看渐开线斜齿与锁止塔弹簧',
+    tabs: [
+      { id: 'glb', label: '3D 交互旋转检视 (GLB)' },
+      { id: 'phases', label: '4 相位运动序列 & 锁止塔特写' },
+      { id: 'views', label: '六视图 / 90° 剖切 / 参考图' }
+    ],
+    glbUrl: './models/cad_f3_05_gearbox.glb',
+    renderTab(tabId) {
+      if (tabId === 'glb') {
+        return `<div class="glb-layout">
+          <div class="glb-stage" id="active-glb-stage"></div>
+          <div class="glb-side">
+            <div class="side-card">
+              <h3>机械配合实测（BRepExtrema）</h3>
+              <ul>
+                <li>轴-轴承直径间隙：<strong>0.1000 mm</strong>（规范 0.05–0.15）</li>
+                <li>同步器蓝套滑动间隙：<strong>0.2200 mm</strong>（规范 0.15–0.30）</li>
+                <li>拨叉-环槽单侧间隙：<strong>0.3500 mm</strong>（规范 0.25–0.45）</li>
+                <li>三对渐开线/斜齿轮侧隙：<strong>0.343–0.361 mm</strong>（&ge; 0.20）</li>
+                <li>过渡态 <code>phase=0.67</code>：钢球抬升 <strong>+1.2828 mm</strong>、弹簧动态压缩，全过程 <strong>0.0 mm³ 干涉</strong></li>
+              </ul>
+            </div>
+            <div class="side-card">
+              <h3>局部特写预览（点击放大）</h3>
+              <img class="side-thumb zoom-img" src="./assets/gearbox/shifter_detent_closeup.jpg" alt="Gearbox Detent Close-up">
+            </div>
+          </div>
+        </div>`;
+      }
+      if (tabId === 'phases') {
+        return `<div class="grid-2">
+          <div class="fig-box"><div class="fig-head"><span>4 相位全局运动对比（Neutral / Low -11mm / Transition 0.67 / High +11mm）</span></div><img class="zoom-img" src="./assets/gearbox/phases_comparison.jpg" alt="Gearbox Phases"></div>
+          <div class="fig-box"><div class="fig-head"><span>换挡拨叉、蓝套啮合 & 外露锁止塔钢球抬升/弹簧压缩特写</span></div><img class="zoom-img" src="./assets/gearbox/shifter_detent_closeup.jpg" alt="Gearbox Close-up"></div>
+        </div>`;
+      }
+      return `<div class="grid-3">
+        <div class="fig-box"><div class="fig-head"><span>六视图工程检查表</span></div><img class="zoom-img" src="./assets/gearbox/views_grid.jpg" alt="Gearbox Views"></div>
+        <div class="fig-box"><div class="fig-head"><span>90° 四分之一剖切视图</span></div><img class="zoom-img" src="./assets/gearbox/section_view.jpg" alt="Gearbox Section"></div>
+        <div class="fig-box"><div class="fig-head"><span>单视角参考图（未含锁止塔）</span></div><img class="zoom-img" src="./assets/gearbox/reference.jpg" alt="Gearbox Reference"></div>
+      </div>`;
+    }
+  },
+
+  scissor32: {
+    title: 'CAD-1 · 32 实例混合输入气动剪叉升降剪切平台',
+    badges: [
+      { text: 'C-F1 · Hybrid 2D Drawing + SO(3)_24 STEP', cls: 'b-cad' },
+      { text: 'HELD-OUT GT 0.9988 IoU', cls: 'b-pass' }
+    ],
+    desc: '无喂饭工业逆向装配挑战：从 2D 工程图重建 5 类非标机加工件（8 件），并解析 9 类任意 SO(3)_24 去位姿标准件 STEP（24 件），完成 32 实例气动剪叉全机构闭环与 5 行程运动学验证。',
+    metrics: [
+      ['盲测 GT 评分', 'passed_all_gates = true · benchcad_t5_proxy = 0.9531', true],
+      ['整机对齐', 'iou_pinned = 0.9988 · iou24 = 0.9984', true],
+      ['非标件 IoU_24', 'part_01..04 = 1.0000（part_05 = 0.7729）', true],
+      ['5 行程干涉', '[0, 9, 18, 27, 36] mm 全部 0.0 mm³ · 升降误差 0.0 mm', true]
+    ],
+    hint: '3D 窗口：左键拖动旋转 · 右键平移 · 滚轮缩放检视 32 个装配实例',
+    tabs: [
+      { id: 'glb', label: '3D 交互旋转检视 (GLB)' },
+      { id: 'overlay', label: '工程图线框叠加 & 5 行程对比' },
+      { id: 'views', label: '六视图 / 90° 剖切 / 爆炸图' }
+    ],
+    glbUrl: './models/cad_f3_01_scissor32.glb',
+    renderTab(tabId) {
+      if (tabId === 'glb') {
+        return `<div class="glb-layout">
+          <div class="glb-stage" id="active-glb-stage"></div>
+          <div class="glb-side">
+            <div class="side-card">
+              <h3>独立 Held-Out GT 核验摘要</h3>
+              <ul>
+                <li><strong>14 零件类 / 32 实例</strong>，100% BOM 一致，全刚体变换 <code>det(R) = +1</code></li>
+                <li><strong>16 个运动副</strong>覆盖 <code>rigid / revolute / slider / pin_slot</code></li>
+                <li>外包络 <strong>240.0 × 164.0 × 177.2 mm</strong>，与工程图像素级吻合</li>
+                <li>行程 <code>0 → 36 mm</code> 台面抬升 <code>164.0 → 200.0 mm</code>，最大误差 <strong>0.0 mm</strong></li>
+              </ul>
+            </div>
+            <div class="side-card">
+              <h3>工程图线框像素级重叠（点击放大）</h3>
+              <img class="side-thumb zoom-img" src="./assets/scissor32/drawing_overlay_check.jpg" alt="Scissor32 Drawing Overlay">
+            </div>
+          </div>
+        </div>`;
+      }
+      if (tabId === 'overlay') {
+        return `<div class="grid-2">
+          <div class="fig-box"><div class="fig-head"><span>2D 工程图红线投影叠加核验</span><span class="badge b-pass">iou_pinned = 0.9988</span></div><img class="zoom-img" src="./assets/scissor32/drawing_overlay_check.jpg" alt="Scissor Overlay"></div>
+          <div class="fig-box"><div class="fig-head"><span>多行程运动对比（s = 0 / 18 / 36 mm · 0.0 mm³ 干涉）</span></div><img class="zoom-img" src="./assets/scissor32/stroke_comparison.jpg" alt="Scissor Strokes"></div>
+        </div>`;
+      }
+      return `<div class="grid-3">
+        <div class="fig-box"><div class="fig-head"><span>六视图工程检查表</span></div><img class="zoom-img" src="./assets/scissor32/views_grid.jpg" alt="Scissor Views"></div>
+        <div class="fig-box"><div class="fig-head"><span>90° 四分之一剖切视图</span></div><img class="zoom-img" src="./assets/scissor32/section_view.jpg" alt="Scissor Section"></div>
+        <div class="fig-box"><div class="fig-head"><span>32 件爆炸视图</span></div><img class="zoom-img" src="./assets/scissor32/exploded_view.jpg" alt="Scissor Exploded"></div>
+      </div>`;
+    }
+  },
+
+  overview: {
+    title: 'Frontier v3.0 · 4-Case 试点总览（2 2D + 2 CAD 全过）',
+    badges: [
+      { text: '4/4 ALL GATES PASSED', cls: 'b-pass' },
+      { text: 'Blind Sandbox Verified', cls: 'b-gold' }
+    ],
+    desc: '全部 4 个试点 Case 均在独立盲测沙盒完成并通过 Option 2 / Frontier v3.0 确定性防作弊门禁。点击任意卡片立刻进入实时 2D 交互试玩或 3D GLB 旋转检视。',
+    metrics: [
+      ['2D-1 玛瑙 2.5D', '5,682 LoC · 0.0px 灭点 · cos 0.975', true],
+      ['2D-2 飞行陀飞轮', '4,869 LoC · 0.000px 闭合 · RK4 实时相图', true],
+      ['CAD-2 同步器变速箱', '42 实例 · 2,258 面 · 12/12 零干涉', true],
+      ['CAD-1 32件剪叉', '盲测 GT 0.9988 IoU · 5 行程零干涉', true]
+    ],
+    hint: '点击下方任意展品卡片即可切入对应的实时交互舞台',
+    tabs: [{ id: 'cards', label: '四题总览卡片' }],
+    renderTab() {
+      const items = [
+        ['agate25d', './assets/agate25d/interaction_agate_selected.jpg', '2D-1 · 玛瑙 2.5D 博物馆展厅', '纯 Canvas 2D 统一 3D→2D 相机重建小红书斜拍展厅，16 枚程序化半透明玛瑙可点击、台灯可拖动。'],
+        ['tourbillon', './assets/tourbillon/full_1280x720_t0.jpg', '2D-2 · 瑞士飞行陀飞轮实验室', '10 节点 / 8 枢轴 RK4 物理求解器、精确 -Na/Nb 齿比、实时相图与摆轮直接圆周拖动。'],
+        ['gearbox', './assets/gearbox/phases_comparison.jpg', 'CAD-2 · 两速同步器变速箱', '28 零件类 / 42 实例 / 2,258 B-rep 面，反旋向斜齿轮 + 外露锁止塔钢球弹簧动态压缩。'],
+        ['scissor32', './assets/scissor32/stroke_comparison.jpg', 'CAD-1 · 32件气动剪叉平台', '2D 工程图 + SO(3)_24 STEP 混合逆向装配，盲测 GT iou_pinned = 0.9988、5 行程零干涉。']
+      ];
+      return `<div class="grid-2">${items.map(([id, img, title, desc]) => `
+        <article class="ov-card">
+          <img src="${img}" alt="${title}" data-jump="${id}">
+          <div class="ov-body">
+            <h3>${title}</h3>
+            <p>${desc}</p>
+            <div class="ov-actions">
+              <button class="ov-open" data-jump="${id}">进入交互检视 →</button>
+            </div>
+          </div>
+        </article>`).join('')}</div>`;
+    }
+  }
+};
+
+let currentCase = 'agate25d';
+let currentTab = 'live';
+let activeGlbCleanup = null;
+
+function cleanupViewer() {
+  if (activeGlbCleanup) {
+    try { activeGlbCleanup(); } catch (_) {}
+    activeGlbCleanup = null;
+  }
+}
+
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+function bindDynamicEvents(root) {
+  root.querySelectorAll('.zoom-img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.classList.add('open');
+    });
+  });
+  root.querySelectorAll('[data-jump]').forEach(el => {
+    el.addEventListener('click', () => selectCase(el.dataset.jump));
+  });
+}
+
+function renderStage() {
+  cleanupViewer();
+  const cfg = CASES[currentCase] || CASES.agate25d;
+  if (!cfg.tabs.some(t => t.id === currentTab)) currentTab = cfg.tabs[0].id;
+
+  const root = document.getElementById('stage-root');
+  const badgesHtml = cfg.badges.map(b => `<span class="badge ${b.cls}">${b.text}</span>`).join('');
+  const launchHtml = cfg.launchUrl
+    ? `<a class="btn-launch" href="${cfg.launchUrl}" target="_blank" rel="noopener">${cfg.launchLabel}</a>`
+    : '';
+  const metricsHtml = cfg.metrics
+    .map(([k, v, ok]) => `<span>${k}：<strong class="${ok ? 'ok' : ''}">${v}</strong></span>`)
+    .join('');
+  const tabsHtml = cfg.tabs
+    .map(t => `<button class="tab-btn ${t.id === currentTab ? 'active' : ''}" data-tab="${t.id}">${t.label}</button>`)
+    .join('');
+
+  root.innerHTML = `
+    <div class="case-head">
+      <div class="case-title-wrap">
+        <h2><span>${cfg.title}</span>${badgesHtml}</h2>
+        <p>${cfg.desc}</p>
+      </div>
+      <div>${launchHtml}</div>
+    </div>
+    <div class="metrics-strip">${metricsHtml}</div>
+    <div class="tabs-bar">
+      <div class="tabs">${tabsHtml}</div>
+      <div class="hint-inline">${cfg.hint}</div>
+    </div>
+    <div class="stage-body" id="stage-body">${cfg.renderTab(currentTab)}</div>
+  `;
+
+  root.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentTab = btn.dataset.tab;
+      renderStage();
+    });
+  });
+
+  bindDynamicEvents(root);
+
+  if (currentTab === 'glb' && cfg.glbUrl && typeof window.mountGlbViewer === 'function') {
+    const stageEl = document.getElementById('active-glb-stage');
+    if (stageEl) {
+      activeGlbCleanup = window.mountGlbViewer(stageEl, cfg.glbUrl);
+    }
+  }
+}
+
+function selectCase(caseId, pushHash = true) {
+  if (!CASES[caseId]) caseId = 'agate25d';
+  currentCase = caseId;
+  currentTab = CASES[caseId].tabs[0].id;
+  document.querySelectorAll('.sw-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.case === caseId);
+  });
+  if (pushHash && location.hash !== '#' + caseId) {
+    history.replaceState(null, '', '#' + caseId);
+  }
+  renderStage();
+}
+
+document.querySelectorAll('.sw-btn').forEach(btn => {
+  btn.addEventListener('click', () => selectCase(btn.dataset.case));
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') lightbox.classList.remove('open');
+});
+window.addEventListener('hashchange', () => {
+  const h = location.hash.replace(/^#/, '');
+  if (CASES[h]) selectCase(h, false);
+});
+
+const initHash = location.hash.replace(/^#/, '');
+selectCase(CASES[initHash] ? initHash : 'agate25d', false);
+</script>
+</body>
+</html>
