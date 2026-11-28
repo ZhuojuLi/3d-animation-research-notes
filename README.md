@@ -2,7 +2,7 @@
 
 围绕 **代码驱动的 3D 场景与动画（Blender `bpy` + Three.js）、2D Web 多文件交互动画、CadQuery 参数化建模与工业装配、多模态长程 Agent 数据构造、Option 2 全链路 `Static YaRN 1.5×` 不切分硬训 `384K` + `256K` 统一沙盒，以及 SFT 后确定性 Repair-RL 与 256K RFT 收敛方案**，整理已有论文精读、大厂技术复盘、工程经验和实验记录。
 
-最新更新日期：**2026-11-28**。共收录 **186 份文档、分类配置与实测统计清单**，索引 **132 条去重 arXiv 引用**，其中 **42 篇有单独一手精读**。
+最新更新日期：**2026-11-28**。共收录 **189 份文档、分类配置与实测统计清单**，索引 **132 条去重 arXiv 引用**，其中 **42 篇有单独一手精读**。
 
 ## 从这里开始
 
@@ -11,10 +11,11 @@
 | 论文列表、分类与 42 篇单篇精读 | [Paper list](PAPERS.md) |
 | 从项目与同源文献提炼的实战避坑经验 | [经验导读](LESSONS.md) |
 | **Revision 3 / Option 2 终局定案：全链路 `Static YaRN 1.5×` 硬训 `384K` + `256K` 统一沙盒与 CAD/2D 配比总案（2026-11-28 唯一真值）** | [**4 模型无尘室独立裁决（Option 2）**](research/xhs-384k-to-200k-data-adaptation-20261127/CLEANROOM-4MODEL-VERDICT-384K-TRAIN-256K-SERVE.md) · [**Option 2 CAD/2D 数据、独立评估与混训配比总蓝图**](research/xhs-384k-to-200k-data-adaptation-20261127/OPTION2-CAD-2D-DATA-EVAL-MIX-MASTER-PLAN.md) · [**全工作区版本差异与改动对照清单**](3d-animation-agent/docs/OPTION2-VERSION-DIFF-AND-CHANGE-CHECKLIST.md) · [XHS Option 2 统一训练标准](3d-animation-agent/docs/XHS-UNIFIED-SFT-STANDARD.md) · [Rev 1/2 历史归档索引](research/xhs-384k-to-200k-data-adaptation-20261127/archive/README.md) |
+| **Frontier v3.0 2D & CAD 超越 `Qwen3.8-Max` 高复杂度出题规格与分类树（2026-11-28 新增）** | [**Frontier v3.0 2D & CAD 出题与反作弊验收规格**](3d-animation-agent/docs/FRONTIER-2D-CAD-TASK-DESIGN-V3.md) · [CadQuery-Tree v3.0](3d-animation-agent/configs/taxonomies/cadquery_tree_v3_0.json) · [Anim2D-Tree v3.0](3d-animation-agent/configs/taxonomies/anim2d_tree_v3_0.json) |
 | **`realhard6` 四方真高难盲测尸检与 3D $\to$ 工业 CAD / 高精 2D 跃迁四分册蓝图（2026-11-28 新增）** | [**`realhard6` 尸检与跨轨总方案档案**](3d-animation-agent/docs/REALHARD6-AND-3D-TO-2D-CAD-BLUEPRINT-20261127.md) · [蓝图总纲](research/distill-3d-to-2d-cad-blueprint-20261127/README.md) · [01 · 384K 训练与 256K 沙盒](research/distill-3d-to-2d-cad-blueprint-20261127/01-sandbox-context-spec.md) · [02 · 工业 CAD 跃迁](research/distill-3d-to-2d-cad-blueprint-20261127/02-cad-capability-plan.md) · [03 · 高精 2D 与四阶段配比](research/distill-3d-to-2d-cad-blueprint-20261127/03-2d-capability-and-mixing-plan.md) |
 | **SFT 后强化学习、Opus 5.5 去杂糅收敛与同源防刷分总览** | [**Opus 5.5 联合去杂糅与终极收敛蓝图**](research/3d-agent-rl-opus-review-and-consolidation-20261127/README.md) · [**可执行工程计划书（Option 2 对齐）**](3d-animation-agent/docs/plans/2026-11-27-post-sft-repair-rl-and-rft-plan.md) · [RL 全景调研 v3.0](research/3d-agent-post-sft-rl-survey-20261127/README.md) · [31 大踩坑避坑手册](research/visual-3d-agent-rl-pitfalls-and-lab-lessons-20261127/README.md) · [2026 H2 大厂技术博客专题](research/frontier-labs-agentic-rl-blogs-2026h2/README.md) |
 | 全部研究与阅读笔记 | [117 份研究文档与统计附件](research/README.md) |
-| 数据守则、三轨交付规格、版本对照清单、`realhard6`、Canary-12、RL 计划与分类树 | [32 份工程文档与分类配置](3d-animation-agent/docs/README.md) |
+| 数据守则、Frontier v3.0 规格、三轨交付规格、版本对照清单、`realhard6`、Canary-12、RL 计划与分类树 | [35 份工程文档与分类配置](3d-animation-agent/docs/README.md) |
 | 训练、评测、失败原因与阶段整合实验报告 | [32 份实验报告](3d-animation-agent/reports/README.md) |
 | 早期方案的完整历史原文 | [5 份历史笔记](history/README.md) |
 

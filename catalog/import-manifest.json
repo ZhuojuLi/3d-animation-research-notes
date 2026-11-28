@@ -22,6 +22,15 @@
       "edits": {}
     },
     {
+      "path": "3d-animation-agent/configs/taxonomies/anim2d_tree_v3_0.json",
+      "source": "3d-animation-agent/configs/taxonomies/anim2d_tree_v3_0.json",
+      "source_kind": "taxonomy_config",
+      "title": "anim2d_tree_v3_0.json",
+      "source_sha256": "1cbeabc1c5edafcb2bc2145e8ac133c089372a0ee71626ccaa8f91cdc1566be5",
+      "published_sha256": "1cbeabc1c5edafcb2bc2145e8ac133c089372a0ee71626ccaa8f91cdc1566be5",
+      "edits": {}
+    },
+    {
       "path": "3d-animation-agent/configs/taxonomies/cadquery_tree_v1_1.json",
       "source": "3d-animation-agent/configs/taxonomies/cadquery_tree_v1_1.json",
       "source_kind": "taxonomy_config",
@@ -39,6 +48,15 @@
       "title": "cadquery_tree_v2_0.json",
       "source_sha256": "ddb739f86a198b3a7055b6eb4410ec5f3b9b82f18704cbaeda75dd2faa9f9c96",
       "published_sha256": "ddb739f86a198b3a7055b6eb4410ec5f3b9b82f18704cbaeda75dd2faa9f9c96",
+      "edits": {}
+    },
+    {
+      "path": "3d-animation-agent/configs/taxonomies/cadquery_tree_v3_0.json",
+      "source": "3d-animation-agent/configs/taxonomies/cadquery_tree_v3_0.json",
+      "source_kind": "taxonomy_config",
+      "title": "cadquery_tree_v3_0.json",
+      "source_sha256": "5c912cfce77fd868efb6d168939d4f60dc5937b4f8e8fc1d326560ed753a02e5",
+      "published_sha256": "5c912cfce77fd868efb6d168939d4f60dc5937b4f8e8fc1d326560ed753a02e5",
       "edits": {}
     },
     {
@@ -76,6 +94,19 @@
         "unpublished_attachments": 2,
         "rewritten_internal_links": 14,
         "local_path_placeholders": 3,
+        "public_notice_added": 1
+      }
+    },
+    {
+      "path": "3d-animation-agent/docs/FRONTIER-2D-CAD-TASK-DESIGN-V3.md",
+      "source": "3d-animation-agent/docs/FRONTIER-2D-CAD-TASK-DESIGN-V3.md",
+      "source_kind": "engineering_doc",
+      "title": "Frontier v3.0 2D & CAD 高复杂度出题、反作弊验收与超越 Qwen-Max 蒸馏规格",
+      "source_sha256": "95ab335e55491cdd2d777b788ceb1aa296847ce07a6ed2fcc5569b74e95c95b9",
+      "published_sha256": "df4435de7d266221bb235b1acfb8e032a369f47bbb7c71ad4d54140e42de121b",
+      "edits": {
+        "rewritten_internal_links": 4,
+        "unpublished_attachments": 5,
         "public_notice_added": 1
       }
     },
@@ -126,10 +157,10 @@
       "source": "3d-animation-agent/docs/THREE-TRACK-DELIVERABLE-SPEC.md",
       "source_kind": "engineering_doc",
       "title": "三轨顶级交付产物规格与高难长程造数指南（v2.1）",
-      "source_sha256": "8b86fec39eab3c91039da422680cfc48f52f644f963b555f133923f9fcd53e60",
-      "published_sha256": "18f9502725c8d2b609b3ddbafd3408a37cd9fbff0b2de102fc9f364bb8f0222f",
+      "source_sha256": "b1f0f8ff3380983fa8bda95639598667ecbf6f62acea71463207e164bb84c3c0",
+      "published_sha256": "fcee23bff421547819bb35a682f1d92c511e88207c46034cab1b1f181d0871d0",
       "edits": {
-        "rewritten_internal_links": 17,
+        "rewritten_internal_links": 20,
         "unpublished_attachments": 2,
         "local_path_placeholders": 1,
         "public_notice_added": 1
@@ -140,10 +171,10 @@
       "source": "3d-animation-agent/docs/XHS-TASK-AND-RUBRIC-SPEC.md",
       "source_kind": "engineering_doc",
       "title": "小红书 `3DCodeFactory` 出题与 Rubric 体系拆解及 2D / CAD 双轨并发造数规范",
-      "source_sha256": "453f48798aff3c1ed7edbda84ba27a9b027f820a68fe02489572a72ba5d81da4",
-      "published_sha256": "ec8501a0753205436d35e3533164d0ee1a38552a5a2e2a8f24059bfc6b5266da",
+      "source_sha256": "adab9ecc473937f5d4728485658a236e3451c8f4f20ee01f5a175a9fc4557249",
+      "published_sha256": "e1784aa2d550db4ff8f209ce17ad66bdda3d25594f5eced27524207948850f28",
       "edits": {
-        "rewritten_internal_links": 4,
+        "rewritten_internal_links": 7,
         "local_path_placeholders": 1,
         "public_notice_added": 1
       }
@@ -2022,10 +2053,10 @@
       "source_kind": "research_archive",
       "title": "归档说明：小红书 384K 轨迹适配早期调研（Revision 1 / Revision 2）",
       "source_sha256": "fd3192823f2100edf074cb6b59b2d5e79347981499c742110a6887ac28c652cd",
-      "published_sha256": "a33245205a03674dd817ba6522fd30656000210d41cb09c730e61ce253b7d5ca",
+      "published_sha256": "4fdabc61f87c954cb0a6daa91e5da373925668f819ce3cac482594f407c2b37f",
       "edits": {
         "rewritten_internal_links": 15,
-        "unpublished_attachments": 4,
+        "unpublished_attachments": 3,
         "local_path_placeholders": 2,
         "public_notice_added": 1
       }

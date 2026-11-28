@@ -1,16 +1,16 @@
 # 整理与来源说明
 
-整理日期：2026-11-28（在前期文档基础上，正式升级并锁定 **Revision 3 / Option 2** 全链路 `Static YaRN 1.5×` 不切分硬训 `384K` + `256K` 统一沙盒定案，新增 4 模型无尘室裁决、Option 2 CAD/2D 评估与四阶段混训配比总蓝图、`realhard6` 四方盲测尸检与 3D $\to$ 工业 CAD / 高精 2D 四分册跃迁蓝图、全工作区版本差异对照清单、Rev 1/2 历史归档与阶段整合实验报告，合计收录 **186** 份文档）。
+整理日期：2026-11-28（在前期文档基础上，正式升级并锁定 **Revision 3 / Option 2** 全链路 `Static YaRN 1.5×` 不切分硬训 `384K` + `256K` 统一沙盒定案与 **Frontier v3.0** 超越 `Qwen3.8-Max` 高复杂度 2D/CAD 出题规格与分类树，新增 4 模型无尘室裁决、Option 2 CAD/2D 评估与四阶段混训配比总蓝图、`realhard6` 四方盲测尸检与 3D $\to$ 工业 CAD / 高精 2D 四分册跃迁蓝图、全工作区版本差异对照清单、Rev 1/2 历史归档与阶段整合实验报告，合计收录 **189** 份文档）。
 
 ## 收录范围
 
 | 来源 | 文档数 | 收录内容 |
 | --- | ---: | --- |
 | `research/` | 117 | 42 篇 arXiv 一手单篇精读、Option 2 4 模型裁决与 CAD/2D 混训配比总蓝图、Rev 1/2 历史方案与 A100 分块 CE 归档、`3D -> CAD/2D` 四分册跃迁蓝图、Opus 5.5 RL 去杂糅蓝图与 31 大避坑手册、2026 H2 大厂博客调研与样本统计 |
-| `3d-animation-agent/docs/` & `configs/taxonomies/` | 32 | Option 2 版本差异与改动清单、`realhard6` 四方盲测尸检档案、XHS 统一 SFT 标准、三轨交付规格 v2.1、Canary-12 勘误复盘、Post-SFT Repair-RL 计划书、出题规范与分类树 JSON |
+| `3d-animation-agent/docs/` & `configs/taxonomies/` | 35 | Frontier v3.0 2D/CAD 超越 Qwen-Max 出题规格与 v3.0 分类树、Option 2 版本差异与改动清单、`realhard6` 四方盲测尸检档案、XHS 统一 SFT 标准、三轨交付规格 v2.1、Canary-12 勘误复盘、Post-SFT Repair-RL 计划书、出题规范与分类树 JSON |
 | `3d-animation-agent/reports/` | 32 | 阶段实验与策略整合总报告、XHS `core20` 沙盒评测、Round 2/3 训练评测、XHS 分段审计、单轮 vs 长程对照与 CoT 投影实验报告 |
 | `history/research/` | 5 | 从已有压缩归档恢复的早期研究完整原文 |
-| 合计 | **186** | 不含首页、导读、索引和来源说明 |
+| 合计 | **189** | 不含首页、导读、索引和来源说明 |
 
 原有项目文件保留在本地；本仓库是单独整理的公开副本。历史原文只从归档中读取指定的 5 份研究笔记，没有上传原压缩包；本地下载核验的 42 篇 arXiv 论文原始 `paper.html`、`paper.txt` 与 `sources.json` 仅保留于本地工作区，公开仓库只发布中文精读 `README.md` 并链接至上游 `arxiv.org`。
 

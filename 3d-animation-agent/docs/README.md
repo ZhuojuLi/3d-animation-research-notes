@@ -4,6 +4,9 @@
 
 | 文档 | 内容 |
 | --- | --- |
+| [**Frontier v3.0 2D & CAD 超越 Qwen-Max 高复杂度出题、反作弊验收与蒸馏规格**](FRONTIER-2D-CAD-TASK-DESIGN-V3.md) | `3d-animation-agent/docs/FRONTIER-2D-CAD-TASK-DESIGN-V3.md` |
+| [CadQuery-Tree v3.0 Frontier（4 大前沿原型 × 20 工业词条）](../configs/taxonomies/cadquery_tree_v3_0.json) | `3d-animation-agent/configs/taxonomies/cadquery_tree_v3_0.json` |
+| [Anim2D-Tree v3.0 Frontier（5 大高天花板原型 × 20 词条）](../configs/taxonomies/anim2d_tree_v3_0.json) | `3d-animation-agent/configs/taxonomies/anim2d_tree_v3_0.json` |
 | [**Revision 3 / Option 2 全工作区版本差异与逐文件改动对照清单**](OPTION2-VERSION-DIFF-AND-CHANGE-CHECKLIST.md) | `3d-animation-agent/docs/OPTION2-VERSION-DIFF-AND-CHANGE-CHECKLIST.md` |
 | [**真高难四方盲测（`realhard6_20261127`）尸检复盘与 3D $\to$ CAD/2D 总方案档案**](REALHARD6-AND-3D-TO-2D-CAD-BLUEPRINT-20261127.md) | `3d-animation-agent/docs/REALHARD6-AND-3D-TO-2D-CAD-BLUEPRINT-20261127.md` |
 | [三轨顶级交付产物规格与高难长程造数指南（v2.1 · Option 2 对齐）](THREE-TRACK-DELIVERABLE-SPEC.md) | `3d-animation-agent/docs/THREE-TRACK-DELIVERABLE-SPEC.md` |

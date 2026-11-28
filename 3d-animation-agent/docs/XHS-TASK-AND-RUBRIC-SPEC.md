@@ -2,9 +2,9 @@
 
 > 公开整理版 · 2026-11-28。保留成文时点的记录；计划、文献结果和本地实测请分别理解。环境路径已泛化，未收录的附件已标注；发布范围见 [整理说明](../../PROVENANCE.md)。
 
-> **成文日期**：2026-11-27  
+> **成文日期**：2026-11-27（2026-11-28 增补 Frontier v3.0 升级入口）  
 > **上游对照源码**：`3DCodeFactory`（`arXiv:2611.28783v1`，Apache-2.0，`assets/prompts/P01..P11.txt`、`assets/fewshots/{press,hall}/case.json`、`src/code3dfactory/{validation.py,workflow.py}`）  
-> **配套分类树与交付规格**：[Anim2D-Tree v2.0](../configs/taxonomies/anim2d_tree_v2_0.json) · [CadQuery-Tree v2.0](../configs/taxonomies/cadquery_tree_v2_0.json) · [三轨顶级交付产物规格 v2.1](THREE-TRACK-DELIVERABLE-SPEC.md) · [XHS 对齐统一 SFT 标准](XHS-UNIFIED-SFT-STANDARD.md)
+> **配套分类树与交付规格**：[**Frontier v3.0 高复杂度出题规格（超越 Qwen-Max 主力）**](FRONTIER-2D-CAD-TASK-DESIGN-V3.md) · [Anim2D-Tree v3.0](../configs/taxonomies/anim2d_tree_v3_0.json) · [CadQuery-Tree v3.0](../configs/taxonomies/cadquery_tree_v3_0.json) · [Anim2D-Tree v2.0](../configs/taxonomies/anim2d_tree_v2_0.json) · [CadQuery-Tree v2.0](../configs/taxonomies/cadquery_tree_v2_0.json) · [三轨顶级交付产物规格 v2.1](THREE-TRACK-DELIVERABLE-SPEC.md) · [XHS 对齐统一 SFT 标准](XHS-UNIFIED-SFT-STANDARD.md)
 
 ---
 

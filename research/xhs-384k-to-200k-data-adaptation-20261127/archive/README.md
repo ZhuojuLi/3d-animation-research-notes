@@ -35,7 +35,7 @@
 | 7 | [empirical_audit_200k_ledger.json](empirical_audit_200k_ledger.json) | `empirical_audit_200k_ledger.json` | **Raw 一手实测（L1–141）+ Rev 1/2 模拟（L142–238）** | `${MODEL_ROOT}/Qwen3.8-27B` 分词器对 `v1_dense`/`v1_full` 的一手真实统计（L1–141 **长期有效**）；L142–238 为已废止的 `HCPF-200K` / `ct_diet` / `HCPF-Lite@256K` 模拟结果。 |
 | 8 | [joint-consolidation.md](joint-consolidation.md) | `joint-consolidation.md` | **Rev 2** | 主调研 × Opus 5.5 原生 `256K + HCPF-Lite@256K`（`220K/85%`, YaRN OFF）联合定案原文。 |
 | 9 | [QWEN38-27B-32xH100-TRAINING-PLAN.md](QWEN38-27B-32xH100-TRAINING-PLAN.md) | `QWEN38-27B-32xH100-TRAINING-PLAN.md` | **Rev 2** | Swarm 四专家原生 `256K` 训练方案（含 `start-full-32g-s3-v1` 静默丢数据取证与 4 项硬硬件禁令）。 |
-| 10 | `a100-experiments`（本地附件未发布） | `a100-experiments/` | **Exp 1 有效实测 + Exp 2 Rev 2 脚本** | 包含 `exp1_gpu1_verified_results.json`（**长期有效**的 A100 分块 CE 精度与显存实测）、`exp1_megatron_ce_and_stage_vram.py`（Exp 1 基准脚本）与 `exp2_build_and_verify_hcpf_lite_256k.py`（已废止的 Rev 2 `HCPF-Lite@256K` 构建脚本）。 |
+| 10 | [a100-experiments/](a100-experiments/) | `a100-experiments/` | **Exp 1 有效实测 + Exp 2 Rev 2 脚本** | 包含 `exp1_gpu1_verified_results.json`（**长期有效**的 A100 分块 CE 精度与显存实测）、`exp1_megatron_ce_and_stage_vram.py`（Exp 1 基准脚本）与 `exp2_build_and_verify_hcpf_lite_256k.py`（已废止的 Rev 2 `HCPF-Lite@256K` 构建脚本）。 |
 
 ---
 

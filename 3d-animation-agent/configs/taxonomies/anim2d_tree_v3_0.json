@@ -1,0 +1,127 @@
+{
+  "taxonomy_id": "Anim2D-Tree",
+  "version": "3.0-frontier",
+  "aligned_date": "2026-11-28",
+  "track": "2d_web_interactive_multi",
+  "option2_aligned": true,
+  "supersedes_for_frontier_distillation": "configs/taxonomies/anim2d_tree_v2_0.json",
+  "design_principle": "对标小红书 3DCodeFactory (+8.12 跃迁超越 Qwen-Max) 与 Bartosz Ciechanowski / Kurzgesagt / NYT Graphics / Awwwards 顶级互动作品。彻底淘汰旧版 4 模块 8 秒单幕小挂件、静态 KPI 四卡大屏与发光移动点拓扑图；全面升级为 5 大前沿原型（2D-F1 统一相机 2.5D 透视交互展厅与建筑剖面 25% · 2D-F2 真实数学物理/机械/光学/流体剖面实验台 25% · 2D-F3 多层视差叙事短片与 FK/IK 骨骼剧场 18% · 2D-F4 多幕连续形变数据叙事与模拟长卷 12% · 2D-F5 256K 两阶段大工程与坏场景外科修复 20%）。硬锁定 >=6 个实质 ES 模块（1,500-3,500+ LoC）、12-24s >=3 幕连续分镜、3-5 个深度耦合控件（含画布直拖/点选 + #reset），全离线 Canvas 2D / SVG / GSAP，零 Three.js/WebGL。",
+  "delivery_contract_ref": "docs/FRONTIER-2D-CAD-TASK-DESIGN-V3.md",
+  "preferred_teacher_mix": {
+    "kimi-k3.1-pro": 0.80,
+    "claude-opus-5-5": 0.20
+  },
+  "sandbox_alignment": {
+    "context_window": 262144,
+    "auto_compact_window": 208000,
+    "auto_compact_pct": 80,
+    "max_output_tokens": 32768,
+    "max_tool_result_tokens": 16384
+  },
+  "frontier_floors": {
+    "min_js_modules": 6,
+    "min_acts": 3,
+    "duration_seconds_range": [12.0, 24.0],
+    "min_coupled_controls": 3,
+    "max_coupled_controls": 5,
+    "requires_direct_canvas_manipulation": true,
+    "requires_offline_gsap": true,
+    "forbid_webgl_threejs": true,
+    "anti_saturation_base27b_max_score": 0.70,
+    "anti_saturation_teacher_min_turns": 45,
+    "target_loc_range": [1500, 3600],
+    "target_net_tokens_range": [160000, 520000]
+  },
+  "permanent_blacklist": [
+    "flat_static_kpi_card_dashboards",
+    "node_edge_pulse_dot_transit_or_microservice_maps",
+    "single_icon_or_bare_canvas_toys",
+    "single_act_8s_static_backdrop_loops"
+  ],
+  "archetypes": [
+    {
+      "id": "2D-F1",
+      "name": "Unified-Camera 2.5D Perspective & Axonometric Interactive Diorama",
+      "quota": 0.25,
+      "projection_mode": "perspective_25d",
+      "requires_projection25d": true,
+      "requires_overlay_diff": true,
+      "min_js_modules": 7,
+      "min_acts": 3
+    },
+    {
+      "id": "2D-F2",
+      "name": "Ciechanowski-Grade Physically-Solved Mechanical / Optical / Fluid Cutaway",
+      "quota": 0.25,
+      "projection_mode": "orthographic_2d",
+      "requires_kinematic_state": true,
+      "min_coupled_joints": 8,
+      "min_js_modules": 7,
+      "min_acts": 3
+    },
+    {
+      "id": "2D-F3",
+      "name": "Multi-Layer Parallax Narrative Short & Articulated FK/IK Theater",
+      "quota": 0.18,
+      "projection_mode": "layered_parallax_2d",
+      "min_parallax_layers": 6,
+      "requires_kinematic_state": true,
+      "min_js_modules": 6,
+      "min_acts": 3
+    },
+    {
+      "id": "2D-F4",
+      "name": "Multi-Act Scrollytelling & Live-Simulation Visual Essay (High-Complexity D03)",
+      "quota": 0.12,
+      "projection_mode": "orthographic_2d",
+      "min_js_modules": 6,
+      "min_acts": 4,
+      "object_constancy_morph": true
+    },
+    {
+      "id": "2D-F5",
+      "name": "256K Two-Phase Production Epic & Broken-Scene Surgical Overhaul",
+      "quota": 0.20,
+      "projection_mode": "hybrid_25d",
+      "triggers_compaction": true,
+      "includes_healthy_zero_edit_control_pct": 0.15,
+      "min_js_modules": 7,
+      "min_acts": 3
+    }
+  ],
+  "ood_benchmarks_excluded": [
+    "starry1001/AnimWeb-Bench (CC-BY-4.0, 124 pages, OOD only)",
+    "figma-ai/motion-graphics-bench (Data CC-BY-NC-SA-4.0 NEVER TRAIN, OOD only)",
+    "Roy-DOU/Webdev-Bench (MIT, 40 composite tasks, OOD only)",
+    "evals/2d-seed-v1 (internal seed benchmark)"
+  ],
+  "domains": [
+    {"domain_id": "D01", "domain": "2.5D Interactive Architectural, Museum & Workshop Dioramas", "domain_zh": "2.5D 统一透视展厅、建筑剖面与工坊互动场景", "quota": 0.25},
+    {"domain_id": "D02", "domain": "Physically-Solved Mechanical, Horological & Fluid/Optical Cutaways", "domain_zh": "真实物理求解的机械、钟表、光学与流体剖面实验室", "quota": 0.25},
+    {"domain_id": "D03", "domain": "Multi-Act Simulation-Driven Visual Essays & Scrollytelling", "domain_zh": "多幕连续形变模拟数据叙事长卷（零静态 KPI/拓扑黑名单）", "quota": 0.12},
+    {"domain_id": "D04", "domain": "Multi-Layer Parallax Narrative Shorts & Articulated Puppetry", "domain_zh": "多层视差电影叙事短片与 FK/IK 骨骼人偶剧场", "quota": 0.18},
+    {"domain_id": "D05", "domain": "Two-Phase Long-Horizon Production Epics & Broken-Scene Surgery", "domain_zh": "256K 两阶段大工程构建与坏透视/假机构外科手术", "quota": 0.20}
+  ],
+  "leaves": [
+    {"id": "A2D3_D01L01", "domain_id": "D01", "archetype": "2D-F1", "renderer": "hybrid", "duration": 16.0, "min_js_modules": 7, "min_acts": 3, "label": "Geological Museum Agate Backlit Gallery & Lapidary Bench (2.5D Unified Camera)", "label_zh": "地质博物馆玛瑙背光展柜与抛光工作台 2.5D 统一灭点互动展厅"},
+    {"id": "A2D3_D01L02", "domain_id": "D01", "archetype": "2D-F1", "renderer": "hybrid", "duration": 18.0, "min_js_modules": 7, "min_acts": 4, "label": "Victorian Astronomical Observatory Dome & Equatorial Refractor Cutaway", "label_zh": "维多利亚天文台穹顶、赤道仪折射望远镜与传动齿圈 2.5D 透视剖面"},
+    {"id": "A2D3_D01L03", "domain_id": "D01", "archetype": "2D-F1", "renderer": "hybrid", "duration": 16.0, "min_js_modules": 7, "min_acts": 3, "label": "Historic Letterpress Printshop & Vertical Cast-Iron Proof Press Studio", "label_zh": "古董活字印刷工坊与双螺杆垂直齿轮压机 2.5D 联动工作室"},
+    {"id": "A2D3_D01L04", "domain_id": "D01", "archetype": "2D-F1", "renderer": "hybrid", "duration": 18.0, "min_js_modules": 8, "min_acts": 4, "label": "Cutaway Alpine Hydroelectric Powerhouse & Pelton Turbine Hall", "label_zh": "高山水电站厂房、压力钢管与冲击式水轮机大厅轴测互动剖面"},
+    {"id": "A2D3_D02L01", "domain_id": "D02", "archetype": "2D-F2", "renderer": "hybrid", "duration": 16.0, "min_js_modules": 7, "min_acts": 3, "label": "Swiss Tourbillon & Anchor Escapement Horology Solver", "label_zh": "瑞士陀飞轮与锚式擒纵机构精确齿数比与摆轮动力学实验室"},
+    {"id": "A2D3_D02L02", "domain_id": "D02", "archetype": "2D-F2", "renderer": "hybrid", "duration": 16.0, "min_js_modules": 7, "min_acts": 3, "label": "Walschaerts Steam Locomotive Valve-Gear & Indicator-Diagram Cutaway", "label_zh": "蒸汽机车华氏配气四连杆、滑阀气缸与实时示功图耦合剖面台"},
+    {"id": "A2D3_D02L03", "domain_id": "D02", "archetype": "2D-F2", "renderer": "hybrid", "duration": 16.0, "min_js_modules": 7, "min_acts": 3, "label": "Multi-Element Apochromatic Camera Lens Chromatic Ray-Tracer & Leaf Shutter", "label_zh": "六片消色差定焦镜头实时色散光路追迹、焦散与机械镜间快门实验室"},
+    {"id": "A2D3_D02L04", "domain_id": "D02", "archetype": "2D-F2", "renderer": "hybrid", "duration": 16.0, "min_js_modules": 7, "min_acts": 3, "label": "Twin-Scroll Turbocharged Four-Stroke Engine & Gas-Exchange Thermodynamics", "label_zh": "双涡管涡轮增压四冲程发动机气门凸轮、涡轮气流与热力循环剖面台"},
+    {"id": "A2D3_D03L01", "domain_id": "D03", "archetype": "2D-F4", "renderer": "hybrid", "duration": 18.0, "min_js_modules": 7, "min_acts": 4, "label": "Orbital Mechanics & Lagrange-Point Halo Transfer Visual Essay", "label_zh": "三体拉格朗日点与深空引力弹弓四幕连续形变互动叙事长卷"},
+    {"id": "A2D3_D03L02", "domain_id": "D03", "archetype": "2D-F4", "renderer": "hybrid", "duration": 18.0, "min_js_modules": 7, "min_acts": 4, "label": "Fourier Epicycles to JPEG 2D-DCT Compression Live Interactive Essay", "label_zh": "从傅里叶本轮到二维频谱压缩的四幕连续形变模拟科普长卷"},
+    {"id": "A2D3_D03L03", "domain_id": "D03", "archetype": "2D-F4", "renderer": "hybrid", "duration": 18.0, "min_js_modules": 6, "min_acts": 4, "label": "Ocean Thermohaline Circulation & ENSO Coupled Climate Scrollyteller", "label_zh": "海洋温盐环流与厄尔尼诺耦合粒子流场四幕数据叙事长卷"},
+    {"id": "A2D3_D03L04", "domain_id": "D03", "archetype": "2D-F4", "renderer": "hybrid", "duration": 18.0, "min_js_modules": 7, "min_acts": 4, "label": "Epidemic SEIR Spatial Agent-Based Simulation & Policy Phase-Space Essay", "label_zh": "空间粒子群流行病动力学与相空间演进四幕联动模拟长卷"},
+    {"id": "A2D3_D04L01", "domain_id": "D04", "archetype": "2D-F3", "renderer": "hybrid", "duration": 20.0, "min_js_modules": 7, "min_acts": 4, "label": "Clockwork Automaton Calligrapher & Multi-Joint IK Puppet Stage", "label_zh": "发条机械书法偶多关节逆向运动学（IK）与齿轮凸轮后台透视剧场"},
+    {"id": "A2D3_D04L02", "domain_id": "D04", "archetype": "2D-F3", "renderer": "hybrid", "duration": 20.0, "min_js_modules": 7, "min_acts": 4, "label": "Stormbound Lighthouse & Fresnel Lens 8-Layer Atmospheric Parallax Epic", "label_zh": "暴风雨灯塔菲涅尔透镜折射与八层大气海浪视差四幕短片"},
+    {"id": "A2D3_D04L03", "domain_id": "D04", "archetype": "2D-F3", "renderer": "hybrid", "duration": 18.0, "min_js_modules": 6, "min_acts": 3, "label": "Submarine Bathyscaphe Abyssal Descent & Pressure-Hull Cutaway Story", "label_zh": "深海载人潜器万米下潜、压载水舱与深渊发光生态三幕视差绘本"},
+    {"id": "A2D3_D04L04", "domain_id": "D04", "archetype": "2D-F3", "renderer": "hybrid", "duration": 18.0, "min_js_modules": 7, "min_acts": 3, "label": "Mechanical Grand Piano Action & Acoustic String Harmonic Theater", "label_zh": "三角钢琴击弦机双擒纵杠杆与琴弦驻波泛音多幕交互剧场"},
+    {"id": "A2D3_D05L01", "domain_id": "D05", "archetype": "2D-F5", "renderer": "hybrid", "duration": 20.0, "min_js_modules": 8, "min_acts": 4, "label": "Two-Phase Multi-Deck Ocean Liner Engine Room & Bridge Interactive Studio", "label_zh": "两阶段远洋邮轮多甲板轮机舱与舰桥联动 2.5D 大工程（208K 压缩续写）"},
+    {"id": "A2D3_D05L02", "domain_id": "D05", "archetype": "2D-F5", "renderer": "hybrid", "duration": 16.0, "min_js_modules": 7, "min_acts": 3, "label": "Perspective-Mashup & Desynced-Gear Broken Museum Scene Surgical Overhaul", "label_zh": "多坐标系透视分裂与失步假齿轮破损展厅外科修复工程"},
+    {"id": "A2D3_D05L03", "domain_id": "D05", "archetype": "2D-F5", "renderer": "hybrid", "duration": 22.0, "min_js_modules": 8, "min_acts": 4, "label": "Two-Phase Modular Analog Synthesizer & Live WebAudio/Oscilloscope Workbench", "label_zh": "两阶段模块化模拟合成器、跳线信号流与实时傅里叶示波工作台（208K 压缩续写）"},
+    {"id": "A2D3_D05L04", "domain_id": "D05", "archetype": "2D-F5", "renderer": "hybrid", "duration": 16.0, "min_js_modules": 7, "min_acts": 3, "label": "Canvas Text-Collision, Floating-Linkage & Non-Deterministic Timeline Repair", "label_zh": "Canvas 文本碰撞、悬空连杆与非确定性时间轴故障修复及健康对照组"}
+  ]
+}

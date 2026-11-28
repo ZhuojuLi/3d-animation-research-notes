@@ -1,0 +1,107 @@
+{
+  "taxonomy_id": "CadQuery-Tree",
+  "version": "3.0-frontier",
+  "aligned_date": "2026-11-28",
+  "track": "cad_print_cq",
+  "option2_aligned": true,
+  "supersedes_for_frontier_distillation": "configs/taxonomies/cadquery_tree_v2_0.json",
+  "design_principle": "对标小红书 3DCodeFactory (+8.12 跃迁超越 Qwen-Max) 与 BenchCAD 2.1 (realhard6) 真工业门槛。彻底淘汰文本喂饭的 6 零件简单桌面件（Kimi 22-45 轮秒杀、无法拉开与 Qwen-Max 差距）；全面升级为 4 大前沿原型（C-F1 非喂饭工程图+去姿态 STEP 12-36 实例工业总成 40% · C-F2 4 相位动态机构与变截面功能总成 10-22 件 >=200 面 25% · C-F3 微扰多视图 0-STEP 逆向 6-14 件 15% · C-F4 长程 208K 压缩 ECO 变更与多故障外科手术 20%）。强制非 XY 起草基准 XY 35% / XZ 35% / YZ 30%，全链路运行于 Option 2 256K 沙盒（208000 / 80% / 32768 / 16384），经 cad_inspect.py 5 修 + 多相位扫掠 + tools/cad_kit.py 确定性零干涉验收。",
+  "delivery_contract_ref": "docs/FRONTIER-2D-CAD-TASK-DESIGN-V3.md",
+  "preferred_teacher_mix": {
+    "kimi-k3.1-pro": 0.80,
+    "claude-opus-5-5": 0.20
+  },
+  "sandbox_alignment": {
+    "context_window": 262144,
+    "auto_compact_window": 208000,
+    "auto_compact_pct": 80,
+    "max_output_tokens": 32768,
+    "max_tool_result_tokens": 16384,
+    "sketch_plane_quotas": {"XY": 0.35, "XZ": 0.35, "YZ": 0.30}
+  },
+  "frontier_floors": {
+    "min_distinct_parts": 8,
+    "min_placed_instances": 10,
+    "min_brep_faces": 200,
+    "min_occt_feature_classes": 6,
+    "min_parametric_probes": 2,
+    "kinematic_phases": [0.0, 0.33, 0.67, 1.0],
+    "anti_saturation_base27b_max_score": 0.70,
+    "anti_saturation_teacher_min_turns": 45,
+    "target_loc_range": [1200, 3200],
+    "target_net_tokens_range": [140000, 480000]
+  },
+  "archetypes": [
+    {
+      "id": "C-F1",
+      "name": "Un-Spoonfed Hybrid Drawing + De-Posed STEP Industrial Assembly",
+      "quota": 0.40,
+      "instances_range": [12, 36],
+      "custom_drawing_parts_range": [4, 6],
+      "anti_spoonfeed": true,
+      "projection_split": {"ISO-E": 0.50, "ISO-A": 0.50},
+      "traps": ["so3_24_deposed_steps", "chiral_lr_pairs_20pct", "multi_solid_step_15pct", "non_90deg_phase_25pct"]
+    },
+    {
+      "id": "C-F2",
+      "name": "Multi-Phase Kinematic Mechanism & Variable-Section Functional System",
+      "quota": 0.25,
+      "parts_range": [10, 22],
+      "min_brep_faces": 220,
+      "kinematic_phases": [0.0, 0.33, 0.67, 1.0],
+      "min_probes": 2
+    },
+    {
+      "id": "C-F3",
+      "name": "Perturbed Multi-View 0-STEP Reverse Engineering",
+      "quota": 0.15,
+      "parts_range": [6, 14],
+      "camera_perturbation_deg": [3.0, 8.0],
+      "requires_canonical_local_frame": true,
+      "anti_spoonfeed": true
+    },
+    {
+      "id": "C-F4",
+      "name": "Long-Horizon Industrial ECO & Multi-Fault Surgery (208K Compaction)",
+      "quota": 0.20,
+      "parts_range": [10, 20],
+      "triggers_compaction": true,
+      "includes_healthy_zero_edit_control_pct": 0.15
+    }
+  ],
+  "ood_benchmarks_excluded": [
+    "BenchCAD/BenchCAD (CC-BY-4.0 / MIT, OOD only)",
+    "HuggingAI4Engineering/cadgenbench-data (ODC-BY, 81 industrial fixtures, OOD only)",
+    "IterCAD-Draw_1k (Shard 5 permanently held out as OOD)",
+    "evals/print-seed-v1 (internal seed benchmark)"
+  ],
+  "domains": [
+    {"domain_id": "D01", "domain": "Precision Industrial Fixtures, Actuators & Linear Automation", "domain_zh": "精密工业夹具、气动执行器与直线自动化总成", "quota": 0.20},
+    {"domain_id": "D02", "domain": "Multi-Stage Gearboxes, Indexing & Differential Drivetrains", "domain_zh": "多级变速箱、分度机构与差速传动系统", "quota": 0.20},
+    {"domain_id": "D03", "domain": "Fluid Machinery, Variable-Section Volutes & Valve Manifolds", "domain_zh": "流体机械、变截面蜗壳叶轮与多通阀控系统", "quota": 0.20},
+    {"domain_id": "D04", "domain": "Industrial Mechatronic Enclosures, Optics & Sealed Chassis", "domain_zh": "工业机电整机箱体、光学仪台与密封散热系统", "quota": 0.20},
+    {"domain_id": "D05", "domain": "Robotics Joints, Multi-Axis Gimbals & Cam Automation", "domain_zh": "机器人关节、多轴云台与凸轮自动化整机", "quota": 0.20}
+  ],
+  "leaves": [
+    {"id": "CAD3_D01L01", "domain_id": "D01", "archetype": "C-F1", "primary_sketch_plane": "XZ", "min_distinct_parts": 12, "min_placed_instances": 24, "min_brep_faces": 320, "label": "Pneumatic Scissor-Lift Shear Table", "label_zh": "气动剪叉举升与斜刃剪切工作台总成（24+ 实例混合工程图+STEP）"},
+    {"id": "CAD3_D01L02", "domain_id": "D01", "archetype": "C-F2", "primary_sketch_plane": "YZ", "min_distinct_parts": 12, "min_placed_instances": 16, "min_brep_faces": 260, "label": "Dual-Axis Cross-Roller Micrometer Stage", "label_zh": "双轴交叉滚柱丝杠微调精密滑台与楔形锁紧总成（4 相位行程验证）"},
+    {"id": "CAD3_D01L03", "domain_id": "D01", "archetype": "C-F1", "primary_sketch_plane": "XZ", "min_distinct_parts": 14, "min_placed_instances": 28, "min_brep_faces": 340, "label": "Dual-Belt Synchronized Transfer Conveyor Unit", "label_zh": "双同步带张紧传输模组与非对称轴承座总成（含左右手性件与多实体陷阱）"},
+    {"id": "CAD3_D01L04", "domain_id": "D01", "archetype": "C-F4", "primary_sketch_plane": "YZ", "min_distinct_parts": 12, "min_placed_instances": 18, "min_brep_faces": 280, "label": "Compound-Angle CNC Vise & Multi-Clamp ECO", "label_zh": "双向自定心精密机用虎钳与二阶段跨距 ECO 改型总成"},
+    {"id": "CAD3_D02L01", "domain_id": "D02", "archetype": "C-F2", "primary_sketch_plane": "YZ", "min_distinct_parts": 14, "min_placed_instances": 20, "min_brep_faces": 420, "label": "Two-Speed Synchromesh Gearbox with Shift Fork", "label_zh": "双速同步器齿轮变速箱与拨叉换挡机构总成（渐开线斜齿+4 相位啮合）"},
+    {"id": "CAD3_D02L02", "domain_id": "D02", "archetype": "C-F3", "primary_sketch_plane": "XY", "min_distinct_parts": 9, "min_placed_instances": 12, "min_brep_faces": 350, "label": "Planetary Cycloidal Pinwheel Reducer", "label_zh": "双摆线针轮偏心减速机零 STEP 微扰四视图逆向总成"},
+    {"id": "CAD3_D02L03", "domain_id": "D02", "archetype": "C-F1", "primary_sketch_plane": "XZ", "min_distinct_parts": 12, "min_placed_instances": 26, "min_brep_faces": 360, "label": "Bevel-Gear Differential Winch & Ratchet Brake", "label_zh": "锥齿轮差速绞盘与棘轮防逆制动工业总成（ISO-E/A 工程图+STEP）"},
+    {"id": "CAD3_D02L04", "domain_id": "D02", "archetype": "C-F3", "primary_sketch_plane": "XY", "min_distinct_parts": 8, "min_placed_instances": 11, "min_brep_faces": 310, "label": "Self-Centering 4-Jaw Scroll & Bevel Chuck", "label_zh": "四爪阿基米德涡卷锥齿自定心卡盘微扰四视图逆向总成"},
+    {"id": "CAD3_D03L01", "domain_id": "D03", "archetype": "C-F2", "primary_sketch_plane": "XY", "min_distinct_parts": 10, "min_placed_instances": 14, "min_brep_faces": 300, "label": "Variable-Section Centrifugal Volute Pump & Impeller", "label_zh": "变截面阿基米德蜗壳离心泵、后倾扭曲叶轮与机械密封总成"},
+    {"id": "CAD3_D03L02", "domain_id": "D03", "archetype": "C-F1", "primary_sketch_plane": "XZ", "min_distinct_parts": 11, "min_placed_instances": 22, "min_brep_faces": 310, "label": "Worm-Driven High-Pressure Butterfly & Check Valve Manifold", "label_zh": "蜗轮减速驱动双偏心蝶阀与止回多通阀块工业总成"},
+    {"id": "CAD3_D03L03", "domain_id": "D03", "archetype": "C-F2", "primary_sketch_plane": "YZ", "min_distinct_parts": 11, "min_placed_instances": 15, "min_brep_faces": 290, "label": "Axial Swashplate Piston Hydraulic Pump Cutaway", "label_zh": "斜盘式五柱塞轴向液压泵剖切总成（斜盘倾角变参+4 相位柱塞往复）"},
+    {"id": "CAD3_D03L04", "domain_id": "D03", "archetype": "C-F4", "primary_sketch_plane": "XZ", "min_distinct_parts": 10, "min_placed_instances": 16, "min_brep_faces": 270, "label": "Multi-Port Liquid-Cooling Coldplate & Manifold ECO", "label_zh": "多通道液冷分流歧管与快换密封接头故障修复及 ECO 改型总成"},
+    {"id": "CAD3_D04L01", "domain_id": "D04", "archetype": "C-F1", "primary_sketch_plane": "XZ", "min_distinct_parts": 13, "min_placed_instances": 24, "min_brep_faces": 340, "label": "IP67 Ruggedized Rack-Mount Field Analyzer Chassis", "label_zh": "IP67 三防斜面现场频谱分析仪整机机箱与双铰链密封锁扣总成"},
+    {"id": "CAD3_D04L02", "domain_id": "D04", "archetype": "C-F1", "primary_sketch_plane": "XY", "min_distinct_parts": 12, "min_placed_instances": 22, "min_brep_faces": 280, "label": "Kinematic Optical Rail Bench & Iris Beam-Splitter Assembly", "label_zh": "精密光学导轨实验台、可调光阑与双轴微调分光镜座工业总成（22+ 实例工程图+STEP）"},
+    {"id": "CAD3_D04L03", "domain_id": "D04", "archetype": "C-F4", "primary_sketch_plane": "XY", "min_distinct_parts": 12, "min_placed_instances": 18, "min_brep_faces": 300, "label": "Dual-Tower Vapor-Chamber Server Cooler & Shroud ECO", "label_zh": "双塔热管服务器液风冷散热模块与快拆导流风道长程 ECO 总成"},
+    {"id": "CAD3_D04L04", "domain_id": "D04", "archetype": "C-F1", "primary_sketch_plane": "YZ", "min_distinct_parts": 12, "min_placed_instances": 20, "min_brep_faces": 290, "label": "Multi-Compartment Sealed Battery Pack & Busbar Enclosure", "label_zh": "分舱密封工业电池包壳体、防爆阀与压紧汇流排装配总成"},
+    {"id": "CAD3_D05L01", "domain_id": "D05", "archetype": "C-F2", "primary_sketch_plane": "YZ", "min_distinct_parts": 13, "min_placed_instances": 18, "min_brep_faces": 350, "label": "3-DOF Hollow-Shaft Harmonic Robot Wrist Joint", "label_zh": "三自由度中空走线机器人腕部谐波关节与双交叉滚子轴承座总成"},
+    {"id": "CAD3_D05L02", "domain_id": "D05", "archetype": "C-F1", "primary_sketch_plane": "XZ", "min_distinct_parts": 13, "min_placed_instances": 26, "min_brep_faces": 330, "label": "Geneva-Wheel Intermittent Rotary Indexer & Cam Clamp", "label_zh": "槽轮间歇分度转台与同步凸轮压紧工位工业总成（26 实例）"},
+    {"id": "CAD3_D05L03", "domain_id": "D05", "archetype": "C-F3", "primary_sketch_plane": "XY", "min_distinct_parts": 9, "min_placed_instances": 13, "min_brep_faces": 300, "label": "3-Axis Belt-Driven Stabilized Cinema Gimbal Head", "label_zh": "三轴同步带传动精密电影云台头零 STEP 微扰四视图逆向总成"},
+    {"id": "CAD3_D05L04", "domain_id": "D05", "archetype": "C-F4", "primary_sketch_plane": "YZ", "min_distinct_parts": 12, "min_placed_instances": 18, "min_brep_faces": 320, "label": "Parallel 3-Finger Industrial Servo Gripper Fault-Surgery & ECO", "label_zh": "三指齿轮齿条联动工业伺服夹爪多故障外科修复与行程 ECO 总成"}
+  ]
+}
